@@ -1,5 +1,16 @@
 # Maximum Public Website
 
+一般公開向けのMaximumウェブサイトを管理するリポジトリです。
+
+## 開発形態
+
+### ブランチ名
+
+- `main`: 本番環境
+- `feat/xxx`: 機能追加
+- `fix/xxx`: バグ修正
+- `hotfix/xxx`: 緊急バグ修正
+
 ## 開発手順
 
 ### 前提条件
