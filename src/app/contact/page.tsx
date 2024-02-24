@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact | Maximum',
+  title: 'Contact',
   description: 'Maximum Website',
 };
 
