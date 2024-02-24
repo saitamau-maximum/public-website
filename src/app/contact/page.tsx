@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Maximum Website',
+  description: '埼玉大学プログラミングサークル「Maximum」へのお問い合わせのページです。',
 };
 
 export default function Contact() {
