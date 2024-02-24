@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'サークルについて | Maximum',
-  description: 'Maximum Website',
+  title: 'サークルについて',
+  description: '埼玉大学プログラミングサークル「Maximum」についての活動内容のページです。',
 };
 
 export default function About() {
