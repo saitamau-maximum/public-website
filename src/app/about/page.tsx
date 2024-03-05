@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'サークルについて',
@@ -34,9 +35,9 @@ export default function About() {
       </p>
       <img src='/images/ics-pamphlet.png' alt='情報工学科パンフレット' />
       <div>
-        <a href='../achievements'>
-          <strong>過去の成績|Maximum</strong>
-        </a>
+        <Link href="/achievements">
+            <strong>過去の成績|Maximum</strong>
+        </Link>
       </div>
       <h2>Web</h2>
       <h3>講習</h3>
@@ -62,9 +63,9 @@ export default function About() {
       </p>
       <p>詳しく知りたい方は大会参加記を見てみてください。</p>
       <div>
-        <a href='../achievements'>
-          <strong>過去の成績|Maximum</strong>
-        </a>
+        <Link href="/achievements">
+            <strong>過去の成績|Maximum</strong>
+        </Link>
       </div>
     </div>
   );
