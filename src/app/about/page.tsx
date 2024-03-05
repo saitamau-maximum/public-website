@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'サークルについて',
-  description: '埼玉大学プログラミングサークル「Maximum」についての活動内容のページです。',
+  description:
+    '埼玉大学プログラミングサークル「Maximum」についての活動内容のページです。',
 };
 
 export default function About() {
@@ -24,27 +25,25 @@ export default function About() {
       <p>
         工学部情報工学科のパンフレットに記載していただきました！
         例題も掲載されているので是非ご覧ください。
-        <a href="http://www.ics.saitama-u.ac.jp/content/uploads/pamphlet/ics_pamphlet.pdf" target="_blank">
+        <a
+          href='http://www.ics.saitama-u.ac.jp/content/uploads/pamphlet/ics_pamphlet.pdf'
+          target='_blank'
+        >
           情報工学科パンフレット
         </a>
       </p>
       <div>
-        <a href="../achievements">
-          <div>
-            <strong>
-              過去の成績|Maximum
-            </strong>
-            <p>
-              maximum.vc
-            </p>
-          </div>
+        <a href='../achievements'>
+          <strong>過去の成績|Maximum</strong>
+          maximum.vc
         </a>
       </div>
       <h2>Web</h2>
       <h3>講習</h3>
       <p>
         WebサイトやWebサーバーを制作・構築・運用するための基礎を一通り学びます。
-        講習ではHTML,CSS,JabaScriptを触ります。Webに関しては<strong>アウトプットこそ正義</strong>
+        講習ではHTML,CSS,JabaScriptを触ります。Webに関しては
+        <strong>アウトプットこそ正義</strong>
         なので「勉強する」よりも「作りながらその都度調べる」というフローで効率の良い学習ができるようサポートします。
       </p>
       <h3>サイト制作・アプリ制作</h3>
@@ -61,19 +60,11 @@ export default function About() {
         一見競技性のないWebの分野でも、こういった問題を解決する力を競う大会がいくつか開催されており、
         そこに出場することを目標にトレーニングもしています。
       </p>
-      <p>
-        詳しく知りたい方は大会参加記を見てみてください。
-      </p>
+      <p>詳しく知りたい方は大会参加記を見てみてください。</p>
       <div>
-        <a href="../achievements">
-          <div>
-            <strong>
-              過去の成績|Maximum
-            </strong>
-            <p>
-              maximum.vc
-            </p>
-          </div>
+        <a href='../achievements'>
+          <strong>過去の成績|Maximum</strong>
+          maximum.vc
         </a>
       </div>
     </div>
