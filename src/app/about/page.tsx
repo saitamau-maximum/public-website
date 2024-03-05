@@ -32,6 +32,7 @@ export default function About() {
           情報工学科パンフレット
         </a>
       </p>
+      <img src="/images/ics-pamphlet.png" alt="情報工学科パンフレット"/>
       <div>
         <a href='../achievements'>
           <strong>過去の成績|Maximum</strong>
