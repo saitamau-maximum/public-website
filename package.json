@@ -30,7 +30,7 @@
   },
   "husky": {
     "hooks": { 
-     "pre-commit": "yarn lint:fix && yarn format"
+     "pre-commit": "eco 'pre-commit done' && yarn lint:fix && yarn format"
     }
   }
 }
