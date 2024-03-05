@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-yarn lint:fix
-yarn format
-. "${0%/*}/h"
