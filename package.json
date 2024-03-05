@@ -27,9 +27,9 @@
     "prettier": "^3.2.5",
     "typescript": "^5"
   },
-  "husky":{
-    "hooks":{
-      "pre-commit":"yarn lint:fix && yarn format"
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint:fix && yarn format"
     }
   }
 }
