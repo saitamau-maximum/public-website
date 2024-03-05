@@ -32,11 +32,10 @@ export default function About() {
           情報工学科パンフレット
         </a>
       </p>
-      <img src="/images/ics-pamphlet.png" alt="情報工学科パンフレット"/>
+      <img src='/images/ics-pamphlet.png' alt='情報工学科パンフレット' />
       <div>
         <a href='../achievements'>
           <strong>過去の成績|Maximum</strong>
-          maximum.vc
         </a>
       </div>
       <h2>Web</h2>
@@ -65,7 +64,6 @@ export default function About() {
       <div>
         <a href='../achievements'>
           <strong>過去の成績|Maximum</strong>
-          maximum.vc
         </a>
       </div>
     </div>
