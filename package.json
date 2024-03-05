@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint --dir src",
     "lint:fix": "npm run lint --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "next": "14.1.0",
@@ -29,10 +31,6 @@
   },
   "husky": {
     "hooks": {
-      
-      
-      
-      
       "pre-commit": "yarn lint:fix && yarn format"
     }
   }
