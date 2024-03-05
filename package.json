@@ -30,8 +30,8 @@
     "typescript": "^5"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint:fix && yarn format"
+    "hooks": { 
+         "pre-commit": "yarn lint:fix && yarn format"
     }
   }
 }
