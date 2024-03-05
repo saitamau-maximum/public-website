@@ -43,6 +43,7 @@ npm install -D husky
 
 #yarnの場合
 yarn add -D husky
+```
 
 ### デプロイについて
 
