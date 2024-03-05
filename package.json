@@ -29,6 +29,10 @@
   },
   "husky": {
     "hooks": {
+      
+      
+      
+      
       "pre-commit": "yarn lint:fix && yarn format"
     }
   }
