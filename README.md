@@ -33,6 +33,17 @@ yarn install
 yarn dev
 ```
 
+#### yarn prepareについて
+
+huskyを用いてコミット前にフォーマッターを適応しています。
+huskyは以下のコマンドでインストールできます。
+```bash
+#npmの場合
+npm install -D husky
+
+#yarnの場合
+yarn add -D husky
+
 ### デプロイについて
 
 GitHubの `main` ブランチに push すると、Cloudflare Pagesに自動デプロイされます。
