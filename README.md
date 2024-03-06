@@ -27,22 +27,18 @@ npm install -g yarn
 yarn install
 ```
 
-#### 開発サーバーの起動
-
-```bash
-yarn dev
-```
-
 #### yarn prepareについて
 
 huskyを用いてコミット前にフォーマッターを適応しています。
 huskyは以下のコマンドでインストールできます。
 ```bash
-#npmの場合
-npm install -D husky
-
-#yarnの場合
 yarn add -D husky
+```
+
+#### 開発サーバーの起動
+
+```bash
+yarn dev
 ```
 
 ### デプロイについて
