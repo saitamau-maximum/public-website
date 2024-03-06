@@ -8,8 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --dir src",
-    "lint:fix": "npm run lint --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "14.1.0",
@@ -23,6 +24,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
     "prettier": "^3.2.5",
     "typescript": "^5"
   }

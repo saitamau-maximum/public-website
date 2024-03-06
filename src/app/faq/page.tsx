@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'FAQ',
-  description: '埼玉大学プログラミングサークル「Maximum」について、よくある質問をまとめたページです。',
+  description:
+    '埼玉大学プログラミングサークル「Maximum」について、よくある質問をまとめたページです。',
 };
 
 export default function Faq() {
