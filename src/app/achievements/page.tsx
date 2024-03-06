@@ -47,8 +47,8 @@ export default async function Achievements() {
   docs.push(...getDocs.map((doc) => ({ ...doc })));
 
   // 一覧を日付でソート
-  docs.sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
-
+  docs.sort((a, b) => (a.frontmatter.updatedAt < b.frontmatter.updatedAt ? 1 : -1));
+  
   return (
     <div>
       <h1>Achievements</h1>
