@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Achievements',
@@ -53,7 +54,9 @@ export default async function Achievements() {
       <h1>Achievements</h1>
       {docs.map((doc) => (
         <div key={doc.slug}>
-          <a href={`/achievements/${doc.slug}`}>{doc.frontmatter.title}</a>
+          <Link href={`/achievements/${doc.slug}`}>
+            {doc.frontmatter.title}
+          </Link>
         </div>
       ))}
     </div>
