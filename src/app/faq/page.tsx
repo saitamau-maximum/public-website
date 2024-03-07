@@ -11,11 +11,12 @@ export default function Faq() {
     <div>
       <h1>よくある質問</h1>
       <p>
-        もしほかにご質問があればX（旧Twitter）のDMなどで気軽に聞いてください！
+        もしほかにご質問があれば
+        <a href='https://twitter.com/Maximum03400346' target='_blank'>
+          X(旧Twitter)
+        </a>
+        のDMなどで気軽に聞いてください！
       </p>
-      <a href='https://twitter.com/Maximum03400346' target='_blank'>
-        埼玉大学プログラミングサークル Maximum (@Maximum03400346)
-      </a>
       <p>Q. プログラミング初心者なんですが、大丈夫ですか？ </p>
       <p>
         A.
