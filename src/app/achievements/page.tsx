@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { promises as fs } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import type { Metadata } from 'next';
@@ -18,14 +18,14 @@ interface Doc {
   };
 }
 
-const getMarkdown = async (dir: string) => {
-  const fileNames = fs.readdirSync(dir);
+const getMarkdowns = async (dir: string) => {
+  const fileNames = await fs.readdir(dir);
   const docs = await Promise.all(
     fileNames.map(async (fileName) => {
       const filePath = path.join(dir, fileName);
 
       // ファイルの中身を取得
-      const fileContents = fs.readFileSync(filePath, "utf8");
+      const fileContents = await fs.readFile(filePath, "utf8");
       const { data, content } = matter(fileContents);
 
       // ファイル名からカテゴリを取得
@@ -43,7 +43,7 @@ export default async function Achievements() {
   const docs: Doc[] = [];
   // achievementの中身を取得
   const docsDir = path.join(process.cwd(), "docs", "achievement");
-  const getDocs = await getMarkdown(docsDir);
+  const getDocs = await getMarkdowns(docsDir);
   docs.push(...getDocs.map((doc) => ({ ...doc })));
 
   // 一覧を日付でソート
