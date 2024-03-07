@@ -19,7 +19,7 @@ export const getMarkdowns = async (dir: string): Promise<Doc[]> => {
       const fileContents = await fs.readFile(filePath, "utf8");
       const { data, content } = matter(fileContents);
 
-      // ファイル名からカテゴリを取得
+      // 取得結果からDocオブジェクトを作成
       return {
         slug: fileName.replace(".md", ""),
         content,
