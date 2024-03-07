@@ -10,12 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Achievements() {
-  const docs: Doc[] = [];
   // achievementの中身を取得
   const docsDir = path.join(process.cwd(), "docs", "achievement");
-  const getDocs = await getMarkdowns(docsDir);
-  docs.push(...getDocs);
-
+  const docs = await getMarkdowns(docsDir);
+  
   // 一覧を日付でソート
   docs.sort((a, b) => (a.frontmatter.updatedAt < b.frontmatter.updatedAt ? 1 : -1));
   
