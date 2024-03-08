@@ -11,12 +11,14 @@ export const metadata: Metadata = {
 
 export default async function Achievements() {
   // achievementの中身を取得
-  const docsDir = path.join(process.cwd(), "docs", "achievement");
+  const docsDir = path.join(process.cwd(), 'docs', 'achievement');
   const docs = await getMarkdowns(docsDir);
-  
+
   // 一覧を日付でソート
-  docs.sort((a, b) => (a.frontmatter.updatedAt < b.frontmatter.updatedAt ? 1 : -1));
-  
+  docs.sort((a, b) =>
+    a.frontmatter.updatedAt < b.frontmatter.updatedAt ? 1 : -1,
+  );
+
   return (
     <div>
       <h1>Achievements</h1>

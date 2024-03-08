@@ -16,16 +16,16 @@ export const getMarkdowns = async (dir: string): Promise<Doc[]> => {
     fileNames.map(async (fileName) => {
       const filePath = path.join(dir, fileName);
       // ファイルの中身を取得
-      const fileContents = await fs.readFile(filePath, "utf8");
+      const fileContents = await fs.readFile(filePath, 'utf8');
       const { data, content } = matter(fileContents);
 
       // 取得結果からDocオブジェクトを作成
       return {
-        slug: fileName.replace(".md", ""),
+        slug: fileName.replace('.md', ''),
         content,
         frontmatter: data,
       };
-    })
+    }),
   );
   return docs;
 };
