@@ -40,7 +40,7 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
 | seica on the border | 39th | 横浜大会 24th (29th) |  |
-| KKaraage | 2187th |  |  |
+| KKaraage | 187th |  |  |
 
 ## 2018
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
@@ -54,15 +54,15 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
 | Maximum-omake | 54nd | つくば大会 19th (27th) |  |
-| Maximum-Trump | 93nd |  |  |
+| Maximum-Trump | 93rd |  |  |
 | Maximum-bug | 134th |  |  |
-| Maximum-VJJ | 142th |  |  |
+| Maximum-VJJ | 142nd |  |  |
 
 ## 2016
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| Maximum-Variant | 40nd | つくば大会 24th (31th) |  |
-| Maximum-UniSchoolFleet | 88nd |  |  |
+| Maximum-Variant | 40nd | つくば大会 24th (31st) |  |
+| Maximum-UniSchoolFleet | 88th |  |  |
 | Maximum-NuPogodi | 120th |  |  |
 | Maximum-bug | 152th |  |  |
 | Maximum-Digital | 166th |  |  |
@@ -95,8 +95,8 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | Maximum-column | 34th |  |  |
 | Maximum-Akunohana | 54th |  |  |
 | Maximum-later | 68th	 |  |  |
-| Maximum-minimum | onorable Mention |  |  |
-| Maximum-beginner | onorable Mention |  |  |
+| Maximum-minimum | Honorable Mention |  |  |
+| Maximum-beginner | Honorable Mention |  |  |
 
 ## 2012
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
@@ -164,7 +164,7 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 ## 2005
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| Maximum_Tomato | 20th	 | 東京大会 Honorable Mention<br>北京大会 26th (36th) |  |
+| Keep Time Worker | 20th	 | 東京大会 Honorable Mention<br>北京大会 26th (36th) |  |
 | Bugless	 | 83rd	 |  |  |
 | Fairy_Tale	 | 93rd	 |  |  |
 | iostream	 | 99th	 |  |  |
@@ -175,7 +175,7 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | Maximum-TNT | 3rd	 | 愛媛大会 9th (10th)<br>Kanpur 大会 4th (4th) |  |
 | FutaPi | 29th | 愛媛大会 Honorable Mention |  |
 | polymorphism | 111st |  |  |
-| Wearein_rock	 | Honorable Mention	 |  |  |
+| We*are*in_rock	 | Honorable Mention	 |  |  |
 | minimum | Honorable Mention	 |  |  |
 | hustle-Z	 | Honorable Mention	 |  |  |
 
@@ -199,7 +199,7 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 ## 2001
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| OutOfOrder | 21st	 | 函館大会 13th (17th) |  |
+| Out*Of*Order | 21st	 | 函館大会 13th (17th) |  |
 | only_* | 13th | 函館大会 Honorable Mention |  |
 | NaN	 | 38th	 |  |  |
 | ringo_* | 42nd |  |  |
