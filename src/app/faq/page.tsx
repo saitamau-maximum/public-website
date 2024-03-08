@@ -46,8 +46,8 @@ export default function Faq() {
       <p>
         A.
         AtCoderという毎週末に競技プログラミングコンテストを開催している企業があるので、主にそこの問題を解きます。
-        まずは”AtCoder Beginner
-        Contest”に参加して競技プログラミングに慣れましょう。
+        まず&quot;AtCoder Beginner
+        Contest&quot;に参加して競技プログラミングに慣れましょう。
         Web研では基礎を一通り講習した後で対価の過去問を使った実践演習を主に行っています！
       </p>
       <p>Q. 使う言語は？ </p>
