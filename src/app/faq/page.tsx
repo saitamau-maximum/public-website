@@ -28,6 +28,7 @@ export default function Faq() {
         会員が一同に会する機会は多くなく、連絡は基本的にDiscordで行っています。そのため、講習会に毎回参加することはできなくても、討論に参加したり、遅れを取り戻すことはできます。
       </p>
       <p>Q. 活動の成果は？</p>
+      {/* TODO: Achievementの名前、後で決める。+ ref:https://github.com/saitamau-maximum/public-website/pull/25 */} 
       <p>A. 上のAchievementsページから過去の成績をご覧ください！</p>
       <p>Q. 活動内容を教えてください！ </p>
       <p>
