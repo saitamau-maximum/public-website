@@ -81,8 +81,8 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 ## 2014
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| MaximumShiftKey | 49th | 東京大会 28th (33rd) |  |
-| MaximumInpactStraight | 58st	 |  |  |
+| Maximum*Shift*Key | 49th | 東京大会 28th (33rd) |  |
+| Maximum*Inpact*Straight | 58st	 |  |  |
 | Maximum_Tsubugumi | 102th |  |  |
 | Maximum_Ypsilon | 147th |  |  |
 | Maximum_Kayoubi | Honorable Mention	 |  |  |
@@ -175,7 +175,7 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | Maximum-TNT | 3rd	 | 愛媛大会 9th (10th)<br>Kanpur 大会 4th (4th) |  |
 | FutaPi | 29th | 愛媛大会 Honorable Mention |  |
 | polymorphism | 111st |  |  |
-| We*are*in_rock	 | Honorable Mention	 |  |  |
+| We\_are\_in\_rock	 | Honorable Mention	 |  |  |
 | minimum | Honorable Mention	 |  |  |
 | hustle-Z	 | Honorable Mention	 |  |  |
 
@@ -199,7 +199,7 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 ## 2001
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| Out*Of*Order | 21st	 | 函館大会 13th (17th) |  |
+| Out\_Of\_Order | 21st	 | 函館大会 13th (17th) |  |
 | only_* | 13th | 函館大会 Honorable Mention |  |
 | NaN	 | 38th	 |  |  |
 | ringo_* | 42nd |  |  |
