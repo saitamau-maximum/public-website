@@ -81,8 +81,8 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 ## 2014
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| Maximum*Shift*Key | 49th | 東京大会 28th (33rd) |  |
-| Maximum*Inpact*Straight | 58st	 |  |  |
+| Maximum\_Shift\_Key | 49th | 東京大会 28th (33rd) |  |
+| Maximum\_Inpact\_Straight | 58st |  |  |
 | Maximum_Tsubugumi | 102th |  |  |
 | Maximum_Ypsilon | 147th |  |  |
 | Maximum_Kayoubi | Honorable Mention	 |  |  |
