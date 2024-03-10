@@ -1,12 +1,11 @@
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
-import type { Metadata } from 'next';
 import { parseMarkdownToHTML } from '@saitamau-maximum/markdown-processor/server';
 
 interface Props {
   params: { 
-    work: string;
+    id: string;
     slug: string
   };
   searchParams: {};
@@ -20,6 +19,22 @@ export async function generateStaticParams() {
     params.push({ slug : doc.replace(/\.md$/, '') });
   }
   return params;
+}
+
+interface ResolvingMetadata {
+  title: string;
+  description: string;
+}
+
+export async function generateMetadata({ params }: Props): Promise<ResolvingMetadata> {
+  const { slug } = params;
+  const filePath = path.join(process.cwd(), 'docs', 'achievement', `${slug}.md`);
+  const fileContents = await fs.readFile(filePath, 'utf8');
+  const { data } = matter(fileContents);
+  return {
+    title: data.title as string,
+    description: data.description as string
+  };
 }
 
 export default async function AchievementsSlug( { params } : Props ) {
