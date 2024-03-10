@@ -15,30 +15,19 @@
 
 ### 前提条件
 
-#### yarnをインストールする
-
-```bash
-npm install -g yarn
-```
-
 #### 必要なパッケージをインストールする
 
 ```bash
-yarn install
+npm install
 ```
 
-#### yarn prepareについて
-
+#### npm run prepareについて
 huskyを用いてコミット前にフォーマッターを適応しています。
-huskyは以下のコマンドでインストールできます。
-```bash
-yarn add -D husky
-```
 
 #### 開発サーバーの起動
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 ### デプロイについて

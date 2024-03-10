@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
-import matter from 'gray-matter';
 import { parseMarkdownToHTML } from '@saitamau-maximum/markdown-processor/server';
+import matter from 'gray-matter';
 
 interface Props {
   params: { 
