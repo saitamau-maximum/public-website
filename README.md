@@ -21,6 +21,13 @@
 npm install
 ```
 
+#### npm run prepareについて
+huskyを用いてコミット前にフォーマッターを適応しています。
+huskyは以下のコマンドでインストールできます。
+```bash
+npm i -D husky
+```
+
 #### 開発サーバーの起動
 
 ```bash
