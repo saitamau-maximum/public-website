@@ -21,6 +21,9 @@
 npm install
 ```
 
+#### npm run prepareについて
+huskyを用いてコミット前にフォーマッターを適応しています。
+
 #### 開発サーバーの起動
 
 ```bash
