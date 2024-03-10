@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<ResolvingMeta
   };
 }
 
-export default async function AchievementsSlug( { params } : Props ) {
+export default async function AchievementsDetail( { params } : Props ) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), `docs`, `achievement`, `${slug}.md`);
   const fileContents = await fs.readFile(filePath, 'utf8');
