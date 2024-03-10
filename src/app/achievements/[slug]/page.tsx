@@ -44,9 +44,10 @@ export default async function AchievementsSlug( { params } : Props ) {
   const { content, data } = matter(fileContents);
   const html = await parseMarkdownToHTML(content);
   return(
-    <div>
+    <article>
       <h1>{data.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: html.content }} />
-    </div>
+      { /* 記事のタイトル等の動的コンテンツにXSSが発生する可能性が、信頼できるリソースからのみ提供されることとして許容する。 */ }
+      <article dangerouslySetInnerHTML={{ __html: html.content }} />
+    </article>
   )
 }
