@@ -1,7 +1,7 @@
 import path from 'path';
-import Link from 'next/link';
-import { getMarkdowns } from '../../utils/markdown';
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { Doc, getMarkdowns } from '../../utils/markdown';
 
 export const metadata: Metadata = {
   title: 'News',
