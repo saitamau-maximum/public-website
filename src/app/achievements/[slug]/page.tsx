@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { parseMarkdownToHTML } from '@saitamau-maximum/markdown-processor/server';
 import matter from 'gray-matter';
+import { Metadata } from 'next';
 
 interface Props {
   params: { 
@@ -26,14 +27,14 @@ interface ResolvingMetadata {
   description: string;
 }
 
-export async function generateMetadata({ params }: Props): Promise<ResolvingMetadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
-  const filePath = path.join(process.cwd(), 'docs', 'achievement', `${slug}.md`);
+  const filePath = path.join(process.cwd(), `docs`, `achievement`, `${slug}.md`);
   const fileContents = await fs.readFile(filePath, 'utf8');
   const { data } = matter(fileContents);
   return {
-    title: data.title as string,
-    description: data.description as string
+    title: data.title,
+    description: data.description,
   };
 }
 
