@@ -15,9 +15,9 @@ export default function Contact() {
         <a href="https://x.com/Maximum03400346" target="_blank" rel="noopener noreferrer">
           X(旧Twitter)
         </a>
-        または以下のフォームからお願いします。
+        からお願いします。
       </p>
-      <div className="form">
+      {/* <div className="form">
         <form action="https://formspree.io/f/moqyqkzg" method="POST">
           <div>
             <label htmlFor="name">お名前</label>
@@ -33,7 +33,7 @@ export default function Contact() {
           </div>
           <button type="submit">送信</button>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }
