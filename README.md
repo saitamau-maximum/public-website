@@ -34,7 +34,7 @@ npm login --scope=@saitamau-maximum --auth-type=legacy --registry=https://npm.pk
 npm install
 ```
 
-#### npm run prepareについて
+#### pre-commitについて
 
 prepareを使ってインストールなどのアクション時にhuskyのフックを設定しています。
 こうしてコミット前にフォーマッターを適応させています。
