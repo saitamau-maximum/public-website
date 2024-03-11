@@ -10,12 +10,12 @@ ICPC (International Collegiate Programming Contest / 国際大学対抗プログ
 ICPC には 2000 年から出場し続けており、これまでにも世界大会経験や、国内予選の継続的な突破といった好成績を収める実績を挙げています。
 
 ## 2023
-| チーム名            | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals | 
-| :-----------------: | :------: | :-----------------:  | :-----------------: | 
-| Maximum-executive   | 71 位     |                      |                     | 
-| Maximum.mum         | 112 位    |                      |                     | 
-| Maximum-mini_tomato | 138 位    |                      |                     | 
-| touch_hogehoge      | 174 位    |                      |                     | 
+| チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
+| :-: | :-: | :-: | :-: |
+| Maximum-executive | 71 位 |  |  |
+| Maximum.mum | 112 位 |  |  |
+| Maximum-mini_tomato | 138 位 |  |  |
+| touch_hogehoge | 174 位 |  |  |
 
 ## 2022
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
@@ -85,8 +85,8 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | Maximum\_Inpact\_Straight | 58 位 |  |  |
 | Maximum_Tsubugumi | 102 位 |  |  |
 | Maximum_Ypsilon | 147 位 |  |  |
-| Maximum_Kayoubi | Honorable Mention	 |  |  |
-| Maximum_Mokuyoubi | Honorable Mention	 |  |  |
+| Maximum_Kayoubi | Honorable Mention  |  |  |
+| Maximum_Mokuyoubi | Honorable Mention  |  |  |
 
 ## 2013
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
@@ -94,7 +94,7 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | tHe_SaitaMa | 31 位 | 会津大会 14 位 (20 位) |  |
 | Maximum-column | 34 位 |  |  |
 | Maximum-Akunohana | 54 位 |  |  |
-| Maximum-later | 68 位	 |  |  |
+| Maximum-later | 68 位  |  |  |
 | Maximum-minimum | Honorable Mention |  |  |
 | Maximum-beginner | Honorable Mention |  |  |
 
@@ -111,7 +111,7 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | :-: | :-: | :-: | :-: |
 | Maximum.ma-bo-doufu | 22 位 | 福岡大会 12 位 (17 位)<br>台湾大会 Honorable Mention |  |
 | Maximum-Opera | 32 位 |  |  |
-| MaximumixaM	 | Honorable Mention |  |  |
+| MaximumixaM  | Honorable Mention |  |  |
 | scop | Honorable Mention |  |  |
 
 ## 2010
@@ -150,61 +150,61 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | I My 3cm | 43 位 |  |  |
 | ANALOG | 87 位 |  |  |
 | Orange | 133 位 |  |  |
-| Team-ASIKA | Honorable Mention	 |  |  |
+| Team-ASIKA | Honorable Mention  |  |  |
 
 ## 2006
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
 | Maximum_Tomato | 13 位 | 横浜大会 6 位 (7 位)<br>マニラ大会 3 位 (3 位) | 44 位 |
-| Maximum-iTT	 | 32 位 | 横浜大会 12 位 (19 位) |  |
-| Lemon Marron Melon	 | 40 位	 |  |  |
-| Solve or Melt	 | Honorable Mention	 |  |  |
-| ANALOG	 | Honorable Mention	 |  |  |
+| Maximum-iTT  | 32 位 | 横浜大会 12 位 (19 位) |  |
+| Lemon Marron Melon  | 40 位  |  |  |
+| Solve or Melt  | Honorable Mention  |  |  |
+| ANALOG  | Honorable Mention  |  |  |
 
 ## 2005
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| Keep Time Worker | 20 位	 | 東京大会 Honorable Mention<br>北京大会 26 位 (36 位) |  |
-| Bugless	 | 83 位	 |  |  |
-| Fairy_Tale	 | 93 位	 |  |  |
-| iostream	 | 99 位	 |  |  |
+| Keep Time Worker | 20 位  | 東京大会 Honorable Mention<br>北京大会 26 位 (36 位) |  |
+| Bugless  | 83 位  |  |  |
+| Fairy_Tale  | 93 位  |  |  |
+| iostream  | 99 位  |  |  |
 
 ## 2004
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| Maximum-TNT | 3 位	 | 愛媛大会 9 位 (10 位)<br>Kanpur 大会 4 位 (4 位) |  |
+| Maximum-TNT | 3 位  | 愛媛大会 9 位 (10 位)<br>Kanpur 大会 4 位 (4 位) |  |
 | FutaPi | 29 位 | 愛媛大会 Honorable Mention |  |
 | polymorphism | 111 位 |  |  |
-| We\_are\_in\_rock	 | Honorable Mention	 |  |  |
-| minimum | Honorable Mention	 |  |  |
-| hustle-Z	 | Honorable Mention	 |  |  |
+| We\_are\_in\_rock  | Honorable Mention  |  |  |
+| minimum | Honorable Mention  |  |  |
+| hustle-Z  | Honorable Mention  |  |  |
 
 ## 2003
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
 | Maximum_TNT | 7 位 | 会津大会 5 位 (7 位) |  |
-| little dancer	 | 39 位	 |  |  |
-| JUNICHIRO | 41 位	 |  |  |
-| Mata_Rainen | 61 位	 |  |  |
+| little dancer  | 39 位  |  |  |
+| JUNICHIRO | 41 位  |  |  |
+| Mata_Rainen | 61 位  |  |  |
 
 ## 2002
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| TILTOWAIT | 12 位	 | 金沢大会 12 位 (16 位) |  |
-| Seventh_* | 6 位	 | 金沢大会 (19 位) |  |
-| Country_Sai | 19 位	 |  |  |
-| A team | Honorable Mention	 |  |  |
-| Happy Clacking!? | Honorable Mention	 |  |  |
+| TILTOWAIT | 12 位  | 金沢大会 12 位 (16 位) |  |
+| Seventh_* | 6 位  | 金沢大会 (19 位) |  |
+| Country_Sai | 19 位  |  |  |
+| A team | Honorable Mention  |  |  |
+| Happy Clacking!? | Honorable Mention  |  |  |
 
 ## 2001
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| Out\_Of\_Order | 21 位	 | 函館大会 13 位 (17 位) |  |
+| Out\_Of\_Order | 21 位  | 函館大会 13 位 (17 位) |  |
 | only_* | 13 位 | 函館大会 Honorable Mention |  |
-| NaN	 | 38 位	 |  |  |
+| NaN  | 38 位  |  |  |
 | ringo_* | 42 位 |  |  |
-| maXimum-N.C.	 | Honorable Mention	 |  |  |
-| saidai | Honorable Mention	 |  |  |
+| maXimum-N.C.  | Honorable Mention  |  |  |
+| saidai | Honorable Mention  |  |  |
 
 ## 2000
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
