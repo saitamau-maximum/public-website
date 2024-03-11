@@ -24,9 +24,7 @@ export default async function News() {
       <h1>News</h1>
       {docs.map((doc) => (
         <div key={doc.slug}>
-          <Link href={`/news/${doc.slug}`}>
-            {doc.frontmatter.title}
-          </Link>
+          <Link href={`/news/${doc.slug}`}>{doc.frontmatter.title}</Link>
         </div>
       ))}
     </div>
