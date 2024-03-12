@@ -44,3 +44,15 @@ body {
   align-items: center;
   gap: 32px;
 }
+
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+a:hover {
+  color: #7FCC8F;
+}
