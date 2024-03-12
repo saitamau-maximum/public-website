@@ -30,11 +30,6 @@
   color: #ffffff;
 }
   
-.logo {
-  width: 167px;
-  height: 42px;
-}
-  
 .navigations {
   display: flex;
   align-items: center;
