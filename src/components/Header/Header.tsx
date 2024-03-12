@@ -1,7 +1,4 @@
 import Link from 'next/link';
-import maximumlogo from '../../../public/logos/Maximum-logo.svg';
-import githublogo from '../../../public/logos/github-logo-white.svg';
-import xlogo from '../../../public/logos/x-logo-white.svg';
 import style from './Header.module.css';
 
 export function Header() {
@@ -9,44 +6,44 @@ export function Header() {
     <header className={style.header}>
       <div className={style.logo}>
         <Link href='/'>
-          <img src={maximumlogo.src} width={167} height={42} alt='Maximum' />
+          <img src='/logos/Maximum-logo.svg' width={167} height={42} alt='Maximum' />
         </Link>
       </div>
       <nav className={style.navigations}>
         <Link href='/about'>
-          <p>About</p>
+          <span>About</span>
         </Link>
         <Link href='/news'>
-          <p>News</p>
+          <span>News</span>
         </Link>
         <Link href='#'>
-          <p>Join</p>
+          <span>Join</span>
         </Link>
         <Link href='/achievements'>
-          <p>Achievements</p>
+          <span>Achievements</span>
         </Link>
         <Link href='/contact'>
-          <p>Contact</p>
+          <span>Contact</span>
         </Link>
         <Link href='/faq'>
-          <p>Q&A</p>
+          <span>Q&amp;A</span>
         </Link>
         <Link href='https://blog.maximum.vc'>
-          <p>Blog↗</p>
+          <span>Blog↗</span>
         </Link>
         <Link
           href='https://x.com/Maximum03400346'
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img src={xlogo.src} width={29} height={29} alt='X' />
+          <img src='/logos/x-logo-white.svg' width={29} height={29} alt='X' />
         </Link>
         <Link
           href='https://github.com/saitamau-maximum'
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img src={githublogo.src} width={29} height={29} alt='GitHub' />
+          <img src='/logos/github-logo-white.svg' width={29} height={29} alt='GitHub' />
         </Link>
       </nav>
     </header>
