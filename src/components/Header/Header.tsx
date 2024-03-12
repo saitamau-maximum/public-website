@@ -8,7 +8,9 @@ export function Header() {
   return (
     <header className={style.header}>
       <div className={style.logo}>
-        <img src={maximumlogo.src} width={167} height={42} alt='Maximum' />
+        <Link href='/'>
+          <img src={maximumlogo.src} width={167} height={42} alt='Maximum' />
+        </Link>
       </div>
       <nav className={style.navigations}>
         <Link href='/about'>
