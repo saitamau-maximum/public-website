@@ -1,0 +1,46 @@
+body { 
+  margin: 0;
+}
+
+:root {
+  --header-left-padding: 139px;
+}
+  
+.header::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: var(--header-left-padding);
+  background: linear-gradient(0.25turn, #B2FFBFFF, #B2FFBF00);
+}
+  
+.header {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 72px;
+  background-color: #070707;
+    
+  /*  上下中央揃え  */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    
+  padding-left: var(--header-left-padding);
+  padding-right: 32px;
+  color: #ffffff;
+}
+  
+.logo {
+  width: 167px;
+  height: 42px;
+}
+  
+.navigations {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
