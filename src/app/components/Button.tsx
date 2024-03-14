@@ -1,10 +1,9 @@
-// Button.tsx
 import Link from 'next/link';
 import React from 'react';
 import styles from './Button.module.css';
 
 interface ButtonProps {
-  href: string; 
+  href: string;
   label: string;
   variant: 'green' | 'gray';
 }
