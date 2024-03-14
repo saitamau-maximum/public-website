@@ -18,16 +18,17 @@ export function Header() {
         </Link>
       </div>
       <nav className={style.navigations}>
-        <Link href='/about'>About</Link>
-        <Link href='/news'>News</Link>
-        <Link href='#'>Join</Link>
-        <Link href='/achievements'>Achievements</Link>
-        <Link href='/contact'>Contact</Link>
-        <Link href='/faq'>Q&amp;A</Link>
+        <Link href='/about' className={style.navigationLink}>About</Link>
+        <Link href='/news' className={style.navigationLink}>News</Link>
+        <Link href='#' className={style.navigationLink}>Join</Link>
+        <Link href='/achievements' className={style.navigationLink}>Achievements</Link>
+        <Link href='/contact' className={style.navigationLink}>Contact</Link>
+        <Link href='/faq' className={style.navigationLink}>Q&amp;A</Link>
         <Link
           href='https://blog.maximum.vc'
           target='_blank'
           rel='noopener noreferrer'
+          className={style.navigationLink}
         >
           Blog
           <MdArrowOutward />
@@ -36,6 +37,7 @@ export function Header() {
           href='https://x.com/Maximum03400346'
           target='_blank'
           rel='noopener noreferrer'
+          className={style.navigationLink}
         >
           <SiX size={24} />
         </Link>
@@ -43,6 +45,7 @@ export function Header() {
           href='https://github.com/saitamau-maximum'
           target='_blank'
           rel='noopener noreferrer'
+          className={style.navigationLink}
         >
           <SiGithub size={24} />
         </Link>
