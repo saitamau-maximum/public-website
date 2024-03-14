@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import style from './Header.module.css';
+import { MdArrowOutward } from 'react-icons/md';
 
 export function Header() {
   return (
@@ -29,7 +30,7 @@ export function Header() {
           <span>Q&amp;A</span>
         </Link>
         <Link href='https://blog.maximum.vc'>
-          <span>Blog↗</span>
+          <span>Blog<MdArrowOutward /></span>
         </Link>
         <Link
           href='https://x.com/Maximum03400346'
