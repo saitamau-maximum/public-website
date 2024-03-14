@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import style from './Header.module.css';
 import { MdArrowOutward } from 'react-icons/md';
+import { IoLogoGithub } from "react-icons/io";
+import { FaXTwitter } from "react-icons/fa6";
 
 export function Header() {
   return (
@@ -37,14 +39,14 @@ export function Header() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img src='/logos/x-logo-white.svg' width={29} height={29} alt='X' />
+          <FaXTwitter size={29} />
         </Link>
         <Link
           href='https://github.com/saitamau-maximum'
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img src='/logos/github-logo-white.svg' width={29} height={29} alt='GitHub' />
+          <IoLogoGithub size={29} />
         </Link>
       </nav>
     </header>
