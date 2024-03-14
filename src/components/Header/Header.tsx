@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { IoLogoGithub } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoGithub } from "react-icons/io";
 import { MdArrowOutward } from 'react-icons/md';
 import style from './Header.module.css';
 
