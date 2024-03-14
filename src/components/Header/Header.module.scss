@@ -1,7 +1,5 @@
-:root {
-  --header-left-padding: 139px;
-}
-  
+$header-left-padding: 139px;
+
 .header::before {
   content: '';
   display: block;
@@ -9,13 +7,14 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: var(--header-left-padding);
+  width: $header-left-padding;
   background: linear-gradient(0.25turn, #B2FFBFFF, #B2FFBF00);
 }
   
 .header {
   position: fixed;
   box-sizing: border-box;
+  top : 0;
   width: 100%;
   height: 72px;
   background-color: #070707;
@@ -25,7 +24,7 @@
   align-items: center;
   justify-content: space-between;
     
-  padding-left: var(--header-left-padding);
+  padding-left: $header-left-padding;
   padding-right: 32px;
   color: #ffffff;
 }

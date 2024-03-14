@@ -1,20 +1,14 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { MdArrowOutward } from 'react-icons/md';
 import { SiX, SiGithub } from 'react-icons/si';
-import style from './Header.module.css';
+import style from './Header.module.scss';
 
 export function Header() {
   return (
     <header className={style.header}>
       <div className={style.logo}>
         <Link href='/'>
-          <Image
-            src='/images/maximum-logo.png'
-            alt='Maximum'
-            width={167}
-            height={42}
-          />
+          <img src='/logos/Maximum-logo.svg' alt='Maximum' width={167} height={42} />
         </Link>
       </div>
       <nav className={style.navigations}>
