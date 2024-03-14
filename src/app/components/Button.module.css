@@ -1,0 +1,21 @@
+.button {
+  display: inline-block;
+  font-size: 24px;
+  text-align: center;
+}
+
+.greenButton {
+  padding: 24px 48px;
+  background-color: #439154;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 80px
+}
+
+.grayButton {
+  padding: 12px 64px;
+  background-color: #414141;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 0px;
+}
