@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { FaXTwitter } from "react-icons/fa6";
-import { IoLogoGithub } from "react-icons/io";
 import { MdArrowOutward } from 'react-icons/md';
+import { SiX, SiGithub } from 'react-icons/si';
 import style from './Header.module.css';
 
 export function Header() {
@@ -9,7 +9,12 @@ export function Header() {
     <header className={style.header}>
       <div className={style.logo}>
         <Link href='/'>
-          <img src='/logos/Maximum-logo.svg' width={167} height={42} alt='Maximum' />
+          <Image
+            src='/images/maximum-logo.png'
+            alt='Maximum'
+            width={167}
+            height={42}
+          />
         </Link>
       </div>
       <nav className={style.navigations}>
@@ -39,14 +44,14 @@ export function Header() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <FaXTwitter size={29} />
+          <SiX size={28} />
         </Link>
         <Link
           href='https://github.com/saitamau-maximum'
           target='_blank'
           rel='noopener noreferrer'
         >
-          <IoLogoGithub size={29} />
+          <SiGithub size={28} />
         </Link>
       </nav>
     </header>
