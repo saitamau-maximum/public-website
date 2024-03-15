@@ -1,6 +1,6 @@
 .button {
   display: inline-block;
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -9,7 +9,7 @@
   background-color: #439154;
   color: #FFFFFF;
   border: none;
-  border-radius: 80px
+  border-radius: 999px;
 }
 
 .grayButton {
@@ -17,5 +17,4 @@
   background-color: #414141;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
-  border-radius: 0px;
 }
