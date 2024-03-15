@@ -12,15 +12,13 @@ interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({ href, label, variant }) => {
   const className = clsx(
     styles.button,
-    {
-      [styles.greenButton]: variant === 'green',
-      [styles.grayButton]: variant === 'gray',
-    },
+    variant === 'green' && styles.greenButton,
+    variant === 'gray' && styles.grayButton,
   );
 
   return (
     <Link href={href} className={className}>
-        {label}
+      {label}
     </Link>
   );
 };
