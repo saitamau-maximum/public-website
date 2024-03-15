@@ -1,6 +1,6 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import React from 'react';
-import clsx from 'clsx';
 import styles from './Button.module.css';
 
 interface ButtonProps {
@@ -10,16 +10,17 @@ interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({ href, label, variant }) => {
-  const className = clsx(styles.button, {
-    [styles.greenButton]: variant === 'green',
-    [styles.grayButton]: variant === 'gray',
-  });
+  const className = clsx(
+    styles.button,
+    {
+      [styles.greenButton]: variant === 'green',
+      [styles.grayButton]: variant === 'gray',
+    },
+  );
 
   return (
-    <Link href={href}>
-      <span className={className} role="button" tabIndex={0}>
+    <Link href={href} className={className}>
         {label}
-      </span>
     </Link>
   );
 };

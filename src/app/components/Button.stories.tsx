@@ -1,7 +1,7 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { Button } from './Button';
 import { action } from '@storybook/addon-actions';
+import { Meta, Story } from '@storybook/react';
+import React from 'react';
+import { Button } from './Button';
 
 export default {
   title: 'Components/Button',
