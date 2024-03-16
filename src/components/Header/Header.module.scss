@@ -1,0 +1,48 @@
+$header-left-padding: 139px;
+
+.header::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: $header-left-padding;
+  background: linear-gradient(0.25turn, #B2FFBFFF, #B2FFBF00);
+}
+  
+.header {
+  position: fixed;
+  box-sizing: border-box;
+  top : 0;
+  width: 100%;
+  height: 72px;
+  background-color: #070707;
+    
+  /*  上下中央揃え  */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    
+  padding-left: $header-left-padding;
+  padding-right: 32px;
+  color: #ffffff;
+}
+  
+.navigations {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navigationLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.navigationLink:hover {
+  color: #7FCC8F;
+}
