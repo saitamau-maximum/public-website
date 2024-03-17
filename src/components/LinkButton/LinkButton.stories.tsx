@@ -7,13 +7,18 @@ export default {
   component: LinkButton,
 } as Meta;
 
-const Template: StoryFn<typeof LinkButton> = (args) => (
-  <LinkButton {...args}  />
-);
+const Template: StoryFn<typeof LinkButton> = (args) => <LinkButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   label: 'Click Me',
   variant: 'green',
+  href: '/',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: 'Click Me',
+  variant: 'gray',
   href: '/',
 };
