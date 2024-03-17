@@ -5,11 +5,11 @@ import styles from './LinkButton.module.css';
 
 interface ButtonProps {
   href: string;
-  label: string;
   variant: 'green' | 'gray';
+  children: React.ReactNode;
 }
 
-export const LinkButton: React.FC<ButtonProps> = ({ href, label, variant }) => {
+export const LinkButton: React.FC<ButtonProps> = ({ href, variant , children }) => {
   const className = clsx(
     styles.button,
     variant === 'green' && styles.greenButton,
@@ -18,7 +18,7 @@ export const LinkButton: React.FC<ButtonProps> = ({ href, label, variant }) => {
 
   return (
     <Link href={href} className={className}>
-      {label}
+      {children}
     </Link>
   );
 };
