@@ -11,14 +11,14 @@ const Template: StoryFn<typeof LinkButton> = (args) => <LinkButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'Click Me',
+  children: 'Click Me',
   variant: 'green',
   href: '/',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Click Me',
+  children: 'Click Me',
   variant: 'gray',
   href: '/',
 };
