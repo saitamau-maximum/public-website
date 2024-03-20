@@ -5,9 +5,9 @@ import matter from 'gray-matter';
 import { Metadata } from 'next';
 
 interface Props {
-  params: { 
+  params: {
     id: string;
-    slug: string
+    slug: string;
   };
   searchParams: {};
 }
@@ -15,7 +15,7 @@ interface Props {
 export async function generateStaticParams() {
   const docsDirectory = path.join(process.cwd(), `docs`, `news`);
   const docs = await fs.readdir(docsDirectory);
-  return docs.map(doc => ({ slug: doc.replace(/\.md$/, '') }));
+  return docs.map((doc) => ({ slug: doc.replace(/\.md$/, '') }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -29,17 +29,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function NewsDetail( { params } : Props ) {
+export default async function NewsDetail({ params }: Props) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), `docs`, `news`, `${slug}.md`);
   const fileContents = await fs.readFile(filePath, 'utf8');
   const { content, data } = matter(fileContents);
   const html = await parseMarkdownToHTML(content);
-  return(
+  return (
     <main>
       <h1>{data.title}</h1>
-      { /* 記事のタイトル等の動的コンテンツにXSSが発生する可能性が、信頼できるリソースからのみ提供されることとして許容する。 */ }
+      {/* 記事のタイトル等の動的コンテンツにXSSが発生する可能性が、信頼できるリソースからのみ提供されることとして許容する。 */}
       <article dangerouslySetInnerHTML={{ __html: html.content }} />
     </main>
-  )
+  );
 }
