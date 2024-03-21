@@ -13,6 +13,7 @@ $header-left-padding: 139px;
   
 .header {
   position: fixed;
+  z-index: 100;
   box-sizing: border-box;
   top : 0;
   width: 100%;
