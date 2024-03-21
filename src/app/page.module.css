@@ -19,6 +19,12 @@
   background-color: #f1f1f1;
 }
 
+.heroImage {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
 .breadcrumb {
   width: 100%;
   height: 64px;
@@ -37,7 +43,41 @@
 .about {
   margin: 24px;
   border-bottom: 1px solid black;
-  width: 128px;
+  width: 4em;
+}
+
+.aboutText {
+  margin: 24px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.activityCP {
+  background-color: white;
+  flex-direction: column;
+}
+.activityCPtitle p {
+  margin: 0px;
+}
+.activityCPtitle h2 {
+  margin-bottom: 0px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid black;
+  width: 50%;
+}
+
+.activityWeb {
+  background-color: white;
+  flex-direction: column;
+}
+.activityWebtitle h2 {
+  margin-bottom: 0px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid black;
+  width: 50%;
 }
 
 .boldspan {
@@ -47,4 +87,12 @@
 
 .span {
   color: #47B660;
+}
+
+.activityOther {
+  margin: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

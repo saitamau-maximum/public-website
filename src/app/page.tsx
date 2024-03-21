@@ -9,7 +9,7 @@ export function Home() {
       <Header />
       <main className={style.main}>
         <div className={style.hero}>
-          <img src='images/hero.png' alt='Hero' />
+          <img src='images/hero.png' alt='Hero' className={style.heroImage} />
           <div className={style.breadcrumb}>
             <Link href='/' className={style.breadcrumbLink}>
               Top
@@ -17,12 +17,16 @@ export function Home() {
           </div>
         </div>
         <h1 className={style.about}>活動内容</h1>
-        <p>
-          Maximumでは競技プログラミング（週２回）とWeb研究会（週１回）の２つの活動を行っています。
+        <p className={style.aboutText}>
+          Maximumでは<span className={style.boldspan}>競技プログラミング</span>
+          （週２回）と<span className={style.boldspan}>Web研究会</span>
+          （週１回）の２つの活動を行っています。
         </p>
         <div className={style.activityCP}>
-          <h2 className={style.activityCPtitle}>競技プログラミング</h2>
-          <p>Competitive programming</p>
+          <div className={style.activityCPtitle}>
+            <h2>競技プログラミング</h2>
+            <p>Competitive programming</p>
+          </div>
           <p>
             AtCoderやICPCに向けて毎週競技プログラミングの講義と大会の感想会などを行っています。
           </p>
@@ -31,8 +35,10 @@ export function Home() {
           </LinkButton>
         </div>
         <div className={style.activityWeb}>
-          <h2 className={style.activityWebTitle}>Web研究会</h2>
-          <p>Web programming</p>
+          <div className={style.activityWebtitle}>
+            <h2>Web研究会</h2>
+            <p>Web programming</p>
+          </div>
           <p>
             Webプログラミングに関する講義とパフォーマンスチューニングの大会に向けた練習会などを行っています。
           </p>
@@ -42,7 +48,11 @@ export function Home() {
         </div>
         <div className={style.activityOther}>
           <p>
-            他にも&hellip;Discordを用いた交流会、勉強会、サークル内模擬大会等々希望があれば、様々な活動を行っています。希望があれば、ほかにも様々な活動を行いたいと思っています。
+            他にも&hellip;<br/>Discordを用いた
+            <span className={style.span}>交流会</span>、
+            <span className={style.span}>勉強会</span>、
+            <span className={style.span}>サークル内模擬大会</span>
+            等々希望があれば、様々な活動を行っています。希望があれば、ほかにも様々な活動を行いたいと思っています。
           </p>
           <LinkButton href='#' variant='green'>
             入会案内はこちら
