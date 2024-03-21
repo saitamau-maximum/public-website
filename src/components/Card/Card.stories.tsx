@@ -12,6 +12,7 @@ export default {
     group: { control: 'text' },
     to: { control: 'text' },
     imageSrc: { control: 'text' },
+    imageAlt: {control: 'text'},
   },
 } as Meta;
 
@@ -25,4 +26,5 @@ Default.args = {
   group: 'OOO',
   to: '/',
   imageSrc: '/images/maximum-card.png',
+  imageAlt: 'maximum',
 };

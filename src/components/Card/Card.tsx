@@ -9,6 +9,7 @@ interface CardProps {
   group: string;
   to: string;
   imageSrc: string;
+  imageAlt: string;
 }
 const Card: React.FC<CardProps> = ({
   title,
@@ -17,11 +18,12 @@ const Card: React.FC<CardProps> = ({
   group,
   to,
   imageSrc,
+  imageAlt,
 }) => {
   return (
     <Link href={to} className={style.card}>
       <div className={style.img}>
-        <img className={style.img} src={imageSrc} alt='maximum' />
+        <img className={style.img} src={imageSrc} alt={imageAlt} />
         <div className={style.box}>
           <p className={style.group}>{group}</p>
         </div>
