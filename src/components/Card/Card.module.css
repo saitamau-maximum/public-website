@@ -1,7 +1,6 @@
 
 .card {
-    width: 369px; 
-    height: 391px; 
+    width: 100%;  
     border: 1px solid #ccc;
     background-color: #fff;
     text-decoration: none;
@@ -16,22 +15,20 @@
 }
   
 .title {
-    font-size: 20px;
+    font-size: 1.25rem;
     word-wrap: break-word;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left:36px;
-    padding-right:36px;
+    margin: 0 auto;
+    padding: auto 36px;
 }
 
 .img{
     position: relative;
-    width: 369px; 
-    height: 211px; 
+    width: 100%; 
+    aspect-ratio: 360 / 211; 
 
 }
 .text{
-    font-size: 12px;
+    font-size: 0.75rem;
     word-wrap: break-word;
     margin-top: 0;
     margin-bottom:0;
@@ -42,27 +39,25 @@
     text-overflow: ellipsis;
 }
 .date{
-    font-size: 15px;
-    font-family:Zen Kaku Gothic Antique;
+    font-size: 1rem;
     margin-right:8px;
-    margin-top:7px;
+    margin-top:8px;
     margin-bottom: 0;
     text-align: right;
 }
 .box {
-    width: 157px; 
-    height: 33px; 
-    position: absolute;
+    width: 160px; 
+    height: 32px; 
+    /*position: absolute;
     right: 0;
     bottom:0;
-    float: right;
+    float: right;*/
     background-color: #eaeaea;
-    line-height: 5px;
 }
 .group{
-    font-size: 15px;
+    font-size: 1rem;
     text-align: center;
     word-wrap: break-word;
-    padding-left:35px;
-    padding-right:35px;
+    padding-left:36px;
+    padding-right:36px;
 }
