@@ -6,7 +6,7 @@
     text-decoration: none;
     color: #000;
     display:block;
-    padding: 24px;
+    padding-bottom: 24px;
 }
 .card:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0.2);
@@ -39,7 +39,7 @@
     font-size: 1rem;
     margin-right:8px;
     margin-top:8px;
-    margin-bottom: 0;
+    margin-bottom: 8px;
     text-align: right;
 }
 .box {
