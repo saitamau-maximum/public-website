@@ -12,7 +12,7 @@ export default {
     group: { control: 'text' },
     to: { control: 'text' },
     imageSrc: { control: 'text' },
-    imageAlt: {control: 'text'},
+    imageAlt: { control: 'text' },
   },
 } as Meta;
 
@@ -21,7 +21,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   title: 'OOOOOOOOOOOOOOOOOOOOOOOOOO',
-  content: 'AAAAAAAAAAAAAAAAAAAA…',
+  content: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
   date: 'YYYY.MM.DD',
   group: 'OOO',
   to: '/',
