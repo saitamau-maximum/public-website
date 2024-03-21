@@ -9,6 +9,7 @@
   padding-top: 72px;
   flex-direction: column;
   background-color: #f1f1f1;
+
 }
 
 .hero {
@@ -40,16 +41,22 @@
   text-decoration: none;
 }
 
+.contents {
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
+}
+
 .about {
-  margin: 24px;
+  font-size: 48px;
+  font-weight: normal;
   border-bottom: 1px solid black;
   width: 4em;
 }
 
 .aboutText {
   margin: 24px;
-  font-size: 1.5rem;
-  display: flex;
+  font-size: 32px;
   align-items: center;
   justify-content: center;
   flex-direction: row;
@@ -60,11 +67,12 @@
   flex-direction: column;
 }
 .activityCPtitle p {
+  font-size: 20px;
   margin: 0px;
 }
 .activityCPtitle h2 {
   margin-bottom: 0px;
-  font-size: 1.5rem;
+  font-size: 32px;
   border-bottom: 1px solid black;
   width: 50%;
 }
@@ -73,9 +81,13 @@
   background-color: white;
   flex-direction: column;
 }
+.activityWebtitle p {
+  font-size: 20px;
+  margin: 0px;
+}
 .activityWebtitle h2 {
   margin-bottom: 0px;
-  font-size: 1.5rem;
+  font-size: 32px;
   border-bottom: 1px solid black;
   width: 50%;
 }
@@ -91,8 +103,8 @@
 
 .activityOther {
   margin: 120px;
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-size: 24px;
 }
