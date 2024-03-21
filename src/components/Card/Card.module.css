@@ -24,8 +24,7 @@
 .img{
     position: relative;
     width: 100%; 
-    aspect-ratio: 360 / 211; 
-
+    aspect-ratio: 1920/1080; 
 }
 .text{
     font-size: 0.75rem;
@@ -48,11 +47,12 @@
 .box {
     width: 160px; 
     height: 32px; 
-    /*position: absolute;
+    position: absolute;
     right: 0;
     bottom:0;
-    float: right;*/
+    float: right;
     background-color: #eaeaea;
+    line-height: 5px;
 }
 .group{
     font-size: 1rem;

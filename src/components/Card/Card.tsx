@@ -13,7 +13,7 @@ const Card: React.FC<CardProps> = ({ title, content, date, group, link }) => {
   return (
     <a href={link} className={style.card}>
       <div className={style.img}>
-        <img src='/images/maximum-card.png' alt='maximum' />
+        <img className={style.img} src='/images/maximum-card.png' alt='maximum' />
         <div className={style.box}>
           <p className={style.group}>{group}</p>
         </div>
