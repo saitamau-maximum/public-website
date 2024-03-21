@@ -8,14 +8,15 @@ interface CardProps {
   date: string;
   group: string;
   to: string;
+  imageSrc: string;
 }
-const Card: React.FC<CardProps> = ({ title, content, date, group, to }) => {
+const Card: React.FC<CardProps> = ({ title, content, date, group, to, imageSrc }) => {
   return (
     <Link href={to} className={style.card}>
       <div className={style.img}>
         <img
           className={style.img}
-          src='/images/maximum-card.png'
+          src={imageSrc}
           alt='maximum'
         />
         <div className={style.box}>

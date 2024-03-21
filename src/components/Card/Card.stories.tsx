@@ -11,6 +11,7 @@ export default {
     date: { control: 'text' },
     group: { control: 'text' },
     to: { control: 'text' },
+    imageSrc: {control: 'text'},
   },
 } as Meta;
 
@@ -23,4 +24,5 @@ Default.args = {
   date: 'YYYY.MM.DD',
   group: 'OOO',
   to: '/',
+  imageSrc: '/images/maximum-card.png',
 };
