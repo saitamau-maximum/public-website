@@ -11,7 +11,7 @@ export default {
     date: { control: 'text' },
     group: { control: 'text' },
     to: { control: 'text' },
-    imageSrc: {control: 'text'},
+    imageSrc: { control: 'text' },
   },
 } as Meta;
 
