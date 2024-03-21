@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({
       </div>
 
       <p className={style.date}>{date}</p>
-      <h2 className={style.title}>{title}</h2>
+      <p className={style.title}>{title}</p>
       <p className={style.text}>{content}</p>
     </Link>
   );
