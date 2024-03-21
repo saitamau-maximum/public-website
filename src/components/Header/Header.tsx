@@ -8,16 +8,33 @@ export function Header() {
     <header className={style.header}>
       <div className={style.logo}>
         <Link href='/'>
-          <img src='/logos/Maximum-logo.svg' alt='Maximum' width={167} height={42} />
+          <img
+            src='/logos/Maximum-logo.svg'
+            alt='Maximum'
+            width={167}
+            height={42}
+          />
         </Link>
       </div>
       <nav className={style.navigations}>
-        <Link href='/about' className={style.navigationLink}>About</Link>
-        <Link href='/news' className={style.navigationLink}>News</Link>
-        <Link href='#' className={style.navigationLink}>Join</Link>
-        <Link href='/achievements' className={style.navigationLink}>Achievements</Link>
-        <Link href='/contact' className={style.navigationLink}>Contact</Link>
-        <Link href='/faq' className={style.navigationLink}>Q&amp;A</Link>
+        <Link href='/about' className={style.navigationLink}>
+          About
+        </Link>
+        <Link href='/news' className={style.navigationLink}>
+          News
+        </Link>
+        <Link href='#' className={style.navigationLink}>
+          Join
+        </Link>
+        <Link href='/achievements' className={style.navigationLink}>
+          Achievements
+        </Link>
+        <Link href='/contact' className={style.navigationLink}>
+          Contact
+        </Link>
+        <Link href='/faq' className={style.navigationLink}>
+          Q&amp;A
+        </Link>
         <Link
           href='https://blog.maximum.vc'
           target='_blank'

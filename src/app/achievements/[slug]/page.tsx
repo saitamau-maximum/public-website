@@ -29,7 +29,12 @@ interface ResolvingMetadata {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
-  const filePath = path.join(process.cwd(), `docs`, `achievement`, `${slug}.md`);
+  const filePath = path.join(
+    process.cwd(),
+    `docs`,
+    `achievement`,
+    `${slug}.md`,
+  );
   const fileContents = await fs.readFile(filePath, 'utf8');
   const { data } = matter(fileContents);
   return {
