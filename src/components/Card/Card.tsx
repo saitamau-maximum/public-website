@@ -7,11 +7,11 @@ interface CardProps {
   content: string;
   date: string;
   group: string;
-  link: string;
+  to: string;
 }
-const Card: React.FC<CardProps> = ({ title, content, date, group, link }) => {
+const Card: React.FC<CardProps> = ({ title, content, date, group, to }) => {
   return (
-    <Link href={link} className={style.card}>
+    <Link href={to} className={style.card}>
       <div className={style.img}>
         <img
           className={style.img}

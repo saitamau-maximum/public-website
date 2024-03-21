@@ -10,7 +10,7 @@ export default {
     content: { control: 'text' },
     date: { control: 'text' },
     group: { control: 'text' },
-    link: { control: 'text' },
+    to: { control: 'text' },
   },
 } as Meta;
 
@@ -22,5 +22,5 @@ Default.args = {
   content: 'AAAAAAAAAAAAAAAAAAAA…',
   date: 'YYYY.MM.DD',
   group: 'OOO',
-  link: '/',
+  to: '/',
 };
