@@ -11,9 +11,13 @@ interface CardProps {
 }
 const Card: React.FC<CardProps> = ({ title, content, date, group, link }) => {
   return (
-    <a href={link} className={style.card}>
+    <Link href={link} className={style.card}>
       <div className={style.img}>
-        <img className={style.img} src='/images/maximum-card.png' alt='maximum' />
+        <img
+          className={style.img}
+          src='/images/maximum-card.png'
+          alt='maximum'
+        />
         <div className={style.box}>
           <p className={style.group}>{group}</p>
         </div>
@@ -22,7 +26,7 @@ const Card: React.FC<CardProps> = ({ title, content, date, group, link }) => {
       <p className={style.date}>{date}</p>
       <h2 className={style.title}>{title}</h2>
       <p className={style.text}>{content}</p>
-    </a>
+    </Link>
   );
 };
 
