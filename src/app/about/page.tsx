@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '../../components/Header/Header';
-import Card from '../../components/Card/Card'
 import style from './styles.module.css';
 
 export const metadata: Metadata = {
@@ -13,7 +12,6 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div className={style.container}>
-      <Header />
       <img className={style.hero} src='/heros/hero-about.png' alt='hero' />
       <div className={style.box}>
         <h2 className={style.title}>
