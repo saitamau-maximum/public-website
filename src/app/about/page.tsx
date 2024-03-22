@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import {Header} from '../../components/Header/Header'
+import style from './styles.module.css'
 
 export const metadata: Metadata = {
   title: 'サークルについて',
@@ -10,13 +12,15 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div>
-      <p>埼玉大学プログラミングサークル　Maximumとは？</p>
+      <Header/>
+    <div className={style.container}>
+      <p className={style.title}>埼玉大学プログラミングサークル　<span className={style.highlight}>Maximum</span>とは？</p>
       <hr />
       <p>Maximumは、国際大学対抗プログラミングコンテスト（ICPC）へ参加し、</p>
       <p>良い成績を上げるために成立したプログラミング研究会です。</p>
       <p>2022年度からは、競技プログラミングのみならず、</p>
       <p>Webやその他のプログラミングの知識を高める活動を行っています。</p>
-      <p>競技プログラミング</p>
+      <p className={style.title}>競技プログラミング</p>
       <hr />
       <p>活動内容</p>
       <p>国際大学対抗プログラミングコンテスト(ICPC)に参加し、</p>
@@ -44,7 +48,7 @@ export default function About() {
           情報工学科パンフレット
         </a>
       </p>
-      <p>Web研究会</p>
+      <p className={style.title}>Web研究会</p>
       <hr />
       <p>講習</p>
       <p>
@@ -80,6 +84,7 @@ export default function About() {
       </p>
       <p>そこに出場することを目標にトレーニングもします。</p>
       <p>詳しく知りたい方は大会参加記を見てみてください。</p>
+    </div>
     </div>
   );
 }
