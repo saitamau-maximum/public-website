@@ -4,6 +4,7 @@
   background-color: #000;
   color: #fff;
   padding: 96px;
+  gap: 96px;
 }
 
 .logo {
@@ -16,7 +17,6 @@
 .navigations {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 96px;
   margin-left: auto;
   gap: 32px;
 
