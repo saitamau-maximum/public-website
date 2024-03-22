@@ -11,15 +11,12 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div>
+    <div className={style.container}>
       <Header />
       <div>
-        <image/>
-        <p>
-          
-        </p>
+        <img  src='/hero/Hero.png' alt='hero' />
       </div>
-      <div className={style.container}>
+      <div className={style.box}>
         <p className={style.title}>
           埼玉大学プログラミングサークル　
           <span className={style.highlight}>Maximum</span>とは？
