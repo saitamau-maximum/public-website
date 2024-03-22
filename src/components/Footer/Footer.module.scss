@@ -3,7 +3,7 @@
   align-items: center;
   background-color: #000;
   color: #fff;
-  padding: 100px 100px 100px 100px;
+  padding: 96px;
 }
 
 .logo {
@@ -16,8 +16,8 @@
 .navigations {
   display: flex;
   flex-wrap: wrap;
-  padding: 0px 0px 0px 100px;
-  margin-right: 0px;
+  padding-left: 96px;
+  margin-left: auto;
   gap: 32px;
 
   .navigationLink {
