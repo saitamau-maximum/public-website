@@ -15,7 +15,6 @@ export default function About() {
       {/*
         TODO: Hero 画像とタイトルを分離する
         ref: https://github.com/saitamau-maximum/public-website/pull/52#discussion_r1535109180
-      
       */}
       <img className={style.hero} src='/heros/hero-about.png' alt='hero' />
       <main className={style.box}>
