@@ -1,8 +1,9 @@
 .container{
-    display:flex;
-    flex-direction: column;
+    background-color: #f1f1f1;
+    margin: 0 auto;
 }
 .box{
+    background-color: #fff;
     width: 66%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-top: 48px;
@@ -29,4 +30,8 @@
 .image{
     width: 65%; 
     aspect-ratio: 574/323; 
+}
+.hero{
+    width: 100%;
+    margin-top: 43px;
 }

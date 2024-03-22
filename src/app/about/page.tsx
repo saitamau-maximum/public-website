@@ -13,9 +13,7 @@ export default function About() {
   return (
     <div className={style.container}>
       <Header />
-      <div>
-        <img src='/hero/Hero.png' alt='hero' />
-      </div>
+        <img className={style.hero} src='/heros/hero-about.png' alt='hero' />
       <div className={style.box}>
         <p className={style.title}>
           埼玉大学プログラミングサークル　
