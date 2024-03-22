@@ -4,11 +4,12 @@
 }
 .box{
     background-color: #fff;
-    width: 66%;
+    width: 54rem;
+    max-width: 100%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-top: 48px;
     margin-bottom: 48px;
-    margin-left: 17%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 24px;
 }
 .title{
