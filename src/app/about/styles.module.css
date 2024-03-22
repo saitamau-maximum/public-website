@@ -22,3 +22,7 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
+.image{
+    width: 65%; 
+    aspect-ratio: 574/323; 
+}

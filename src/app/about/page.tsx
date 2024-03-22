@@ -50,7 +50,7 @@ export default function About() {
           具体的には、ICPCなどの各種プログラミングコンテストへの参加、
         </p>
         <p className={style.text}>週2回の勉強会などを行っています。</p>
-        <img />
+        <img className={style.image}src='/images/about.png' alt='活動風景' />
         <p className={style.subtitle}>競技プログラミングとは？</p>
         <p className={style.text}>
           皆さんご存じの通り、コンピュータはとても高速に計算してくれます。
@@ -74,12 +74,13 @@ export default function About() {
         </p>
         <p className={style.text}>
           例題も掲載されているので是非ご覧ください。
-          <a
+          <Link
+            className={style.link}
             href='http://www.ics.saitama-u.ac.jp/content/uploads/pamphlet/ics_pamphlet.pdf'
             target='_blank'
           >
-            情報工学科パンフレット
-          </a>
+            情報工学科パンフレット（PDF）
+          </Link>
         </p>
         <p className={style.title}>Web研究会</p>
         <hr />
