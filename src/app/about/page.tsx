@@ -18,7 +18,7 @@ export default function About() {
       
       */}
       <img className={style.hero} src='/heros/hero-about.png' alt='hero' />
-      <div className={style.box}>
+      <main className={style.box}>
         <h2 className={style.title}>
           埼玉大学プログラミングサークル　
           <span className={style.highlight}>Maximum</span>とは？
@@ -94,7 +94,7 @@ export default function About() {
         <p className={style.text}>
           詳しく知りたい方は大会参加記を見てみてください。
         </p>
-      </div>
+      </main>
     </div>
   );
 }
