@@ -1,0 +1,38 @@
+.footer {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 100px 100px 100px 100px;
+}
+
+.logo {
+  img {
+    display: block;
+    margin-left: 0px;
+  }
+}
+
+.navigations {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 0px 0px 100px;
+  margin-right: 0px;
+  gap: 32px;
+
+  .navigationLink {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    white-space: nowrap;
+  }
+}
+
+.greenButton {
+  margin: 24px;
+  white-space: nowrap;
+}
+
+.navigationLink:hover {
+    color: #7FCC8F;
+  }
