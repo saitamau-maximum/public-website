@@ -13,6 +13,12 @@ export default function About() {
   return (
     <div>
       <Header />
+      <div>
+        <image/>
+        <p>
+          
+        </p>
+      </div>
       <div className={style.container}>
         <p className={style.title}>
           埼玉大学プログラミングサークル　
@@ -50,7 +56,7 @@ export default function About() {
           具体的には、ICPCなどの各種プログラミングコンテストへの参加、
         </p>
         <p className={style.text}>週2回の勉強会などを行っています。</p>
-        <img className={style.image}src='/images/about.png' alt='活動風景' />
+        <img className={style.image} src='/images/about.png' alt='活動風景' />
         <p className={style.subtitle}>競技プログラミングとは？</p>
         <p className={style.text}>
           皆さんご存じの通り、コンピュータはとても高速に計算してくれます。
