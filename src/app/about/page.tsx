@@ -22,7 +22,6 @@ export default function About() {
           埼玉大学プログラミングサークル　
           <span className={style.highlight}>Maximum</span>とは？
         </h2>
-        <hr />
         <p className={style.text}>
           Maximumは、
           <span className={style.highlight}>
@@ -37,7 +36,6 @@ export default function About() {
           の知識を高める活動を行っています。
         </p>
         <h2 className={style.title}>競技プログラミング</h2>
-        <hr />
         <h3 className={style.subtitle}>活動内容</h3>
         <p className={style.text}>
           国際大学対抗プログラミングコンテスト(ICPC)に参加し、良い成績を上げるための活動を行っています。
@@ -64,7 +62,6 @@ export default function About() {
           </Link>
         </p>
         <h2 className={style.title}>Web研究会</h2>
-        <hr />
         <h3 className={style.subtitle}>講習</h3>
         <p className={style.text}>
           WebサイトやWebサーバーを制作・構築・運用するための基礎を一通り学びます。講習ではHTML,CSS,JabaScriptを触ります。
