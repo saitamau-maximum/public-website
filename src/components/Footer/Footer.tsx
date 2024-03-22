@@ -17,11 +17,11 @@ export function Footer() {
               height={84}
             />
           </Link>
-          <div className={style.greenButton}>
-            <LinkButton href='/join' variant='green'>
-              入会案内はこちら
-            </LinkButton>
-          </div>
+        </div>
+        <div className={style.greenButton}>
+          <LinkButton href='/join' variant='green'>
+            入会案内はこちら
+          </LinkButton>
         </div>
       </div>
 
