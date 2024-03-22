@@ -81,7 +81,7 @@ export default function About() {
         <h3 className={style.subtitle}>サイト制作・アプリ制作</h3>
         <p className={style.text}>
           一通り基礎を学び終えたら、実際にX（旧twitter）やNoteのような投稿ができるサービスを
-          自分たちで作ってもらいます。実際に私（sor4chi）は自作のブログや広告収入のあるWebアプリを作成・公開してきました。
+          自分たちで作ってもらいます。
         </p>
         <h3 className={style.subtitle}>パフォーマンスチューニング</h3>
         <p className={style.text}>
