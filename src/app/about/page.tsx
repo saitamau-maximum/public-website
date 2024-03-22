@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '../../components/Header/Header';
+import Card from '../../components/Card/Card'
 import style from './styles.module.css';
 
 export const metadata: Metadata = {
@@ -13,12 +14,12 @@ export default function About() {
   return (
     <div className={style.container}>
       <Header />
-        <img className={style.hero} src='/heros/hero-about.png' alt='hero' />
+      <img className={style.hero} src='/heros/hero-about.png' alt='hero' />
       <div className={style.box}>
-        <p className={style.title}>
+        <h2 className={style.title}>
           埼玉大学プログラミングサークル　
           <span className={style.highlight}>Maximum</span>とは？
-        </p>
+        </h2>
         <hr />
         <p className={style.text}>
           Maximumは、
@@ -40,9 +41,9 @@ export default function About() {
           <span className={style.highlight}>その他プログラミング</span>
           の知識を高める活動を行っています。
         </p>
-        <p className={style.title}>競技プログラミング</p>
+        <h2 className={style.title}>競技プログラミング</h2>
         <hr />
-        <p className={style.subtitle}>活動内容</p>
+        <h3 className={style.subtitle}>活動内容</h3>
         <p className={style.text}>
           国際大学対抗プログラミングコンテスト(ICPC)に参加し、
         </p>
@@ -52,7 +53,7 @@ export default function About() {
         </p>
         <p className={style.text}>週2回の勉強会などを行っています。</p>
         <img className={style.image} src='/images/about.png' alt='活動風景' />
-        <p className={style.subtitle}>競技プログラミングとは？</p>
+        <h3 className={style.subtitle}>競技プログラミングとは？</h3>
         <p className={style.text}>
           皆さんご存じの通り、コンピュータはとても高速に計算してくれます。
         </p>
@@ -83,9 +84,9 @@ export default function About() {
             情報工学科パンフレット（PDF）
           </Link>
         </p>
-        <p className={style.title}>Web研究会</p>
+        <h2 className={style.title}>Web研究会</h2>
         <hr />
-        <p className={style.subtitle}>講習</p>
+        <h3 className={style.subtitle}>講習</h3>
         <p className={style.text}>
           WebサイトやWebサーバーを制作・構築・運用するための基礎を一通り学びます。
         </p>
@@ -98,7 +99,7 @@ export default function About() {
         <p className={style.text}>
           「作りながらその都度調べる」というフローで効率の良い学習ができるようサポートします!
         </p>
-        <p className={style.subtitle}>サイト制作・アプリ制作</p>
+        <h3 className={style.subtitle}>サイト制作・アプリ制作</h3>
         <p className={style.text}>
           一通り基礎を学び終えたら、実際にX（旧twitter）やNoteのような投稿ができるサービスを
         </p>
@@ -106,7 +107,7 @@ export default function About() {
           自分たちで作ってもらいます。実際に私（sor4chi）は自作のブログや広告収入のある
         </p>
         <p className={style.text}>Webアプリを作成・公開してきました。</p>
-        <p className={style.subtitle}>パフォーマンスチューニング</p>
+        <h3 className={style.subtitle}>パフォーマンスチューニング</h3>
         <p className={style.text}>Webの醍醐味は「制作」だけではありません。</p>
         <p className={style.text}>
           この世には「遅すぎる」や「セキュリティ的に危険」などの様々な問題を抱えたサイトがあります。
