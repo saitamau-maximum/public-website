@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { MdArrowOutward } from 'react-icons/md';
 import { SiX, SiGithub } from 'react-icons/si';
-import style from './Footer.module.scss';
 import { LinkButton } from '../LinkButton/LinkButton';
+import style from './Footer.module.scss';
 
 export function Footer() {
   return (
     <footer className={style.footer}>
-      <div className={style.logoandbutton}>
+      <div>
         <div className={style.logo}>
           <Link href='/'>
             <img
