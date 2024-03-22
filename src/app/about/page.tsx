@@ -24,8 +24,7 @@ export default function About() {
           <span className={style.highlight}>
             国際大学対抗プログラミングコンテスト（ICPC）
           </span>
-          へ参加し、
-          良い成績を上げるために成立したプログラミング研究会です。
+          へ参加し、 良い成績を上げるために成立したプログラミング研究会です。
           2022年度からは、
           <span className={style.highlight}>競技プログラミング</span>
           のみならず、
@@ -80,7 +79,8 @@ export default function About() {
           自分たちで作ってもらいます。実際に私（sor4chi）は自作のブログや広告収入のあるWebアプリを作成・公開してきました。
         </p>
         <h3 className={style.subtitle}>パフォーマンスチューニング</h3>
-        <p className={style.text}>Webの醍醐味は「制作」だけではありません。
+        <p className={style.text}>
+          Webの醍醐味は「制作」だけではありません。
           この世には「遅すぎる」や「セキュリティ的に危険」などの様々な問題を抱えたサイトがあります。
           こんなサイトを高速化したり安全に書き換えたりなどするのも、もちろんWebの範疇です。
           一見競技性のないWebの分野でも、こういった問題を解決する力を競う大会がいくつか開催されており、
