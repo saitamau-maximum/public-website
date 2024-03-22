@@ -73,8 +73,6 @@ export default function About() {
           Webに関しては
           <strong className={style.highlight}>アウトプットこそ正義</strong>
           なので「勉強する」よりも
-        </p>
-        <p className={style.text}>
           「作りながらその都度調べる」というフローで効率の良い学習ができるようサポートします!
         </p>
         <h3 className={style.subtitle}>サイト制作・アプリ制作</h3>
