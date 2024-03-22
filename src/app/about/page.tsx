@@ -14,7 +14,7 @@ export default function About() {
     <div className={style.container}>
       <Header />
       <div>
-        <img  src='/hero/Hero.png' alt='hero' />
+        <img src='/hero/Hero.png' alt='hero' />
       </div>
       <div className={style.box}>
         <p className={style.title}>
