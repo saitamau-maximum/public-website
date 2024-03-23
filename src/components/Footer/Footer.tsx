@@ -11,7 +11,7 @@ export function Footer() {
         <div className={style.logo}>
           <Link href='/'>
             <img
-              src='/logos/Maximum-logo.svg'
+              src='/logos/Maximum-logo-white.svg'
               alt='Maximum'
               width={334}
               height={84}
