@@ -1,3 +1,326 @@
+@media screen and (max-width: 768px) {
+  .hero {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+  }
+
+  .breadcrumb {
+    width: 100%;
+    height: 28px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .breadcrumbLink {
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+  }
+
+  .contents {
+    width: 100%;
+    max-width: 1080px;
+    margin: auto;
+    /* imgBox1のright 0にしたときにはみ出さないようにする */
+    position: relative;
+  }
+
+  .about {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: normal;
+    border-bottom: 1px solid black;
+    width: 4em;
+  }
+
+  .aboutText {
+    margin: 24px;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+  }
+
+  .activityCP {
+    background-color: white;
+    flex-direction: column;
+    width: 80%;
+    height: 232px;
+    padding: 16px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin: 180px 0px 96px 0px;
+  }
+  .activityCPtitle p {
+    font-size: 12px;
+    margin: 0px;
+  }
+  .activityCPtitle h2 {
+    margin-bottom: 0px;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+  }
+  .activityCPcontent {
+    font-size: 16px;
+  }
+  .activityLeftButtonContainer {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    left: 64px;
+  }
+
+  .activityWeb {
+    background-color: white;
+    flex-direction: column;
+    width: 80%;
+    height: 232px;
+    padding: 16px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin: 252px 0 128px auto;
+  }
+  .activityWebtitle p {
+    font-size: 12px;
+    margin: 0px;
+  }
+  .activityWebtitle h2 {
+    margin-bottom: 0px;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+  }
+  .activityWebcontent {
+    font-size: 16px;
+  }
+  .activityRightButtonContainer {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    right: 64px;
+  }
+
+  .boldspan {
+    font-weight: bold;
+    color: #47B660;
+  }
+
+  .span {
+    color: #47B660;
+  }
+
+  .activityOther {
+    margin: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+  }
+
+  .activityOtherButtonContainer {
+    margin: 12px;
+  }
+
+  .txtOther {
+    position: absolute;
+    top: -64px;
+    left: -24px;
+  }
+
+  .imgBox1 {
+    width: 80%;
+    height: 220px;
+    z-index: 0;
+    background-color: gray;
+    position: absolute;
+    right: 0;
+  }
+
+  .imgBox2 {
+    width: 80%;
+    height: 220px;
+    z-index: 0;
+    background-color: gray;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .hero {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+
+  .breadcrumb {
+    width: 100%;
+    height: 64px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .breadcrumbLink {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  .contents {
+    width: 100%;
+    max-width: 1080px;
+    margin: auto;
+    /* imgBox1のright 0にしたときにはみ出さないようにする */
+    position: relative;
+  }
+
+  .about {
+    font-size: 48px;
+    font-weight: normal;
+    border-bottom: 1px solid black;
+    width: 4em;
+  }
+
+  .aboutText {
+    margin: 48px;
+    font-size: 32px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+  }
+
+  .activityCP {
+    background-color: white;
+    flex-direction: column;
+    width: 55%;
+    height: 400px;
+    padding: 32px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin: 80px 0px 96px 0px;
+  }
+  .activityCPtitle p {
+    font-size: 20px;
+    margin: 0px;
+  }
+  .activityCPtitle h2 {
+    margin-bottom: 0px;
+    font-size: 32px;
+    border-bottom: 1px solid black;
+  }
+  .activityCPcontent {
+    font-size: 20px;
+  }
+  .activityLeftButtonContainer {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    left: 64px;
+  }
+
+  .activityWeb {
+    background-color: white;
+    flex-direction: column;
+    width: 55%;
+    height: 400px;
+    padding: 32px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin: 128px 0 128px auto;
+  }
+  .activityWebtitle p {
+    font-size: 20px;
+    margin: 0px;
+  }
+  .activityWebtitle h2 {
+    margin-bottom: 0px;
+    font-size: 32px;
+    border-bottom: 1px solid black;
+  }
+  .activityWebcontent {
+    font-size: 20px;
+  }
+  .activityRightButtonContainer {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    right: 64px;
+  }
+
+  .boldspan {
+    font-weight: bold;
+    color: #47B660;
+  }
+
+  .span {
+    color: #47B660;
+  }
+
+  .activityOther {
+    margin: 128px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+  }
+
+  .activityOtherButtonContainer {
+    margin: 48px;
+  }
+
+  .txtOther {
+    position: absolute;
+    top: -64px;
+    left: -48px;
+  }
+
+  .imgBox1 {
+    width: 55%;
+    height: 464px;
+    z-index: 0;
+    background-color: gray;
+    position: absolute;
+    right: 0;
+  }
+
+  .imgBox2 {
+    width: 55%;
+    height: 464px;
+    z-index: 0;
+    background-color: gray;
+    position: absolute;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -9,163 +332,4 @@
   padding-top: 72px;
   flex-direction: column;
   background-color: #f1f1f1;
-}
-
-.hero {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  background-color: #f1f1f1;
-}
-
-.heroImage {
-  width: 100%;
-  height: 60vh;
-  object-fit: cover;
-}
-
-.breadcrumb {
-  width: 100%;
-  height: 64px;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.breadcrumbLink {
-  color: white;
-  font-size: 1.5rem;
-  text-decoration: none;
-}
-
-.contents {
-  width: 100%;
-  max-width: 1080px;
-  margin: auto;
-  /* imgBox1のright 0にしたときにはみ出さないようにする */
-  position: relative;
-}
-
-.about {
-  font-size: 48px;
-  font-weight: normal;
-  border-bottom: 1px solid black;
-  width: 4em;
-}
-
-.aboutText {
-  margin: 48px;
-  font-size: 32px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  text-align: center;
-}
-
-.activityCP {
-  background-color: white;
-  flex-direction: column;
-  width: 55%;
-  height: 400px;
-  padding: 32px;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1;
-  margin: 80px 0px 96px 0px;
-}
-.activityCPtitle p {
-  font-size: 20px;
-  margin: 0px;
-}
-.activityCPtitle h2 {
-  margin-bottom: 0px;
-  font-size: 32px;
-  border-bottom: 1px solid black;
-}
-.activityCPcontent {
-  font-size: 20px;
-}
-.activityLeftButtonContainer {
-  position: absolute;
-  bottom: 0;
-  transform: translateY(50%);
-  left: 64px;
-}
-
-.activityWeb {
-  background-color: white;
-  flex-direction: column;
-  width: 55%;
-  height: 400px;
-  padding: 32px;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1;
-  margin: 128px 0 128px auto;
-}
-.activityWebtitle p {
-  font-size: 20px;
-  margin: 0px;
-}
-.activityWebtitle h2 {
-  margin-bottom: 0px;
-  font-size: 32px;
-  border-bottom: 1px solid black;
-}
-.activityWebcontent {
-  font-size: 20px;
-}
-.activityRightButtonContainer {
-  position: absolute;
-  bottom: 0;
-  transform: translateY(50%);
-  right: 64px;
-}
-
-.boldspan {
-  font-weight: bold;
-  color: #47B660;
-}
-
-.span {
-  color: #47B660;
-}
-
-.activityOther {
-  margin: 128px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  font-size: 24px;
-  position: relative;
-}
-
-.activityOtherButtonContainer {
-  margin: 48px;
-}
-
-.txtOther {
-  position: absolute;
-  top: -64px;
-  left: -48px;
-}
-
-.imgBox1 {
-  width: 55%;
-  height: 464px;
-  z-index: 0;
-  background-color: gray;
-  position: absolute;
-  right: 0;
-}
-
-.imgBox2 {
-  width: 55%;
-  height: 464px;
-  z-index: 0;
-  background-color: gray;
-  position: absolute;
 }
