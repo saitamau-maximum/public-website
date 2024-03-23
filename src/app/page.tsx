@@ -68,19 +68,21 @@ export function Home() {
             </div>
           </div>
           <div className={style.activityOther}>
-            <p className={style.txtOther}>
-              他にも&hellip;
-            </p>
+            <p className={style.txtOther}>他にも&hellip;</p>
             <p>
               Discordを用いた&nbsp;
               <span className={style.span}>交流会</span>、
               <span className={style.span}>勉強会</span>、
               <span className={style.span}>サークル内模擬大会</span>
-              &nbsp;等々<br />希望があれば、ほかにも様々な活動を行いたいと思っています。
+              &nbsp;等々
+              <br />
+              希望があれば、ほかにも様々な活動を行いたいと思っています。
             </p>
-            <LinkButton href='#' variant='green'>
-              入会案内はこちら
-            </LinkButton>
+            <div className={style.activityOtherButtonContainer}>
+              <LinkButton href='#' variant='green'>
+                入会案内はこちら
+              </LinkButton>
+            </div>
           </div>
         </div>
       </main>

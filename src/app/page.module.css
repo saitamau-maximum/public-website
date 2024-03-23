@@ -134,18 +134,23 @@
 }
 
 .activityOther {
-  margin: 120px;
+  margin: 128px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
   font-size: 24px;
   position: relative;
+}
+
+.activityOtherButtonContainer {
+  margin: 48px;
 }
 
 .txtOther {
   position: absolute;
   top: -64px;
-  left: -72px;
+  left: -48px;
 }
 
 .imgBox1 {
