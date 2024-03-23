@@ -17,7 +17,7 @@ export function Home() {
           </div>
         </div>
         <div className={style.contents}>
-          <h1 className={style.about}>活動内容</h1>
+          <h1 className={style.contentTitle}>活動内容</h1>
           <p className={style.aboutText}>
             Maximumでは
             <span className={style.boldspan}>競技プログラミング</span>
