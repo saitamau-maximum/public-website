@@ -9,7 +9,6 @@
   padding-top: 72px;
   flex-direction: column;
   background-color: #f1f1f1;
-
 }
 
 .hero {
@@ -45,6 +44,8 @@
   width: 100%;
   max-width: 1080px;
   margin: auto;
+  /* imgBox1のright 0にしたときにはみ出さないようにする */
+  position: relative;
 }
 
 .about {
@@ -67,9 +68,12 @@
   background-color: white;
   flex-direction: column;
   width: 55%;
+  height: 400px;
   padding: 32px;
   box-sizing: border-box;
   position: relative;
+  z-index: 1;
+  margin: 64px 0;
 }
 .activityCPtitle p {
   font-size: 20px;
@@ -93,12 +97,13 @@
 .activityWeb {
   background-color: white;
   flex-direction: column;
-  text-align: right;
-  margin: 0 0 0 auto;
   width: 55%;
+  height: 400px;
   padding: 32px;
   box-sizing: border-box;
   position: relative;
+  z-index: 1;
+  margin: 64px 0 64px auto;
 }
 .activityWebtitle p {
   font-size: 20px;
@@ -134,4 +139,21 @@
   justify-content: center;
   flex-direction: column;
   font-size: 24px;
+}
+
+.imgBox1 {
+  width: 55%;
+  height: 400px;
+  z-index: 0;
+  background-color: gray;
+  position: absolute;
+  right: 0;
+}
+
+.imgBox2 {
+  width: 55%;
+  height: 400px;
+  z-index: 0;
+  background-color: gray;
+  position: absolute;
 }

@@ -24,6 +24,9 @@ export function Home() {
             （週２回）と<span className={style.boldspan}>Web研究会</span>
             （週１回）の２つの活動を行っています。
           </p>
+          <div className={style.imgBox1}>
+            {/* <img src='images/hero.png' alt='Hero' className={style.img} /> */}
+          </div>
           <div className={style.activityCP}>
             <div className={style.activityCPtitle}>
               <h2>競技プログラミング</h2>
@@ -42,6 +45,9 @@ export function Home() {
                 Learn More
               </LinkButton>
             </div>
+          </div>
+          <div className={style.imgBox2}>
+            {/* <img src='images/hero.png' alt='Hero' className={style.img} /> */}
           </div>
           <div className={style.activityWeb}>
             <div className={style.activityWebtitle}>
