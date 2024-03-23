@@ -21,8 +21,8 @@ export function Home() {
           <p className={style.aboutText}>
             Maximumでは
             <span className={style.boldspan}>競技プログラミング</span>
-            （週２回）と<span className={style.boldspan}>Web研究会</span>
-            （週１回）の２つの活動を行っています。
+            (週２回)と<span className={style.boldspan}>Web研究会</span>
+            (週１回)の２つの活動を行っています。
           </p>
           <div className={style.imgBox1}>
             {/* <img src='images/hero.png' alt='Hero' className={style.img} /> */}
