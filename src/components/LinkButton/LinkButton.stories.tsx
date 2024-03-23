@@ -14,6 +14,7 @@ Primary.args = {
   children: 'Click Me',
   variant: 'green',
   href: '/',
+  size: 'medium',
 };
 
 export const Secondary = Template.bind({});
@@ -21,4 +22,5 @@ Secondary.args = {
   children: 'Click Me',
   variant: 'gray',
   href: '/',
+  size: 'medium',
 };
