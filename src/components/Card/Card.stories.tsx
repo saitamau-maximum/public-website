@@ -6,7 +6,7 @@ export default {
   title: 'Components/Card',
   component: Card,
   argTypes: {
-    customStyle: {control: 'object'},
+    customStyle: { control: 'object' },
     title: { control: 'text' },
     content: { control: 'text' },
     date: { control: 'text' },
@@ -22,7 +22,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   customStyle: {
-    width: '100%'
+    width: '100%',
   },
   title: 'OOOOOOOOOOOOOOOOOOOOOOOOOO',
   content:
