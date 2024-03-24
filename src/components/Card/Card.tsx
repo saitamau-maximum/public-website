@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, {useState} from 'react';
 import style from './Card.module.css';
 
 interface CardProps {
@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({
   cardWidth,
 }) => {
   return (
-    <Link href={to} className={style.card}>
+    <Link href={to} className={style.card} style={{ width: cardWidth}}>
       <div className={style.img}>
         <img className={style.img} src={imageSrc} alt={imageAlt} />
         <div className={style.box}>
