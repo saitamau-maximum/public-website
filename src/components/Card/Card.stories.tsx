@@ -6,6 +6,7 @@ export default {
   title: 'Components/Card',
   component: Card,
   argTypes: {
+    customStyle: {control: 'object'},
     title: { control: 'text' },
     content: { control: 'text' },
     date: { control: 'text' },
@@ -13,7 +14,6 @@ export default {
     to: { control: 'text' },
     imageSrc: { control: 'text' },
     imageAlt: { control: 'text' },
-    cardWidth: { control: 'text' },
   },
 } as Meta;
 
@@ -21,6 +21,9 @@ const Template: StoryFn<typeof Card> = (args) => <Card {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
+  customStyle: {
+    width: '100%'
+  },
   title: 'OOOOOOOOOOOOOOOOOOOOOOOOOO',
   content:
     'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
@@ -29,5 +32,4 @@ Default.args = {
   to: '/',
   imageSrc: '/images/maximum-card.png',
   imageAlt: 'maximum',
-  cardWidth: '100%',
 };

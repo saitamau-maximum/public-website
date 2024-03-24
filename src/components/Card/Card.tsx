@@ -3,6 +3,7 @@ import React from 'react';
 import style from './Card.module.css';
 
 interface CardProps {
+  customStyle?: React.CSSProperties | undefined;
   title: string;
   content: string;
   date: string;
@@ -10,9 +11,9 @@ interface CardProps {
   to: string;
   imageSrc: string;
   imageAlt: string;
-  cardWidth: string;
 }
 const Card: React.FC<CardProps> = ({
+  customStyle,
   title,
   content,
   date,
@@ -20,18 +21,9 @@ const Card: React.FC<CardProps> = ({
   to,
   imageSrc,
   imageAlt,
-  cardWidth,
 }) => {
-  //widthとして当てはまらない値の場合100%にする
-  const width =
-    /^(\d+(\.\d+)?(%|px|em|rem|cm|mm|in|pt|pc)|auto|inherit|initial|unset|fit-content|max-content|min-content)$/.test(
-      cardWidth,
-    )
-      ? cardWidth
-      : '100%';
-
   return (
-    <Link href={to} className={style.card} style={{ width }}>
+    <Link href={to} className={style.card} style={customStyle}>
       <div className={style.img}>
         <img className={style.img} src={imageSrc} alt={imageAlt} />
         <div className={style.box}>
