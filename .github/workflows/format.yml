@@ -22,7 +22,7 @@ jobs:
 
       - run: npm install
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_PAT }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run format
         run: npm run format
