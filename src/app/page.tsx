@@ -44,8 +44,10 @@ export default function Home() {
                 <span className={style.bold}>ICPC</span>
               </span>
               に向けて
-              <br />毎週競技プログラミングの講義と
-              <br />大会の感想会などを行っています。
+              <br />
+              毎週競技プログラミングの講義と
+              <br />
+              大会の感想会などを行っています。
             </p>
             <div className={style.activityLeftButtonContainer}>
               <LinkButton href='#' variant='gray'>
@@ -62,8 +64,10 @@ export default function Home() {
               <p>Web programming</p>
             </div>
             <p className={style.activityWebcontent}>
-              Webプログラミングに関する講義と<br />
-              パフォーマンスチューニングの大会に向けた<br />
+              Webプログラミングに関する講義と
+              <br />
+              パフォーマンスチューニングの大会に向けた
+              <br />
               練習会などを行っています。
             </p>
             <div className={style.activityRightButtonContainer}>
