@@ -13,7 +13,7 @@ export default {
     to: { control: 'text' },
     imageSrc: { control: 'text' },
     imageAlt: { control: 'text' },
-    cardWidth: {control: 'text'},
+    cardWidth: { control: 'text' },
   },
 } as Meta;
 
@@ -29,5 +29,5 @@ Default.args = {
   to: '/',
   imageSrc: '/images/maximum-card.png',
   imageAlt: 'maximum',
-  cardWidth: '100%'
+  cardWidth: '100%',
 };

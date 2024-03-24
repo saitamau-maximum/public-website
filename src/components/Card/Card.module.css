@@ -1,6 +1,9 @@
 
+:root{
+    --cardWidth: 100%;
+}
 .card {
-    width: 100%;  
+    width: var(--cardWidth);  
     border: 1px solid #ccc;
     background-color: #fff;
     text-decoration: none;
