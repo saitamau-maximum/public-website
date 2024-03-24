@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { LinkButton } from '../components/LinkButton';
-import style from './page.module.css';
+import style from './page.module.scss';
 
 export default function Home() {
   return (
     <div className={style.container}>
       <main className={style.main}>
         <div className={style.hero}>
-          <img src='images/hero.png' alt='Hero' className={style.heroImage} />
+          <img src='/images/hero.png' alt='Hero' className={style.heroImage} />
           <div className={style.breadcrumb}>
             <Link href='/' className={style.breadcrumbLink}>
               Top
@@ -18,9 +18,9 @@ export default function Home() {
           <h1 className={style.contentTitle}>活動内容</h1>
           <p className={style.aboutText}>
             Maximumでは
-            <span className={style.boldspan}>競技プログラミング</span>
-            (週２回)と<span className={style.boldspan}>Web研究会</span>
-            (週１回)の２つの活動を行っています。
+            <span className={style.span}><span className={style.bold}>競技プログラミング</span></span>
+            (週2回)と<span className={style.span}><span className={style.bold}>Web研究会</span></span>
+            (週1回)の2つの活動を行っています。
           </p>
           <div className={style.imgBox1}>
             {/* <img src='images/hero.png' alt='Hero' className={style.img} /> */}
@@ -31,8 +31,8 @@ export default function Home() {
               <p>Competitive programming</p>
             </div>
             <p className={style.activityCPcontent}>
-              <span className={style.boldspan}>AtCoder</span>や
-              <span className={style.boldspan}>ICPC</span>に向けて
+              <span className={style.span}><span className={style.bold}>AtCoder</span></span>や
+              <span className={style.span}><span className={style.bold}>ICPC</span></span>に向けて
               <br />
               毎週競技プログラミングの講義と
               <br />
