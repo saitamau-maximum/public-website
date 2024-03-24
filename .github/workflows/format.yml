@@ -9,10 +9,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
+          always-auth: true
           node-version: '18'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@saitamau-maximum'
+
       - name: Restore app cache
         uses: actions/cache@v3
         id: node_modules_cache_id
@@ -21,11 +26,18 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-      - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
+
+      - name: Show cache hit
+        run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
+
       - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
         run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_PAT }}
+
       - name: Run format
         run: npm run format
+
       - name: Check diff exists
         run: |
           git add -N .
