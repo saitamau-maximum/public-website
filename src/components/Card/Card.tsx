@@ -23,7 +23,12 @@ const Card: React.FC<CardProps> = ({
   cardWidth,
 }) => {
   //widthとして当てはまらない値の場合100%にする
-  const width = /^(\d+(\.\d+)?%|auto|inherit|initial|unset|fit-content|max-content|min-content|\d+(\.\d+)?(px|em|rem|cm|mm|in|pt|pc))$/.test(cardWidth) ? cardWidth : '100%';
+  const width =
+    /^(\d+(\.\d+)?%|auto|inherit|initial|unset|fit-content|max-content|min-content|\d+(\.\d+)?(px|em|rem|cm|mm|in|pt|pc))$/.test(
+      cardWidth,
+    )
+      ? cardWidth
+      : '100%';
 
   return (
     <Link href={to} className={style.card} style={{ width }}>
