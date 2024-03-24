@@ -7,7 +7,7 @@ import style from './Footer.module.scss';
 export function Footer() {
   return (
     <footer className={style.footer}>
-      <div>
+      <div className={style.container}>
         <div className={style.logo}>
           <Link href='/'>
             <img
@@ -18,11 +18,9 @@ export function Footer() {
             />
           </Link>
         </div>
-        <div className={style.greenButton}>
-          <LinkButton href='/join' variant='green'>
-            入会案内はこちら
-          </LinkButton>
-        </div>
+        <LinkButton href='/join' variant='green'>
+          入会案内はこちら
+        </LinkButton>
       </div>
 
       <nav className={style.navigations}>
