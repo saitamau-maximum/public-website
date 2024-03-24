@@ -17,7 +17,7 @@
 }
 
 .greenButton {
-  padding: 24px 48px;
+  padding: 1em 2em;
   background-color: #439154;
   color: #ffffff;
   border: none;
@@ -26,11 +26,11 @@
 }
 
 .greenButton.small {
-  padding: 18px 36px;
+  padding: 1em 2em;
 }
 
 .greenButton.large {
-  padding: 30px 60px;
+  padding: 1em 2em;
 }
 
 .greenButton:hover {
@@ -38,7 +38,7 @@
 }
 
 .grayButton {
-  padding: 12px 64px;
+  padding: 0.5em 3em;
   background-color: #414141;
   color: #ffffff;
   border: 1px solid #ffffff;
@@ -46,11 +46,11 @@
 }
 
 .grayButton.small {
-  padding: 9px 48px;
+  padding: 0.5em 3em;
 }
 
 .grayButton.large {
-  padding: 15px 80px;
+  padding: 0.5em 3em;
 }
 
 .grayButton:hover {
