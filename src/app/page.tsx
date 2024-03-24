@@ -28,7 +28,7 @@ export default function Home() {
             (週1回)の2つの活動を行っています。
           </p>
           <div className={style.imgBox1}>
-            {/* <img src='images/hero.png' alt='Hero' className={style.img} /> */}
+            {/* <img src='/images/hero.png' alt='Hero' className={style.img} /> */}
           </div>
           <div className={style.activityCP}>
             <div className={style.activityCPtitle}>
@@ -39,13 +39,13 @@ export default function Home() {
               <span className={style.span}>
                 <span className={style.bold}>AtCoder</span>
               </span>
-              や
+              &nbsp;や&nbsp;
               <span className={style.span}>
                 <span className={style.bold}>ICPC</span>
               </span>
               に向けて
-              毎週競技プログラミングの講義と
-              大会の感想会などを行っています。
+              <br />毎週競技プログラミングの講義と
+              <br />大会の感想会などを行っています。
             </p>
             <div className={style.activityLeftButtonContainer}>
               <LinkButton href='#' variant='gray'>
@@ -54,7 +54,7 @@ export default function Home() {
             </div>
           </div>
           <div className={style.imgBox2}>
-            {/* <img src='images/hero.png' alt='Hero' className={style.img} /> */}
+            {/* <img src='/images/hero.png' alt='Hero' className={style.img} /> */}
           </div>
           <div className={style.activityWeb}>
             <div className={style.activityWebtitle}>
@@ -62,8 +62,8 @@ export default function Home() {
               <p>Web programming</p>
             </div>
             <p className={style.activityWebcontent}>
-              Webプログラミングに関する講義と
-              パフォーマンスチューニングの大会に向けた
+              Webプログラミングに関する講義と<br />
+              パフォーマンスチューニングの大会に向けた<br />
               練習会などを行っています。
             </p>
             <div className={style.activityRightButtonContainer}>
