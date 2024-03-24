@@ -24,9 +24,9 @@ const Card: React.FC<CardProps> = ({
 }) => {
   //widthとして当てはまらない値の場合100%にする
   const width =
-    /^(\d+(\.\d+)?%|auto|inherit|initial|unset|fit-content|max-content|min-content|\d+(\.\d+)?(px|em|rem|cm|mm|in|pt|pc))$/.test(
-      cardWidth,
-    )
+  /^(\d+(\.\d+)?(%|px|em|rem|cm|mm|in|pt|pc)|auto|inherit|initial|unset|fit-content|max-content|min-content)$/.test(
+    cardWidth
+  )
       ? cardWidth
       : '100%';
 
