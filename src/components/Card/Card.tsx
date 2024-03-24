@@ -10,6 +10,7 @@ interface CardProps {
   to: string;
   imageSrc: string;
   imageAlt: string;
+  cardWidth: string;
 }
 const Card: React.FC<CardProps> = ({
   title,
@@ -19,6 +20,7 @@ const Card: React.FC<CardProps> = ({
   to,
   imageSrc,
   imageAlt,
+  cardWidth,
 }) => {
   return (
     <Link href={to} className={style.card}>
