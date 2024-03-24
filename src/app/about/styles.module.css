@@ -1,0 +1,38 @@
+.container{
+    background-color: #f1f1f1;
+    margin: 0 auto;
+}
+.box{
+    background-color: #fff;
+    width: 54rem;
+    max-width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+}
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    border-bottom: 1px solid black;
+}
+.highlight{
+    color: #439154;
+}
+.text{
+    margin-bottom:1rem;
+}
+.subtitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.image{
+    width: 65%; 
+    aspect-ratio: 574/323; 
+}
+.hero{
+    width: 100%;
+    margin-top: 43px;
+}
