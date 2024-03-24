@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import { Header } from '../components/Header';
 import { LinkButton } from '../components/LinkButton';
 import style from './page.module.css';
 
-export function Home() {
+export default function Home() {
   return (
     <div className={style.container}>
       <main className={style.main}>
@@ -88,5 +87,3 @@ export function Home() {
     </div>
   );
 }
-
-export default Home;
