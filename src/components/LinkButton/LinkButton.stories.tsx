@@ -9,16 +9,16 @@ export default {
 
 const Template: StoryFn<typeof LinkButton> = (args) => <LinkButton {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Green = Template.bind({});
+Green.args = {
   children: 'Click Me',
   variant: 'green',
   href: '/',
   size: 'medium',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
+export const Gray = Template.bind({});
+Gray.args = {
   children: 'Click Me',
   variant: 'gray',
   href: '/',
