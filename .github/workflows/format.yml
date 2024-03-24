@@ -16,6 +16,7 @@ jobs:
           always-auth: true
           node-version: '18'
           cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@saitamau-maximum'
 
