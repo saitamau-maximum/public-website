@@ -1,4 +1,44 @@
+/* heroImageとヘッダーのpadding調整 */
+@media screen and (min-width: 1280px){
+  .heroImage {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } 
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+  .main {
+    padding-top: 64px;
+    flex-direction: column;
+    background-color: #f1f1f1;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main {
+    padding-top: 72px;
+    flex-direction: column;
+    background-color: #f1f1f1;
+  }
+}
+
+/* 画面幅が768px以下の場合のスタイル */
 @media screen and (max-width: 768px) {
+  .main {
+    padding-top: 64px;
+    flex-direction: column;
+    background-color: #f1f1f1;
+  }
+
   .hero {
     align-items: center;
     justify-content: center;
@@ -9,7 +49,7 @@
 
   .heroImage {
     width: 100%;
-    height: 15vh;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -160,6 +200,7 @@
   }
 }
 
+/* 画面幅が768px以上の場合のスタイル */
 @media screen and (min-width:768px) {
   .hero {
     align-items: center;
@@ -167,12 +208,6 @@
     display: flex;
     flex-direction: column;
     background-color: #f1f1f1;
-  }
-
-  .heroImage {
-    width: 100%;
-    height: 60vh;
-    object-fit: cover;
   }
 
   .breadcrumb {
@@ -322,15 +357,10 @@
   }
 }
 
+/* 共通 */
 .container {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #f1f1f1;
-}
-
-.main {
-  padding-top: 72px;
-  flex-direction: column;
   background-color: #f1f1f1;
 }

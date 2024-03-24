@@ -6,7 +6,6 @@ import style from './page.module.css';
 export function Home() {
   return (
     <div className={style.container}>
-      <Header />
       <main className={style.main}>
         <div className={style.hero}>
           <img src='images/hero.png' alt='Hero' className={style.heroImage} />
