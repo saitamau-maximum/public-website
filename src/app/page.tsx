@@ -18,8 +18,13 @@ export default function Home() {
           <h1 className={style.contentTitle}>活動内容</h1>
           <p className={style.aboutText}>
             Maximumでは
-            <span className={style.span}><span className={style.bold}>競技プログラミング</span></span>
-            (週2回)と<span className={style.span}><span className={style.bold}>Web研究会</span></span>
+            <span className={style.span}>
+              <span className={style.bold}>競技プログラミング</span>
+            </span>
+            (週2回)と
+            <span className={style.span}>
+              <span className={style.bold}>Web研究会</span>
+            </span>
             (週1回)の2つの活動を行っています。
           </p>
           <div className={style.imgBox1}>
@@ -31,11 +36,15 @@ export default function Home() {
               <p>Competitive programming</p>
             </div>
             <p className={style.activityCPcontent}>
-              <span className={style.span}><span className={style.bold}>AtCoder</span></span>や
-              <span className={style.span}><span className={style.bold}>ICPC</span></span>に向けて
-              <br />
+              <span className={style.span}>
+                <span className={style.bold}>AtCoder</span>
+              </span>
+              や
+              <span className={style.span}>
+                <span className={style.bold}>ICPC</span>
+              </span>
+              に向けて
               毎週競技プログラミングの講義と
-              <br />
               大会の感想会などを行っています。
             </p>
             <div className={style.activityLeftButtonContainer}>
@@ -54,9 +63,7 @@ export default function Home() {
             </div>
             <p className={style.activityWebcontent}>
               Webプログラミングに関する講義と
-              <br />
               パフォーマンスチューニングの大会に向けた
-              <br />
               練習会などを行っています。
             </p>
             <div className={style.activityRightButtonContainer}>
