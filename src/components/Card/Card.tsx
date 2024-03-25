@@ -3,7 +3,7 @@ import React from 'react';
 import style from './Card.module.css';
 
 interface CardProps {
-  customStyle?: React.CSSProperties;
+  style?: React.CSSProperties;
   title: string;
   content: string;
   date: string;
@@ -13,7 +13,7 @@ interface CardProps {
   imageAlt: string;
 }
 const Card: React.FC<CardProps> = ({
-  customStyle,
+  style: customStyle,
   title,
   content,
   date,
