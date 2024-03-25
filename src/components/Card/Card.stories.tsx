@@ -6,7 +6,7 @@ export default {
   title: 'Components/Card',
   component: Card,
   argTypes: {
-    customStyle: { control: 'object' },
+    style: { control: 'object' },
     title: { control: 'text' },
     content: { control: 'text' },
     date: { control: 'text' },
@@ -21,7 +21,7 @@ const Template: StoryFn<typeof Card> = (args) => <Card {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  customStyle: {
+  style: {
     width: '100%',
   },
   title: 'OOOOOOOOOOOOOOOOOOOOOOOOOO',
