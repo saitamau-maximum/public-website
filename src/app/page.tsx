@@ -19,13 +19,9 @@ export default function Home() {
           <h1 className={style.contentTitle}>活動内容</h1>
           <p className={style.aboutText}>
             Maximumでは
-            <span className={clsx(style.span, style.bold)}>
-              競技プログラミング
-            </span>
+            <span className={clsx(style.span, style.bold)}>競技プログラミング</span>
             (週2回)と
-            <span className={clsx(style.span, style.bold)}>
-              Web研究会
-            </span>
+            <span className={clsx(style.span, style.bold)}>Web研究会</span>
             (週1回)の2つの活動を行っています。
           </p>
           <div className={style.imgBox1}>
@@ -37,13 +33,9 @@ export default function Home() {
               <p>Competitive programming</p>
             </div>
             <p className={style.activityCPcontent}>
-              <span className={clsx(style.span, style.bold)}>
-                AtCoder
-              </span>
+              <span className={clsx(style.span, style.bold)}>AtCoder</span>
               &nbsp;や&nbsp;
-              <span className={clsx(style.span, style.bold)}>
-                ICPC
-              </span>
+              <span className={clsx(style.span, style.bold)}>ICPC</span>
               に向けて
               <br />
               毎週競技プログラミングの講義と
