@@ -19,7 +19,9 @@ export default function Home() {
           <h1 className={style.contentTitle}>活動内容</h1>
           <p className={style.aboutText}>
             Maximumでは
-            <span className={clsx(style.span, style.bold)}>競技プログラミング</span>
+            <span className={clsx(style.span, style.bold)}>
+              競技プログラミング
+            </span>
             (週2回)と
             <span className={clsx(style.span, style.bold)}>Web研究会</span>
             (週1回)の2つの活動を行っています。
