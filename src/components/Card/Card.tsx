@@ -3,7 +3,7 @@ import React from 'react';
 import style from './Card.module.css';
 
 interface CardProps {
-  customStyle?: React.CSSProperties | undefined;
+  customStyle?: React.CSSProperties;
   title: string;
   content: string;
   date: string;
