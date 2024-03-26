@@ -38,7 +38,7 @@ export default function Home() {
               <span className={clsx(style.span, style.bold)}>AtCoder</span>
               &nbsp;や&nbsp;
               <span className={clsx(style.span, style.bold)}>ICPC</span>
-              に向けて
+              &nbsp;に向けて
               <br />
               毎週競技プログラミングの講義と
               <br />
