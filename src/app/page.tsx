@@ -18,13 +18,13 @@ export default function Home() {
         <div className={style.contents}>
           <h1 className={style.contentTitle}>活動内容</h1>
           <p className={style.aboutText}>
-            Maximumでは
+            Maximumでは&nbsp;
             <span className={clsx(style.span, style.bold)}>
               競技プログラミング
             </span>
-            (週2回)と
+            &nbsp;(週2回)と&nbsp;
             <span className={clsx(style.span, style.bold)}>Web研究会</span>
-            (週1回)の2つの活動を行っています。
+            &nbsp;(週1回)の2つの活動を行っています。
           </p>
           <div className={style.imgBox1}>
             {/* <img src='/images/hero.png' alt='Hero' className={style.img} /> */}
