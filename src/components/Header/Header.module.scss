@@ -48,27 +48,14 @@ $header-left-padding: 139px;
   color: #7FCC8F;
 }
 
-@media screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .header::before {
     display: none;
-
   }
 
   .header {
-    position: fixed;
-    z-index: 100;
-    box-sizing: border-box;
-    top : 0;
-    width: 100%;
     height: 64px;
-      
-    /*  上下中央揃え  */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     padding: 8px 16px;
-    color: #ffffff;
   }
 
   .navigations {
