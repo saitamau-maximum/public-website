@@ -27,7 +27,7 @@ export default function Home() {
             &nbsp;(週1回)の2つの活動を行っています。
           </p>
           <div className={style.imgBox1}>
-            {/* <img src='/images/hero.png' alt='Hero' className={style.img} /> */}
+            {/* <img src='/images/hero.png' alt='Hero'/> */}
           </div>
           <div className={style.activityCP}>
             <div className={style.activityCPtitle}>
@@ -51,7 +51,7 @@ export default function Home() {
             </div>
           </div>
           <div className={style.imgBox2}>
-            {/* <img src='/images/hero.png' alt='Hero' className={style.img} /> */}
+            {/* <img src='/images/hero.png' alt='Hero'/> */}
           </div>
           <div className={style.activityWeb}>
             <div className={style.activityWebtitle}>
