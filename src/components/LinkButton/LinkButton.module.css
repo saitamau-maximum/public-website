@@ -25,14 +25,6 @@
   transition: background-color 0.3s ease;
 }
 
-.greenButton.small {
-  padding: 1em 2em;
-}
-
-.greenButton.large {
-  padding: 1em 2em;
-}
-
 .greenButton:hover {
   background-color: #36773c;
 }
@@ -46,11 +38,7 @@
 }
 
 .grayButton.small {
-  padding: 0.5em 3em;
-}
-
-.grayButton.large {
-  padding: 0.5em 3em;
+  padding: 0.5em 2em;
 }
 
 .grayButton:hover {
