@@ -30,11 +30,11 @@ export default function Home() {
             {/* <img src='/images/hero.png' alt='Hero'/> */}
           </div>
           <div className={style.activityCP}>
-            <div className={style.activityCPtitle}>
+            <div className={style.activityTitle}>
               <h2>競技プログラミング</h2>
               <p>Competitive programming</p>
             </div>
-            <p className={style.activityCPcontent}>
+            <p className={style.activityContent}>
               <span className={clsx(style.span, style.bold)}>AtCoder</span>
               &nbsp;や&nbsp;
               <span className={clsx(style.span, style.bold)}>ICPC</span>
@@ -54,11 +54,11 @@ export default function Home() {
             {/* <img src='/images/hero.png' alt='Hero'/> */}
           </div>
           <div className={style.activityWeb}>
-            <div className={style.activityWebtitle}>
+            <div className={style.activityTitle}>
               <h2>Web研究会</h2>
               <p>Web programming</p>
             </div>
-            <p className={style.activityWebcontent}>
+            <p className={style.activityContent}>
               Webプログラミングに関する講義と
               <br />
               パフォーマンスチューニングの大会に向けた

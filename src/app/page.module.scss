@@ -66,35 +66,22 @@ $background-color: #F1F1F1;
     padding: 16px 16px 20% 16px;
     margin: 180px 0px 96px 0px;
   }
-  .activityCPtitle p {
-    font-size: 0.75rem; // 12px
-    margin: 0px;
-  }
-  .activityCPtitle h2 {
-    margin-bottom: 0px;
-    font-size: 1.25rem; // 20px
-    border-bottom: 1px solid black;
-  }
-  .activityCPcontent {
-    font-size: 1rem; // 16px
-    margin: 16px 0px;
-  }
 
   .activityWeb {
     width: 80%;
     padding: 16px 16px 20% 16px;
     margin: 252px 0 128px auto;
   }
-  .activityWebtitle p {
+  .activityTitle p {
     font-size: 0.75rem; // 12px
     margin: 0px;
   }
-  .activityWebtitle h2 {
+  .activityTitle h2 {
     margin-bottom: 0px;
     font-size: 1.25rem; // 20px
     border-bottom: 1px solid black;
   }
-  .activityWebcontent {
+  .activityContent {
     font-size: 1rem; // 16px
     margin: 16px 0px;
   }
@@ -140,7 +127,7 @@ $background-color: #F1F1F1;
 
   .contentTitle {
     margin: 32px;
-    font-size: 2rem; // 32px
+    font-size: 2.5rem; // 40px
   }
 
   .aboutText {
@@ -154,18 +141,6 @@ $background-color: #F1F1F1;
     padding: 32px;
     margin: 80px 0px 96px 0px;
   }
-  .activityCPtitle p {
-    font-size: 1.25rem; // 20px
-    margin: 0px;
-  }
-  .activityCPtitle h2 {
-    margin-bottom: 0px;
-    font-size: 2rem; // 32px
-    border-bottom: 1px solid black;
-  }
-  .activityCPcontent {
-    font-size: 1.25rem; // 20px
-  }
 
   .activityWeb {
     width: 55%;
@@ -173,16 +148,17 @@ $background-color: #F1F1F1;
     padding: 32px;
     margin: 128px 0 128px auto;
   }
-  .activityWebtitle p {
+
+  .activityTitle p {
     font-size: 1.25rem; // 20px
     margin: 0px;
   }
-  .activityWebtitle h2 {
+  .activityTitle h2 {
     margin-bottom: 0px;
     font-size: 2rem; // 32px
     border-bottom: 1px solid black;
   }
-  .activityWebcontent {
+  .activityContent {
     font-size: 1.25rem; // 20px
   }
 
