@@ -26,7 +26,7 @@ export default function Home() {
             <span className={clsx(style.span, style.bold)}>Web研究会</span>
             &nbsp;(週1回)の2つの活動を行っています。
           </p>
-          <div className={style.imgBox1}>
+          <div className={clsx(style.imgBox1, style.imgBoxCommon)}>
             {/* <img src='/images/hero.png' alt='Hero'/> */}
           </div>
           <div className={style.activityCP}>
@@ -50,7 +50,7 @@ export default function Home() {
               </LinkButton>
             </div>
           </div>
-          <div className={style.imgBox2}>
+          <div className={clsx(style.imgBox2, style.imgBoxCommon)}>
             {/* <img src='/images/hero.png' alt='Hero'/> */}
           </div>
           <div className={style.activityWeb}>
