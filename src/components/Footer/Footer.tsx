@@ -3,6 +3,7 @@ import { MdArrowOutward } from 'react-icons/md';
 import { SiX, SiGithub } from 'react-icons/si';
 import { LinkButton } from '../LinkButton/LinkButton';
 import style from './Footer.module.scss';
+import clsx from 'clsx';
 
 export function Footer() {
   return (
@@ -52,10 +53,28 @@ export function Footer() {
           <MdArrowOutward />
         </Link>
         <Link
+          href='https://blog.maximum.vc'
+          target='_blank'
+          rel='noopener noreferrer'
+          className={clsx(style.navigationLink, style.navigationsForMobile)}
+        >
+          X
+          <MdArrowOutward />
+        </Link>
+        <Link
+          href='https://blog.maximum.vc'
+          target='_blank'
+          rel='noopener noreferrer'
+          className={clsx(style.navigationLink, style.navigationsForMobile)}
+        >
+          GitHub
+          <MdArrowOutward />
+        </Link>
+        <Link
           href='https://x.com/Maximum03400346'
           target='_blank'
           rel='noopener noreferrer'
-          className={style.navigationLink}
+          className={clsx(style.navigationLink, style.navigationsForPC)}
         >
           <SiX size={24} />
         </Link>
@@ -63,7 +82,7 @@ export function Footer() {
           href='https://github.com/saitamau-maximum'
           target='_blank'
           rel='noopener noreferrer'
-          className={style.navigationLink}
+          className={clsx(style.navigationLink, style.navigationsForPC)}
         >
           <SiGithub size={24} />
         </Link>
