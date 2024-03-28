@@ -99,12 +99,12 @@ export default function Home() {
             <div className={style.activityOtherButtonContainer}>
               <div className={style.navigationForPC}>
                 <LinkButton href='#' variant='green' size='medium'>
-                入会案内はこちら
+                  入会案内はこちら
                 </LinkButton>
               </div>
               <div className={style.navigationForMobile}>
                 <LinkButton href='#' variant='green' size='small'>
-                入会案内はこちら
+                  入会案内はこちら
                 </LinkButton>
               </div>
             </div>
