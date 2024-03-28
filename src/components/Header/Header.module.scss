@@ -13,6 +13,7 @@ $header-left-padding: 139px;
   
 .header {
   position: fixed;
+  z-index: 100;
   box-sizing: border-box;
   top : 0;
   width: 100%;
@@ -45,4 +46,19 @@ $header-left-padding: 139px;
 
 .navigationLink:hover {
   color: #7FCC8F;
+}
+
+@media (max-width: 1200px) {
+  .header::before {
+    display: none;
+  }
+
+  .header {
+    height: 64px;
+    padding: 8px 16px;
+  }
+
+  .navigations {
+    display: none;
+  }
 }
