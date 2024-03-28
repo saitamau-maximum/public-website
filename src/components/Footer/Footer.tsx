@@ -19,9 +19,16 @@ export function Footer() {
             />
           </Link>
         </div>
-        <LinkButton href='/join' variant='green'>
-          入会案内はこちら
-        </LinkButton>
+        <div className={style.navigationsForPC}>
+          <LinkButton href='/join' variant='green' size='medium'>
+            入会案内はこちら
+          </LinkButton>
+        </div>
+        <div className={style.navigationsForMobile}>
+          <LinkButton href='/join' variant='green' size='small'>
+            入会案内はこちら
+          </LinkButton>
+        </div>
       </div>
 
       <nav className={style.navigations}>
