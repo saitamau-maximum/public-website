@@ -97,9 +97,16 @@ export default function Home() {
               希望があれば、ほかにも様々な活動を行いたいと思っています。
             </p>
             <div className={style.activityOtherButtonContainer}>
-              <LinkButton href='#' variant='green'>
+              <div className={style.navigationForPC}>
+                <LinkButton href='#' variant='green' size='medium'>
                 入会案内はこちら
-              </LinkButton>
+                </LinkButton>
+              </div>
+              <div className={style.navigationForMobile}>
+                <LinkButton href='#' variant='green' size='small'>
+                入会案内はこちら
+                </LinkButton>
+              </div>
             </div>
           </div>
         </div>
