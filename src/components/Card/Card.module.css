@@ -1,6 +1,5 @@
-
-.card {
-    width: 100%;  
+.card { 
+    max-width: 100%;
     border: 1px solid #ccc;
     background-color: #fff;
     text-decoration: none;

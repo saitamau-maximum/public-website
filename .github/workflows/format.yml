@@ -1,0 +1,39 @@
+name: format
+
+on: pull_request
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          always-auth: true
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@saitamau-maximum'
+
+      - run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run format
+        run: npm run format
+
+      - name: Check diff exists
+        run: |
+          git add -N .
+          git diff
+          line=`git diff | wc -l`
+          if [ $line -gt 0 ]; then
+            echo "You need to format before commit"
+            git diff
+            exit -1
+          fi
