@@ -5,17 +5,6 @@ $header-change-width: 1200px;
 $tablet-width: 768px;
 $background-color: #F1F1F1;
 
-/* 共通 */
-.heroImage {
-  width: 100%;
-  object-fit: cover;
-}
-
-.main {
-  flex-direction: column;
-  background-color: $background-color;
-}
-
 /* heroImageとヘッダーのpadding調整 */
 @media (min-width: $heroImage-change-width) {
   .heroImage {
@@ -109,6 +98,10 @@ $background-color: #F1F1F1;
     width: 80%;
     aspect-ratio: 300 / 220;
   }
+
+  .navigationForPC {
+    display: none;
+  }
 }
 
 /* 画面幅が768px以上の場合のスタイル */
@@ -186,9 +179,23 @@ $background-color: #F1F1F1;
     width: 55%;
     height: 464px;
   }
+
+  .navigationForMobile {
+    display: none;
+  }
 }
 
 /* 共通 */
+.heroImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+.main {
+  flex-direction: column;
+  background-color: $background-color;
+}
+
 .container {
   display: flex;
   flex-direction: column;

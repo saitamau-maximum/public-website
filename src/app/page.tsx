@@ -45,9 +45,16 @@ export default function Home() {
               大会の感想会などを行っています。
             </p>
             <div className={style.activityLeftButtonContainer}>
-              <LinkButton href='#' variant='gray'>
-                Learn More
-              </LinkButton>
+              <div className={style.navigationForPC}>
+                <LinkButton href='#' variant='gray' size='medium'>
+                  Learn More
+                </LinkButton>
+              </div>
+              <div className={style.navigationForMobile}>
+                <LinkButton href='#' variant='gray' size='small'>
+                  Learn More
+                </LinkButton>
+              </div>
             </div>
           </div>
           <div className={clsx(style.imgBox2, style.imgBoxCommon)}>
@@ -66,9 +73,16 @@ export default function Home() {
               練習会などを行っています。
             </p>
             <div className={style.activityRightButtonContainer}>
-              <LinkButton href='#' variant='gray'>
-                Learn More
-              </LinkButton>
+              <div className={style.navigationForPC}>
+                <LinkButton href='#' variant='gray' size='medium'>
+                  Learn More
+                </LinkButton>
+              </div>
+              <div className={style.navigationForMobile}>
+                <LinkButton href='#' variant='gray' size='small'>
+                  Learn More
+                </LinkButton>
+              </div>
             </div>
           </div>
           <div className={style.activityOther}>
