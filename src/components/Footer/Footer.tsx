@@ -60,7 +60,7 @@ export function Footer() {
           <MdArrowOutward />
         </Link>
         <Link
-          href='https://blog.maximum.vc'
+          href='https://x.com/Maximum03400346'
           target='_blank'
           rel='noopener noreferrer'
           className={clsx(style.navigationLink, style.navigationsForMobile)}
@@ -69,7 +69,7 @@ export function Footer() {
           <MdArrowOutward />
         </Link>
         <Link
-          href='https://blog.maximum.vc'
+          href='https://github.com/saitamau-maximum'
           target='_blank'
           rel='noopener noreferrer'
           className={clsx(style.navigationLink, style.navigationsForMobile)}
