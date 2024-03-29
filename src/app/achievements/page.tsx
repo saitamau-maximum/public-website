@@ -1,8 +1,10 @@
 import path from 'path';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { FaArrowRight } from 'react-icons/fa';
 import { Doc, getMarkdowns } from '../../utils/markdown';
 import style from './list-styles.module.css';
+
 
 export const metadata: Metadata = {
   title: 'Achievements',
@@ -23,19 +25,24 @@ export default async function Achievements() {
   return (
     <div>
       <div>
-        <h1>過去の実績</h1>
-        <h2>参加した大会</h2>
-          {docs.map((doc) => (
-            <div key={doc.slug} className={style.box}>
-              <img src={doc.frontmatter.imageUrl} alt={doc.frontmatter.title}/>
-              <div>
-                <h3>{doc.frontmatter.title}</h3>
-                <p>{doc.frontmatter.subtitle}</p>
-                <p>{doc.frontmatter.description}</p>
-                <Link href={`/achievements/${doc.slug}`}>成績を見る→</Link>
-              </div>
+        <h1 className={style.heroText}>過去の実績</h1>
+      </div>
+      <div className={style.container}>
+        <h2 className={style.title}>参加した大会</h2>
+        {docs.map((doc) => (
+          <div key={doc.slug} className={style.box}>
+            <img className={style.image} src={doc.frontmatter.imageUrl} alt={doc.frontmatter.title} />
+            <div>
+              <h3 className={style.docTitle}>{doc.frontmatter.title}</h3>
+              <p className={style.docSubtitle}>{doc.frontmatter.subtitle}</p>
+              <p className={style.contents}>{doc.frontmatter.description}</p>
+              <Link className={style.link} href={`/achievements/${doc.slug}`}>
+                成績を見る
+                <FaArrowRight/>
+              </Link>
             </div>
-          ))}
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ subtitle: "国際大学対抗プログラミングコンテスト"
 createdAt: "2024-03-06"
 updatedAt: "2024-03-06"
 description: "ICPC は、同じ大学で 3 人 1 組のチームを作り、チームでプログラミングと問題解決の能力を競う大会です。これまでにも世界大会経験や、国内予選の継続的な突破といった好成績を収める実績を挙げています。"
-imageUrl: ""
+imageUrl: "/images/maximum-card.png"
 ---
  
 ICPC (International Collegiate Programming Contest / 国際大学対抗プログラミングコンテスト) とは、[ICPC Foundation](https://icpc.foundation/)が主催するプログラミングコンテストです。同じ大学で3人1組のチームを作り、チームでプログラミングと問題解決の能力を競う大会です。

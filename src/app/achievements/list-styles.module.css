@@ -1,7 +1,54 @@
+.container{
+    background-color: #f1f1f1;
+}
 .box{
-    margin: 0 auto;
+    width: 1024px;
+    margin: 32px auto;
     padding: 0 auto;
     display: flex;
     align-items: center;
+}
+.heroText{
+    text-align:center;
+    font-weight: bold;
+    font-size: 3.3rem;
+}
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 55px;
+    margin-bottom: 29px;
+}
+.docTitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto;
+}
+.docSubtitle{
+    font-size: 0.75rem;
+    margin: 0 auto;
+}
+.image{
+    width: 240px;
+    height: 144px;
+    border-radius: 5%;
+    margin-top: 16.5px;
+    margin-bottom: 16.5px;
+    margin-left: 0;
+    margin-right: 32px;
 
+}
+.contents{
+    font-size: 1rem;
+    margin: 8px auto;
+}
+.link{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #439154;
+    text-decoration: none;
+}
+.link:hover{
+    text-decoration: underline;
 }
