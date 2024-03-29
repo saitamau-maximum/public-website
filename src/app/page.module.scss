@@ -102,6 +102,12 @@ $background-color: #F1F1F1;
   .navigationForPC {
     display: none;
   }
+
+  .newsItem {
+    margin: 32px;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* 画面幅が768px以上の場合のスタイル */
@@ -182,6 +188,10 @@ $background-color: #F1F1F1;
 
   .navigationForMobile {
     display: none;
+  }
+
+  .newsList {
+    display: flex;
   }
 }
 
@@ -303,4 +313,9 @@ $background-color: #F1F1F1;
 
 .span {
   color: $span-color;
+}
+
+.news {
+  align-items: center;
+  justify-content: center;
 }
