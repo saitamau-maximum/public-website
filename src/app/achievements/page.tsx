@@ -21,11 +21,15 @@ export default async function Achievements() {
 
   return (
     <div>
-      <h1>Achievements</h1>
+      <h1>過去の実績</h1>
+      <h2>参加した大会</h2>
       {docs.map((doc) => (
         <div key={doc.slug}>
+          <img/>
+          <h3>{doc.frontmatter.title}</h3>
+          <p>{doc.frontmatter.description}</p>
           <Link href={`/achievements/${doc.slug}`}>
-            {doc.frontmatter.title}
+             成績を見る→
           </Link>
         </div>
       ))}
