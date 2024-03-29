@@ -27,6 +27,7 @@ export default async function Achievements() {
         <div key={doc.slug}>
           <img />
           <h3>{doc.frontmatter.title}</h3>
+          <p>{doc.frontmatter.tilte}</p>
           <p>{doc.frontmatter.description}</p>
           <Link href={`/achievements/${doc.slug}`}>成績を見る→</Link>
         </div>
