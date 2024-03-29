@@ -1,23 +1,23 @@
+import path from 'path';
 import clsx from 'clsx';
 import Link from 'next/link';
-import path from 'path';
-import { getMarkdowns } from '../utils/markdown';
-import { LinkButton } from '../components/LinkButton';
 import Card from '../components/Card';
+import { LinkButton } from '../components/LinkButton';
+import { getMarkdowns } from '../utils/markdown';
 import style from './page.module.scss';
 
 export default async function Home() {
-    // achievementの中身を取得
-    const docsDir = path.join(process.cwd(), 'docs', 'achievement');
-    const docs = await getMarkdowns(docsDir);
-  
-    // 一覧を日付でソート
-    docs.sort((a, b) =>
-      a.frontmatter.updatedAt < b.frontmatter.updatedAt ? 1 : -1,
-    );
-    
-    // 上位3件に絞る
-    docs.length = 3;
+  // achievementの中身を取得
+  const docsDir = path.join(process.cwd(), 'docs', 'achievement');
+  const docs = await getMarkdowns(docsDir);
+
+  // 一覧を日付でソート
+  docs.sort((a, b) =>
+    a.frontmatter.updatedAt < b.frontmatter.updatedAt ? 1 : -1,
+  );
+
+  // 上位3件に絞る
+  docs.length = 3;
   return (
     <div className={style.container}>
       <main className={style.main}>
@@ -125,32 +125,32 @@ export default async function Home() {
           </div>
           <div className={style.news}>
             <h2 className={style.contentTitle}>新着情報</h2>
-              <div className={style.newsList}>
-                {docs.map((doc) => (
-                  <div key={doc.slug} className={style.newsItem}>
-                    <Card
-                      title={doc.frontmatter.title}
-                      content={doc.frontmatter.description}
-                      date={new Date(doc.frontmatter.updatedAt).toLocaleDateString()}
-                      group={doc.frontmatter.group}
-                      to={`/achievements/${doc.slug}`}
-                      imageSrc={doc.frontmatter.image}
-                      imageAlt={doc.frontmatter.title}
-                      style={{ width : '348px' }}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={style.navigationForPC}>
-                <LinkButton href='#' variant='gray' size='medium'>
-                  Learn More
-                </LinkButton>
-              </div>
-              <div className={style.navigationForMobile}>
-                <LinkButton href='#' variant='gray' size='small'>
-                  Learn More
-                </LinkButton>
-              </div>
+            <div className={style.newsList}>
+              {docs.map((doc) => (
+                <div key={doc.slug} className={style.newsItem}>
+                  <Card
+                    title={doc.frontmatter.title}
+                    content={doc.frontmatter.description}
+                    date={new Date(doc.frontmatter.updatedAt,).toLocaleDateString()}
+                    group={doc.frontmatter.group}
+                    to={`/achievements/${doc.slug}`}
+                    imageSrc={doc.frontmatter.image}
+                    imageAlt={doc.frontmatter.title}
+                    style={{ width: '348px' }}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className={style.navigationForPC}>
+              <LinkButton href='#' variant='gray' size='medium'>
+                Learn More
+              </LinkButton>
+            </div>
+            <div className={style.navigationForMobile}>
+              <LinkButton href='#' variant='gray' size='small'>
+                Learn More
+              </LinkButton>
+            </div>
           </div>
         </div>
       </main>
