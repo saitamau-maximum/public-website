@@ -1,5 +1,6 @@
 ---
 title: "Web Speed Hackathon"
+subtitle: ""
 createdAt: "2024-03-06"
 updatedAt: "2024-03-06"
 description: ""

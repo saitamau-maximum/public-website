@@ -25,12 +25,10 @@ export default async function Achievements() {
       <h2>参加した大会</h2>
       {docs.map((doc) => (
         <div key={doc.slug}>
-          <img/>
+          <img />
           <h3>{doc.frontmatter.title}</h3>
           <p>{doc.frontmatter.description}</p>
-          <Link href={`/achievements/${doc.slug}`}>
-             成績を見る→
-          </Link>
+          <Link href={`/achievements/${doc.slug}`}>成績を見る→</Link>
         </div>
       ))}
     </div>

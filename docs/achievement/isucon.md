@@ -1,5 +1,6 @@
 ---
 title: "ISUCON"
+subtitle: "Iikanji Spped Up Contest"
 createdAt: "2024-03-06"
 updatedAt: "2024-03-06"
 description: ""
