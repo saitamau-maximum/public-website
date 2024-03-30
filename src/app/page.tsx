@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { LinkButton } from '../components/LinkButton';
-import { NewsList } from '@/components/news-list';
 import style from './page.module.scss';
+import { NewsList } from '@/components/news-list';
 
 export default async function Home() {
   return (
