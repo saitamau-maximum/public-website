@@ -1,5 +1,7 @@
 .container{
     background-color: #f1f1f1;
+    padding-top: 88px;
+    padding-bottom: 103px;
 }
 .box{
     width: 1024px;
@@ -22,16 +24,19 @@
 .docTitle{
     font-size: 1.5rem;
     font-weight: bold;
+    color: #161616;
     margin: 0 auto;
 }
 .docSubtitle{
     font-size: 0.75rem;
     margin: 0 auto;
+    color: #232323;
 }
 .image{
     width: 240px;
     height: 144px;
-    border-radius: 5%;
+    border-radius: 8px;
+    border: 1px solid #CCCCCC;
     margin-top: 16.5px;
     margin-bottom: 16.5px;
     margin-left: 0;
@@ -41,6 +46,7 @@
 .contents{
     font-size: 1rem;
     margin: 8px auto;
+    color: #161616;
 }
 .link{
     margin: 0;
