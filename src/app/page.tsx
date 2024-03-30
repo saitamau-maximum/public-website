@@ -18,6 +18,11 @@ export default async function Home() {
 
   // 上位3件に絞る
   docs.length = 3;
+
+  // 例外処理
+  if(docs.length === 0) {
+    return <div>データがありません</div>;
+  }
   return (
     <div className={style.container}>
       <main className={style.main}>
@@ -131,7 +136,9 @@ export default async function Home() {
                   <Card
                     title={doc.frontmatter.title}
                     content={doc.frontmatter.description}
-                    date={new Date(doc.frontmatter.updatedAt,).toLocaleDateString()}
+                    date={new Date(
+                      doc.frontmatter.updatedAt,
+                    ).toLocaleDateString()}
                     group={doc.frontmatter.group}
                     to={`/achievements/${doc.slug}`}
                     imageSrc={doc.frontmatter.image}
