@@ -34,7 +34,14 @@
     background-color: #ffffff;
     margin: auto;
     padding-left: 20px;
+    padding-top:32px;
+    padding-bottom: 32px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image{
+    width: 808px;
+    border: 1px solid #D7D7D7 ;
 }
 
 .title{
