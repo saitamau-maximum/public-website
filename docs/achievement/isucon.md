@@ -4,7 +4,7 @@ subtitle: "Iikanji Spped Up Contest"
 createdAt: "2024-03-06"
 updatedAt: "2024-03-06"
 description: "ISUCON は、与えられた Web サービスをどれだけ高速化できるかを競う、 LINE ヤフー社主催のコンテストです。"
-imageUrl: "/images/maximum-card.png"
+imageUrl: "https://avatars.githubusercontent.com/u/9019510?s=280&v=4"
 ---
 
 [ISUCON](https://isucon.net/)は、与えられた Web サービスをどれだけ高速化できるかを競う、 LINE ヤフー社主催のコンテストです。

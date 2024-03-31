@@ -31,11 +31,11 @@ export default async function Achievements() {
         {docs.map((doc) => (
           <div key={doc.slug} className={style.box}>
             <div className={style.imageBox}>
-            <img
-              className={style.image}
-              src={doc.frontmatter.imageUrl}
-              alt={doc.frontmatter.title}
-            />
+              <img
+                className={style.image}
+                src={doc.frontmatter.imageUrl}
+                alt={doc.frontmatter.title}
+              />
             </div>
             <div>
               <h3 className={style.docTitle}>{doc.frontmatter.title}</h3>

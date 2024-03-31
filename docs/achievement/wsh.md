@@ -4,7 +4,7 @@ subtitle: ""
 createdAt: "2024-03-06"
 updatedAt: "2024-03-06"
 description: "Web Speed Hackathon は株式会社サイバーエージェントが主催している、めちゃくちゃ重たいサイトの Core Web Vitals のスコアを期間内にどれだけ向上させられるかを競うフロントエンドメインの大会です。"
-imageUrl: "/images/maximum-card.png"
+imageUrl: "https://www.cyberagent.co.jp/files/topics/29524_ext_03_0.jpg?width=824&height=464&scale=2"
 ---
 
 Web Speed Hackathon は株式会社サイバーエージェントが主催している、めちゃくちゃ重たいサイトの Core Web Vitals のスコアを期間内にどれだけ向上させられるかを競うフロントエンドメインの大会です。
