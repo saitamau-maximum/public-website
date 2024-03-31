@@ -30,11 +30,13 @@ export default async function Achievements() {
         <h2 className={style.title}>参加した大会</h2>
         {docs.map((doc) => (
           <div key={doc.slug} className={style.box}>
+            <div className={style.imageBox}>
             <img
               className={style.image}
               src={doc.frontmatter.imageUrl}
               alt={doc.frontmatter.title}
             />
+            </div>
             <div>
               <h3 className={style.docTitle}>{doc.frontmatter.title}</h3>
               <p className={style.docSubtitle}>{doc.frontmatter.subtitle}</p>
