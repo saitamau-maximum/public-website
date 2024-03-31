@@ -3,6 +3,7 @@ import path from 'path';
 import { parseMarkdownToHTML } from '@saitamau-maximum/markdown-processor/server';
 import matter from 'gray-matter';
 import { Metadata } from 'next';
+import style from './slug-styles.module.css'
 
 interface Props {
   params: {
@@ -56,9 +57,19 @@ export default async function AchievementsDetail({ params }: Props) {
   const html = await parseMarkdownToHTML(content);
   return (
     <main>
-      <h1>{data.title}</h1>
-      {/* 記事のタイトル等の動的コンテンツにXSSが発生する可能性が、信頼できるリソースからのみ提供されることとして許容する。 */}
-      <article dangerouslySetInnerHTML={{ __html: html.content }} />
+      <div className={style.heroBox}>
+        <h1 className={style.heroText}>過去の実績</h1>
+        <img className={style.heroImage} src='/heros/hero.png' />
+      </div>
+      <div className={style.container}>
+        <div className={style.box}>
+          <img/>
+          <h2 className={style.title}>{data.title}</h2>
+          <hr className={style.line}/>
+          {/* 記事のタイトル等の動的コンテンツにXSSが発生する可能性が、信頼できるリソースからのみ提供されることとして許容する。 */}
+          <article dangerouslySetInnerHTML={{ __html: html.content }} />
+        </div>
+      </div>
     </main>
   );
 }

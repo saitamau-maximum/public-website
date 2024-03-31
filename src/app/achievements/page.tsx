@@ -25,7 +25,7 @@ export default async function Achievements() {
     <div>
       <div className={style.heroBox}>
         <h1 className={style.heroText}>過去の実績</h1>
-        <img className={style.heroImage} src='/heros/hero.png'/>
+        <img className={style.heroImage} src='/heros/hero.png' />
       </div>
       <div className={style.container}>
         <h2 className={style.title}>参加した大会</h2>
@@ -34,7 +34,7 @@ export default async function Achievements() {
             <div className={style.imageBox}>
               <img
                 className={style.image}
-                src={doc.frontmatter.imageUrl}
+                src={doc.frontmatter.iconUrl}
                 alt={doc.frontmatter.title}
               />
             </div>
