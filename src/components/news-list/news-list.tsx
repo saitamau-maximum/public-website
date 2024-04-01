@@ -16,12 +16,11 @@ export async function NewsList() {
   // 記事が存在するなら上位3件に絞り、存在しないなら記事がない旨を表示
   docs.length ? docs.slice(0, 3) : docs;
   if (docs.length === 0) {
-    console.log('記事がありません');
-    return <p>記事がありません</p>;
+    return <p className={style.newsEmpty}>新着情報はありません</p>;
   }
 
   return (
-    <div>
+    <div className={style.newsList}>
       {docs.map((doc) => (
         <div key={doc.slug} className={style.newsItem}>
           <Card

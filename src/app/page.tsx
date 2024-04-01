@@ -112,7 +112,7 @@ export default async function Home() {
           </div>
           <div className={style.news}>
             <h2 className={style.contentTitle}>新着情報</h2>
-            <div className={style.newsList}>
+            <div>
               <NewsList />
             </div>
             <div className={style.navigationForPC}>
