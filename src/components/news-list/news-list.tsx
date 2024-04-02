@@ -5,7 +5,7 @@ import { getMarkdowns } from '@/utils/markdown';
 
 export async function NewsList() {
   // newsの中身を取得
-  const docsDir = path.join(process.cwd(), 'docs', 'test');
+  const docsDir = path.join(process.cwd(), 'docs', 'achievement');
   const docs = await getMarkdowns(docsDir);
 
   // 一覧を日付でソート
@@ -14,7 +14,7 @@ export async function NewsList() {
   );
 
   // 記事が存在するなら上位3件に絞り、存在しないなら記事がない旨を表示
-  docs.length ? docs.slice(0, 3) : docs;
+  docs.splice(3);
   if (docs.length === 0) {
     return <p className={style.newsEmpty}>新着情報はありません</p>;
   }
@@ -28,10 +28,9 @@ export async function NewsList() {
             content={doc.frontmatter.description}
             date={new Date(doc.frontmatter.updatedAt).toLocaleDateString()}
             group={doc.frontmatter.group}
-            to={`/achievements/${doc.slug}`}
+            to={`/news/${doc.slug}`}
             imageSrc={doc.frontmatter.image}
             imageAlt={doc.frontmatter.title}
-            style={{ width: '348px' }}
           />
         </div>
       ))}

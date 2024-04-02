@@ -110,11 +110,9 @@ export default async function Home() {
               </div>
             </div>
           </div>
+          <h1 className={style.contentTitle}>新着情報</h1>
           <div className={style.news}>
-            <h2 className={style.contentTitle}>新着情報</h2>
-            <div>
-              <NewsList />
-            </div>
+            <NewsList />
             <div className={style.navigationForPC}>
               <LinkButton href='#' variant='gray' size='medium'>
                 Learn More

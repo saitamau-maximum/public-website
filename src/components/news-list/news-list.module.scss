@@ -1,5 +1,37 @@
+$--card-list-item-in-row: 3;
+$--card-list-gap: 32px;
+
 .newsEmpty {
   margin: 64px;
   font-size: 1.25rem; // 20px
   text-align: center;
+}
+
+.newsList {
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 32px;
+  gap: $--card-list-gap;
+}
+
+.newsItem {
+  width: calc((100% - ($--card-list-item-in-row - 1) * $--card-list-gap) / $--card-list-item-in-row);
+}
+
+@media (min-width: 768px){
+  .newsList {
+    display: flex;
+    max-width: 1080px;
+    flex-grow: 1;
+  }
+}
+
+@media (max-width:768px) {
+  .newsEmpty {
+    font-size: 1rem; // 16px
+  }
+
+  .newsItem {
+    margin: 16px 0px;
+  }
 }
