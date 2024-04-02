@@ -209,7 +209,6 @@ $background-color: #F1F1F1;
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   background-color: $background-color;
 }
 
@@ -316,6 +315,8 @@ $background-color: #F1F1F1;
 }
 
 .news {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
