@@ -70,6 +70,12 @@ $header-left-padding: 139px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.menuButton:hover {
+  background-color: #ffffff22;
 }
 
 .menuButtonLines {
