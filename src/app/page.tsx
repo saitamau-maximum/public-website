@@ -4,7 +4,7 @@ import { LinkButton } from '../components/LinkButton';
 import style from './page.module.scss';
 import { NewsList } from '@/components/news-list';
 
-export default async function Home() {
+export default function Home() {
   return (
     <div className={style.container}>
       <main className={style.main}>
@@ -113,12 +113,12 @@ export default async function Home() {
           <h1 className={style.contentTitle}>新着情報</h1>
           <div className={style.news}>
             <NewsList />
-            <div className={clsx(style.navigationForPC,style.newsButton)}>
+            <div className={clsx(style.navigationForPC, style.newsButton)}>
               <LinkButton href='/news' variant='gray' size='medium'>
                 Learn More
               </LinkButton>
             </div>
-            <div className={clsx(style.navigationForMobile,style.newsButton)}>
+            <div className={clsx(style.navigationForMobile, style.newsButton)}>
               <LinkButton href='/news' variant='gray' size='small'>
                 Learn More
               </LinkButton>

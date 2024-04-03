@@ -13,15 +13,15 @@ $--card-list-gap: 32px;
   gap: $--card-list-gap;
 }
 
-.newsItem {
-  width: calc((100% - ($--card-list-item-in-row - 1) * $--card-list-gap) / $--card-list-item-in-row);
-}
-
 @media (min-width: 768px){
   .newsList {
     display: flex;
     max-width: 1080px;
     flex-grow: 1;
+  }
+
+  .newsItem {
+    width: calc((100% - ($--card-list-item-in-row - 1) * $--card-list-gap) / $--card-list-item-in-row);
   }
 }
 
