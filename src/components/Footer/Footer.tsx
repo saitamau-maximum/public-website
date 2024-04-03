@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import { MdArrowOutward } from 'react-icons/md';
 import { SiX, SiGithub } from 'react-icons/si';
@@ -18,9 +19,16 @@ export function Footer() {
             />
           </Link>
         </div>
-        <LinkButton href='/join' variant='green'>
-          入会案内はこちら
-        </LinkButton>
+        <div className={style.navigationsForPC}>
+          <LinkButton href='/join' variant='green' size='medium'>
+            入会案内はこちら
+          </LinkButton>
+        </div>
+        <div className={style.navigationsForMobile}>
+          <LinkButton href='/join' variant='green' size='small'>
+            入会案内はこちら
+          </LinkButton>
+        </div>
       </div>
 
       <nav className={style.navigations}>
@@ -55,7 +63,25 @@ export function Footer() {
           href='https://x.com/Maximum03400346'
           target='_blank'
           rel='noopener noreferrer'
-          className={style.navigationLink}
+          className={clsx(style.navigationLink, style.navigationsForMobile)}
+        >
+          X
+          <MdArrowOutward />
+        </Link>
+        <Link
+          href='https://github.com/saitamau-maximum'
+          target='_blank'
+          rel='noopener noreferrer'
+          className={clsx(style.navigationLink, style.navigationsForMobile)}
+        >
+          GitHub
+          <MdArrowOutward />
+        </Link>
+        <Link
+          href='https://x.com/Maximum03400346'
+          target='_blank'
+          rel='noopener noreferrer'
+          className={clsx(style.navigationLink, style.navigationsForPC)}
         >
           <SiX size={24} />
         </Link>
@@ -63,7 +89,7 @@ export function Footer() {
           href='https://github.com/saitamau-maximum'
           target='_blank'
           rel='noopener noreferrer'
-          className={style.navigationLink}
+          className={clsx(style.navigationLink, style.navigationsForPC)}
         >
           <SiGithub size={24} />
         </Link>

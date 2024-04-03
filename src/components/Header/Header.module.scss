@@ -8,29 +8,41 @@ $header-left-padding: 139px;
   top: 0;
   height: 100%;
   width: $header-left-padding;
-  background: linear-gradient(0.25turn, #B2FFBFFF, #B2FFBF00);
+  background: linear-gradient(0.25turn, #b2ffbfff, #b2ffbf00);
 }
-  
+
 .header {
   position: fixed;
   z-index: 100;
   box-sizing: border-box;
-  top : 0;
+  top: 0;
   width: 100%;
   height: 72px;
   background-color: #070707;
-    
+
   /*  上下中央揃え  */
   display: flex;
   align-items: center;
   justify-content: space-between;
-    
+
   padding-left: $header-left-padding;
   padding-right: 32px;
   color: #ffffff;
 }
-  
+
 .navigations {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navigationLinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navigationIcons {
   display: flex;
   align-items: center;
   gap: 32px;
@@ -45,7 +57,57 @@ $header-left-padding: 139px;
 }
 
 .navigationLink:hover {
-  color: #7FCC8F;
+  color: #7fcc8f;
+}
+
+.menuButton {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.menuButton:hover {
+  background-color: #ffffff22;
+}
+
+.menuButtonLines {
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  inset: 0;
+  margin: auto;
+  transition: transform 0.3s;
+}
+
+.menuButtonLines:nth-child(1) {
+  transform: translateY(-6px);
+}
+
+.menuButtonLines:nth-child(3) {
+  transform: translateY(6px);
+}
+
+.headerMenuOpen .menuButtonLines:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.headerMenuOpen .menuButtonLines:nth-child(2) {
+  display: none;
+}
+
+.headerMenuOpen .menuButtonLines:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
 }
 
 @media (max-width: 1200px) {
@@ -54,11 +116,47 @@ $header-left-padding: 139px;
   }
 
   .header {
-    height: 64px;
-    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 72px;
+    transition: height 0.3s;
+  }
+
+  .headerMenuOpen.header {
+    height: 100dvh;
+  }
+
+  .logo {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+
+  .menuButton {
+    display: block;
   }
 
   .navigations {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .navigationLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .headerMenuOpen .navigations {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
