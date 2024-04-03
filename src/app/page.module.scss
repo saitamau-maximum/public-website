@@ -108,6 +108,10 @@ $background-color: #F1F1F1;
     align-items: center;
     justify-content: center;
   }
+
+  .news {
+    margin: 24px;
+  }
 }
 
 /* 画面幅が768px以上の場合のスタイル */
@@ -192,6 +196,10 @@ $background-color: #F1F1F1;
 
   .newsList {
     display: flex;
+  }
+
+  .news {
+    margin: 46px;
   }
 }
 
@@ -319,4 +327,8 @@ $background-color: #F1F1F1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.newsButton {
+  margin: 32px;
 }
