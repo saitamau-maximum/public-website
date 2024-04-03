@@ -14,23 +14,23 @@ export async function NewsList() {
   );
 
   // 記事が存在するなら上位3件に絞り、存在しないなら記事がない旨を表示
-  docs.splice(3);
   if (docs.length === 0) {
     return <p className={style.newsEmpty}>新着情報はありません</p>;
   }
+  const topDocs = docs.slice(0, 3);
 
   return (
     <div className={style.newsList}>
-      {docs.map((doc) => (
-        <div key={doc.slug} className={style.newsItem}>
+      {docs.map((topDocs) => (
+        <div key={topDocs.slug} className={style.newsItem}>
           <Card
-            title={doc.frontmatter.title}
-            content={doc.frontmatter.description}
-            date={new Date(doc.frontmatter.updatedAt).toLocaleDateString()}
-            group={doc.frontmatter.group}
-            to={`/news/${doc.slug}`}
-            imageSrc={doc.frontmatter.image}
-            imageAlt={doc.frontmatter.title}
+            title={topDocs.frontmatter.title}
+            content={topDocs.frontmatter.description}
+            date={new Date(topDocs.frontmatter.updatedAt).toLocaleDateString()}
+            group={topDocs.frontmatter.group}
+            to={`/news/${topDocs.slug}`}
+            imageSrc={topDocs.frontmatter.image}
+            imageAlt={topDocs.frontmatter.title}
           />
         </div>
       ))}
