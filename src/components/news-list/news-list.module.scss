@@ -10,7 +10,7 @@ $card-list-gap: 32px;
 .newsList {
   width: 100%;
   flex-wrap: wrap;
-  gap: $--card-list-gap;
+  gap: $card-list-gap;
 }
 
 @media (min-width: 768px){
@@ -21,7 +21,7 @@ $card-list-gap: 32px;
   }
 
   .newsItem {
-    width: calc((100% - ($--card-list-item-in-row - 1) * $--card-list-gap) / $--card-list-item-in-row);
+    width: calc((100% - ($card-list-item-in-row - 1) * $card-list-gap) / $card-list-item-in-row);
   }
 }
 
