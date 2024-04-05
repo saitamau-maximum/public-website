@@ -1,7 +1,7 @@
+@use 'src/app/_variables';
 $hovering-color: #7FCC8F;
-$tablet-width: 768px;
 
-@media (min-width: $tablet-width) {
+@media (min-width: variables.$tablet-width) {
   .footer {
     display: flex;
     height: 400px;
@@ -22,7 +22,7 @@ $tablet-width: 768px;
   }
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: variables.$tablet-width) {
   .footer {
     padding: 64px 12%;
   }

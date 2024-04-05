@@ -1,3 +1,4 @@
+@use 'src/app/_variables';
 $card-list-item-in-row: 3;
 $card-list-gap: 32px;
 
@@ -13,10 +14,10 @@ $card-list-gap: 32px;
   gap: $card-list-gap;
 }
 
-@media (min-width: 768px){
+@media (min-width: variables.$tablet-width){
   .newsList {
     display: flex;
-    max-width: 1080px;
+    max-width: variables.$pages-max-width;
     flex-grow: 1;
   }
 
@@ -25,7 +26,7 @@ $card-list-gap: 32px;
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: variables.$tablet-width) {
   .newsEmpty {
     font-size: 1rem; // 16px
   }
