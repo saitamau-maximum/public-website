@@ -1,9 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, GoogleFont } from 'next/font/google';
 import './global.css';
 import { Header } from '../components/Header/Header';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const notoSansJP = GoogleFont({
+  name: 'Noto Sans JP',
+  subsets: ['japanese'],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja'>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${notoSansJP.className}`}>
         <Header />
         {children}
       </body>
