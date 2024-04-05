@@ -8,17 +8,20 @@ export async function NewsList() {
   const docsDir = path.join(process.cwd(), 'docs', 'news');
   const docs = await getMarkdowns(docsDir);
 
-  // frontmatterに未記入の項目がある場合はエラーを表示
-  if (
-    docs.some(
-      (doc) =>
-        !doc.frontmatter.description ||
-        !doc.frontmatter.group ||
-        !doc.frontmatter.updatedAt ||
-        !doc.frontmatter.title,
-    )
-  ) {
-    throw new Error('frontmatterに未記入の項目があります');
+  // frontmatterの未記入の項目をファイルごとに取得
+  const frontmatterKeys = ['description', 'group', 'updatedAt', 'title'];
+  const errorDocs = docs.filter(
+    (doc) => !frontmatterKeys.every((key) => doc.frontmatter[key as keyof typeof doc.frontmatter]),
+  );
+  
+  // 未記入の項目がある場合はエラーを投げる
+  if (errorDocs.length > 0) {
+    const undefinedKeys = errorDocs.map((doc) =>
+      frontmatterKeys.filter((key) => !doc.frontmatter[key as keyof typeof doc.frontmatter]),
+    );
+    throw new Error(
+      `frontmatterに未記入の項目があります: ${errorDocs.map((doc, i) => `${doc.slug}(${undefinedKeys[i].join(', ')})`)}`,
+    );
   }
 
   // 一覧を日付でソート
