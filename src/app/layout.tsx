@@ -1,14 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter, GoogleFont } from 'next/font/google';
+import { Inter, Noto_Sans_JP } from 'next/font/google';
 import './global.css';
 import { Header } from '../components/Header/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const notoSansJP = GoogleFont({
-  name: 'Noto Sans JP',
-  subsets: ['japanese'],
-});
+const notoSansJP = Noto_Sans_JP({  subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
