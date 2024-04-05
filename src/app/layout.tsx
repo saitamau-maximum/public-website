@@ -4,8 +4,7 @@ import './global.css';
 import { Header } from '../components/Header/Header';
 
 const inter = Inter({ subsets: ['latin'] });
-
-const notoSansJP = Noto_Sans_JP({  subsets: ['latin'] });
+const notoSansJP = Noto_Sans_JP({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
