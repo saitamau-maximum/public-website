@@ -1,6 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
-import Card from './Card';
+import Card from './NewsCard';
 
 export default {
   title: 'Components/Card',

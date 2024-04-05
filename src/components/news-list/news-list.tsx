@@ -1,5 +1,5 @@
 import path from 'path';
-import Card from '../Card';
+import Card from '../NewsCard';
 import style from './news-list.module.scss';
 import { getMarkdowns } from '@/utils/markdown';
 

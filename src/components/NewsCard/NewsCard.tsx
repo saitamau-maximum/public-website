@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import style from './Card.module.css';
+import style from './NewsCard.module.css';
 
 interface CardProps {
   style?: React.CSSProperties;
