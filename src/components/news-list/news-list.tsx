@@ -5,8 +5,13 @@ import { getMarkdowns } from '@/utils/markdown';
 
 export async function NewsList() {
   // newsの中身を取得
-  const docsDir = path.join(process.cwd(), 'docs', 'news');
+  const docsDir = path.join(process.cwd(), 'docs', 'achievement');
   const docs = await getMarkdowns(docsDir);
+
+  // frontmatterに未記入の項目がある場合はエラーを表示
+  if (docs.some((doc) => !doc.frontmatter.description || !doc.frontmatter.group || !doc.frontmatter.updatedAt || !doc.frontmatter.title)) {
+    throw new Error('frontmatterに未記入の項目があります');
+  }
 
   // 一覧を日付でソート
   docs.sort((a, b) =>
@@ -17,6 +22,8 @@ export async function NewsList() {
   if (docs.length === 0) {
     return <p className={style.newsEmpty}>新着情報はありません</p>;
   }
+
+  // 上位3件を取得
   const topDocs = docs.slice(0, 3);
 
   return (
