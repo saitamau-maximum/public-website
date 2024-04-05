@@ -23,8 +23,8 @@ const Card: React.FC<CardProps> = ({
   imageAlt,
 }) => {
   // 画像が未設定の場合はデフォルト画像を表示
-  if(!imageSrc) imageSrc = '/images/maximum-card.png';
-  
+  if (!imageSrc) imageSrc = '/images/maximum-card.png';
+
   return (
     <Link href={to} className={style.card} style={customStyle}>
       <div className={style.img}>

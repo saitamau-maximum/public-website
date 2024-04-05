@@ -9,7 +9,15 @@ export async function NewsList() {
   const docs = await getMarkdowns(docsDir);
 
   // frontmatterに未記入の項目がある場合はエラーを表示
-  if (docs.some((doc) => !doc.frontmatter.description || !doc.frontmatter.group || !doc.frontmatter.updatedAt || !doc.frontmatter.title)) {
+  if (
+    docs.some(
+      (doc) =>
+        !doc.frontmatter.description ||
+        !doc.frontmatter.group ||
+        !doc.frontmatter.updatedAt ||
+        !doc.frontmatter.title,
+    )
+  ) {
     throw new Error('frontmatterに未記入の項目があります');
   }
 
