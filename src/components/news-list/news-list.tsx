@@ -21,7 +21,7 @@ export async function NewsList() {
 
   return (
     <div className={style.newsList}>
-      {docs.map((topDocs) => (
+      {topDocs.map((topDocs) => (
         <div key={topDocs.slug} className={style.newsItem}>
           <Card
             title={topDocs.frontmatter.title}
