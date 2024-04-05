@@ -11,13 +11,18 @@ export async function NewsList() {
   // frontmatterの未記入の項目をファイルごとに取得
   const frontmatterKeys = ['description', 'group', 'updatedAt', 'title'];
   const errorDocs = docs.filter(
-    (doc) => !frontmatterKeys.every((key) => doc.frontmatter[key as keyof typeof doc.frontmatter]),
+    (doc) =>
+      !frontmatterKeys.every(
+        (key) => doc.frontmatter[key as keyof typeof doc.frontmatter],
+      ),
   );
-  
+
   // 未記入の項目がある場合はエラーを投げる
   if (errorDocs.length > 0) {
     const undefinedKeys = errorDocs.map((doc) =>
-      frontmatterKeys.filter((key) => !doc.frontmatter[key as keyof typeof doc.frontmatter]),
+      frontmatterKeys.filter(
+        (key) => !doc.frontmatter[key as keyof typeof doc.frontmatter],
+      ),
     );
     throw new Error(
       `frontmatterに未記入の項目があります: ${errorDocs.map((doc, i) => `${doc.slug}(${undefinedKeys[i].join(', ')})`)}`,
