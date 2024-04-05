@@ -1,8 +1,8 @@
+@use 'src/app/variables';
 $hovering-color: #7FCC8F;
 $span-color: #47B660;
 $heroImage-change-width: 1280px;
 $header-change-width: 1200px;
-$tablet-width: 768px;
 $background-color: #F1F1F1;
 
 /* heroImageとヘッダーのpadding調整 */
@@ -31,7 +31,7 @@ $background-color: #F1F1F1;
 }
 
 /* 画面幅が768px以下の場合のスタイル */
-@media (max-width: $tablet-width) {
+@media (max-width: variables.$tablet-width) {
   .breadcrumb {
     height: 28px;
   }
@@ -102,10 +102,20 @@ $background-color: #F1F1F1;
   .navigationForPC {
     display: none;
   }
+
+  .newsItem {
+    margin: 32px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .news {
+    margin: 24px;
+  }
 }
 
 /* 画面幅が768px以上の場合のスタイル */
-@media (min-width:768px) {
+@media (min-width: variables.$tablet-width) {
   .breadcrumb {
     height: 64px;
   }
@@ -115,7 +125,7 @@ $background-color: #F1F1F1;
   }
 
   .contents {
-    max-width: 1080px;
+    max-width: variables.$pages-max-width;
   }
 
   .contentTitle {
@@ -183,6 +193,14 @@ $background-color: #F1F1F1;
   .navigationForMobile {
     display: none;
   }
+
+  .newsList {
+    display: flex;
+  }
+
+  .news {
+    margin: 46px;
+  }
 }
 
 /* 共通 */
@@ -199,7 +217,6 @@ $background-color: #F1F1F1;
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   background-color: $background-color;
 }
 
@@ -303,4 +320,15 @@ $background-color: #F1F1F1;
 
 .span {
   color: $span-color;
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsButton {
+  margin: 32px;
 }

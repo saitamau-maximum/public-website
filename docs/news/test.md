@@ -2,7 +2,8 @@
 title: "テスト"
 createdAt: "2024-03-10"
 updatedAt: "2024-03-10"
-description: ""
+description: "説明欄"
+group: "Maximum"
 ---
 
 デプロイの関係上、仮のファイルを作らないと通らないため作りました。

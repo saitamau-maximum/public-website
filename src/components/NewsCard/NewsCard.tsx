@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import style from './Card.module.css';
+import style from './NewsCard.module.css';
 
 interface CardProps {
   style?: React.CSSProperties;
@@ -22,6 +22,9 @@ const Card: React.FC<CardProps> = ({
   imageSrc,
   imageAlt,
 }) => {
+  // 画像が未設定の場合はデフォルト画像を表示
+  if (!imageSrc) imageSrc = '/images/maximum-card.png';
+
   return (
     <Link href={to} className={style.card} style={customStyle}>
       <div className={style.img}>
