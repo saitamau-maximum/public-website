@@ -1,7 +1,32 @@
-export function LinkCard () {
+import Link from 'next/link';
+import { MdArrowForward } from 'react-icons/md';
+import style from './LinkCard.module.scss';
+
+interface CardProps {
+  title: string;
+  content: string;
+  date: string;
+  group: string;
+  to: string;
+}
+export const LinkCard: React.FC<CardProps> = ({
+  title,
+  content,
+  date,
+  group,
+  to,
+}) => {
   return (
-    <div>
-    <p>LinkCard</p>
+    <div className={style.container}>
+      <Link href={to} className={style.card}>
+        <div className={style.head}>
+          <h2 className={style.title}>{title}</h2>
+          <p className={style.group}>{group}</p>
+        </div>
+        <p className={style.text}>{content}</p>
+        <p className={style.learn}>記事を読む&nbsp;<MdArrowForward /></p>
+      </Link>
+      <p className={style.date}>{date}</p>
     </div>
   );
-}
+};
