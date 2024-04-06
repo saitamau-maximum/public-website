@@ -16,7 +16,9 @@ interface Props {
 export async function getStaticPaths() {
   const docsDirectory = path.join(process.cwd(), `docs`, `news`);
   const docs = await fs.readdir(docsDirectory);
-  const paths = docs.map((doc) => ({ params: { slug: doc.replace(/\.md$/, '') } }));
+  const paths = docs.map((doc) => ({
+    params: { slug: doc.replace(/\.md$/, '') },
+  }));
   return { paths, fallback: false };
 }
 
