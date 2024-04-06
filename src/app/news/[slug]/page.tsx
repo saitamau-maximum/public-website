@@ -13,7 +13,7 @@ interface Props {
 }
 
 // newsの中身が無かった場合の処理
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const docsDirectory = path.join(process.cwd(), `docs`, `news`);
   const docs = await fs.readdir(docsDirectory);
   const paths = docs.map((doc) => ({
