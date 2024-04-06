@@ -1,10 +1,9 @@
 import path from 'path';
-import clsx from 'clsx';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { LinkCard } from '../../components/LinkCard';
 import { getMarkdowns } from '../../utils/markdown';
 import style from './page.module.scss';
+import { NewsPageList } from '@/components/news-page-list';
 
 export const metadata: Metadata = {
   title: 'News',
@@ -39,18 +38,7 @@ export default async function News() {
         </div>
         <div className={style.contents}>
           <h1 className={style.contentTitle}>新着情報</h1>
-          <div className={style.cardContainer}>
-            {docs.map((doc) => (
-              <LinkCard
-                key={doc.slug}
-                title={doc.frontmatter.title}
-                content='AtCoder社の協力により◯年ぶりにMaximum主催の競技プログラミングコンテストを主催しました'
-                date={doc.frontmatter.updatedAt.replace(/-/g, '/').slice(0, 7)}
-                group={doc.frontmatter.group}
-                to={`/news/${doc.slug}`}
-              />
-            ))}
-          </div>
+          <NewsPageList />
         </div>
       </main>
     </div>

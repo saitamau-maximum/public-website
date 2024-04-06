@@ -1,8 +1,8 @@
 import path from 'path';
+import Link from 'next/link';
 import { LinkCard } from '../LinkCard';
 import style from './news-page-list.module.scss';
 import { getMarkdowns } from '@/utils/markdown';
-import Link from 'next/link';
 
 export async function NewsPageList() {
   // newsの中身を取得
@@ -17,7 +17,7 @@ export async function NewsPageList() {
       </div>
     );
   }
-  
+
   return (
     <div className={style.cardContainer}>
       {docs.map((doc) => (
