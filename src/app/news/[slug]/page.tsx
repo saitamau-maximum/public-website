@@ -12,14 +12,10 @@ interface Props {
   searchParams: {};
 }
 
-// newsの中身が無かった場合の処理
 export async function generateStaticParams() {
   const docsDirectory = path.join(process.cwd(), `docs`, `news`);
   const docs = await fs.readdir(docsDirectory);
-  const paths = docs.map((doc) => ({
-    params: { slug: doc.replace(/\.md$/, '') },
-  }));
-  return { paths, fallback: false };
+  return docs.map((doc) => ({ slug: doc.replace(/\.md$/, '') }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
