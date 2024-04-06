@@ -1,0 +1,25 @@
+@use 'src/app/variables';
+
+.cardContainer {
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  margin: 24px 0px;
+}
+
+.isEmpty {
+  text-align: center;
+  margin: 128px;
+}
+
+@media (max-width: variables.$tablet-width) {
+  .isEmpty {
+    font-size: 1rem; // 16px
+  }
+}
+
+@media (min-width: variables.$tablet-width) {
+  .isEmpty {
+    font-size: 1.5rem; // 24px
+  }
+}
