@@ -20,8 +20,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   title: 'Maximum Cup 2023',
-  content:
-    'AtCoder社の協力により◯年ぶりにMaximum主催の競技プログラミングコンテストを主催しましたAtCoder社の協力により◯年ぶりにMaximum主催の競技プログラミングコンテストを主催しました',
+  content: 'description',
   date: '2024/08',
   group: 'Web研',
   to: '/',

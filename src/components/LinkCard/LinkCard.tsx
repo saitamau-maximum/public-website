@@ -18,15 +18,19 @@ export const LinkCard: React.FC<CardProps> = ({
 }) => {
   return (
     <div className={style.container}>
+      <p className={style.dateForPC}>{date}</p>
       <Link href={to} className={style.card}>
         <div className={style.head}>
           <h2 className={style.title}>{title}</h2>
           <p className={style.group}>{group}</p>
         </div>
+        <p className={style.dateForMobile}>{date}</p>
         <p className={style.text}>{content}</p>
-        <p className={style.learn}>記事を読む&nbsp;<MdArrowForward /></p>
+        <p className={style.learn}>
+          記事を読む&nbsp;
+          <MdArrowForward />
+        </p>
       </Link>
-      <p className={style.date}>{date}</p>
     </div>
   );
 };

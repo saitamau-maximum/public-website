@@ -4,6 +4,20 @@
   .container {
     margin: 16px;
   }
+
+  .dateForMobile {
+    font-size: 0.75rem; // 12px
+    margin: 0px;
+    color: black;
+  }
+
+  .dateForPC {
+    display: none;
+  }
+
+  .title {
+    font-size: 1.25rem; // 20px
+  }
 }
 
 @media (min-width: variables.$tablet-width) {
@@ -11,6 +25,22 @@
     max-width: 829px;
     margin: 24px;
   }
+
+  .dateForMobile {
+    display: none;
+  }
+
+  .dateForPC {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem; // 16px
+    margin: 4px 0px 0px;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 16px;
 }
 
 .card {
@@ -49,14 +79,5 @@
   margin: 0px;
   padding: 4px 8px;
   background-color: #47B660;
-}
-
-.date {
-  color: black;
-  text-decoration: none;
-  position: relative;
-  right: 88px;
-  top: -106px;
-  font-size: 1rem; // 16px
-  margin: 0;
+  white-space: nowrap;
 }

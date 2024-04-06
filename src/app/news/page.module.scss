@@ -55,42 +55,69 @@ $background-color: #F1F1F1;
   .breadcrumbLink {
     font-size: 1.5rem; // 24px
   }
+
+  .contents {
+    max-width: variables.$pages-max-width;
+  }
+
+  .contentTitle {
+    margin: 32px;
+    font-size: 2.5rem; // 40px
+  }
 }
 
 /* 共通 */
 .heroImage {
-    width: 100%;
-    object-fit: cover;
-  }
+  width: 100%;
+  object-fit: cover;
+}
   
-  .main {
-    flex-direction: column;
-    background-color: $background-color;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    background-color: $background-color;
-  }
-  
-  .hero {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    background-color: $background-color;
-  }
-  
-  .breadcrumb {
-    width: 100%;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .breadcrumbLink {
-    color: white;
-    text-decoration: none;
-  }
+.main {
+  flex-direction: column;
+  background-color: $background-color;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+}
+
+.hero {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+}
+
+.breadcrumb {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breadcrumbLink {
+  color: white;
+  text-decoration: none;
+}
+
+.contents {
+  width: 100%;
+  margin: auto;
+}
+
+.contentTitle {
+  font-weight: normal;
+  border-bottom: 1px solid black;
+  width: 4em;
+}
+
+.cardContainer {
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  margin: 24px 0px;
+}
