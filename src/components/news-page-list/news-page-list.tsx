@@ -25,7 +25,10 @@ export async function NewsPageList() {
           key={doc.slug}
           title={doc.frontmatter.title}
           content={doc.frontmatter.description}
-          date={new Date(doc.frontmatter.updatedAt).toLocaleDateString("ja-JP", {year: "numeric",month: "2-digit"})}
+          date={new Date(doc.frontmatter.updatedAt).toLocaleDateString(
+            'ja-JP',
+            { year: 'numeric', month: '2-digit' },
+          )}
           group={doc.frontmatter.group}
           to={`/news/${doc.slug}`}
         />
