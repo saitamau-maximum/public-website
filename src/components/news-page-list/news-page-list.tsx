@@ -24,8 +24,8 @@ export async function NewsPageList() {
         <LinkCard
           key={doc.slug}
           title={doc.frontmatter.title}
-          content='AtCoder社の協力により◯年ぶりにMaximum主催の競技プログラミングコンテストを主催しました'
-          date={doc.frontmatter.updatedAt.replace(/-/g, '/').slice(0, 7)}
+          content={doc.frontmatter.description}
+          date={new Date(doc.frontmatter.updatedAt).toLocaleDateString("ja-JP", {year: "numeric",month: "2-digit"})}
           group={doc.frontmatter.group}
           to={`/news/${doc.slug}`}
         />
