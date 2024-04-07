@@ -1,10 +1,5 @@
 @use 'src/app/variables';
 
-.cardContainer {
-  margin: 0px 56px;
-  padding: 32px 0px;
-}
-
 .isEmpty {
   text-align: center;
   margin: 128px;
@@ -14,10 +9,20 @@
   .isEmpty {
     font-size: 1rem; // 16px
   }
+
+  .cardContainer {
+    margin: 0px 16px;
+    padding: 32px 0px;
+  }
 }
 
 @media (min-width: variables.$tablet-width) {
   .isEmpty {
     font-size: 1.5rem; // 24px
+  }
+
+  .cardContainer {
+    margin: 0px 56px;
+    padding: 32px 0px;
   }
 }
