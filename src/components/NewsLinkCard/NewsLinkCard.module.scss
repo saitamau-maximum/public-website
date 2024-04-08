@@ -5,18 +5,29 @@
     margin: 16px;
   }
 
-  .dateForMobile {
-    font-size: 0.75rem; // 12px
-    margin: 0px;
-    color: black;
+  .headForMobile {
+    display: flex;
+    gap: 16px;
+    .date {
+      font-size: 1rem; // 16px
+      margin: 0px;
+      color: black;
+    }
   }
-
+  
   .dateForPC {
     display: none;
   }
 
   .title {
     font-size: 1.25rem; // 20px
+  }
+
+  .head {
+    margin: 8px 0px;
+    .group {
+      display: none;
+    }
   }
 }
 
@@ -34,6 +45,10 @@
     text-decoration: none;
     font-size: 1rem; // 16px
     margin: 4px 0px 0px;
+  }
+
+  .headForMobile {
+    display: none;
   }
 }
 
@@ -59,7 +74,7 @@
 }
 
 .learn {
-  color: #47B660;
+  color: #439154;
   margin: 0px;
   font-weight: bold;
 }
@@ -77,6 +92,6 @@
   text-align: center;
   margin: 0px;
   padding: 4px 8px;
-  background-color: #47B660;
+  background-color: #439154;
   white-space: nowrap;
 }

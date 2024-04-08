@@ -15,7 +15,9 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<typeof NewsLinkCard> = (args) => <NewsLinkCard {...args} />;
+const Template: StoryFn<typeof NewsLinkCard> = (args) => (
+  <NewsLinkCard {...args} />
+);
 export const Default = Template.bind({});
 
 Default.args = {
