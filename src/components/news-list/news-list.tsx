@@ -45,17 +45,16 @@ export async function NewsList() {
   return (
     <div className={style.newsList}>
       {topDocs.map((topDocs) => (
-        <div key={topDocs.slug} className={style.newsItem}>
-          <Card
-            title={topDocs.frontmatter.title}
-            content={topDocs.frontmatter.description}
-            date={new Date(topDocs.frontmatter.updatedAt).toLocaleDateString()}
-            group={topDocs.frontmatter.group}
-            to={`/news/${topDocs.slug}`}
-            imageSrc={topDocs.frontmatter.image}
-            imageAlt={topDocs.frontmatter.title}
-          />
-        </div>
+        <Card
+          key={topDocs.slug}
+          title={topDocs.frontmatter.title}
+          content={topDocs.frontmatter.description}
+          date={new Date(topDocs.frontmatter.updatedAt).toLocaleDateString()}
+          group={topDocs.frontmatter.group}
+          to={`/news/${topDocs.slug}`}
+          imageSrc={topDocs.frontmatter.image}
+          imageAlt={topDocs.frontmatter.title}
+        />
       ))}
     </div>
   );

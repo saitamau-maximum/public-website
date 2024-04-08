@@ -16,13 +16,11 @@ $card-list-gap: 32px;
 
 @media (min-width: variables.$tablet-width){
   .newsList {
-    display: flex;
+    display: grid;
     max-width: variables.$pages-max-width;
     flex-grow: 1;
-  }
-
-  .newsItem {
-    width: calc((100% - ($card-list-item-in-row - 1) * $card-list-gap) / $card-list-item-in-row);
+    grid-template-columns: repeat($card-list-item-in-row, 1fr);
+    align-items: stretch;
   }
 }
 
