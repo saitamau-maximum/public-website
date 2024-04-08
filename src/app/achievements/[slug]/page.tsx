@@ -63,7 +63,7 @@ export default async function AchievementsDetail({ params }: Props) {
       </div>
       <div className={style.container}>
         <div className={style.box}>
-          <img className={style.image} src={data.imageUrl}/>
+          <img className={style.image} src={data.imageUrl} />
           <h2 className={style.title}>{data.title}</h2>
           <hr className={style.line} />
           {/* 記事のタイトル等の動的コンテンツにXSSが発生する可能性が、信頼できるリソースからのみ提供されることとして許容する。 */}
