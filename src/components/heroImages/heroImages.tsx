@@ -12,16 +12,19 @@ export const HeroImages: React.FC<Props> = ({
   title,
   blur = false,
   type = 'default',
-  }) => {
+}) => {
   return (
-    <div className={style.heroImages}>
-      <img src={type === 'default' ? '/images/hero2.png' : '/images/hero.png'}
-        alt='hero' className={clsx(style.heroImage, {
-        [style.blur]: blur,
-        [style.default]: type === 'default',
-        [style.thumbnail]: type === 'thumbnail',
-      })} />
+    <div className={style.heroImagesContainer}>
+      <img
+        src={type === 'default' ? '/images/hero2.png' : '/images/hero.png'}
+        alt='hero'
+        className={clsx(style.heroImage, {
+          [style.blur]: blur,
+          [style.default]: type === 'default',
+          [style.thumbnail]: type === 'thumbnail',
+        })}
+      />
       <div className={style.heroTitle}>{title}</div>
     </div>
   );
-}
+};
