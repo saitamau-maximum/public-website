@@ -1,10 +1,10 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
-import { LinkCard } from './LinkCard';
+import { NewsLinkCard } from './NewsLinkCard';
 
 export default {
   title: 'Components/LinkCard',
-  component: LinkCard,
+  component: NewsLinkCard,
   argTypes: {
     style: { control: 'object' },
     title: { control: 'text' },
@@ -15,7 +15,7 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<typeof LinkCard> = (args) => <LinkCard {...args} />;
+const Template: StoryFn<typeof NewsLinkCard> = (args) => <NewsLinkCard {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {

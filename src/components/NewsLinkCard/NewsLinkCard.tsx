@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { MdArrowForward } from 'react-icons/md';
-import style from './LinkCard.module.scss';
+import style from './NewsLinkCard.module.scss';
 
 interface CardProps {
   title: string;
@@ -9,7 +9,7 @@ interface CardProps {
   group: string;
   to: string;
 }
-export const LinkCard: React.FC<CardProps> = ({
+export const NewsLinkCard: React.FC<CardProps> = ({
   title,
   content,
   date,

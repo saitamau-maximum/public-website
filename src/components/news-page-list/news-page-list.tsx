@@ -1,6 +1,6 @@
 import path from 'path';
 import Link from 'next/link';
-import { LinkCard } from '../LinkCard';
+import { NewsLinkCard } from '../NewsLinkCard';
 import style from './news-page-list.module.scss';
 import { getMarkdowns } from '@/utils/markdown';
 
@@ -21,7 +21,7 @@ export async function NewsPageList() {
   return (
     <div className={style.cardContainer}>
       {docs.map((doc) => (
-        <LinkCard
+        <NewsLinkCard
           key={doc.slug}
           title={doc.frontmatter.title}
           content={doc.frontmatter.description}
