@@ -3,7 +3,7 @@ import React from 'react';
 import style from './heroImages.module.scss';
 
 interface Props {
-  title: string;
+  title?: string;
   blur?: boolean;
   type?: 'default' | 'thumbnail';
 }
