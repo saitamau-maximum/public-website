@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
-import style from './heroImages.module.scss';
+import style from './DynamicHeroImage.module.scss';
 
 interface Props {
   title?: string;
@@ -8,7 +8,7 @@ interface Props {
   type?: 'default' | 'thumbnail';
 }
 
-export const HeroImages: React.FC<Props> = ({
+export const DynamicHeroImage: React.FC<Props> = ({
   title,
   blur = false,
   type = 'default',
