@@ -5,19 +5,6 @@ $heroImage-change-width: 1280px;
 $header-change-width: 1200px;
 $background-color: #F1F1F1;
 
-/* heroImageとヘッダーのpadding調整 */
-@media (min-width: $heroImage-change-width) {
-  .heroImage {
-    height: 60vh;
-  }
-}
-
-@media (max-width: $heroImage-change-width) {
-  .heroImage {
-    height: 100%;
-  } 
-}
-
 @media (max-width: $header-change-width) {
   .main {
     padding-top: 64px;
@@ -204,11 +191,6 @@ $background-color: #F1F1F1;
 }
 
 /* 共通 */
-.heroImage {
-  width: 100%;
-  object-fit: cover;
-}
-
 .main {
   flex-direction: column;
   background-color: $background-color;
