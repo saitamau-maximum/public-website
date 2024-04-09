@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
-import style from './DynamicHeroImage.module.scss';
+import style from './HeroImage.module.scss';
 
 interface Props {
   title?: string;
@@ -8,7 +8,7 @@ interface Props {
   type?: 'default' | 'thumbnail';
 }
 
-export const DynamicHeroImage: React.FC<Props> = ({
+export const HeroImage: React.FC<Props> = ({
   title,
   blur = false,
   type = 'default',
@@ -18,11 +18,11 @@ export const DynamicHeroImage: React.FC<Props> = ({
       <img
         src={type === 'default' ? '/images/hero2.png' : '/images/hero.png'}
         alt='hero'
-        className={clsx(style.heroImage, {
-          [style.blur]: blur,
-          [style.default]: type === 'default',
-          [style.thumbnail]: type === 'thumbnail',
-        })}
+        className={clsx(style.heroImage,
+          blur && style.blur,
+          type === 'default' && style.default,
+          type === 'thumbnail' && style.thumbnail,
+        )}
       />
       <div className={style.heroTitle}>{title}</div>
     </div>

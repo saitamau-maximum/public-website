@@ -1,14 +1,14 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
-import { DynamicHeroImage } from './DynamicHeroImage';
+import { HeroImage } from './HeroImage';
 
 export default {
-  title: 'Components/DynamicHeroImage',
-  component: DynamicHeroImage,
+  title: 'Components/HeroImage',
+  component: HeroImage,
 } as Meta;
 
-const Template: StoryFn<typeof DynamicHeroImage> = (args) => (
-  <DynamicHeroImage {...args} />
+const Template: StoryFn<typeof HeroImage> = (args) => (
+  <HeroImage {...args} />
 );
 
 export const Default = Template.bind({});

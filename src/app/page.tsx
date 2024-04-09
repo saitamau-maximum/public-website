@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import { DynamicHeroImage } from '../components/DynamicHeroImage';
+import { HeroImage } from '../components/HeroImage';
 import { LinkButton } from '../components/LinkButton';
 import style from './page.module.scss';
 import { NewsList } from '@/components/news-list';
@@ -10,7 +10,7 @@ export default function Home() {
     <div className={style.container}>
       <main className={style.main}>
         <div className={style.hero}>
-          <DynamicHeroImage type='thumbnail' />
+          <HeroImage type='thumbnail' />
           <div className={style.breadcrumb}>
             <Link href='/' className={style.breadcrumbLink}>
               Top
