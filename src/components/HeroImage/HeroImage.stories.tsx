@@ -7,9 +7,7 @@ export default {
   component: HeroImage,
 } as Meta;
 
-const Template: StoryFn<typeof HeroImage> = (args) => (
-  <HeroImage {...args} />
-);
+const Template: StoryFn<typeof HeroImage> = (args) => <HeroImage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

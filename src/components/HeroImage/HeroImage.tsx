@@ -18,7 +18,8 @@ export const HeroImage: React.FC<Props> = ({
       <img
         src={type === 'default' ? '/images/hero2.png' : '/images/hero.png'}
         alt='hero'
-        className={clsx(style.heroImage,
+        className={clsx(
+          style.heroImage,
           blur && style.blur,
           type === 'default' && style.default,
           type === 'thumbnail' && style.thumbnail,
