@@ -1,0 +1,115 @@
+@use 'src/app/variables';
+
+/* heroImageとヘッダーのpadding調整 */
+@media (min-width: variables.$heroImage-change-width) {
+  .heroImage {
+    height: 60vh;
+  }
+}
+
+@media (max-width: variables.$heroImage-change-width) {
+  .heroImage {
+    height: 100%;
+  } 
+}
+
+@media (max-width: variables.$header-change-width) {
+  .main {
+    padding-top: 64px;
+  }
+}
+
+@media (min-width: variables.$header-change-width) {
+  .main {
+    padding-top: 72px;
+  }
+}
+
+/* 画面幅が768px以下の場合のスタイル */
+@media (max-width: variables.$tablet-width) {
+  .breadcrumb {
+    height: 28px;
+  }
+  
+  .breadcrumbLink {
+    font-size: 0.75rem; // 12px
+  }
+
+  .contentTitle {
+    margin: 0px 16px;
+    padding: 24px 0px 0px;
+    font-size: 1.5rem; // 24px
+  }
+}
+
+/* 画面幅が768px以上の場合のスタイル */
+@media (min-width: variables.$tablet-width) {
+  .breadcrumb {
+    height: 64px;
+  }
+ 
+  .breadcrumbLink {
+    font-size: 1.5rem; // 24px
+  }
+
+  .contents {
+    max-width: variables.$pages-max-width;
+  }
+
+  .contentTitle {
+    margin: 0px 40px;
+    padding: 40px 0px 0px;
+    font-size: 2.5rem; // 40px
+  }
+}
+
+/* 共通 */
+.heroImage {
+  width: 100%;
+  object-fit: cover;
+}
+  
+.main {
+  flex-direction: column;
+  background-color: variables.$background-color;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$background-color;
+}
+
+.hero {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$background-color;
+}
+
+.breadcrumb {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breadcrumbLink {
+  color: white;
+  text-decoration: none;
+}
+
+.contents {
+  width: 100%;
+  margin: 40px auto;
+  background-color: #fff;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.contentTitle {
+  font-weight: normal;
+  border-bottom: 1px solid black;
+  width: 4em;
+}

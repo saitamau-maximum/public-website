@@ -1,17 +1,25 @@
 @use 'src/app/variables';
-$hovering-color: #7FCC8F;
-$span-color: #47B660;
-$heroImage-change-width: 1280px;
-$header-change-width: 1200px;
-$background-color: #F1F1F1;
 
-@media (max-width: $header-change-width) {
+/* heroImageとヘッダーのpadding調整 */
+@media (min-width: variables.$heroImage-change-width) {
+  .heroImage {
+    height: 60vh;
+  }
+}
+
+@media (max-width: variables.$heroImage-change-width) {
+  .heroImage {
+    height: 100%;
+  } 
+}
+
+@media (max-width: variables.$header-change-width) {
   .main {
     padding-top: 64px;
   }
 }
 
-@media (min-width: $header-change-width) {
+@media (min-width: variables.$header-change-width) {
   .main {
     padding-top: 72px;
   }
@@ -29,7 +37,7 @@ $background-color: #F1F1F1;
 
   .contentTitle {
     margin: 20px;
-    font-size: 1.25rem; // 20px
+    font-size: 1.5rem; // 24px
   }
 
   .aboutText {
@@ -193,13 +201,13 @@ $background-color: #F1F1F1;
 /* 共通 */
 .main {
   flex-direction: column;
-  background-color: $background-color;
+  background-color: variables.$background-color;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  background-color: $background-color;
+  background-color: variables.$background-color;
 }
 
 .hero {
@@ -207,7 +215,7 @@ $background-color: #F1F1F1;
   justify-content: center;
   display: flex;
   flex-direction: column;
-  background-color: $background-color;
+  background-color: variables.$background-color;
 }
 
 .breadcrumb {
@@ -293,7 +301,7 @@ $background-color: #F1F1F1;
 }
 
 .breadcrumbLink:hover {
-  color: $hovering-color;
+  color: variables.$hovering-color;
 }
 
 .bold {
@@ -301,7 +309,7 @@ $background-color: #F1F1F1;
 }
 
 .span {
-  color: $span-color;
+  color: variables.$span-color;
 }
 
 .news {
