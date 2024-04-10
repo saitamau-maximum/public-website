@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { getMarkdowns } from '../../utils/markdown';
 import style from './page.module.scss';
-import { NewsPageList } from '@/components/news-page-list';
 import { HeroImage } from '@/components/HeroImage';
+import { NewsPageList } from '@/components/news-page-list';
 
 export const metadata: Metadata = {
   title: 'News',
