@@ -11,7 +11,15 @@
 .content table thead {
     background-color: #04781e; 
     color: #ffffff;
-    font-weight:normal;
+}
+
+.content table thead th {
+    font-weight:medium;
+    font-size: 18.55px;
+}
+
+.content table tbody {
+    font-size:1.25rem ;
 }
 
 .content table tbody tr:nth-child(even) {
