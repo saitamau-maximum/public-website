@@ -1,1 +1,1 @@
-export * from './Toc'
+export { default } from './Toc';
