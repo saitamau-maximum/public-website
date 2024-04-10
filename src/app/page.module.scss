@@ -1,30 +1,5 @@
 @use 'src/app/variables';
 
-/* heroImageとヘッダーのpadding調整 */
-@media (min-width: variables.$heroImage-change-width) {
-  .heroImage {
-    height: 60vh;
-  }
-}
-
-@media (max-width: variables.$heroImage-change-width) {
-  .heroImage {
-    height: 100%;
-  } 
-}
-
-@media (max-width: variables.$header-change-width) {
-  .main {
-    padding-top: 64px;
-  }
-}
-
-@media (min-width: variables.$header-change-width) {
-  .main {
-    padding-top: 72px;
-  }
-}
-
 /* 画面幅が768px以下の場合のスタイル */
 @media (max-width: variables.$tablet-width) {
   .breadcrumb {
@@ -321,4 +296,8 @@
 
 .newsButton {
   margin: 32px;
+}
+
+.main {
+  padding-top: 72px;
 }

@@ -1,6 +1,10 @@
 .container{
     background-color: #f1f1f1;
     margin: 0 auto;
+    padding-top: 72xp;
+}
+.heroBox{
+    padding-top: 72px;
 }
 .box{
     background-color: #fff;
