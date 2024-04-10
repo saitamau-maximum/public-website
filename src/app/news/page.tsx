@@ -1,7 +1,9 @@
 import path from 'path';
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import Link from 'next/link';
-import { Doc, getMarkdowns } from '../../utils/markdown';
+import { getMarkdowns } from '../../utils/markdown';
+import style from './page.module.scss';
+import { NewsPageList } from '@/components/news-page-list';
 
 export const metadata: Metadata = {
   title: 'News',
@@ -20,13 +22,25 @@ export default async function News() {
   );
 
   return (
-    <div>
-      <h1>News</h1>
-      {docs.map((doc) => (
-        <div key={doc.slug}>
-          <Link href={`/news/${doc.slug}`}>{doc.frontmatter.title}</Link>
+    <div className={style.container}>
+      <main className={style.main}>
+        <div className={style.hero}>
+          <img src='/images/hero.png' alt='Hero' className={style.heroImage} />
+          <div className={style.breadcrumb}>
+            <Link href='/' className={style.breadcrumbLink}>
+              Top
+            </Link>
+            <p className={style.breadcrumbLink}>&nbsp;&gt;&nbsp;</p>
+            <Link href='/news' className={style.breadcrumbLink}>
+              News
+            </Link>
+          </div>
         </div>
-      ))}
+        <div className={style.contents}>
+          <h1 className={style.contentTitle}>新着情報</h1>
+          <NewsPageList />
+        </div>
+      </main>
     </div>
   );
 }

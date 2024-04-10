@@ -1,0 +1,329 @@
+@use 'src/app/variables';
+
+/* heroImageとヘッダーのpadding調整 */
+@media (min-width: variables.$heroImage-change-width) {
+  .heroImage {
+    height: 60vh;
+  }
+}
+
+@media (max-width: variables.$heroImage-change-width) {
+  .heroImage {
+    height: 100%;
+  } 
+}
+
+@media (max-width: variables.$header-change-width) {
+  .main {
+    padding-top: 64px;
+  }
+}
+
+@media (min-width: variables.$header-change-width) {
+  .main {
+    padding-top: 72px;
+  }
+}
+
+/* 画面幅が768px以下の場合のスタイル */
+@media (max-width: variables.$tablet-width) {
+  .breadcrumb {
+    height: 28px;
+  }
+
+  .breadcrumbLink {
+    font-size: 0.75rem; // 12px
+  }
+
+  .contentTitle {
+    margin: 20px;
+    font-size: 1.5rem; // 24px
+  }
+
+  .aboutText {
+    margin: 24px;
+    font-size: 1rem; // 16px
+  }
+
+  .activityCP {
+    width: 80%;
+    padding: 16px 16px 20% 16px;
+    margin: 180px 0px 96px 0px;
+  }
+
+  .activityWeb {
+    width: 80%;
+    padding: 16px 16px 20% 16px;
+    margin: 252px 0 128px auto;
+  }
+  .activityTitle p {
+    font-size: 0.75rem; // 12px
+    margin: 0px;
+  }
+  .activityTitle h2 {
+    margin-bottom: 0px;
+    font-size: 1.25rem; // 20px
+    border-bottom: 1px solid black;
+  }
+  .activityContent {
+    font-size: 1rem; // 16px
+    margin: 16px 0px;
+  }
+
+  .activityOther {
+    margin: 44px;
+    font-size: 1.25rem; // 20px
+  }
+
+  .activityOtherButtonContainer {
+    margin: 12px;
+  }
+
+  .txtOther {
+    left: -24px;
+  }
+
+  .imgBox1 {
+    width: 80%;
+    aspect-ratio: 300 / 220;
+    right: 0;
+  }
+
+  .imgBox2 {
+    width: 80%;
+    aspect-ratio: 300 / 220;
+  }
+
+  .navigationForPC {
+    display: none;
+  }
+
+  .newsItem {
+    margin: 32px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .news {
+    margin: 24px;
+  }
+}
+
+/* 画面幅が768px以上の場合のスタイル */
+@media (min-width: variables.$tablet-width) {
+  .breadcrumb {
+    height: 64px;
+  }
+
+  .breadcrumbLink {
+    font-size: 1.5rem; // 24px
+  }
+
+  .contents {
+    max-width: variables.$pages-max-width;
+  }
+
+  .contentTitle {
+    margin: 32px;
+    font-size: 2.5rem; // 40px
+  }
+
+  .aboutText {
+    margin: 48px;
+    font-size: 2rem; // 32px
+  }
+
+  .activityCP {
+    width: 55%;
+    height: 400px;
+    padding: 32px;
+    margin: 80px 0px 96px 0px;
+  }
+
+  .activityWeb {
+    width: 55%;
+    height: 400px;
+    padding: 32px;
+    margin: 128px 0 128px auto;
+  }
+
+  .activityTitle p {
+    font-size: 1.25rem; // 20px
+    margin: 0px;
+  }
+  .activityTitle h2 {
+    margin-bottom: 0px;
+    font-size: 2rem; // 32px
+    border-bottom: 1px solid black;
+  }
+  .activityContent {
+    font-size: 1.25rem; // 20px
+  }
+
+  .activityOther {
+    margin: 128px;
+    font-size: 1.5rem; // 24px
+  }
+
+  .activityOtherButtonContainer {
+    margin: 48px;
+  }
+
+  .txtOther {
+    left: -48px;
+  }
+
+  .imgBox1 {
+    width: 55%;
+    height: 464px;
+
+    right: 0;
+  }
+
+  .imgBox2 {
+    width: 55%;
+    height: 464px;
+  }
+
+  .navigationForMobile {
+    display: none;
+  }
+
+  .newsList {
+    display: flex;
+  }
+
+  .news {
+    margin: 46px;
+  }
+}
+
+/* 共通 */
+.heroImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+.main {
+  flex-direction: column;
+  background-color: variables.$background-color;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$background-color;
+}
+
+.hero {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$background-color;
+}
+
+.breadcrumb {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breadcrumbLink {
+  color: white;
+  text-decoration: none;
+}
+
+.contents {
+  width: 100%;
+  margin: auto;
+  /* imgBox1のright 0にしたときにはみ出さないようにする */
+  position: relative;
+}
+
+.contentTitle {
+  font-weight: normal;
+  border-bottom: 1px solid black;
+  width: 4em;
+}
+
+.aboutText {
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+}
+
+.activityCP {
+  background-color: white;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.activityWeb {
+  background-color: white;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.activityLeftButtonContainer {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+  left: 64px;
+}
+
+.activityRightButtonContainer {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+  right: 64px;
+}
+
+.activityOther {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.txtOther {
+  position: absolute;
+  top: -64px;
+}
+
+.imgBoxCommon {
+  z-index: 0;
+  background-color: gray;
+  position: absolute;
+}
+
+.breadcrumbLink:hover {
+  color: variables.$hovering-color;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.span {
+  color: variables.$span-color;
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsButton {
+  margin: 32px;
+}

@@ -34,11 +34,6 @@ export async function generateStaticParams() {
   return params;
 }
 
-interface ResolvingMetadata {
-  title: string;
-  description: string;
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
   const filePath = path.join(

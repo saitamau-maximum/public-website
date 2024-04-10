@@ -1,0 +1,35 @@
+@use 'src/app/variables';
+$card-list-item-in-row: 3;
+$card-list-gap: 32px;
+
+.newsEmpty {
+  margin: 64px;
+  font-size: 1.25rem; // 20px
+  text-align: center;
+}
+
+.newsList {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: $card-list-gap;
+}
+
+@media (min-width: variables.$tablet-width){
+  .newsList {
+    display: grid;
+    max-width: variables.$pages-max-width;
+    flex-grow: 1;
+    grid-template-columns: repeat($card-list-item-in-row, 1fr);
+    align-items: stretch;
+  }
+}
+
+@media (max-width: variables.$tablet-width) {
+  .newsEmpty {
+    font-size: 1rem; // 16px
+  }
+
+  .newsItem {
+    margin: 16px 0px;
+  }
+}

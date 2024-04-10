@@ -1,0 +1,97 @@
+@use '/src/app/variables';
+
+@media (max-width: variables.$tablet-width) {
+  .container {
+    margin: 16px;
+  }
+
+  .headForMobile {
+    display: flex;
+    gap: 16px;
+    .date {
+      font-size: 1rem; // 16px
+      margin: 0px;
+      color: black;
+    }
+  }
+  
+  .dateForPC {
+    display: none;
+  }
+
+  .title {
+    font-size: 1.25rem; // 20px
+  }
+
+  .head {
+    margin: 8px 0px;
+    .group {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: variables.$tablet-width) {
+  .container {
+    margin: 24px;
+  }
+
+  .dateForMobile {
+    display: none;
+  }
+
+  .dateForPC {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem; // 16px
+    margin: 4px 0px 0px;
+  }
+
+  .headForMobile {
+    display: none;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+}
+
+.card {
+  text-decoration: none;
+  width: 100%;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.title {
+  margin: 0px;
+  color: black;
+}
+
+.learn {
+  color: #439154;
+  margin: 0px;
+  font-weight: bold;
+}
+
+.text {
+  color: black;
+  font-size: 0.875rem; // 14px
+  margin: 8px 0px;
+  overflow-wrap: break-word;
+}
+
+.group {
+  font-size: 0.75rem; // 12px
+  color: #fff;
+  text-align: center;
+  margin: 0px;
+  padding: 4px 8px;
+  background-color: #439154;
+  white-space: nowrap;
+}
