@@ -1,0 +1,42 @@
+.container{
+    width: 20rem;
+    margin-right:auto;
+    margin-left:auto;
+    background-color: #ffffff;
+    padding-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.title{
+    margin: 0;
+    padding: 16px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.line{
+    margin-top: 0; 
+    border: none;
+    height: 1px;
+    background-color: #d3d3d3;
+}
+
+.tocItem{
+    padding-left: 13px;
+    padding-top:7px;
+    margin:0;
+}
+
+.value{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #439154;
+}
+.value:hover {
+    text-decoration: underline;
+}
+.value:active {
+    font-size: 0.95rem;
+}

@@ -27,12 +27,13 @@
     padding-top: 48px;
     padding-bottom: 48px;
     display:flex;
+    align-items: flex-start;
 }
 
 .box{
     width:52rem;
     background-color: #ffffff;
-    margin: auto;
+    margin-left: auto;
     padding-left: 20px;
     padding-top:32px;
     padding-bottom: 32px;

@@ -4,7 +4,9 @@ import { parseMarkdownToHTML } from '@saitamau-maximum/markdown-processor/server
 import matter from 'gray-matter';
 import { Metadata } from 'next';
 import { Article } from '../../../components/Article/Article';
+import Toc from '../../../components/Toc/Toc'
 import style from './slug-styles.module.css';
+
 
 interface Props {
   params: {
@@ -13,6 +15,15 @@ interface Props {
   };
   searchParams: {};
 }
+/*目次のためのinterfaceです*/
+interface TocItem {
+  depth: number;
+  value: string;
+  data: {
+    id: string;
+  };
+  children: TocItem[];
+} 
 
 export async function generateStaticParams() {
   const docsDirectory = path.join(process.cwd(), `docs`, `achievement`);
@@ -56,13 +67,23 @@ export default async function AchievementsDetail({ params }: Props) {
   const fileContents = await fs.readFile(filePath, 'utf8');
   const { content, data } = matter(fileContents);
   const html = await parseMarkdownToHTML(content);
+
+  const tocData: TocItem[] = [
+    {
+      depth: 1,
+      value: data.title,
+      data: {id: 'container'},
+      children: html.toc,
+    },
+  ];
+
   return (
     <main>
       <div className={style.heroBox}>
         <h1 className={style.heroText}>過去の実績</h1>
         <img className={style.heroImage} src='/heros/hero.png' />
       </div>
-      <div className={style.container}>
+      <div id="container" className={style.container}>
         <div className={style.box}>
           <img className={style.image} src={data.imageUrl} />
           <h2 className={style.title}>{data.title}</h2>
@@ -70,6 +91,9 @@ export default async function AchievementsDetail({ params }: Props) {
           {/* 記事のタイトル等の動的コンテンツにXSSが発生する可能性が、信頼できるリソースからのみ提供されることとして許容する。 */}
           <Article content={html.content} />
         </div>
+        <Toc 
+          tocData={tocData}
+        />
       </div>
     </main>
   );
