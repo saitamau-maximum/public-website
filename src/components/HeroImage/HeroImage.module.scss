@@ -1,0 +1,42 @@
+@use 'src/app/variables';
+$heroImage-change-width: 1280px;
+
+.heroImagesContainer {
+  position: relative;
+  width: 100%;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.blur {
+  filter: blur(9px);
+}
+
+.heroTitle {
+  white-space: nowrap;
+  color: #455749;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: calc((100vw + 320px) / 40);
+}
+
+/* heroImageとヘッダーのpadding調整 */
+@media (min-width: $heroImage-change-width) {
+  .heroImage {
+    height: 60vh;
+  }
+}
+
+@media (max-width: $heroImage-change-width) {
+  .heroImage {
+    height: 100%;
+  } 
+}
