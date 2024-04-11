@@ -13,7 +13,12 @@ export default function Faq() {
   return (
     <div className={styles.container}>
       <HeroImage type='default' title='よくある質問' />
-      <BreadCrumb items={[{ title: 'Top', href: '/' }, { title: 'FAQ', href: '/faq' }]} />
+      <BreadCrumb
+        items={[
+          { title: 'Top', href: '/' },
+          { title: 'FAQ', href: '/faq' },
+        ]}
+      />
       <h1>よくある質問</h1>
       <p>
         もしほかにご質問があれば
