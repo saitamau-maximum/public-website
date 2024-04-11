@@ -35,7 +35,7 @@ export default async function News() {
           />
         </div>
         <div className={style.contents}>
-          <h1 className={style.contentTitle}>新着情報</h1>
+          <h1 className={style.contentTitle}>ニュース一覧</h1>
           <NewsPageList />
         </div>
       </main>
