@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdHome } from 'react-icons/md';
 import styles from './BreadCrumb.module.scss';
 
 interface BreadcrumbItem {
@@ -11,6 +12,7 @@ interface BreadcrumbItem {
 export const BreadCrumb: React.FC<BreadcrumbItem> = ({ items }) => {
   return (
     <div className={styles.container}>
+      <MdHome />
       {items.map((item, index) => (
         <React.Fragment key={index}>
           {item.href ? (
