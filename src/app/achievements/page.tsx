@@ -5,7 +5,6 @@ import style from './list-styles.module.css';
 import { HeroImage } from '@/components/HeroImage';
 import AchievementList from '@/components/achievement-list/achievement-list';
 
-
 export const metadata: Metadata = {
   title: 'Achievements',
   description:
