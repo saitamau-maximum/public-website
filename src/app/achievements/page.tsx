@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Doc, getMarkdowns } from '../../utils/markdown';
 import style from './list-styles.module.css';
 import AchievementList from '@/components/achievement-list/achievement-list';
+import { HeroImage } from '@/components/HeroImage';
 
 export const metadata: Metadata = {
   title: 'Achievements',
@@ -14,8 +15,7 @@ export default async function Achievements() {
   return (
     <div>
       <div className={style.heroBox}>
-        <h1 className={style.heroText}>過去の実績</h1>
-        <img className={style.heroImage} src='/heros/hero.png' />
+        <HeroImage title='過去の実績' type='default' blur={true} />
       </div>
       <div className={style.container}>
         <h2 className={style.title}>参加した大会</h2>

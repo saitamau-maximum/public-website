@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '../../components/Header/Header';
 import style from './styles.module.css';
+import { HeroImage } from '@/components/HeroImage';
 
 export const metadata: Metadata = {
   title: 'サークルについて',
@@ -12,11 +13,9 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div className={style.container}>
-      {/*
-        TODO: Hero 画像とタイトルを分離する
-        ref: https://github.com/saitamau-maximum/public-website/pull/52#discussion_r1535109180
-      */}
-      <img className={style.hero} src='/heros/hero-about.png' alt='hero' />
+      <div className={style.heroBox}>
+        <HeroImage title='Maximumの活動について' type='default' blur={true} />
+      </div>
       <main className={style.box}>
         <h2 className={style.title}>
           埼玉大学プログラミングサークル　
