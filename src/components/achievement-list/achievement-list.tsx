@@ -15,16 +15,16 @@ export default async function AchievementList() {
 
   return (
     <div>
-        {docs.map((doc) => (
-          <AchievementCard
-            key={doc.slug}
-            title={doc.frontmatter.title}
-            subtitle={doc.frontmatter.subtitle}
-            description={doc.frontmatter.description}
-            iconUrl={doc.frontmatter.iconUrl}
-            slug={doc.slug}
-          />
-        ))}
-      </div>
+      {docs.map((doc) => (
+        <AchievementCard
+          key={doc.slug}
+          title={doc.frontmatter.title}
+          subtitle={doc.frontmatter.subtitle}
+          description={doc.frontmatter.description}
+          iconUrl={doc.frontmatter.iconUrl}
+          slug={doc.slug}
+        />
+      ))}
+    </div>
   );
 }
