@@ -9,7 +9,7 @@ export default {
     items: {
       href: { control: 'text' },
       title: { control: 'text' },
-    }
+    },
   },
 } as Meta;
 
