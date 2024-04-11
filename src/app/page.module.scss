@@ -27,13 +27,6 @@
 
 /* 画面幅が768px以下の場合のスタイル */
 @media (max-width: variables.$tablet-width) {
-  .breadcrumb {
-    height: 28px;
-  }
-
-  .breadcrumbLink {
-    font-size: 0.75rem; // 12px
-  }
 
   .contentTitle {
     margin: 20px;
@@ -111,14 +104,6 @@
 
 /* 画面幅が768px以上の場合のスタイル */
 @media (min-width: variables.$tablet-width) {
-  .breadcrumb {
-    height: 64px;
-  }
-
-  .breadcrumbLink {
-    font-size: 1.5rem; // 24px
-  }
-
   .contents {
     max-width: variables.$pages-max-width;
   }
@@ -218,19 +203,6 @@
   background-color: variables.$background-color;
 }
 
-.breadcrumb {
-  width: 100%;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.breadcrumbLink {
-  color: white;
-  text-decoration: none;
-}
-
 .contents {
   width: 100%;
   margin: auto;
@@ -298,10 +270,6 @@
   z-index: 0;
   background-color: gray;
   position: absolute;
-}
-
-.breadcrumbLink:hover {
-  color: variables.$hovering-color;
 }
 
 .bold {
