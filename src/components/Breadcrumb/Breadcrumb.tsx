@@ -1,7 +1,7 @@
+import Link from 'next/link';
 import React from 'react';
 import { MdHome } from 'react-icons/md';
 import styles from './Breadcrumb.module.scss';
-import Link from 'next/link';
 
 interface BreadcrumbItem {
   items: {
@@ -17,7 +17,9 @@ export const Breadcrumb: React.FC<BreadcrumbItem> = ({ items }) => {
       {items.map((item, index) => (
         <React.Fragment key={index}>
           {item.href ? (
-            <Link href={item.href} className={styles.breadcrumbLink}>{item.title}</Link>
+            <Link href={item.href} className={styles.breadcrumbLink}>
+              {item.title}
+            </Link>
           ) : (
             <span className={styles.breadcrumbLink}>{item.title}</span>
           )}
