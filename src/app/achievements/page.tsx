@@ -1,7 +1,7 @@
 import path from 'path';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { MdArrowForward } from "react-icons/md";
+import { MdArrowForward } from 'react-icons/md';
 import { Doc, getMarkdowns } from '../../utils/markdown';
 import style from './list-styles.module.css';
 

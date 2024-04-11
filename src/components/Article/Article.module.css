@@ -3,7 +3,7 @@
 }
 
 .content table {
-    width: 799.8px;
+    width: 100%;
     border-collapse: separate;
     border-spacing: 1px;
 }
@@ -15,7 +15,7 @@
 
 .content table thead th {
     font-weight:medium;
-    font-size: 18.55px;
+    font-size: 1.125;
 }
 
 .content table tbody {

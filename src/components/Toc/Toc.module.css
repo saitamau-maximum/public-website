@@ -1,5 +1,5 @@
 .container{
-    width: 20rem;
+    width: 360px;
     margin-right:auto;
     margin-left:auto;
     background-color: #ffffff;
@@ -22,14 +22,14 @@
 }
 
 .tocItem{
-    padding-left: 13px;
-    padding-top:7px;
-    margin:0;
+    padding-left: 16px;
+    padding-top: 8px;
+    margin: 0;
 }
 
 .value{
-    margin-top: 7px;
-    margin-bottom: 7px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     font-size: 1rem;
     text-decoration: none;
     color: #439154;
@@ -38,5 +38,5 @@
     text-decoration: underline;
 }
 .value:active {
-    font-size: 0.95rem;
+    text-decoration: none;
 }
