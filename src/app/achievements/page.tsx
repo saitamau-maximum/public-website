@@ -38,15 +38,15 @@ export default async function Achievements() {
                 alt={doc.frontmatter.title}
               />
             </div>
-            <div>
+            <Link href={`/achievements/${doc.slug}`} className={style.link}>
               <h3 className={style.docTitle}>{doc.frontmatter.title}</h3>
               <p className={style.docSubtitle}>{doc.frontmatter.subtitle}</p>
               <p className={style.contents}>{doc.frontmatter.description}</p>
-              <Link className={style.link} href={`/achievements/${doc.slug}`}>
+              <p className={style.linkText}>
                 成績を見る
                 <MdArrowForward />
-              </Link>
-            </div>
+              </p>
+            </Link>
           </div>
         ))}
       </div>

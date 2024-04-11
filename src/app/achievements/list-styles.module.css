@@ -85,11 +85,16 @@
 
 .link{
     margin: 0;
+    display: block;
+    text-decoration: none;
+}
+
+.linkText{
+    margin: 0;
     font-size: 1rem;
     font-weight: bold;
     color: #439154;
-    text-decoration: none;
 }
-.link:hover{
+.linkText:hover{
     text-decoration: underline;
 }
