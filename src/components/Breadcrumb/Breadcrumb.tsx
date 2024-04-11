@@ -23,7 +23,9 @@ export const Breadcrumb: React.FC<BreadcrumbItem> = ({ items }) => {
           ) : (
             <span className={styles.breadcrumbLink}>{item.title}</span>
           )}
-          {index < items.length - 1 && <span className={styles.separator}>&gt;</span>}
+          {index < items.length - 1 && (
+            <span className={styles.separator}>&gt;</span>
+          )}
         </React.Fragment>
       ))}
     </nav>
