@@ -1,7 +1,7 @@
 import path from 'path';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { FiArrowRight } from 'react-icons/fi';
+import { MdArrowForward } from "react-icons/md";
 import { Doc, getMarkdowns } from '../../utils/markdown';
 import style from './list-styles.module.css';
 
@@ -44,7 +44,7 @@ export default async function Achievements() {
               <p className={style.contents}>{doc.frontmatter.description}</p>
               <Link className={style.link} href={`/achievements/${doc.slug}`}>
                 成績を見る
-                <FiArrowRight />
+                <MdArrowForward />
               </Link>
             </div>
           </div>
