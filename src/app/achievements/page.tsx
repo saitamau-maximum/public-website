@@ -1,9 +1,8 @@
 import path from 'path';
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { MdArrowForward } from 'react-icons/md';
 import { Doc, getMarkdowns } from '../../utils/markdown';
 import style from './list-styles.module.css';
+import AchievementCard from '@/components/AchievementCard';
 
 export const metadata: Metadata = {
   title: 'Achievements',
@@ -30,24 +29,14 @@ export default async function Achievements() {
       <div className={style.container}>
         <h2 className={style.title}>参加した大会</h2>
         {docs.map((doc) => (
-          <div key={doc.slug} className={style.box}>
-            <div className={style.imageBox}>
-              <img
-                className={style.image}
-                src={doc.frontmatter.iconUrl}
-                alt={doc.frontmatter.title}
-              />
-            </div>
-            <Link href={`/achievements/${doc.slug}`} className={style.link}>
-              <h3 className={style.docTitle}>{doc.frontmatter.title}</h3>
-              <p className={style.docSubtitle}>{doc.frontmatter.subtitle}</p>
-              <p className={style.contents}>{doc.frontmatter.description}</p>
-              <p className={style.linkText}>
-                成績を見る
-                <MdArrowForward />
-              </p>
-            </Link>
-          </div>
+          <AchievementCard
+            key={doc.slug}
+            title={doc.frontmatter.title}
+            subtitle={doc.frontmatter.subtitle}
+            description={doc.frontmatter.description}
+            iconUrl={doc.frontmatter.iconUrl}
+            slug={doc.slug}
+          />
         ))}
       </div>
     </div>
