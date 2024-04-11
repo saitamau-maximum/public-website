@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './BreadCrumb.module.scss';
 
-
 interface BreadcrumbItem {
   items: {
     title: string;
@@ -21,9 +20,7 @@ export const BreadCrumb: React.FC<BreadcrumbItem> = ({ items }) => {
           ) : (
             <p className={styles.breadcrumbLink}>{item.title}</p>
           )}
-          {index < items.length - 1 && (
-            <p className={styles.separator}>&gt;</p>
-          )}
+          {index < items.length - 1 && <p className={styles.separator}>&gt;</p>}
         </React.Fragment>
       ))}
     </div>
