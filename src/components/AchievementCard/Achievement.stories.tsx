@@ -1,7 +1,7 @@
 // src/components/AchievementCard/AchievementCard.stories.tsx
-
-import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
+import React from 'react';
+
 import AchievementCard from './AchievementCard';
 
 export default {
@@ -16,7 +16,9 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<typeof AchievementCard> = (args) => <AchievementCard {...args} />;
+const Template: StoryFn<typeof AchievementCard> = (args) => (
+  <AchievementCard {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
