@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import styles from './page.module.scss';
-import { BreadCrumb } from '@/components/BreadCrumb';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { HeroImage } from '@/components/HeroImage';
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export default function Faq() {
   return (
     <div className={styles.container}>
       <HeroImage type='default' title='よくある質問' />
-      <BreadCrumb
+      <Breadcrumb
         items={[
           { title: 'Top', href: '/' },
           { title: 'FAQ', href: '/faq' },

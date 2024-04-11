@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { HeroImage } from '../components/HeroImage';
 import { LinkButton } from '../components/LinkButton';
 import style from './page.module.scss';
-import { BreadCrumb } from '@/components/BreadCrumb';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { NewsList } from '@/components/news-list';
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       <main className={style.main}>
         <div className={style.hero}>
           <HeroImage type='thumbnail' />
-          <BreadCrumb items={[{ title: 'Top', href: '/' }]} />
+          <Breadcrumb items={[{ title: 'Top', href: '/' }]} />
         </div>
         <div className={style.contents}>
           <h1 className={style.contentTitle}>活動内容</h1>

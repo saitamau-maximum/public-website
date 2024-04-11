@@ -1,10 +1,10 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
-import { BreadCrumb } from './BreadCrumb';
+import { Breadcrumb } from './Breadcrumb';
 
 export default {
-  title: 'Components/BreadCrumb',
-  component: BreadCrumb,
+  title: 'Components/Breadcrumb',
+  component: Breadcrumb,
   argTypes: {
     items: {
       href: { control: 'text' },
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<typeof BreadCrumb> = (args) => <BreadCrumb {...args} />;
+const Template: StoryFn<typeof Breadcrumb> = (args) => <Breadcrumb {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
