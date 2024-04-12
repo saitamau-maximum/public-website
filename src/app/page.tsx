@@ -104,12 +104,12 @@ export default function Home() {
             </p>
             <div className={style.activityOtherButtonContainer}>
               <div className={style.navigationForPC}>
-                <LinkButton href='#' variant='green' size='medium'>
+                <LinkButton href='/join' variant='green' size='medium'>
                   入会案内はこちら
                 </LinkButton>
               </div>
               <div className={style.navigationForMobile}>
-                <LinkButton href='#' variant='green' size='small'>
+                <LinkButton href='/join' variant='green' size='small'>
                   入会案内はこちら
                 </LinkButton>
               </div>
