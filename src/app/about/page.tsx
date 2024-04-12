@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Header } from '../../components/Header/Header';
 import style from './styles.module.css';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { HeroImage } from '@/components/HeroImage';
 
 export const metadata: Metadata = {
@@ -15,6 +15,12 @@ export default function About() {
     <div className={style.container}>
       <div className={style.heroBox}>
         <HeroImage title='Maximumの活動について' type='default' blur={true} />
+        <Breadcrumb
+            items={[
+              { title: 'Top', href: '/' },
+              { title: 'Maximumの活動について', href: '/about' },
+            ]}
+          />
       </div>
       <main className={style.box}>
         <h2 className={style.title}>
