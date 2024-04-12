@@ -1,11 +1,10 @@
 import path from 'path';
-import { Doc, getMarkdowns } from '../../utils/markdown';
-import style from './achievement-list.module.css';
+import { getMarkdowns } from '../../utils/markdown';
 import AchievementCard from '@/components/AchievementCard';
 
 export default async function AchievementList() {
   // achievementの中身を取得
-  const docsDir = path.join(process.cwd(), 'docs', 'achievement');
+  const docsDir = path.join(process.cwd(), 'docs', 'news');
   const docs = await getMarkdowns(docsDir);
 
   // 一覧を日付でソート
