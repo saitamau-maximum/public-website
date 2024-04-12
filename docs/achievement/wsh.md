@@ -1,11 +1,15 @@
 ---
 title: "Web Speed Hackathon"
+subtitle: ""
 createdAt: "2024-03-06"
 updatedAt: "2024-03-06"
-description: ""
+description: "Web Speed Hackathon は株式会社サイバーエージェントが主催している、めちゃくちゃ重たいサイトの Core Web Vitals のスコアを期間内にどれだけ向上させられるかを競うフロントエンドメインの大会です。"
+iconUrl: "/images/wsh_icon.jpg"
+imageUrl: "/images/WSH.png"
 ---
 
-Web Speed Hackathon は株式会社サイバーエージェントが主催している、めちゃくちゃ重たいサイトの Core Web Vitals のスコアを期間内にどれだけ向上させられるかを競うフロントエンドメインの大会です。
+Web Speed Hackathon は株式会社サイバーエージェントが主催している、
+めちゃくちゃ重たいサイトの Core Web Vitals のスコアを期間内にどれだけ向上させられるかを競うフロントエンドメインの大会です。
 
 ## 2024
 | 個人名 | 最終順位 | スコア順位 (学生内) | 備考 |

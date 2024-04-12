@@ -1,0 +1,32 @@
+.content{
+
+}
+
+.content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+.content table thead {
+    background-color: #04781e; 
+    color: #ffffff;
+}
+
+.content table thead th {
+    font-weight:medium;
+    font-size: 1.125rem;
+}
+
+.content table tbody th {
+    font-size:1.25rem ;
+}
+
+.content table tbody tr:nth-child(even) {
+    background-color: #d9d9d9; 
+}
+
+.content table tbody tr:nth-child(odd) {
+    background-color: #ececec; 
+}
+
