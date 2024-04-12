@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 import { Metadata } from 'next';
 import { Article } from '../../../components/Article/Article';
 import Toc from '../../../components/Toc/Toc';
-import style from './slug-styles.module.css';
+import style from './slug-styles.module.scss';
 import { HeroImage } from '@/components/HeroImage';
 
 interface Props {
@@ -73,7 +73,7 @@ export default async function AchievementsDetail({ params }: Props) {
   ];
 
   return (
-    <main>
+    <main className={style.main}>
       <div className={style.heroBox}>
         <HeroImage title='過去の実績' type='default' blur={true} />
       </div>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import style from './Toc.module.css';
+import style from './Toc.module.scss';
 
 interface TocItem {
   depth: number;
