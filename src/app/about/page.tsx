@@ -16,11 +16,11 @@ export default function About() {
       <div className={style.heroBox}>
         <HeroImage title='Maximumの活動について' type='default' blur={true} />
         <Breadcrumb
-            items={[
-              { title: 'Top', href: '/' },
-              { title: 'Maximumの活動について', href: '/about' },
-            ]}
-          />
+          items={[
+            { title: 'Top', href: '/' },
+            { title: 'Maximumの活動について', href: '/about' },
+          ]}
+        />
       </div>
       <main className={style.box}>
         <h2 className={style.title}>
