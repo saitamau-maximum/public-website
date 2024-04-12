@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Link from 'next/link';
 import { HeroImage } from '../components/HeroImage';
 import { LinkButton } from '../components/LinkButton';
 import style from './page.module.scss';
