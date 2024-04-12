@@ -15,7 +15,12 @@ export default async function Achievements() {
     <div className={style.main}>
       <div className={style.heroBox}>
         <HeroImage title='過去の実績' type='default' blur={true} />
-        <Breadcrumb items={[{ title: 'Top', href: '/' }, { title: '過去の実績', href: '/achievements' }]} />
+        <Breadcrumb
+          items={[
+            { title: 'Top', href: '/' },
+            { title: '過去の実績', href: '/achievements' },
+          ]}
+        />
       </div>
       <div className={style.container}>
         <h2 className={style.title}>参加した大会</h2>

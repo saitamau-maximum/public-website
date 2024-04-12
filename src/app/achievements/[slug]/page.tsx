@@ -77,7 +77,13 @@ export default async function AchievementsDetail({ params }: Props) {
     <main className={style.main}>
       <div className={style.heroBox}>
         <HeroImage title='過去の実績' type='default' blur={true} />
-        <Breadcrumb items={[{ title: 'Top', href: '/' }, { title: '過去の実績', href: '/achievements' }, { title: `${data.title}`, href: `/achievements/${slug}` }]} />
+        <Breadcrumb
+          items={[
+            { title: 'Top', href: '/' },
+            { title: '過去の実績', href: '/achievements' },
+            { title: `${data.title}`, href: `/achievements/${slug}` },
+          ]}
+        />
       </div>
       <div id='container' className={style.container}>
         <div className={style.box}>
