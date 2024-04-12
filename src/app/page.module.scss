@@ -161,7 +161,6 @@
   .imgBox1 {
     width: 55%;
     height: 464px;
-
     right: 0;
   }
 
@@ -229,6 +228,7 @@
   box-sizing: border-box;
   position: relative;
   z-index: 1;
+  box-shadow: 2px 2px 4px gray;
 }
 
 .activityWeb {
@@ -237,6 +237,7 @@
   box-sizing: border-box;
   position: relative;
   z-index: 1;
+  box-shadow: 2px 2px 4px gray;
 }
 
 .activityLeftButtonContainer {
@@ -270,6 +271,7 @@
   z-index: 0;
   background-color: gray;
   position: absolute;
+  box-shadow: 2px 2px 4px gray;
 }
 
 .bold {
@@ -289,4 +291,10 @@
 
 .newsButton {
   margin: 32px;
+}
+
+.topImages {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
