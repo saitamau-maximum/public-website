@@ -26,7 +26,11 @@ export default function Home() {
             &nbsp;(週1回)の2つの活動を行っています。
           </p>
           <div className={clsx(style.imgBox1, style.imgBoxCommon)}>
-            <img src='/images/top1.png' alt='TopImage1' className={style.topImages} />
+            <img
+              src='/images/top1.png'
+              alt='TopImage1'
+              className={style.topImages}
+            />
           </div>
           <div className={style.activityCP}>
             <div className={style.activityTitle}>
@@ -57,7 +61,11 @@ export default function Home() {
             </div>
           </div>
           <div className={clsx(style.imgBox2, style.imgBoxCommon)}>
-            <img src='/images/top2.png' alt='topImage2' className={style.topImages}/>
+            <img
+              src='/images/top2.png'
+              alt='topImage2'
+              className={style.topImages}
+            />
           </div>
           <div className={style.activityWeb}>
             <div className={style.activityTitle}>

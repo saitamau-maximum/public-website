@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { getMarkdowns } from '../../utils/markdown';
 import style from './page.module.scss';
 import { NewsPageList } from '@/components/news-page-list';
+import { HeroImage } from '@/components/HeroImage';
+import { Breadcrumb } from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'News',
@@ -25,16 +27,8 @@ export default async function News() {
     <div className={style.container}>
       <main className={style.main}>
         <div className={style.hero}>
-          <img src='/images/hero.png' alt='Hero' className={style.heroImage} />
-          <div className={style.breadcrumb}>
-            <Link href='/' className={style.breadcrumbLink}>
-              Top
-            </Link>
-            <p className={style.breadcrumbLink}>&nbsp;&gt;&nbsp;</p>
-            <Link href='/news' className={style.breadcrumbLink}>
-              News
-            </Link>
-          </div>
+          <HeroImage type='default' title='新着情報' blur={true} />
+          <Breadcrumb items={[{ title: 'Top', href: '/' }, { title: '新着情報', href: '/news' }]} />
         </div>
         <div className={style.contents}>
           <h1 className={style.contentTitle}>新着情報</h1>
