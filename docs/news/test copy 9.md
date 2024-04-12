@@ -1,7 +1,7 @@
 ---
-title: "ISCON 13 (1)"
+title: "ISCON 13 (10)"
 createdAt: "2024-03-10"
-updatedAt: "2024-03-01"
+updatedAt: "2024-03-10"
 description: "Webアプリケーションのチューニング大会 「ISUCON 13」に3チーム参加しうち1チームが学生5位・総合25位という成績を収めました"
 group: "Web研"
 ---
