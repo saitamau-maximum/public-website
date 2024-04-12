@@ -48,12 +48,12 @@ export default function Home() {
             </p>
             <div className={style.activityLeftButtonContainer}>
               <div className={style.navigationForPC}>
-                <LinkButton href='#' variant='gray' size='medium'>
+                <LinkButton href='/about#kyopro' variant='gray' size='medium'>
                   Learn More
                 </LinkButton>
               </div>
               <div className={style.navigationForMobile}>
-                <LinkButton href='#' variant='gray' size='small'>
+                <LinkButton href='/about#kyopro' variant='gray' size='small'>
                   Learn More
                 </LinkButton>
               </div>
@@ -80,12 +80,12 @@ export default function Home() {
             </p>
             <div className={style.activityRightButtonContainer}>
               <div className={style.navigationForPC}>
-                <LinkButton href='#' variant='gray' size='medium'>
+                <LinkButton href='/about#webken' variant='gray' size='medium'>
                   Learn More
                 </LinkButton>
               </div>
               <div className={style.navigationForMobile}>
-                <LinkButton href='#' variant='gray' size='small'>
+                <LinkButton href='/about#webken' variant='gray' size='small'>
                   Learn More
                 </LinkButton>
               </div>

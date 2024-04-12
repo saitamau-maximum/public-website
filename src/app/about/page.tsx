@@ -35,7 +35,7 @@ export default function About() {
           <span className={style.highlight}>その他プログラミング</span>
           の知識を高める活動を行っています。
         </p>
-        <h2 className={style.title}>競技プログラミング</h2>
+        <h2 className={style.title} id='kyopro'>競技プログラミング</h2>
         <h3 className={style.subtitle}>活動内容</h3>
         <p className={style.text}>
           国際大学対抗プログラミングコンテスト(ICPC)に参加し、良い成績を上げるための活動を行っています。
@@ -61,7 +61,7 @@ export default function About() {
             情報工学科パンフレット（PDF）
           </Link>
         </p>
-        <h2 className={style.title}>Web研究会</h2>
+        <h2 className={style.title} id='webken'>Web研究会</h2>
         <h3 className={style.subtitle}>講習</h3>
         <p className={style.text}>
           WebサイトやWebサーバーを制作・構築・運用するための基礎を一通り学びます。講習ではHTML,CSS,JabaScriptを触ります。
