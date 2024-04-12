@@ -28,6 +28,7 @@ const renderTocItems = (items: TocItem[]) => {
     </div>
   ));
 };
+
 const Toc: React.FC<{ tocData: TocItem[] }> = ({ tocData }) => {
   return (
     <div className={style.container}>
@@ -37,3 +38,5 @@ const Toc: React.FC<{ tocData: TocItem[] }> = ({ tocData }) => {
     </div>
   );
 };
+
+export default Toc;
