@@ -1,7 +1,5 @@
-import path from 'path';
 import type { Metadata } from 'next';
-import { Doc, getMarkdowns } from '../../utils/markdown';
-import style from './list-styles.module.css';
+import style from './list-styles.module.scss';
 import { HeroImage } from '@/components/HeroImage';
 import AchievementList from '@/components/achievement-list/achievement-list';
 
@@ -13,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Achievements() {
   return (
-    <div>
+    <div className={style.main}>
       <div className={style.heroBox}>
         <HeroImage title='過去の実績' type='default' blur={true} />
       </div>
