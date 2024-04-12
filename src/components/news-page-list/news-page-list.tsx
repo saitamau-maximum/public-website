@@ -18,6 +18,11 @@ export async function NewsPageList() {
     );
   }
 
+  // 一覧を日付でソート
+  docs.sort((a, b) =>
+    a.frontmatter.updatedAt < b.frontmatter.updatedAt ? 1 : -1,
+  );
+
   return (
     <div className={style.cardContainer}>
       {docs.map((doc) => (
