@@ -1,0 +1,44 @@
+@use 'src/app/variables';
+
+.container {
+  background-color: black;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  z-index: 1;
+}
+
+.breadcrumbLink {
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+}
+
+.breadcrumbLink:hover {
+  color: variables.$hovering-color;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .container {
+    font-size: 1.25rem;
+    height: 64px;
+  }
+
+  .separator {
+    margin: 0 12px;
+  }
+}
+
+@media (max-width: variables.$tablet-width) {
+  .container {
+    font-size: 0.75rem;
+    height: 28px;
+  }
+
+  .separator {
+    margin: 0 8px;
+  }
+}
