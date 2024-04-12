@@ -1,6 +1,5 @@
 import path from 'path';
-import { Doc, getMarkdowns } from '../../utils/markdown';
-import style from './achievement-list.module.css';
+import { getMarkdowns } from '../../utils/markdown';
 import AchievementCard from '@/components/AchievementCard';
 
 export default async function AchievementList() {

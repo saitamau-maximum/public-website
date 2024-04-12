@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import { Article } from '../../../components/Article/Article';
 import Toc from '../../../components/Toc/Toc';
 import style from './slug-styles.module.scss';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { HeroImage } from '@/components/HeroImage';
 
 interface Props {
@@ -76,6 +77,13 @@ export default async function AchievementsDetail({ params }: Props) {
     <main className={style.main}>
       <div className={style.heroBox}>
         <HeroImage title='過去の実績' type='default' blur={true} />
+        <Breadcrumb
+          items={[
+            { title: 'Top', href: '/' },
+            { title: '過去の実績', href: '/achievements' },
+            { title: `${data.title}`, href: `/achievements/${slug}` },
+          ]}
+        />
       </div>
       <div id='container' className={style.container}>
         <div className={style.box}>

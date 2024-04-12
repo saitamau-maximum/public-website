@@ -1,0 +1,40 @@
+@use 'src/app/variables';
+
+@media (max-width: variables.$tablet-width) {
+    .container{
+        margin: 0px 24px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: variables.$tablet-width) {
+    .container{
+        margin: auto;
+        max-width: variables.$pages-max-width;
+    }
+
+    .title{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-left: 55px;
+        margin-bottom: 29px;
+    }
+}
+
+.main {
+    background-color: variables.$background-color;
+}
+
+.heroBox{
+    padding-top: 72px;
+}
+
+.container{
+    background-color: #F1F1F1;
+    padding: 88px 0 103px;
+}
+
