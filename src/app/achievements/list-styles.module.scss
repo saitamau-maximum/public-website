@@ -1,5 +1,30 @@
 @use 'src/app/variables';
 
+@media (max-width: variables.$tablet-width) {
+    .container{
+        margin: 0px 24px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: variables.$tablet-width) {
+    .container{
+        margin: auto;
+        max-width: variables.$pages-max-width;
+    }
+
+    .title{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-left: 55px;
+        margin-bottom: 29px;
+    }
+}
+
 .main {
     background-color: variables.$background-color;
 }
@@ -9,81 +34,7 @@
 }
 
 .container{
-    width: 100%;
     background-color: #F1F1F1;
-    padding-top: 88px;
-    padding-bottom: 103px;
-    max-width: variables.$pages-max-width;
-    margin: 0 auto;
+    padding: 88px 0 103px;
 }
 
-.box{
-    width: 1024px;
-    margin: 32px auto;
-    padding: 0 auto;
-    display: flex;
-    align-items: center;
-}
-
-.heroText{
-    text-align:center;
-    font-weight: bold;
-    font-size: 3.3rem;
-}
-
-.title{
-    font-size: 2rem;
-    font-weight: bold;
-    margin-left: 55px;
-    margin-bottom: 29px;
-}
-
-.docTitle{
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #161616;
-    margin: 0 auto;
-}
-
-.docSubtitle{
-    font-size: 0.75rem;
-    margin: 0 auto;
-    color: #232323;
-}
-
-.imageBox{
-    width:240px;
-    height: 144px;
-    margin-left: 0;
-    margin-right: 32px;
-}
-
-.image{
-    width: 240px;
-    height: 144px;
-    border-radius: 8px;
-    border: 1px solid #CCCCCC;
-    object-fit: cover;
-}
-
-.contents{
-    font-size: 1rem;
-    margin: 8px auto;
-    color: #161616;
-}
-
-.link{
-    margin: 0;
-    display: block;
-    text-decoration: none;
-}
-
-.linkText{
-    margin: 0;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #439154;
-}
-.linkText:hover{
-    text-decoration: underline;
-}
