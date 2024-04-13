@@ -5,7 +5,7 @@ import NewsListSrc from './news-list-view';
 import style from './news-page-list.module.scss';
 import { getMarkdowns } from '@/utils/markdown';
 
-export async function NewsPageList(this: any) {
+export async function NewsPageList() {
   // newsの中身を取得
   const docsDir = path.join(process.cwd(), 'docs', 'news');
   const docs = await getMarkdowns(docsDir);
