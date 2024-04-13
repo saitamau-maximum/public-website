@@ -73,7 +73,7 @@ export default function About() {
         </h2>
         <h3 className={style.subtitle}>講習</h3>
         <p className={style.text}>
-          WebサイトやWebサーバーを制作・構築・運用するための基礎を一通り学びます。講習ではHTML,CSS,JabaScriptを触ります。
+          WebサイトやWebサーバーを制作・構築・運用するための基礎を一通り学びます。講習ではHTML,CSS,JavaScriptを触ります。
           Webに関しては
           <strong className={style.highlight}>アウトプットこそ正義</strong>
           なので「勉強する」よりも
