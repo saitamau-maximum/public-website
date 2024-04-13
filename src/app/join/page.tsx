@@ -68,7 +68,7 @@ export default async function Join() {
             </p>
             <div className={style.triangle} />
             <p className={style.text}>
-              サークルの講習会開催日に
+              サークルの活動日に
               <span className={style.bold}>対面で参加</span>
               してもらい、必要な手続きを説明
             </p>
