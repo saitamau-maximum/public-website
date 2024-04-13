@@ -1,7 +1,7 @@
 import path from 'path';
 import Link from 'next/link';
 import React from 'react';
-import NewsListSrc from './news-list-view'
+import NewsListSrc from './news-list-view';
 import style from './news-page-list.module.scss';
 import { getMarkdowns } from '@/utils/markdown';
 
@@ -24,9 +24,5 @@ export async function NewsPageList(this: any) {
     a.frontmatter.updatedAt < b.frontmatter.updatedAt ? 1 : -1,
   );
 
-  return (
-    <NewsListSrc
-        docs = {docs}
-    />
-  )
+  return <NewsListSrc docs={docs} />;
 }

@@ -1,1 +1,1 @@
-export {default} from './news-list-view';
+export { default } from './news-list-view';
