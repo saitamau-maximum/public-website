@@ -4,7 +4,7 @@ import { getMarkdowns } from '../../utils/markdown';
 import style from './page.module.scss';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { HeroImage } from '@/components/HeroImage';
-import { NewsPageList } from '@/components/news-page-list';
+import { NewsPageList } from '@/components/news-page-list/news-page-list';
 
 export const metadata: Metadata = {
   title: 'News',
