@@ -27,6 +27,32 @@
   }
 }
 
+//選択用
+.selectTable{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.button{
+  width: 80px;
+  height: 40px;
+  border-radius: 36px;
+  border-color: #439154;
+  background-color: #ffffff;
+  font-size: 1rem;
+  font-weight: medium;
+}
+.activeButton{
+  width: 80px;
+  height: 40px;
+  border-radius: 36px;
+  border-color: #439154;
+  background-color: #439154;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: medium;
+}
 //ページネーション用
 .pagination{
   display: flex;

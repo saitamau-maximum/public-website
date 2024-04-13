@@ -18,6 +18,7 @@ interface Props {
 export default function NewsListSrc({ docs }: Props) {
   const perPage = 3;
   const [currentPage, setCurrentPage] = useState(0);
+  const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
 
   const handlePageChange = (selectedPage: {
     selected: React.SetStateAction<number>;
@@ -25,11 +26,35 @@ export default function NewsListSrc({ docs }: Props) {
     setCurrentPage(selectedPage.selected);
   };
 
+  const handleGroupChange = (group: string | null) => {
+    setSelectedGroup(group);
+    setCurrentPage(0); // ページングをリセット
+  };
+
+  if (selectedGroup) {
+    docs = docs.filter(doc => doc.frontmatter.group === selectedGroup);
+  }
   const startIndex = currentPage * perPage;
   const displayedDocs = docs.slice(startIndex, startIndex + perPage);
 
   return (
     <div className={style.cardContainer}>
+      {/*
+      <div className={style.selectTable}>
+        <button 
+          onClick={() => handleGroupChange(null)} 
+          className={selectedGroup === null ? style.activeButton : style.button}
+        >すべて</button> 
+        <button 
+          onClick={() => handleGroupChange('Web研')} 
+          className={selectedGroup === 'Web研' ? style.activeButton : style.button}
+        >Web研</button> 
+        <button 
+          onClick={() => handleGroupChange('競プロ')} 
+          className={selectedGroup === '競プロ' ? style.activeButton : style.button}
+        >競プロ</button> 
+      </div>
+  */}
       {displayedDocs.map((doc) => (
         <NewsLinkCard
           key={doc.slug}
