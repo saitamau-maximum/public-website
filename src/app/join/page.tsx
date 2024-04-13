@@ -41,7 +41,16 @@ export default async function Join() {
                 </Link>
                 のDM
               </span>
-              または<span className={style.bold}>講習会開催日に対面</span>
+              または
+              <Link
+                  href='https://line.me/ti/g2/Vsr7VFeo5KGAe3z6x273erFtObDeUYvCeu88OA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className={clsx(style.bold, style.span)}
+                >
+                  公式OpenChat
+                  <MdArrowOutward />
+                </Link>
               で入会希望を伝える
             </p>
             <div className={style.triangle} />
