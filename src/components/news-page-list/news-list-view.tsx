@@ -32,7 +32,7 @@ export default function NewsListSrc({ docs }: Props) {
   };
 
   if (selectedGroup) {
-    docs = docs.filter(doc => doc.frontmatter.group === selectedGroup);
+    docs = docs.filter((doc) => doc.frontmatter.group === selectedGroup);
   }
   const startIndex = currentPage * perPage;
   const displayedDocs = docs.slice(startIndex, startIndex + perPage);
