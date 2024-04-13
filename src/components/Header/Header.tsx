@@ -42,7 +42,7 @@ export function Header() {
           <Link href='/news' className={style.navigationLink}>
             News
           </Link>
-          <Link href='#' className={style.navigationLink}>
+          <Link href='/join' className={style.navigationLink}>
             Join
           </Link>
           <Link href='/achievements' className={style.navigationLink}>
