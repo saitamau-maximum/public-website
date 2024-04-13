@@ -3,7 +3,8 @@ import path from 'path';
 import { parseMarkdownToHTML } from '@saitamau-maximum/markdown-processor/server';
 import matter from 'gray-matter';
 import { Metadata } from 'next';
-import style from './style.module.css';
+import style from './style.module.scss';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { HeroImage } from '@/components/HeroImage';
 import Toc from '@/components/Toc';
 
@@ -45,9 +46,16 @@ export default async function NewsDetail({ params }: Props) {
   });
   return (
     <div>
-      <main>
+      <main className={style.main}>
         <div className={style.heroBox}>
           <HeroImage title='新着情報' type='default' blur={true} />
+          <Breadcrumb
+            items={[
+              { title: 'Top', href: '/' },
+              { title: '新着情報', href: '/news' },
+              { title: data.title, href: `/news/${slug}`},
+            ]}
+          />
         </div>
         <div className={style.container}>
           <div className={style.box}>
