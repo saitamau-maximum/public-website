@@ -39,7 +39,10 @@ export default async function Join() {
                   公式X(Twitter)
                   <MdArrowOutward />
                 </Link>
-                のDM</span>または<span className={style.bold}>講習会開催日に対面</span>で入会希望を伝える
+                のDM
+              </span>
+              または<span className={style.bold}>講習会開催日に対面</span>
+              で入会希望を伝える
             </p>
             <div className={style.triangle} />
             <p className={style.text}>
@@ -56,13 +59,19 @@ export default async function Join() {
             </p>
             <div className={style.triangle} />
             <p className={style.text}>
-              サークルの講習会開催日に<span className={style.bold}>対面で参加</span>してもらい、必要な手続きを説明
+              サークルの講習会開催日に
+              <span className={style.bold}>対面で参加</span>
+              してもらい、必要な手続きを説明
             </p>
             <div className={style.triangle} />
             <p className={style.text}>GitHub等のアカウント関連の設定をする</p>
           </div>
           <p className={style.subtext}>
-            学位・学部問わず<span className={clsx(style.bold, style.text)}>埼玉大学に所属していれば</span>どなたでも参加できます！
+            学位・学部問わず
+            <span className={clsx(style.bold, style.text)}>
+              埼玉大学に所属していれば
+            </span>
+            どなたでも参加できます！
           </p>
         </div>
       </main>
