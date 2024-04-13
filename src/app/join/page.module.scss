@@ -7,6 +7,18 @@
     padding: 24px 0px 0px;
     font-size: 1.5rem; // 24px
   }
+
+  .subtext {
+    font-size: 1rem; // 16px
+  }
+
+  .text {
+    font-size: 1.25rem; // 20px
+  }
+
+  .frame {
+    padding: 20px;
+  }
 }
 
 /* 画面幅が768px以上の場合のスタイル */
@@ -18,6 +30,18 @@
   .contentTitle {
     margin: 0px 40px;
     font-size: 2.5rem; // 40px
+  }
+
+  .subtext {
+    font-size: 1.25rem; // 20px
+  }
+
+  .text {
+    font-size: 1.5rem; // 24px
+  }
+
+  .frame {
+    padding: 40px;
   }
 }
 
@@ -57,15 +81,18 @@
 .frame {
   width: 80%;
   margin: 48px auto;
-  padding: 40px 0px;
   background-color: #fff;
   box-shadow: 2px 2px 4px gray;
   border-radius: 10px;
 }
 
 .text {
-  font-size: 1.54rem; // 24px
   text-align: center;
+}
+
+.subtext {
+  text-align: center;
+  margin: 16px;
 }
 
 .triangle {
@@ -75,4 +102,12 @@
   border-top: 20px solid #D7E6D4;
   border-right: 50px solid transparent;
   border-left: 50px solid transparent;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.span {
+  color: variables.$span-color;
 }

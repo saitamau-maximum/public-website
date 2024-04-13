@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { MdArrowOutward } from 'react-icons/md';
@@ -28,23 +29,40 @@ export default async function Join() {
           <span className={style.contentTitle}>入会の流れ</span>
           <div className={style.frame}>
             <p className={style.text}>
-              X(Twitter)にてDMまたは講習会開催日に対面で入会希望を伝える
+              <span className={style.bold}>
+                <Link
+                  href='https://twitter.com/Maximum03400346'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className={clsx(style.bold, style.span)}
+                >
+                  公式X(Twitter)
+                  <MdArrowOutward />
+                </Link>
+                のDM</span>または<span className={style.bold}>講習会開催日に対面</span>で入会希望を伝える
             </p>
             <div className={style.triangle} />
             <p className={style.text}>
-              <Link href='https://forms.office.com/pages/responsepage.aspx?id=aa8jBSUEjUqYJ-5yksXYIUwHz3zHfPVCotriPvbaC1RUREdUUk5IQlJGRjdSVzYxNk5ISFVCRkEzOS4u' target='_blank'>入会フォーム<MdArrowOutward /></Link>に必要事項を記入
+              <Link
+                href='https://forms.office.com/pages/responsepage.aspx?id=aa8jBSUEjUqYJ-5yksXYIUwHz3zHfPVCotriPvbaC1RUREdUUk5IQlJGRjdSVzYxNk5ISFVCRkEzOS4u'
+                target='_blank'
+                rel='noopener noreferrer'
+                className={clsx(style.bold, style.span)}
+              >
+                入会フォーム
+                <MdArrowOutward />
+              </Link>
+              に必要事項を記入
             </p>
             <div className={style.triangle} />
             <p className={style.text}>
-              サークルの講習会に対面で参加してもらい、必要な手続きを説明
+              サークルの講習会開催日に<span className={style.bold}>対面で参加</span>してもらい、必要な手続きを説明
             </p>
             <div className={style.triangle} />
-            <p className={style.text}>
-              GitHub等のアカウント関連の設定をする
-            </p>
+            <p className={style.text}>GitHub等のアカウント関連の設定をする</p>
           </div>
-          <p className={style.text}>
-            学位・学部問わず埼玉大学に所属していればどなたでも参加できます！
+          <p className={style.subtext}>
+            学位・学部問わず<span className={clsx(style.bold, style.text)}>埼玉大学に所属していれば</span>どなたでも参加できます！
           </p>
         </div>
       </main>
