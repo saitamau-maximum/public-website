@@ -4,6 +4,7 @@ import { parseMarkdownToHTML } from '@saitamau-maximum/markdown-processor/server
 import matter from 'gray-matter';
 import { Metadata } from 'next';
 import style from './style.module.scss';
+import { Article } from '@/components/Article';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { HeroImage } from '@/components/HeroImage';
 import Toc from '@/components/Toc';
@@ -68,7 +69,7 @@ export default async function NewsDetail({ params }: Props) {
             </div>
             <hr className={style.line} />
             {/* 記事のタイトル等の動的コンテンツにXSSが発生する可能性が、信頼できるリソースからのみ提供されることとして許容する。 */}
-            <article dangerouslySetInnerHTML={{ __html: html.content }} />
+            <Article content={html.content} />
           </div>
           <Toc tocData={html.toc} />
         </div>
