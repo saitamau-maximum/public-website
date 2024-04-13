@@ -33,6 +33,7 @@ export default async function News() {
               { title: '新着情報', href: '/news' },
             ]}
           />
+          <HeroImage title='新着情報' type='default' blur={true} />
         </div>
         <div className={style.contents}>
           <h1 className={style.contentTitle}>新着情報</h1>

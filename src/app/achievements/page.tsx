@@ -1,7 +1,8 @@
-import path from 'path';
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { Doc, getMarkdowns } from '../../utils/markdown';
+import style from './list-styles.module.scss';
+import { Breadcrumb } from '@/components/Breadcrumb';
+import { HeroImage } from '@/components/HeroImage';
+import AchievementList from '@/components/achievement-list/achievement-list';
 
 export const metadata: Metadata = {
   title: 'Achievements',
@@ -10,25 +11,21 @@ export const metadata: Metadata = {
 };
 
 export default async function Achievements() {
-  // achievementの中身を取得
-  const docsDir = path.join(process.cwd(), 'docs', 'achievement');
-  const docs = await getMarkdowns(docsDir);
-
-  // 一覧を日付でソート
-  docs.sort((a, b) =>
-    a.frontmatter.updatedAt < b.frontmatter.updatedAt ? 1 : -1,
-  );
-
   return (
-    <div>
-      <h1>Achievements</h1>
-      {docs.map((doc) => (
-        <div key={doc.slug}>
-          <Link href={`/achievements/${doc.slug}`}>
-            {doc.frontmatter.title}
-          </Link>
-        </div>
-      ))}
+    <div className={style.main}>
+      <div className={style.heroBox}>
+        <HeroImage title='過去の実績' type='default' blur={true} />
+        <Breadcrumb
+          items={[
+            { title: 'Top', href: '/' },
+            { title: '過去の実績', href: '/achievements' },
+          ]}
+        />
+      </div>
+      <div className={style.container}>
+        <h2 className={style.title}>参加した大会</h2>
+        <AchievementList />
+      </div>
     </div>
   );
 }

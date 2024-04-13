@@ -1,0 +1,52 @@
+@use 'src/app/variables';
+
+.title{
+    margin: 0;
+    padding: 16px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.line{
+    margin-top: 0; 
+    border: none;
+    height: 1px;
+    background-color: #d3d3d3;
+}
+
+.tocItem{
+    padding-left: 16px;
+    padding-top: 8px;
+    margin: 0;
+}
+
+.value{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #439154;
+}
+.value:hover {
+    text-decoration: underline;
+}
+.value:active {
+    text-decoration: none;
+}
+
+@media (min-width: variables.$header-change-width) {
+    .container{
+        width: 320px;
+        background-color: #ffffff;
+        padding-bottom: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        position: sticky;
+        top: 100px;
+    }   
+}
+
+@media (max-width: variables.$header-change-width) {
+    .container{
+        display: none;
+    }
+}
