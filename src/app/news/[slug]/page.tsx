@@ -53,7 +53,7 @@ export default async function NewsDetail({ params }: Props) {
             items={[
               { title: 'Top', href: '/' },
               { title: '新着情報', href: '/news' },
-              { title: data.title, href: `/news/${slug}`},
+              { title: data.title, href: `/news/${slug}` },
             ]}
           />
         </div>
