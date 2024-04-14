@@ -2,51 +2,53 @@
 
 /* 画面幅が768px以下の場合のスタイル */
 @media (max-width: variables.$tablet-width) {
-  .breadcrumb {
-    height: 28px;
-  }
-  
-  .breadcrumbLink {
-    font-size: 0.75rem; // 12px
-  }
-
   .contentTitle {
     margin: 0px 16px;
     padding: 24px 0px 0px;
     font-size: 1.5rem; // 24px
   }
+
+  .subtext {
+    font-size: 1rem; // 16px
+  }
+
+  .text {
+    font-size: 1.25rem; // 20px
+  }
+
+  .frame {
+    padding: 20px;
+  }
 }
 
 /* 画面幅が768px以上の場合のスタイル */
 @media (min-width: variables.$tablet-width) {
-  .breadcrumb {
-    height: 64px;
-  }
- 
-  .breadcrumbLink {
-    font-size: 1.5rem; // 24px
-  }
-
   .contents {
     max-width: variables.$pages-max-width;
   }
 
   .contentTitle {
     margin: 0px 40px;
-    padding: 40px 0px 0px;
     font-size: 2.5rem; // 40px
+  }
+
+  .subtext {
+    font-size: 1.25rem; // 20px
+  }
+
+  .text {
+    font-size: 1.5rem; // 24px
+  }
+
+  .frame {
+    padding: 40px;
   }
 }
 
-/* 共通 */
-.heroImage {
-  width: 100%;
-  object-fit: cover;
-}
-  
+/* 共通 */  
 .main {
-  flex-direction: column;
   background-color: variables.$background-color;
+  padding-top: 72px;
 }
 
 .container {
@@ -63,21 +65,9 @@
   background-color: variables.$background-color;
 }
 
-.breadcrumb {
-  width: 100%;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.breadcrumbLink {
-  color: white;
-  text-decoration: none;
-}
-
 .contents {
   width: 100%;
+  padding: 40px 0px;
   margin: 40px auto;
   background-color: #fff;
   box-shadow: 2px 2px 4px gray;
@@ -86,9 +76,38 @@
 .contentTitle {
   font-weight: normal;
   border-bottom: 1px solid black;
-  width: 4em;
 }
 
-.main {
-  padding-top: 72px;
+.frame {
+  width: 80%;
+  margin: 48px auto;
+  background-color: #fff;
+  box-shadow: 2px 2px 4px gray;
+  border-radius: 10px;
+}
+
+.text {
+  text-align: center;
+}
+
+.subtext {
+  text-align: center;
+  margin: 16px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border-top: 20px solid #D7E6D4;
+  border-right: 50px solid transparent;
+  border-left: 50px solid transparent;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.span {
+  color: variables.$span-color;
 }

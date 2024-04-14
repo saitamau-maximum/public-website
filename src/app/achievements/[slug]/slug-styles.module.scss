@@ -1,0 +1,55 @@
+@use 'src/app/variables';
+
+.main {
+  background-color: variables.$background-color;
+}
+
+.heroBox{
+    padding-top: 72px;
+}
+
+.container{
+    width: 100%;
+    background-color: variables.$background-color;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    display:flex;
+    align-items: flex-start;
+}
+
+.box{
+    width: 848px;
+    background-color: #fff;
+    padding: 32px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image{
+    width: 100%;
+    border: 1px solid #D7D7D7 ;
+}
+
+.title{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.line{
+    width:100%;
+    margin-left: 0;
+}
+
+@media (min-width: variables.$header-change-width) {
+    .container{
+        max-width: variables.$pages-max-width;
+        margin: 0 auto;
+        gap: 20px;
+    }
+}
+
+@media (max-width: variables.$header-change-width) {
+    .container{
+        justify-content: center;
+    }
+}
