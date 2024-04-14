@@ -63,14 +63,14 @@ export default function Faq() {
         TODO: Achievementの名前、後で決める。+ ref:https://github.com/saitamau-maximum/public-website/pull/25 
       */}
           <p className={styles.chatMessageAnswer}>
-            <div className={styles.chara}>A</div>{' '}
+            <div className={styles.chara}>A</div>
             上のAchievementsページから過去の成績をご覧ください！
           </p>
         </div>
         <div className={styles.QAcontainer}>
           <p className={styles.chatMessageQuestion}>
             <div className={styles.chara}>Q</div>
-            活動内容を教えてください！{' '}
+            活動内容を教えてください！
           </p>
           <p className={styles.chatMessageAnswer}>
             <div className={styles.chara}>A</div>
@@ -80,7 +80,7 @@ export default function Faq() {
         <div className={styles.QAcontainer}>
           <p className={styles.chatMessageQuestion}>
             <div className={styles.chara}>Q</div>
-            会費はいくらかかるのでしょうか？{' '}
+            会費はいくらかかるのでしょうか？
           </p>
           <p className={styles.chatMessageAnswer}>
             <div className={styles.chara}>A</div> 月額 250
@@ -92,7 +92,7 @@ export default function Faq() {
         <div className={styles.QAcontainer}>
           <p className={styles.chatMessageQuestion}>
             <div className={styles.chara}>Q</div>
-            情報工学科じゃないけれど入れる？{' '}
+            情報工学科じゃないけれど入れる？
           </p>
           <p className={styles.chatMessageAnswer}>
             <div className={styles.chara}>A</div>
@@ -103,7 +103,7 @@ export default function Faq() {
         <div className={styles.QAcontainer}>
           <p className={styles.chatMessageQuestion}>
             <div className={styles.chara}>Q</div>
-            どうやって練習をしているの？{' '}
+            どうやって練習をしているの？
           </p>
           <p className={styles.chatMessageAnswer}>
             <div className={styles.chara}>A</div>
@@ -115,17 +115,17 @@ export default function Faq() {
         </div>
         <div className={styles.QAcontainer}>
           <p className={styles.chatMessageQuestion}>
-            <div className={styles.chara}>Q</div>使う言語は？{' '}
+            <div className={styles.chara}>Q</div>使う言語は？
           </p>
           <p className={styles.chatMessageAnswer}>
-            <div className={styles.chara}>A</div>{' '}
+            <div className={styles.chara}>A</div>
             基本的には独習となるため、特に言語の強制などはしていません。
             ですが、講習で主に用いるのは、C++やHTML/CSS/JavaScriptという言語で、これを推奨しています。
           </p>
         </div>
         <div className={styles.QAcontainer}>
           <p className={styles.chatMessageQuestion}>
-            <div className={styles.chara}>Q</div>人数はどのくらい？{' '}
+            <div className={styles.chara}>Q</div>人数はどのくらい？
           </p>
           <p className={styles.chatMessageAnswer}>
             <div className={styles.chara}>A</div>
