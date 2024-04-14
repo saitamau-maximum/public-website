@@ -8,14 +8,18 @@
 }
 
 .container {
+  display: flex;
   flex-direction: column;
   background-color: variables.$background-color;
+  padding-top: 72px;
 }
 
 .contents {
-  margin: 40px;
+  margin: 40px auto;
   padding: 40px;
   background-color: #ffffff;
+  box-shadow: 2px 2px 4px gray;
+  max-width: variables.$pages-max-width;
 }
 
 .QAcontainer {
