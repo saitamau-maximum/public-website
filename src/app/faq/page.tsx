@@ -21,7 +21,7 @@ export default function Faq() {
         ]}
       />
       <main className={styles.contents}>
-        <h1 className={styles.head}>よくある質問</h1>
+        <span className={styles.head}>よくある質問</span>
         <QAComponent
           question='FAQに載ってないことはどこで聞けますか?'
           answer='もしほかにご質問があればX(旧Twitter)のDMなどで気軽に聞いてください！'
@@ -52,7 +52,7 @@ export default function Faq() {
         />
         <QAComponent
           question='どうやって練習をしているの？'
-          answer='AtCoderという毎週末に競技プログラミングコンテストを開催している企業があるので、主にそこの問題を解きます。まず&quot;AtCoder Beginner Contest&quot;に参加して競技プログラミングに慣れましょう。Web研では基礎を一通り講習した後で対価の過去問を使った実践演習を主に行っています！'
+          answer='AtCoderという毎週末に競技プログラミングコンテストを開催している企業があるので、主にそこの問題を解きます。まず"AtCoder Beginner Contest"に参加して競技プログラミングに慣れましょう。Web研では基礎を一通り講習した後で対価の過去問を使った実践演習を主に行っています！'
         />
         <QAComponent
           question='使う言語は？'
