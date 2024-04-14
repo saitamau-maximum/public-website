@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     '埼玉大学プログラミングサークル「Maximum」へのお問い合わせのページです。',
 };
 
-export default async function Contact() {
+export default function Contact() {
   return (
     <div className={style.container}>
       <div className={style.hero}>
