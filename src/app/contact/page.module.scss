@@ -19,6 +19,10 @@
   .frame {
     padding: 20px;
   }
+
+  .mediaContainer {
+    margin: 24px 12px;
+  }
 }
 
 /* 画面幅が768px以上の場合のスタイル */
@@ -42,6 +46,10 @@
 
   .frame {
     padding: 40px;
+  }
+
+  .mediaContainer {
+    margin: 40px 120px;
   }
 }
 
@@ -88,6 +96,7 @@
 
 .text {
   text-align: center;
+  margin: 16px;
 }
 
 .subtext {
@@ -110,8 +119,4 @@
 
 .span {
   color: variables.$span-color;
-}
-
-.mediaContainer {
-  margin: 40px 120px;
 }

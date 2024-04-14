@@ -32,9 +32,7 @@ export default async function Contact() {
           </p>
           <p className={style.text}>
             お手数ですが、お問い合わせは
-            <span className={style.bold}>
-              Maximum公式X(Twitter)
-            </span>
+            <span className={style.bold}>Maximum公式X(Twitter)</span>
             のDMにお寄せください。
           </p>
           <div className={style.mediaContainer}>
