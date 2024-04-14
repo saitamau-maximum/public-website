@@ -54,8 +54,8 @@ export default function NewsListSrc({ docs }: Props) {
         activeClassName={style.active}
         previousLabel='' //前のページ番号に戻すリンクのテキスト
         nextLabel='' //次のページに進むボタンのテキスト
-        previousClassName={style.noNeed} // '<'の親要素(li)のクラス名
-        nextClassName={style.noNeed} //'>'の親要素(li)のクラス名
+        previousClassName={style.next_prev_item} // '<'の親要素(li)のクラス名
+        nextClassName={style.next_prev_item} //'>'の親要素(li)のクラス名
         previousLinkClassName={style.noNeed} //'<'のリンクのクラス名
         nextLinkClassName={style.noNeed} //'>'のリンクのクラス名
         disabledClassName='disabled'
