@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Link from 'next/link';
 import { HeroImage } from '../components/HeroImage';
 import { LinkButton } from '../components/LinkButton';
 import style from './page.module.scss';
@@ -26,7 +25,11 @@ export default function Home() {
             &nbsp;(週1回)の2つの活動を行っています。
           </p>
           <div className={clsx(style.imgBox1, style.imgBoxCommon)}>
-            {/* <img src='/images/hero.png' alt='Hero'/> */}
+            <img
+              src='/images/top1.png'
+              alt='TopImage1'
+              className={style.topImages}
+            />
           </div>
           <div className={style.activityCP}>
             <div className={style.activityTitle}>
@@ -45,19 +48,23 @@ export default function Home() {
             </p>
             <div className={style.activityLeftButtonContainer}>
               <div className={style.navigationForPC}>
-                <LinkButton href='#' variant='gray' size='medium'>
+                <LinkButton href='/about#kyopro' variant='gray' size='medium'>
                   Learn More
                 </LinkButton>
               </div>
               <div className={style.navigationForMobile}>
-                <LinkButton href='#' variant='gray' size='small'>
+                <LinkButton href='/about#kyopro' variant='gray' size='small'>
                   Learn More
                 </LinkButton>
               </div>
             </div>
           </div>
           <div className={clsx(style.imgBox2, style.imgBoxCommon)}>
-            {/* <img src='/images/hero.png' alt='Hero'/> */}
+            <img
+              src='/images/top2.png'
+              alt='topImage2'
+              className={style.topImages}
+            />
           </div>
           <div className={style.activityWeb}>
             <div className={style.activityTitle}>
@@ -73,12 +80,12 @@ export default function Home() {
             </p>
             <div className={style.activityRightButtonContainer}>
               <div className={style.navigationForPC}>
-                <LinkButton href='#' variant='gray' size='medium'>
+                <LinkButton href='/about#webken' variant='gray' size='medium'>
                   Learn More
                 </LinkButton>
               </div>
               <div className={style.navigationForMobile}>
-                <LinkButton href='#' variant='gray' size='small'>
+                <LinkButton href='/about#webken' variant='gray' size='small'>
                   Learn More
                 </LinkButton>
               </div>
@@ -97,12 +104,12 @@ export default function Home() {
             </p>
             <div className={style.activityOtherButtonContainer}>
               <div className={style.navigationForPC}>
-                <LinkButton href='#' variant='green' size='medium'>
+                <LinkButton href='/join' variant='green' size='medium'>
                   入会案内はこちら
                 </LinkButton>
               </div>
               <div className={style.navigationForMobile}>
-                <LinkButton href='#' variant='green' size='small'>
+                <LinkButton href='/join' variant='green' size='small'>
                   入会案内はこちら
                 </LinkButton>
               </div>

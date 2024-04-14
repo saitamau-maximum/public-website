@@ -1,20 +1,19 @@
 .container{
-    background-color: #f1f1f1;
-    margin: 0 auto;
-    padding-top: 72xp;
+    display: flex;
+    flex-direction: column;
 }
-.heroBox{
+.main {
+    background-color: #f1f1f1;
     padding-top: 72px;
 }
 .box{
     background-color: #fff;
     width: 54rem;
     max-width: 100%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 48px;
-    margin-left: auto;
-    margin-right: auto;
+    box-shadow: 2px 2px 4px gray;
+    margin: 40px auto;
     padding: 24px;
+    box-sizing: border-box;
 }
 .title{
     font-size: 2rem;
