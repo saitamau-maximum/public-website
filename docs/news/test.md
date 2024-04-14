@@ -1,10 +1,14 @@
 ---
-title: "テスト"
-createdAt: "2024-03-10"
-updatedAt: "2024-03-10"
-description: "説明欄"
-group: "Maximum"
+title: 'サイト移行のお知らせ'
+createdAt: '2024-04-15'
+updatedAt: '2024-04-15'
+description: 'Maximum公式Webサイトをリニューアルしました！'
+group: 'Maximum'
 ---
 
-デプロイの関係上、仮のファイルを作らないと通らないため作りました。
-記事作成される方はこのファイルは削除してください。
+# Maximum 公式Webサイトをリニューアルしました！
+
+2024年の春休み中に、Maximum公式Webサイトを開発しました。
+開発は新2年生のメンバーが中心となって行いました！
+
+https://github.com/saitamau-maximum/public-website
