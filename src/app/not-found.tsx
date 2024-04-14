@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import style from './not-found.module.scss';
 import Link from 'next/link';
+import style from './not-found.module.scss';
 
 export const metadata: Metadata = {
   title: '404 Not Found',
