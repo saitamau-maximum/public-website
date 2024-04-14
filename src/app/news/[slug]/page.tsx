@@ -53,7 +53,7 @@ export default async function NewsDetail({ params }: Props) {
           <Breadcrumb
             items={[
               { title: 'Top', href: '/' },
-              { title: '新着情報', href: '/news' },
+              { title: 'news', href: '/news' },
               { title: data.title, href: `/news/${slug}` },
             ]}
           />
