@@ -24,17 +24,13 @@ export const MediaLinkCard: React.FC<MediaLinkCardProps> = ({
         className={style.link}
       >
         <div className={style.imgBox}>
-          <img
-            src={imageUrl}
-            alt={imageAlt}
-            className={style.icon}
-          />
+          <img src={imageUrl} alt={imageAlt} className={style.icon} />
         </div>
         <div className={style.overlay}>
           <p className={clsx(style.bold, style.text)}>{title}</p>
-          <p className={clsx(style.bold, style.subtext)}>{id}</p>
+          <p className={style.subtext}>{id}</p>
         </div>
       </Link>
     </div>
   );
-}
+};

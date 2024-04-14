@@ -6,10 +6,10 @@ export default {
   title: 'Components/MediaLinkCard',
   component: MediaLinkCard,
   argTypes: {
-      title: { control: 'text' },
-      id: { control: 'text' },
-      imageUrl : { control: 'text' },
-      imageAlt : { control: 'text' },
+    title: { control: 'text' },
+    id: { control: 'text' },
+    imageUrl: { control: 'text' },
+    imageAlt: { control: 'text' },
   },
 } as Meta;
 
