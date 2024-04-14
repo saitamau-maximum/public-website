@@ -38,7 +38,7 @@ export default function Faq() {
         <div className={styles.QAcontainer}>
           <p className={styles.chatMessageQuestion}>
             <div className={styles.chara}>Q</div>
-            プログラミング初心者なんですが、大丈夫ですか？{' '}
+            プログラミング初心者なんですが、大丈夫ですか？
           </p>
           <p className={styles.chatMessageAnswer}>
             <div className={styles.chara}>A</div>
