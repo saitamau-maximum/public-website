@@ -6,10 +6,7 @@ interface QAItem {
   answer: string;
 }
 
-export const QAComponent: React.FC<QAItem> = ({
-  question,
-  answer,
-}) => {
+export const QAComponent: React.FC<QAItem> = ({ question, answer }) => {
   return (
     <div className={styles.QAcontainer}>
       <div className={styles.chatMessageQuestion}>
