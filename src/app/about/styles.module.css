@@ -13,7 +13,7 @@
     box-shadow: 2px 2px 4px gray;
     margin: 40px auto;
     padding: 24px;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 .title{
     font-size: 2rem;
