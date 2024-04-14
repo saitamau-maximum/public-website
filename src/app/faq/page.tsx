@@ -23,7 +23,7 @@ export default function Faq() {
       <main className={styles.contents}>
         <span className={styles.head}>よくある質問</span>
         <QAComponent
-          question='FAQに載ってないことはどこで聞けますか?'
+          question='FAQに載ってないことはどこで聞けますか？'
           answer='もしほかにご質問があればX(旧Twitter)のDMなどで気軽に聞いてください！'
         />
         <QAComponent
