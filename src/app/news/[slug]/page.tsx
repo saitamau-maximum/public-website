@@ -49,11 +49,11 @@ export default async function NewsDetail({ params }: Props) {
     <div>
       <main className={style.main}>
         <div className={style.heroBox}>
-          <HeroImage title='新着情報' type='default' blur={true} />
+          <HeroImage title='ニュース' type='default' blur={true} />
           <Breadcrumb
             items={[
               { title: 'Top', href: '/' },
-              { title: 'News', href: '/news' },
+              { title: 'ニュース一覧', href: '/news' },
               { title: data.title, href: `/news/${slug}` },
             ]}
           />
