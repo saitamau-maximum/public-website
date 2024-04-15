@@ -1,5 +1,5 @@
 ---
-title: 'サイト移行のお知らせ'
+title: 'サイトリニューアルのお知らせ'
 createdAt: '2024-04-15'
 updatedAt: '2024-04-15'
 description: 'Maximum公式Webサイトをリニューアルしました！'
