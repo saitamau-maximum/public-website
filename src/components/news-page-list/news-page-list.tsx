@@ -1,6 +1,7 @@
 import path from 'path';
 import Link from 'next/link';
-import { NewsLinkCard } from '../NewsLinkCard';
+import React from 'react';
+import NewsListSrc from './news-list-view';
 import style from './news-page-list.module.scss';
 import { getMarkdowns } from '@/utils/markdown';
 
@@ -18,21 +19,10 @@ export async function NewsPageList() {
     );
   }
 
-  return (
-    <div className={style.cardContainer}>
-      {docs.map((doc) => (
-        <NewsLinkCard
-          key={doc.slug}
-          title={doc.frontmatter.title}
-          content={doc.frontmatter.description}
-          date={new Date(doc.frontmatter.updatedAt).toLocaleDateString(
-            'ja-JP',
-            { year: 'numeric', month: '2-digit' },
-          )}
-          group={doc.frontmatter.group}
-          to={`/news/${doc.slug}`}
-        />
-      ))}
-    </div>
+  // 一覧を日付でソート
+  docs.sort((a, b) =>
+    a.frontmatter.updatedAt < b.frontmatter.updatedAt ? 1 : -1,
   );
+
+  return <NewsListSrc docs={docs} />;
 }
