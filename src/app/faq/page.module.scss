@@ -1,3 +1,43 @@
+@use 'src/app/variables';
+@mixin box-shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+}
+
+@media (max-width: variables.$tablet-width) {
+  .head {
+    font-size: 1.5rem; // 24px
+  }
+
+  .contents {
+    padding: 20px;
+  }
+}
+
+@media (min-width: variables.$tablet-width) {
+  .head {
+    font-size: 2.5rem; // 40px
+  }
+
+  .contents {
+    padding: 40px;
+    max-width: variables.$pages-max-width;
+  }
+}
+
+.head {
+  font-weight: normal;
+  border-bottom: 1px solid black;
+}
+
 .container {
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$background-color;
   padding-top: 72px;
+}
+
+.contents {
+  margin: 40px auto;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px gray;
 }
