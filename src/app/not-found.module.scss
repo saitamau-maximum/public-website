@@ -1,0 +1,28 @@
+@use 'src/app/variables';
+
+.main {
+  padding-top: 72px;
+  background-color: variables.$background-color;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 400px);
+  background-color: variables.$background-color;
+}
+
+.box {
+  margin: 64px;
+  text-align: center;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.link {
+  font-size: 16px;
+  color: variables.$span-color;
+}
