@@ -9,6 +9,9 @@ import style from './Header.module.scss';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
   return (
     <header
       className={clsx(style.header, {
@@ -36,22 +39,22 @@ export function Header() {
       </button>
       <nav className={style.navigations}>
         <div className={style.navigationLinks}>
-          <Link href='/about' className={style.navigationLink}>
+          <Link href='/about' className={style.navigationLink} onClick={handleLinkClick}>
             About
           </Link>
-          <Link href='/news' className={style.navigationLink}>
+          <Link href='/news' className={style.navigationLink} onClick={handleLinkClick}>
             News
           </Link>
-          <Link href='/join' className={style.navigationLink}>
+          <Link href='/join' className={style.navigationLink} onClick={handleLinkClick}>
             Join
           </Link>
-          <Link href='/achievements' className={style.navigationLink}>
+          <Link href='/achievements' className={style.navigationLink} onClick={handleLinkClick}>
             Achievements
           </Link>
-          <Link href='/contact' className={style.navigationLink}>
+          <Link href='/contact' className={style.navigationLink} onClick={handleLinkClick}>
             Contact
           </Link>
-          <Link href='/faq' className={style.navigationLink}>
+          <Link href='/faq' className={style.navigationLink} onClick={handleLinkClick}>
             Q&amp;A
           </Link>
           <Link
@@ -59,6 +62,7 @@ export function Header() {
             target='_blank'
             rel='noopener noreferrer'
             className={style.navigationLink}
+            onClick={handleLinkClick}
           >
             Blog
             <MdArrowOutward />
@@ -70,6 +74,7 @@ export function Header() {
             target='_blank'
             rel='noopener noreferrer'
             className={style.navigationLink}
+            onClick={handleLinkClick}
           >
             <SiX size={24} />
           </Link>
@@ -78,6 +83,7 @@ export function Header() {
             target='_blank'
             rel='noopener noreferrer'
             className={style.navigationLink}
+            onClick={handleLinkClick}
           >
             <SiGithub size={24} />
           </Link>
