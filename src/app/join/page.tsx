@@ -55,19 +55,6 @@ export default async function Join() {
             </p>
             <div className={style.triangle} />
             <p className={style.text}>
-              <Link
-                href='https://forms.office.com/pages/responsepage.aspx?id=aa8jBSUEjUqYJ-5yksXYIUwHz3zHfPVCotriPvbaC1RUREdUUk5IQlJGRjdSVzYxNk5ISFVCRkEzOS4u'
-                target='_blank'
-                rel='noopener noreferrer'
-                className={clsx(style.bold, style.span)}
-              >
-                入会フォーム
-                <MdArrowOutward />
-              </Link>
-              に必要事項を記入
-            </p>
-            <div className={style.triangle} />
-            <p className={style.text}>
               サークルの活動日に
               <span className={style.bold}>対面で参加</span>
               してもらい、必要な手続きを説明
