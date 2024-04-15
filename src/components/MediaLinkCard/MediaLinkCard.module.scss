@@ -1,0 +1,82 @@
+@use 'src/app/variables';
+
+/* 画面幅が768px以下の場合のスタイル */
+@media (max-width: variables.$tablet-width) {
+  .subtext {
+    font-size: 1rem; // 16px
+  }
+
+  .text {
+    font-size: 1.25rem; // 20px
+  }
+
+  .icon {
+    width: 124px;
+    height: 124px;
+  }
+
+  .overlay {
+    margin: auto 16px;
+  }
+}
+
+/* 画面幅が768px以上の場合のスタイル */
+@media (min-width: variables.$tablet-width) {
+  .subtext {
+    font-size: 1.25rem; // 20px
+  }
+
+  .text {
+    font-size: 1.5rem; // 24px
+  }
+
+  .icon {
+    width: 230px;
+    height: 230px;
+  }
+
+  .overlay {
+    margin: auto 20px;
+  }
+}
+
+/* 共通 */  
+.frame {
+  background-color: #fff;
+  box-shadow: 2px 2px 4px gray;
+  border-radius: 10px;
+  padding: 0;
+  border: 1px solid #9999;
+}
+
+.text {
+  margin: 0;
+  color: black;
+}
+
+.subtext {
+  margin: 0;
+  color: black;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.span {
+  color: variables.$span-color;
+}
+
+.link {
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+}
+
+.imgBox {
+  border-right: 2px solid #9999;
+}
+
+.icon {
+  display: block;
+}
