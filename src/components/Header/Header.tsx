@@ -39,22 +39,46 @@ export function Header() {
       </button>
       <nav className={style.navigations}>
         <div className={style.navigationLinks}>
-          <Link href='/about' className={style.navigationLink} onClick={handleLinkClick}>
+          <Link
+            href='/about'
+            className={style.navigationLink}
+            onClick={handleLinkClick}
+          >
             About
           </Link>
-          <Link href='/news' className={style.navigationLink} onClick={handleLinkClick}>
+          <Link
+            href='/news'
+            className={style.navigationLink}
+            onClick={handleLinkClick}
+          >
             News
           </Link>
-          <Link href='/join' className={style.navigationLink} onClick={handleLinkClick}>
+          <Link
+            href='/join'
+            className={style.navigationLink}
+            onClick={handleLinkClick}
+          >
             Join
           </Link>
-          <Link href='/achievements' className={style.navigationLink} onClick={handleLinkClick}>
+          <Link
+            href='/achievements'
+            className={style.navigationLink}
+            onClick={handleLinkClick}
+          >
             Achievements
           </Link>
-          <Link href='/contact' className={style.navigationLink} onClick={handleLinkClick}>
+          <Link
+            href='/contact'
+            className={style.navigationLink}
+            onClick={handleLinkClick}
+          >
             Contact
           </Link>
-          <Link href='/faq' className={style.navigationLink} onClick={handleLinkClick}>
+          <Link
+            href='/faq'
+            className={style.navigationLink}
+            onClick={handleLinkClick}
+          >
             Q&amp;A
           </Link>
           <Link
