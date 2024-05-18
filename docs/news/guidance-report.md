@@ -19,4 +19,3 @@ group: 'Maximum'
 
 まずは、広い部屋を借りるところからですかね．．．（笑）
 
-![2024年度のガイダンス](/images/guidance-news.png)
