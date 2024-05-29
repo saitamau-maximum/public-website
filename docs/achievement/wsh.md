@@ -21,7 +21,7 @@ Web Speed Hackathon は株式会社サイバーエージェントが主催して
 | sor4chi | -1 位 / 103 | 1 位 / 103 (1 位 / 43) | 正規表現のミスにより失格 |
 | Daaaai0809 | -1 位 / 103 | 21 位 / 103 (10 位 / 43) | 画像のアスペクト比のミスにより失格 |
 
-a01sa01to [Web Speed Hackathon 2024 で 3 位になりました](https://a01sa01to.com/articles/2024/03/ca-wsh/)
+- a01sa01to: [Web Speed Hackathon 2024 で 3 位になりました](https://a01sa01to.com/articles/2024/03/ca-wsh/)
 
 
 ## 2023
