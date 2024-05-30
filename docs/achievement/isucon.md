@@ -19,4 +19,4 @@ imageUrl: "/images/ISUCON.png"
 | Maximum.mum | 7,159 | 340 位 | 非公表 |
 
 - a01sa01to: [ISUCON13 参加記 (Maxif. Asa 視点)](https://a01sa01to.com/articles/2023/11/isucon13/)
-- Sor4chi: [SUCON13に参加してきました](https://monica-dev.com/blog/isucon13/)
+- sor4chi: [ISUCON13に参加してきました](https://monica-dev.com/blog/isucon13/)
