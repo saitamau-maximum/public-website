@@ -14,3 +14,6 @@ imageUrl: "/images/UTE-1.png"
 | チーム名 | 順位 |
 | :-: | :-: |
 | Maximum | 22 位 / 30 |
+
+- a01sa01to: [UTE-1 参加記](https://a01sa01to.com/articles/2023/02/uteone/)
+- Sor4chi: [UTE-1に参加しました](https://zenn.dev/monica/articles/117a84653f69a7)
