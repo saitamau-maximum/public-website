@@ -14,4 +14,6 @@ group: 'icpc'
 Yokohama Regionalに向けて、更なる精進を重ねていきます！  
 ご協力いただいた皆様、本当にありがとうございました
 
+各チームの成績は[こちら](https://maximum.vc/achievements/icpc)
+
 ![icpc2024](/images/icpc2024-news.jpg)
