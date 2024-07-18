@@ -15,4 +15,4 @@ imageUrl: "/images/ICFPC.png"
 | :-: | :-: |
 | Maximum | 67 位 / 296 |
 
-- Team Repository: [icfpc2024](https://github.com/saitamau-maximum/icfpc2024)
+- Team Repository: [saitamau-maximum/icfpc2024](https://github.com/saitamau-maximum/icfpc2024)
