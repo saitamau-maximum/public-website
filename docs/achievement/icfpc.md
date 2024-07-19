@@ -3,7 +3,7 @@ title: "ICFPC"
 subtitle: "ICFP Programming Contest"
 createdAt: "2024-07-15"
 updatedAt: "2024-07-15"
-description: "ICFP Contest は、ACM SIGPLAN 国際関数型言語学会 (International Conference on Functional Programming) が主催するプログラミング・コンテストです。"
+description: "毎年開催されているACM SIGPLAN 国際関数型言語学会が主催のプログラミングコンテスト「ICFPC 」のMaximumの戦績を掲載しています。"
 iconUrl: "/images/ICFPC_icon.png"
 imageUrl: "/images/ICFPC.png"
 ---
