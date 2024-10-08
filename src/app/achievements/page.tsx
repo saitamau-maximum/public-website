@@ -27,7 +27,9 @@ export default async function Achievements() {
         <AchievementList />
         <h2 className={style.title}>保有資格</h2>
         <div className={style.content}>
+          <h2>保有資格</h2>
           <h3>当サークルの部員が現在保有している資格について記載します。</h3>
+
           <table>
             <thead>
               <tr>
