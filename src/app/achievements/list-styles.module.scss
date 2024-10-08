@@ -1,7 +1,7 @@
 @use 'src/app/variables';
 
 @media (max-width: variables.$tablet-width) {
-    .container{
+    .container {
         margin: 0px 24px;
     }
 
@@ -12,12 +12,12 @@
 }
 
 @media (min-width: variables.$tablet-width) {
-    .container{
+    .container {
         margin: auto;
         max-width: variables.$pages-max-width;
     }
 
-    .title{
+    .title {
         font-size: 2rem;
         font-weight: bold;
         margin-left: 55px;
@@ -29,12 +29,49 @@
     background-color: variables.$background-color;
 }
 
-.heroBox{
+.heroBox {
     padding-top: 72px;
 }
 
-.container{
+.container {
     background-color: #F1F1F1;
     padding: 88px 0 103px;
 }
 
+.content {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+.content table thead {
+    background-color: #04781e;
+    color: #ffffff;
+}
+
+.content table thead th {
+    font-weight: medium;
+    font-size: 1.125rem;
+    padding: 10px;
+}
+
+.content table tbody th {
+    font-size: 1.25rem;
+}
+
+.content table tbody tr:nth-child(even) {
+    background-color: #d9d9d9;
+}
+
+.content table tbody tr:nth-child(odd) {
+    background-color: #ececec;
+}
+
+.content img {
+    width: 100%;
+}
