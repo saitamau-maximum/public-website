@@ -23,8 +23,6 @@ export default async function Achievements() {
         />
       </div>
       <div className={style.container}>
-        <h2 className={style.title}>参加した大会</h2>
-        <AchievementList />
         <h2 className={style.title}>保有資格</h2>
         <div className={style.content}>
           <p>
@@ -54,6 +52,8 @@ export default async function Achievements() {
             </tbody>
           </table>
         </div>
+        <h2 className={style.title}>参加した大会</h2>
+        <AchievementList />
       </div>
     </div>
   );

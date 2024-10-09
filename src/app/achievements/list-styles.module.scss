@@ -35,7 +35,7 @@
 
 .container {
     background-color: #F1F1F1;
-    padding: 88px 0 103px;
+    padding: 40px 40px 103px;
 }
 
 .content {
@@ -62,6 +62,12 @@
 
 .content table tbody th {
     font-size: 1.25rem;
+}
+
+.content table tbody td {
+    font-size: 1.125rem;
+    padding: 4px;
+    text-align: center;
 }
 
 .content table tbody tr:nth-child(even) {
