@@ -19,8 +19,8 @@ imageUrl: "/images/ISUCON.png"
 | Maximum-Y.N.K.S | 13,766 | - | - | データ保持NG |
 | Maxipus | 3,546 | - | - | 負荷走行後再起動NG |
 
-- a01sa01to: [ISUCON14 参加記 (Maxif. Asa 視点)](https://a01sa01to.com/articles/2024/12/isucon14)
-- Sor4chi: [ISUCON14に参加してきました](https://monica-dev.com/blog/isucon14)
+- a01sa01to: [ISUCON14 参加記 (Maxif. Asa 視点)](https://a01sa01to.com/articles/2024/12/isucon14/)
+- Sor4chi: [ISUCON14に参加してきました](https://monica-dev.com/blog/isucon14/)
 - batora9: [ISUCON14に参加しました(batora視点)](https://batoran.com/articles/isucon14)
 
 ## ISUCON13 (2023)
