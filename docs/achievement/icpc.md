@@ -7,7 +7,7 @@ description: "ICPC は、同じ大学で 3 人 1 組のチームを作り、チ�
 iconUrl: "/images/ICPC_icon.png"
 imageUrl: "/images/ICPC.png"
 ---
- 
+
 ICPC (International Collegiate Programming Contest / 国際大学対抗プログラミングコンテスト) とは、[ICPC Foundation](https://icpc.foundation/)が主催するプログラミングコンテストです。同じ大学で3人1組のチームを作り、チームでプログラミングと問題解決の能力を競う大会です。
 
 ICPC には 2000 年から出場し続けており、これまでにも世界大会経験や、国内予選の継続的な突破といった好成績を収める実績を挙げています。
@@ -15,7 +15,7 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 ## 2024
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
-| executive is deprived | 31 位 | 進出決定 |  |
+| executive is deprived | 31 位 | 横浜大会 34 位 (47 位) |  |
 | mountain_river_village | 131 位 |  |  |
 | Bocchi The Maximum | 159 位 |  |  |
 | Maximum Legends | 164 位 |  |  |
@@ -26,9 +26,8 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | Maximum The Max | 310 位 |  |  |
 | Level1 | 349 位 |  |  |
 
-※国内予選終了時点の順位です。
-
 - a01sa01to: [ICPC2024 国内予選](https://a01sa01to.com/articles/2024/07/icpc2024-prelim/)
+- a01sa01to: [ICPC2024 横浜大会](https://a01sa01to.com/articles/2024/12/icpc2024-regional/)
 
 ## 2023
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
