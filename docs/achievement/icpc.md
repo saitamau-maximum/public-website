@@ -27,7 +27,7 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | Level1 | 349 位 |  |  |
 
 - a01sa01to: [ICPC2024 国内予選](https://a01sa01to.com/articles/2024/07/icpc2024-prelim/)
-- a01sa01to: [ICPC2024 横浜大会](https://a01sa01to.com/articles/2024/12/icpc-2024-regional/)
+- a01sa01to: [ICPC2024 横浜大会](https://a01sa01to.com/articles/2024/12/icpc2024-regional/)
 
 ## 2023
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
