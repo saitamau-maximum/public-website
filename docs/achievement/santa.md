@@ -4,7 +4,7 @@ subtitle: "Santa - The Perplexity Permutation Puzzle"
 createdAt: "2025-02-09"
 updatedAt: "2025-02-09"
 description: "Santa は、～　の大会です。"
-iconUrl: "/images/santa_icon.jpg"
+iconUrl: "/images/santa_icon.png"
 imageUrl: "/images/santa.png"
 ---
 
