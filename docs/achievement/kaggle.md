@@ -12,7 +12,7 @@ imageUrl: "/images/kaggle.png"
 
 ## Santa2024
 
-[Santa](https://www.kaggle.com/competitions/santa-2024/)は～の大会です。
+[Santa](https://www.kaggle.com/competitions/santa-2024/)は毎年クリスマスシーズンに開催されます。クリスマスを題材にした最適化問題に取り組む大会です。
 
 | チーム名 | 順位 |
 | :-: | :-: |
