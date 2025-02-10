@@ -1,9 +1,9 @@
 ---
-title: "kaggle"
-subtitle: "kaggle competitions"
+title: "Kaggle"
+subtitle: "Machine Learning Competitions Platform"
 createdAt: "2025-02-11"
 updatedAt: "2025-02-11"
-description: "kaggleが主催する様々なcompetitionの成績を掲載しています。"
+description: "Kaggleで開催される様々なコンペティションの成績を掲載しています。"
 iconUrl: "/images/kaggle_icon.png"
 imageUrl: "/images/kaggle.png"
 ---
