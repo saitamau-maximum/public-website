@@ -8,7 +8,7 @@ iconUrl: "/images/kaggle_icon.png"
 imageUrl: "/images/kaggle.png"
 ---
 
-[kaggle](https://www.kaggle.com/competitions/)が主催する様々なcompetitionの成績を以下に掲載しています。
+[Kaggle](https://www.kaggle.com/competitions/)で開催される様々なコンペティションの成績を以下に掲載しています。
 
 ## Santa2024
 
