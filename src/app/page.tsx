@@ -92,7 +92,7 @@ export default function Home() {
             </div>
           </div>
           <div className={style.activityOther}>
-            <p className={style.txtOther}>他にも&hellip;</p>
+            <p className={style.txtOther}>他にも…</p>
             <p>
               沢山の活動班があり、2025年度は&nbsp;
               <span className={clsx(style.span, style.bold)}>
@@ -110,10 +110,9 @@ export default function Home() {
               <span className={clsx(style.span, style.bold)}>ゲーム開発班</span>
               、<span className={clsx(style.span, style.bold)}>インフラ班</span>
               &nbsp;が活動しています。
-              <br />
-              メンバーはDiscordを活用し、自由なコミュニケーションの中で、
-              交流会、勉強会、サークル内模擬大会などの多彩なイベントを開催しています。
-              <br />
+            </p>
+            <p>
+              メンバーはDiscordを活用して自由にコミュニケーションを取っています。オンライン・オフラインともに交流会、勉強会、サークル内模擬大会などの多彩なイベントを開催しています。
             </p>
             <div className={style.activityOtherButtonContainer}>
               <div className={style.navigationForPC}>
