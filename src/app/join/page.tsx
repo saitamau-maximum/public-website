@@ -43,7 +43,7 @@ export default async function Join() {
               </span>
               または
               <Link
-                href='https://line.me/ti/g2/Vsr7VFeo5KGAe3z6x273erFtObDeUYvCeu88OA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default'
+                href='https://line.me/ti/g2/uLfSQMqkPI0NKLrWZ0nDs0d6wXZEJPe4wzSjFw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default'
                 target='_blank'
                 rel='noopener noreferrer'
                 className={clsx(style.bold, style.span)}
@@ -56,24 +56,33 @@ export default async function Join() {
             <div className={style.triangle} />
             <p className={style.text}>
               <Link
-                href='https://forms.office.com/pages/responsepage.aspx?id=aa8jBSUEjUqYJ-5yksXYIUwHz3zHfPVCotriPvbaC1RUREdUUk5IQlJGRjdSVzYxNk5ISFVCRkEzOS4u'
+                href='https://github.com'
                 target='_blank'
                 rel='noopener noreferrer'
                 className={clsx(style.bold, style.span)}
               >
-                入会フォーム
+                GitHub
                 <MdArrowOutward />
               </Link>
-              に必要事項を記入
+              アカウントを新規作成またはログイン
             </p>
             <div className={style.triangle} />
             <p className={style.text}>
-              サークルの活動日に
-              <span className={style.bold}>対面で参加</span>
-              してもらい、必要な手続きを説明
+              <Link
+                href='https://id.maximum.vc'
+                target='_blank'
+                rel='noopener noreferrer'
+                className={clsx(style.bold, style.span)}
+              >
+                Maximum IdP
+                <MdArrowOutward />
+              </Link>
+              から招待リンクを受け取り、仮登録を行う
             </p>
             <div className={style.triangle} />
-            <p className={style.text}>GitHub等のアカウント関連の設定をする</p>
+            <p className={style.text}>
+              サークル費の入金を行い、本登録を完了する
+            </p>
           </div>
           <p className={style.subtext}>
             学位・学部問わず
