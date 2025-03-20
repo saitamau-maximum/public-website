@@ -98,19 +98,22 @@ export default function About() {
           <p className={style.text}>
             詳しく知りたい方は大会参加記を見てみてください。
           </p>
-          
+
           <h2 className={style.title} id='CTF'>
             CTF（新設）
           </h2>
           <h3 className={style.subtitle}>活動内容</h3>
           <p className={style.text}>
-            CTF (Capture The Flag)はセキュリティに関する競技で、隠された「フラグ」と呼ばれる文字列をあらゆる手段で探し出す競技です！
+            CTF (Capture The
+            Flag)はセキュリティに関する競技で、隠された「フラグ」と呼ばれる文字列をあらゆる手段で探し出す競技です！
           </p>
           <p className={style.text}>
-            いわゆるハッキングの技術を学んで、攻撃者から身を守ることが目的です。 (攻撃は最大の防御というイメージ)
+            いわゆるハッキングの技術を学んで、攻撃者から身を守ることが目的です。
+            (攻撃は最大の防御というイメージ)
           </p>
           <p className={style.text}>
-            フラグは、ctf&#123;7H15_15_4_D35cr1P710n4B3G1nn3r2&#125;のような文字列で、Web サイトのハッキングや実行ファイルの解析などをすることによって見つかります。フラグそのものが暗号化されているような問題もあります。
+            フラグは、ctf&#123;7H15_15_4_D35cr1P710n4B3G1nn3r2&#125;のような文字列で、Web
+            サイトのハッキングや実行ファイルの解析などをすることによって見つかります。フラグそのものが暗号化されているような問題もあります。
           </p>
           <p className={style.text}>
             毎年沢山のCTFの大会があり、それに参加し良い成績をおさめることを目的としています！
@@ -147,10 +150,11 @@ export default function About() {
           </h2>
           <h3 className={style.subtitle}>活動内容</h3>
           <p className={style.text}>
-          モバイルアプリ班では、その名の通りモバイルアプリの開発を行っていきます。
+            モバイルアプリ班では、その名の通りモバイルアプリの開発を行っていきます。
           </p>
-          <p className={style.text}>今年から新しくできた班なので、メンバーもそれぞれ学びながら活動をしています。
-          各々がそれぞれやりたいことを自主的に学び、その知識をお互いに教え合うことで、インフラの知識をしっかりと身につけることを目標にしています！
+          <p className={style.text}>
+            今年から新しくできた班なので、メンバーもそれぞれ学びながら活動をしています。
+            各々がそれぞれやりたいことを自主的に学び、その知識をお互いに教え合うことで、インフラの知識をしっかりと身につけることを目標にしています！
             3〜4人チームでの開発か個人開発の、好きな方を選ぶことができます。
           </p>
           <p className={style.text}>
@@ -159,9 +163,7 @@ export default function About() {
           <p className={style.text}>
             週に1、2回の進捗共有を行い、活動開始から3ヶ月〜半年でプロダクトの発表会を行います。
           </p>
-          <p className={style.text}>
-            どんなアプリを作るかは自由です！
-          </p>
+          <p className={style.text}>どんなアプリを作るかは自由です！</p>
           <p className={style.text}>
             みんなで気楽にアプリ開発をしてみましょう！
           </p>
@@ -171,7 +173,7 @@ export default function About() {
           </h2>
           <h3 className={style.subtitle}>活動内容</h3>
           <p className={style.text}>
-          ゲーム開発ではウェブサイトなどを使って色々なゲームを作っていきます。
+            ゲーム開発ではウェブサイトなどを使って色々なゲームを作っていきます。
           </p>
           <p className={style.text}>
             まずは比較的簡単なパズルゲームから作り始め、シューティングや対戦型のボードゲームまで作れるようにすることを目標にしています。
@@ -180,7 +182,7 @@ export default function About() {
             当面はUbuntuサーバー上でWebサイトを作り、そこでHTMLやCSS、JavaScriptを用いてゲームを作っていこうと思います。そのために先ずはほかの班と同様にWebサイトの作り方を学びます。
           </p>
           <p className={style.text}>
-          活動としてまずは基礎固めをして、その後は開発に使えそうなレクチャーをしながら共同開発をしようと思っています。
+            活動としてまずは基礎固めをして、その後は開発に使えそうなレクチャーをしながら共同開発をしようと思っています。
           </p>
           <p className={style.text}>
             初心者大歓迎なので、工学部ではない方も是非お越しください！
@@ -190,9 +192,7 @@ export default function About() {
             インフラ（新設）
           </h2>
           <h3 className={style.subtitle}>活動内容</h3>
-          <p className={style.text}>
-          インフラ班では主に、
-          </p>
+          <p className={style.text}>インフラ班では主に、</p>
           <p className={style.text}>
             AWS、Ubuntuサーバを利用したWebサイトの公開、仮想マシンの構築、Minecraftサーバの構築などを可能にするための勉強を行います！
           </p>
