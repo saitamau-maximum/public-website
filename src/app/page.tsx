@@ -20,9 +20,9 @@ export default function Home() {
             <span className={clsx(style.span, style.bold)}>
               競技プログラミング
             </span>
-            &nbsp;(週2回)と&nbsp;
+            &nbsp;と&nbsp;
             <span className={clsx(style.span, style.bold)}>Web研究会</span>
-            &nbsp;(週1回)の2つの活動を行っています。
+            &nbsp;を始めとした様々な活動を行っています。
           </p>
           <div className={clsx(style.imgBox1, style.imgBoxCommon)}>
             <img
@@ -94,13 +94,26 @@ export default function Home() {
           <div className={style.activityOther}>
             <p className={style.txtOther}>他にも&hellip;</p>
             <p>
-              Discordを用いた&nbsp;
-              <span className={style.span}>交流会</span>、
-              <span className={style.span}>勉強会</span>、
-              <span className={style.span}>サークル内模擬大会</span>
-              &nbsp;等々
+              沢山の活動班があり、2025年度は&nbsp;
+              <span className={clsx(style.span, style.bold)}>
+                競技プログラミング班
+              </span>
+              &nbsp;と&nbsp;
+              <span className={clsx(style.span, style.bold)}>Web研究会</span>
+              &nbsp;を始めとして、
+              <span className={clsx(style.span, style.bold)}>CTF班</span>、
+              <span className={clsx(style.span, style.bold)}>広義AI班</span>、
+              <span className={clsx(style.span, style.bold)}>
+                モバイルアプリ班
+              </span>
+              、
+              <span className={clsx(style.span, style.bold)}>ゲーム開発班</span>
+              、<span className={clsx(style.span, style.bold)}>インフラ班</span>
+              &nbsp;が活動しています。
               <br />
-              希望があれば、ほかにも様々な活動を行いたいと思っています。
+              メンバーはDiscordを活用し、自由なコミュニケーションの中で、
+              交流会、勉強会、サークル内模擬大会などの多彩なイベントを開催しています。
+              <br />
             </p>
             <div className={style.activityOtherButtonContainer}>
               <div className={style.navigationForPC}>
