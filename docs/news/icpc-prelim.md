@@ -4,6 +4,7 @@ createdAt: '2024-07-13'
 updatedAt: '2024-07-13'
 description: '祝! 国内予選突破!!! Yokohamaへ'
 group: 'icpc'
+image: '/images/icpc2024-news.jpg'
 ---
 
 ## 今年もICPC国内予選に参加しました！
