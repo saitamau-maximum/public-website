@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <Link href={to} className={style.card} style={customStyle}>
-      <div className={style.img}>
+      <div className={style.imgContainer}>
         <img className={style.img} src={imageSrc} alt={imageAlt} />
         <div className={style.box}>
           <p className={style.group}>{group}</p>
