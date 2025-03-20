@@ -23,6 +23,35 @@ export default async function Achievements() {
         />
       </div>
       <div className={style.container}>
+        <h2 className={style.title}>保有資格</h2>
+        <div className={style.content}>
+          <p>
+            当サークルの部員が現在保有している資格について記載します。(2024年9月時点)
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>資格名</th>
+                <th>保有人数</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>情報処理安全確保支援士（登録セキスペ）</td>
+                <td>1名</td>
+              </tr>
+              <tr>
+                <td>応用情報技術者</td>
+                <td>7名</td>
+              </tr>
+              <tr>
+                <td>基本情報技術者</td>
+                <td>3名</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <h2 className={style.title}>参加した大会</h2>
         <AchievementList />
       </div>

@@ -4,10 +4,10 @@ import { getMarkdowns } from '../../utils/markdown';
 import style from './page.module.scss';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { HeroImage } from '@/components/HeroImage';
-import { NewsPageList } from '@/components/news-page-list';
+import { NewsPageList } from '@/components/news-page-list/news-page-list';
 
 export const metadata: Metadata = {
-  title: 'News',
+  title: 'ニュース一覧',
   description:
     '埼玉大学プログラミングサークル「Maximum」に関する様々なお知らせを配信しています。',
 };
@@ -26,16 +26,15 @@ export default async function News() {
     <div className={style.container}>
       <main className={style.main}>
         <div className={style.hero}>
-          <HeroImage type='default' title='新着情報' blur={true} />
+          <HeroImage type='default' title='ニュース一覧' blur={true} />
           <Breadcrumb
             items={[
               { title: 'Top', href: '/' },
-              { title: '新着情報', href: '/news' },
+              { title: 'ニュース一覧', href: '/news' },
             ]}
           />
         </div>
         <div className={style.contents}>
-          <h1 className={style.contentTitle}>新着情報</h1>
           <NewsPageList />
         </div>
       </main>

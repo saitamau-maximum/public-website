@@ -7,10 +7,27 @@ description: "ICPC は、同じ大学で 3 人 1 組のチームを作り、チ�
 iconUrl: "/images/ICPC_icon.png"
 imageUrl: "/images/ICPC.png"
 ---
- 
+
 ICPC (International Collegiate Programming Contest / 国際大学対抗プログラミングコンテスト) とは、[ICPC Foundation](https://icpc.foundation/)が主催するプログラミングコンテストです。同じ大学で3人1組のチームを作り、チームでプログラミングと問題解決の能力を競う大会です。
 
 ICPC には 2000 年から出場し続けており、これまでにも世界大会経験や、国内予選の継続的な突破といった好成績を収める実績を挙げています。
+
+## 2024
+| チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
+| :-: | :-: | :-: | :-: |
+| executive is deprived | 31 位 | 横浜大会 34 位 (47 位) |  |
+| mountain_river_village | 131 位 |  |  |
+| Bocchi The Maximum | 159 位 |  |  |
+| Maximum Legends | 164 位 |  |  |
+| Maximum.mum | 180 位 |  |  |
+| Maximum ES | 287 位 |  |  |
+| MAXIMUM TUNE 6RR | 298 位 |  |  |
+| YushiYamamoto | 304 位 |  |  |
+| Maximum The Max | 310 位 |  |  |
+| Level1 | 349 位 |  |  |
+
+- a01sa01to: [ICPC2024 国内予選](https://a01sa01to.com/articles/2024/07/icpc2024-prelim/)
+- a01sa01to: [ICPC2024 横浜大会](https://a01sa01to.com/articles/2024/12/icpc2024-regional/)
 
 ## 2023
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
@@ -20,6 +37,8 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | Maximum-mini_tomato | 138 位 |  |  |
 | touch_hogehoge | 174 位 |  |  |
 
+- a01sa01to: [ICPC2023 国内予選](https://a01sa01to.com/articles/2023/07/icpc2023-prelim/)
+
 ## 2022
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
@@ -27,11 +46,17 @@ ICPC には 2000 年から出場し続けており、これまでにも世界大
 | Maximum-2oo2 | 179 位 |  |  |
 | Maximum-Momentum | 209 位 |  |  |
 
+- a01sa01to: [ICPC2022 国内予選](https://a01sa01to.com/articles/2022/07/icpc2022-prelim/)
+- a01sa01to: [ICPC2022 横浜大会](https://a01sa01to.com/articles/2022/12/icpc2022-regional/)
+
 ## 2021
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |
 | :-: | :-: | :-: | :-: |
 | seica is gone | 43 位 | 横浜大会 9 位 (11 位) |  |
 | Maximum2021 | 104 位 |  |  |
+
+- a01sa01to: [ICPC2021 国内予選](https://a01sa01to.com/articles/2021/11/icpc2021-prelim/)
+- a01sa01to: [ICPC2021 横浜大会](https://a01sa01to.com/articles/2022/03/icpc2021-regional/)
 
 ## 2020
 | チーム名 | 国内予選 | アジア大会<br>大学別順位 (チーム順位) | World Finals |

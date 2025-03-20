@@ -1,1 +1,1 @@
-export * from './news-page-list';
+export { default } from './news-list-view';

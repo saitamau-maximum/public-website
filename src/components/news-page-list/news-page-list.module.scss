@@ -26,3 +26,45 @@
     padding: 32px 0px;
   }
 }
+
+//ページネーション用
+.pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:98px;
+  margin-bottom: 98px;
+  gap: 20px 6px;
+  padding-left: 0;
+}
+.pageItem,
+.pageLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #47b660;
+    font-size: 1.5rem;
+    height: 50px;
+    width: 50px;
+}
+.pageLink:hover{
+  background-color: rgba(71, 182, 96, 0.5);
+}
+.active{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px #47b660;
+  background-color: #47b660;
+  font-size: 1.5rem;
+  height: 50px;
+  width: 50px;
+  color: #ffffff;
+}
+.next_prev_item {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    width: 0;
+}
