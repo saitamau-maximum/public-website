@@ -2,7 +2,7 @@
 title: 'Maximum 新体制の導入が決定'
 createdAt: '2025-03-22'
 updatedAt: '2025-03-22'
-description: '20205年度は活動方針を一新!班活動を導入⁉'
+description: '2025年度は活動方針を一新!班活動を導入⁉'
 group: 'Maximum'
 image: '/images/newsystem-news.jpg'
 ---
