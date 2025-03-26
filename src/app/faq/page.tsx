@@ -40,7 +40,7 @@ export default function Faq() {
         />
         <QAComponent
           question='活動内容を教えてください！'
-          answer='競技プログラミングやWeb制作・Webパフォーマンスチューニングなどを行っています！詳細は上のAboutページをご覧ください！'
+          answer='競技プログラミングやWeb研究会を中心に、2025年度からはCTF・広義AI・モバイルアプリなどの新たな活動班も加わり、幅広い分野に挑戦できるサークルになりました！詳細は上のAboutページをご覧ください！'
         />
         <QAComponent
           question='会費はいくらかかるのでしょうか？'
@@ -60,7 +60,7 @@ export default function Faq() {
         />
         <QAComponent
           question='人数はどのくらい？'
-          answer='2023年度の人数は30人弱でした。女子のメンバーもいます。学部学科・男女関係なく歓迎しています！'
+          answer='2024年度の人数は40人強でした。女子のメンバーもいます。学部学科・男女関係なく歓迎しています！'
         />
       </main>
     </div>
