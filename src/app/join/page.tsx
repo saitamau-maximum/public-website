@@ -68,16 +68,17 @@ export default async function Join() {
             </p>
             <div className={style.triangle} />
             <p className={style.text}>
+              メンバーより発行される招待リンクで、
               <Link
                 href='https://id.maximum.vc'
                 target='_blank'
                 rel='noopener noreferrer'
                 className={clsx(style.bold, style.span)}
               >
-                Maximum IdP
+                ポータルサイト
                 <MdArrowOutward />
               </Link>
-              から招待リンクを受け取り、仮登録を行う
+              に仮登録をする
             </p>
             <div className={style.triangle} />
             <p className={style.text}>
