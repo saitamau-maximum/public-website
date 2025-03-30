@@ -43,7 +43,7 @@ export default async function Join() {
               </span>
               または
               <Link
-                href='https://line.me/ti/g2/Vsr7VFeo5KGAe3z6x273erFtObDeUYvCeu88OA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default'
+                href='https://line.me/ti/g2/uLfSQMqkPI0NKLrWZ0nDs0d6wXZEJPe4wzSjFw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default'
                 target='_blank'
                 rel='noopener noreferrer'
                 className={clsx(style.bold, style.span)}
@@ -55,12 +55,35 @@ export default async function Join() {
             </p>
             <div className={style.triangle} />
             <p className={style.text}>
-              サークルの活動日に
-              <span className={style.bold}>対面で参加</span>
-              してもらい、必要な手続きを説明
+              <Link
+                href='https://github.com'
+                target='_blank'
+                rel='noopener noreferrer'
+                className={clsx(style.bold, style.span)}
+              >
+                GitHub
+                <MdArrowOutward />
+              </Link>
+              アカウントを新規作成またはログイン
             </p>
             <div className={style.triangle} />
-            <p className={style.text}>GitHub等のアカウント関連の設定をする</p>
+            <p className={style.text}>
+              メンバーより発行される招待リンクで、
+              <Link
+                href='https://id.maximum.vc'
+                target='_blank'
+                rel='noopener noreferrer'
+                className={clsx(style.bold, style.span)}
+              >
+                ポータルサイト
+                <MdArrowOutward />
+              </Link>
+              に仮登録をする
+            </p>
+            <div className={style.triangle} />
+            <p className={style.text}>
+              サークル費の入金を行い、本登録を完了する
+            </p>
           </div>
           <p className={style.subtext}>
             学位・学部問わず
