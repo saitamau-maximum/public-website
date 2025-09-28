@@ -4,6 +4,7 @@ on: pull_request
 
 permissions:
   contents: read
+  packages: read
 
 jobs:
   check:
@@ -26,6 +27,9 @@ jobs:
 
       - name: Install deps
         run: pnpm install --frozen-lockfile --prefer-offline
+        env:
+          TOKEN_FOR_GITHUB: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_USERCONFIG: .npmrc.pages
 
       - name: Lint Check
         run: pnpm check
