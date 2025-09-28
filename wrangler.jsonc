@@ -1,0 +1,11 @@
+{
+	"name": "public-website",
+	"main": "./workers/app.ts",
+	"compatibility_date": "2025-09-15",
+	"workers_dev": true, // TODO: 本番運用後に false にして maximum.vc を設定する
+	"preview_urls": true,
+	"observability": {
+		"enabled": true
+	},
+	"upload_source_maps": true
+}
