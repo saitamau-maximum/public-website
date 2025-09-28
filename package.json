@@ -1,0 +1,19 @@
+{
+	"name": "public-website",
+	"private": true,
+	"scripts": {
+		"fix": "biome check --write",
+		"check": "biome check",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.4",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.1"
+	},
+	"lint-staged": {
+		"*": [
+			"biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
+		]
+	}
+}
