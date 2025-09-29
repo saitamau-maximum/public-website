@@ -21,6 +21,8 @@ export default function Root() {
 					marginTop: "headerHeight",
 					padding: 4,
 					flexGrow: 1,
+					// header ぶんの高さだけスクロール位置をずらす
+					"& *": { scrollMarginTop: "headerHeight" },
 				})}
 			>
 				<div

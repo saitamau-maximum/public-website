@@ -40,6 +40,7 @@ export function Layout({ children }: { children: ReactNode }) {
 					fontFamily: '"Noto Sans JP", sans-serif',
 					width: "100%",
 					minHeight: "100%",
+					color: "gray.800",
 				})}
 			>
 				{children}
