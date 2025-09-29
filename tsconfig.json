@@ -19,6 +19,7 @@
 	},
 	"include": [
 		"app/**/*",
+		"styled-system/**/*",
 		".react-router/types/**/*",
 		"react-router.config.ts",
 		"worker-configuration.d.ts",

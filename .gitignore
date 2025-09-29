@@ -1,6 +1,7 @@
 .react-router
 build
 .wrangler
+styled-system
 
 # Logs
 logs
