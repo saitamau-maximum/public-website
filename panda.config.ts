@@ -12,7 +12,6 @@ export default defineConfig({
 
 	// Useful for theme customization
 	theme: {
-		containerNames: ["main"],
 		extend: {
 			tokens: {
 				gradients: {
@@ -23,6 +22,12 @@ export default defineConfig({
 							stops: ["#34AA8E", "#63C178"],
 						},
 					},
+				},
+				spacing: {
+					headerHeight: { value: "64px" },
+				},
+				zIndex: {
+					header: { value: "50" },
 				},
 			},
 		},
