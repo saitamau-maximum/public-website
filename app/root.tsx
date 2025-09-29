@@ -7,6 +7,11 @@ import stylesheet from "./app.css?url";
 import { classifyError } from "./utils/classify-error";
 
 export const links: Route.LinksFunction = () => [
+	{
+		rel: "icon",
+		href: "/logos/maximum-icon.svg",
+		type: "image/svg+xml",
+	},
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
 	{
 		rel: "preconnect",
