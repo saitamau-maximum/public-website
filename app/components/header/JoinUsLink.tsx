@@ -1,8 +1,9 @@
+import { Link } from "react-router";
 import { css } from "styled-system/css";
 
 export const JoinUsLink = () => {
 	return (
-		<a
+		<Link
 			className={css({
 				marginLeft: -0.5,
 				paddingTop: 1,
@@ -15,9 +16,9 @@ export const JoinUsLink = () => {
 				fontWeight: "bold",
 				_hover: { textDecoration: "underline" },
 			})}
-			href="/join/"
+			to="/join/"
 		>
 			Join Us!
-		</a>
+		</Link>
 	);
 };
