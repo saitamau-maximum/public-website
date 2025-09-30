@@ -16,7 +16,7 @@ interface Props {
 
 export const HomeNews = ({ newsList }: Props) => {
 	return (
-		<>
+		<section>
 			<H2>新着情報</H2>
 			<p>サークルの活動内容やイベント情報などをお知らせします。 (最新 2 件)</p>
 			<ul
@@ -61,6 +61,6 @@ export const HomeNews = ({ newsList }: Props) => {
 				</Link>{" "}
 				ページからご覧いただけます。
 			</p>
-		</>
+		</section>
 	);
 };

@@ -14,11 +14,11 @@ export const HomeAboutUs = () => {
 				<ExternalLink href="https://icpc.global/">
 					国際大学対抗プログラミングコンテスト (ICPC)
 				</ExternalLink>{" "}
-				へ参加し、良い成績を挙げるために成立したプログラミング研究会です。 2025
-				年度は競技プログラミング班と Web 研究会をはじめとして、以下の 7
-				つの班が活動しています。
+				へ参加し、良い成績を挙げるために 2000
+				年に成立したプログラミング研究会です。 2025 年度は競技プログラミング班と
+				Web 研究会をはじめとして、以下の 7 つの班が活動しています。
 			</p>
-			<CardCarouselUl>
+			<CardCarouselUl ariaLabel="Maximum の各班の紹介">
 				<li>
 					<Card.Root>
 						<Card.Title>競技プログラミング班</Card.Title>
@@ -62,7 +62,7 @@ export const HomeAboutUs = () => {
 						<Card.Body>
 							<p>
 								AtCoder Heuristic Contest (AHC) や ICFPC
-								などで問われる、いわゆる「ルールベース」のものを含め、分類や予測などを行う人工知能の概要と仕組みなどを身に着けていきます。
+								などで問われる「ルールベース」のものを含め、分類や予測などを行う人工知能の概要と仕組みなどを身に着けていきます。
 							</p>
 						</Card.Body>
 					</Card.Root>

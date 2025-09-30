@@ -18,7 +18,7 @@ export const HomeWhatWeMade = () => {
 				</ExternalLink>{" "}
 				(コード共有サービス) もぜひ覗いてみてください！
 			</p>
-			<CardCarouselUl>
+			<CardCarouselUl ariaLabel="Maximum が制作したものの一部リスト">
 				<li>
 					<Card.Root>
 						<Card.Image

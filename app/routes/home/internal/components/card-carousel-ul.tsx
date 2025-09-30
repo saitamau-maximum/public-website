@@ -1,11 +1,22 @@
-import type { PropsWithChildren } from "react";
+import type { ReactNode } from "react";
 import { css } from "styled-system/css";
 import { ScrollIndicator } from "./scroll-indicator";
 
-export const CardCarouselUl = ({ children }: PropsWithChildren) => {
+interface Props {
+	ariaLabel: string;
+	children: ReactNode;
+}
+
+export const CardCarouselUl = ({ children, ariaLabel }: Props) => {
 	return (
 		<>
+			<span className={css({ srOnly: true })}>
+				左右の矢印キーでコンテンツをスクロールできます。
+			</span>
 			<ul
+				aria-label={ariaLabel}
+				// biome-ignore lint/a11y/noNoninteractiveTabindex: キーボード入力でもスクロールできるようにするため
+				tabIndex={0}
 				className={css({
 					display: "flex",
 					flexDirection: "row",
