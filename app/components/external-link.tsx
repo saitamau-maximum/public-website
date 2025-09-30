@@ -3,7 +3,7 @@ import { ExternalLink as ExternalLinkIcon } from "react-feather";
 import { css, cx } from "styled-system/css";
 
 import type { WithCSSProps } from "~/types/with-css-props";
-import { AnchorLike } from "../anchor-like";
+import { AnchorLike } from "./anchor-like";
 
 export const ExternalLink = ({
 	className,

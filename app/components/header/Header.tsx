@@ -14,7 +14,7 @@ import {
 	MAXIMUM_TWITTER_URL,
 	MAXIMUM_YOUTUBE_URL,
 } from "~/constants/social-link";
-import { JoinUsLink } from "./JoinUsLink";
+import { JoinUsLink } from "./join-us-link";
 
 export const Header = () => {
 	const [showingMenu, setShowingMenu] = useState(false);
