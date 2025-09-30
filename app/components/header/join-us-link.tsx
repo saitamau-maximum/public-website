@@ -1,9 +1,10 @@
-import { Link } from "react-router";
+import { Link, type LinkProps } from "react-router";
 import { css } from "styled-system/css";
 
-export const JoinUsLink = () => {
+export const JoinUsLink = (props: Omit<LinkProps, "className" | "to">) => {
 	return (
 		<Link
+			{...props}
 			className={css({
 				marginLeft: -0.5,
 				paddingTop: 1,

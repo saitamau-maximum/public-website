@@ -138,11 +138,13 @@ export const Header = () => {
 									fontSize: "lg",
 									_hover: { textDecoration: "underline" },
 								})}
+								// クリックしたら閉じる (メニューが表示されている前提)
+								onClick={handleMenuClick}
 							>
 								{label}
 							</Link>
 						))}
-						<JoinUsLink />
+						<JoinUsLink onClick={handleMenuClick} />
 						<div
 							className={css({
 								display: "flex",
