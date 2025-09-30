@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { GitHub, Twitter, Youtube } from "react-feather";
+import { Link } from "react-router";
 import { css } from "styled-system/css";
 import {
 	GITHUB_BRAND_COLOR,
@@ -37,7 +38,7 @@ export const Footer = () => {
 				boxShadow: "md",
 			})}
 		>
-			<a href="/">
+			<Link to="/">
 				<img
 					src="/logos/maximum-logo-white.svg"
 					alt="Maximum Logo"
@@ -45,7 +46,7 @@ export const Footer = () => {
 						height: "32px",
 					})}
 				/>
-			</a>
+			</Link>
 			<nav
 				className={css({
 					display: "flex",
@@ -55,15 +56,15 @@ export const Footer = () => {
 				})}
 			>
 				{footerItems.map(([label, href]) => (
-					<a
+					<Link
 						key={href}
-						href={href}
+						to={href}
 						className={css({
 							_hover: { textDecoration: "underline" },
 						})}
 					>
 						{label}
-					</a>
+					</Link>
 				))}
 			</nav>
 			<div

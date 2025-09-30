@@ -1,6 +1,7 @@
 import { type CSSProperties, useState } from "react";
 import { Button } from "react-aria-components";
 import { GitHub, Menu, Twitter, X, Youtube } from "react-feather";
+import { Link } from "react-router";
 import { css } from "styled-system/css";
 
 import {
@@ -48,7 +49,7 @@ export const Header = () => {
 					boxShadow: "md",
 				})}
 			>
-				<a href="/">
+				<Link to="/">
 					<img
 						src="/logos/maximum-logo.svg"
 						alt="Maximum Logo"
@@ -56,7 +57,7 @@ export const Header = () => {
 							height: "32px",
 						})}
 					/>
-				</a>
+				</Link>
 
 				{/* PC 向け */}
 				<nav
@@ -68,15 +69,15 @@ export const Header = () => {
 					})}
 				>
 					{headerItems.map(([label, href]) => (
-						<a
+						<Link
 							key={href}
-							href={href}
+							to={href}
 							className={css({
 								_hover: { textDecoration: "underline" },
 							})}
 						>
 							{label}
-						</a>
+						</Link>
 					))}
 					<JoinUsLink />
 				</nav>
@@ -128,16 +129,16 @@ export const Header = () => {
 						})}
 					>
 						{headerItems.map(([label, href]) => (
-							<a
+							<Link
 								key={href}
-								href={href}
+								to={href}
 								className={css({
 									fontSize: "lg",
 									_hover: { textDecoration: "underline" },
 								})}
 							>
 								{label}
-							</a>
+							</Link>
 						))}
 						<JoinUsLink />
 						<div
