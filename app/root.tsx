@@ -1,11 +1,19 @@
 import type { ReactNode } from "react";
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import {
+	Links,
+	Meta,
+	Outlet,
+	Scripts,
+	ScrollRestoration,
+	useNavigation,
+} from "react-router";
 import { css } from "styled-system/css";
 
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
+import { LoadingSpinner } from "./components/loading-spinner";
 import { classifyError } from "./utils/classify-error";
 
 export const links: Route.LinksFunction = () => [
@@ -28,6 +36,10 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: ReactNode }) {
+	// https://reactrouter.com/start/framework/pending-ui
+	const navigation = useNavigation();
+	const isNavigating = Boolean(navigation.location);
+
 	return (
 		<html lang="ja">
 			<head>
@@ -82,6 +94,7 @@ export function Layout({ children }: { children: ReactNode }) {
 					</div>
 				</div>
 				<Footer />
+				<LoadingSpinner showing={isNavigating} />
 				<ScrollRestoration />
 				<Scripts />
 			</body>

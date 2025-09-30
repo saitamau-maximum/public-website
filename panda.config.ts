@@ -28,6 +28,7 @@ export default defineConfig({
 				},
 				zIndex: {
 					header: { value: "50" },
+					loader: { value: "60" },
 				},
 			},
 		},
