@@ -47,14 +47,18 @@ export function Layout({ children }: { children: ReactNode }) {
 					minHeight: "100dvh",
 					display: "flex",
 					flexDirection: "column",
+					lineHeight: 1.7,
+					letterSpacing: "0.04em",
 				})}
 			>
 				<Header />
-				<main
+				<div
 					className={css({
 						marginTop: "headerHeight",
 						padding: 4,
 						flexGrow: 1,
+						overflowX: "hidden",
+						"& p": { marginTop: 2, marginBottom: 2 },
 						// header ぶんの高さだけスクロール位置をずらす
 						"& *": { scrollMarginTop: "headerHeight" },
 					})}
@@ -64,12 +68,21 @@ export function Layout({ children }: { children: ReactNode }) {
 							backgroundColor: "gray.50",
 							borderRadius: "md",
 							padding: 4,
+							overflowX: "hidden",
 						})}
 					>
-						{children}
+						<main
+							className={css({
+								maxWidth: "5xl", // 1024px
+								margin: "auto",
+							})}
+						>
+							{children}
+						</main>
 					</div>
-				</main>
-				<Footer /> <ScrollRestoration />
+				</div>
+				<Footer />
+				<ScrollRestoration />
 				<Scripts />
 			</body>
 		</html>
