@@ -7,7 +7,7 @@ export default function Home() {
 	return (
 		<>
 			<img
-				src="/hero.png"
+				src="/hero.avif"
 				alt=""
 				className={css({
 					maxWidth: "100%",

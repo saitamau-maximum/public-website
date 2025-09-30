@@ -22,7 +22,7 @@ export const HomeWhatWeMade = () => {
 				<li>
 					<Card.Root>
 						<Card.Image
-							src="/products/public-website.png"
+							src="/products/public-website.avif"
 							alt="Public Website のスクリーンショット"
 						/>
 						<Card.Title>Public Website</Card.Title>
@@ -34,7 +34,7 @@ export const HomeWhatWeMade = () => {
 				<li>
 					<Card.Root>
 						<Card.Image
-							src="/products/private-website.png"
+							src="/products/private-website.avif"
 							alt="Private Website のスクリーンショット"
 						/>
 						<Card.Title>Private Website</Card.Title>
@@ -46,7 +46,7 @@ export const HomeWhatWeMade = () => {
 				<li>
 					<Card.Root>
 						<Card.Image
-							src="/products/idp.png"
+							src="/products/idp.avif"
 							alt="IdP のスクリーンショット"
 						/>
 						<Card.Title>IdP</Card.Title>
@@ -61,7 +61,7 @@ export const HomeWhatWeMade = () => {
 				<li>
 					<Card.Root>
 						<Card.Image
-							src="/products/course.png"
+							src="/products/course.avif"
 							alt="Course のスクリーンショット"
 						/>
 						<Card.Title>Course</Card.Title>
@@ -73,7 +73,7 @@ export const HomeWhatWeMade = () => {
 				<li>
 					<Card.Root>
 						<Card.Image
-							src="/products/leaderboard.png"
+							src="/products/leaderboard.avif"
 							alt="Leaderboard のスクリーンショット"
 						/>
 						<Card.Title>Leaderboard</Card.Title>
