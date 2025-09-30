@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { type CSSProperties, useState } from "react";
 import { Button } from "react-aria-components";
 import { GitHub, Menu, Twitter, X, Youtube } from "react-feather";
 import { css } from "styled-system/css";
+
 import {
 	GITHUB_BRAND_COLOR,
 	TWITTER_BRAND_COLOR,
 	YOUTUBE_BRAND_COLOR,
 } from "~/constants/brand-color";
+import {
+	MAXIMUM_GITHUB_URL,
+	MAXIMUM_TWITTER_URL,
+	MAXIMUM_YOUTUBE_URL,
+} from "~/constants/social-link";
 import { JoinUsLink } from "./JoinUsLink";
 
 export const Header = () => {
@@ -42,13 +48,15 @@ export const Header = () => {
 					boxShadow: "md",
 				})}
 			>
-				<img
-					src="/logos/maximum-logo.svg"
-					alt="Maximum Logo"
-					className={css({
-						height: "32px",
-					})}
-				/>
+				<a href="/">
+					<img
+						src="/logos/maximum-logo.svg"
+						alt="Maximum Logo"
+						className={css({
+							height: "32px",
+						})}
+					/>
+				</a>
 
 				{/* PC 向け */}
 				<nav
@@ -140,38 +148,35 @@ export const Header = () => {
 							})}
 						>
 							<a
-								href="https://github.com/saitamau-maximum/"
+								href={MAXIMUM_GITHUB_URL}
 								target="_blank"
 								rel="noopener noreferrer"
 								className={css({
 									_hover: { color: "var(--brandColor)", transition: "all" },
 								})}
-								// @ts-expect-error: Object literal may only specify known properties, and '"--brandColor"' does not exist in type 'Properties<string | number, string & {}>'.
-								style={{ "--brandColor": GITHUB_BRAND_COLOR }}
+								style={{ "--brandColor": GITHUB_BRAND_COLOR } as CSSProperties}
 							>
 								<GitHub />
 							</a>
 							<a
-								href="https://twitter.com/Maximum03400346"
+								href={MAXIMUM_TWITTER_URL}
 								target="_blank"
 								rel="noopener noreferrer"
 								className={css({
 									_hover: { color: "var(--brandColor)", transition: "all" },
 								})}
-								// @ts-expect-error: Object literal may only specify known properties, and '"--brandColor"' does not exist in type 'Properties<string | number, string & {}>'.
-								style={{ "--brandColor": TWITTER_BRAND_COLOR }}
+								style={{ "--brandColor": TWITTER_BRAND_COLOR } as CSSProperties}
 							>
 								<Twitter />
 							</a>
 							<a
-								href="https://www.youtube.com/@saitama-maximum"
+								href={MAXIMUM_YOUTUBE_URL}
 								target="_blank"
 								rel="noopener noreferrer"
 								className={css({
 									_hover: { color: "var(--brandColor)", transition: "all" },
 								})}
-								// @ts-expect-error: Object literal may only specify known properties, and '"--brandColor"' does not exist in type 'Properties<string | number, string & {}>'.
-								style={{ "--brandColor": YOUTUBE_BRAND_COLOR }}
+								style={{ "--brandColor": YOUTUBE_BRAND_COLOR } as CSSProperties}
 							>
 								<Youtube />
 							</a>
