@@ -54,6 +54,7 @@ export const Footer = () => {
 					justifyContent: "center",
 					gap: 6,
 				})}
+				aria-label="Footer Navigation"
 			>
 				{footerItems.map(([label, href]) => (
 					<Link
@@ -83,6 +84,7 @@ export const Footer = () => {
 						_hover: { color: "var(--brandColor)", transition: "all" },
 					})}
 					style={{ "--brandColor": GITHUB_BRAND_COLOR } as CSSProperties}
+					title="GitHub"
 				>
 					<GitHub />
 				</a>
@@ -94,6 +96,7 @@ export const Footer = () => {
 						_hover: { color: "var(--brandColor)", transition: "all" },
 					})}
 					style={{ "--brandColor": TWITTER_BRAND_COLOR } as CSSProperties}
+					title="Twitter"
 				>
 					<Twitter />
 				</a>
@@ -105,6 +108,7 @@ export const Footer = () => {
 						_hover: { color: "var(--brandColor)", transition: "all" },
 					})}
 					style={{ "--brandColor": YOUTUBE_BRAND_COLOR } as CSSProperties}
+					title="YouTube"
 				>
 					<Youtube />
 				</a>

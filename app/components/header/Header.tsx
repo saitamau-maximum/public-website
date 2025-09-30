@@ -67,6 +67,7 @@ export const Header = () => {
 						gap: 6,
 						alignItems: "center",
 					})}
+					aria-label="Header Navigation"
 				>
 					{headerItems.map(([label, href]) => (
 						<Link
@@ -127,6 +128,7 @@ export const Header = () => {
 							gap: 8,
 							alignItems: "center",
 						})}
+						aria-label="Mobile Header Navigation"
 					>
 						{headerItems.map(([label, href]) => (
 							<Link
@@ -156,6 +158,7 @@ export const Header = () => {
 									_hover: { color: "var(--brandColor)", transition: "all" },
 								})}
 								style={{ "--brandColor": GITHUB_BRAND_COLOR } as CSSProperties}
+								title="GitHub"
 							>
 								<GitHub />
 							</a>
@@ -167,6 +170,7 @@ export const Header = () => {
 									_hover: { color: "var(--brandColor)", transition: "all" },
 								})}
 								style={{ "--brandColor": TWITTER_BRAND_COLOR } as CSSProperties}
+								title="Twitter"
 							>
 								<Twitter />
 							</a>
@@ -178,6 +182,7 @@ export const Header = () => {
 									_hover: { color: "var(--brandColor)", transition: "all" },
 								})}
 								style={{ "--brandColor": YOUTUBE_BRAND_COLOR } as CSSProperties}
+								title="YouTube"
 							>
 								<Youtube />
 							</a>
