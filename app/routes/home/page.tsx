@@ -1,6 +1,7 @@
 import { css } from "styled-system/css";
 import { H1 } from "~/components/heading";
 import { HomeAboutUs } from "./internal/components/about-us";
+import { HomeNews } from "./internal/components/news";
 import { HomeWhatWeMade } from "./internal/components/what-we-made";
 
 export default function Home() {
@@ -43,6 +44,24 @@ export default function Home() {
 			</H1>
 			<HomeAboutUs />
 			<HomeWhatWeMade />
+			<HomeNews
+				newsList={[
+					{
+						slug: "/news/first-post",
+						imgSrc: "/news/news1.avif",
+						title: "First Post",
+						description: "This is the first post.",
+						createdAt: "2024-01-01",
+					},
+					{
+						slug: "/news/first-post",
+						imgSrc: "/news/news1.avif",
+						title: "First Post",
+						description: "This is the first post.",
+						createdAt: "2024-01-01",
+					},
+				]}
+			/>
 		</>
 	);
 }
