@@ -1,6 +1,7 @@
 import { css } from "styled-system/css";
 import { H1 } from "~/components/heading";
 import { HomeAboutUs } from "./internal/components/about-us";
+import { HomeWhatWeMade } from "./internal/components/what-we-made";
 
 export default function Home() {
 	return (
@@ -41,6 +42,7 @@ export default function Home() {
 				<span>Maximum</span>
 			</H1>
 			<HomeAboutUs />
+			<HomeWhatWeMade />
 		</>
 	);
 }
