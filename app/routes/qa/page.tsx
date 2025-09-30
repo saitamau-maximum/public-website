@@ -4,6 +4,7 @@ export default function QA() {
 	return (
 		<>
 			<h1 className={css({ fontSize: "xl", fontWeight: "bold" })}>Q&A</h1>
+			<p>foobar</p>
 		</>
 	);
 }

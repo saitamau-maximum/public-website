@@ -4,6 +4,7 @@ export default function About() {
 	return (
 		<>
 			<h1 className={css({ fontSize: "xl", fontWeight: "bold" })}>About</h1>
+			<p>foobar</p>
 		</>
 	);
 }

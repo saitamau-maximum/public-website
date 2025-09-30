@@ -6,6 +6,7 @@ export default function Achievements() {
 			<h1 className={css({ fontSize: "xl", fontWeight: "bold" })}>
 				Achievements
 			</h1>
+			<p>foobar</p>
 		</>
 	);
 }

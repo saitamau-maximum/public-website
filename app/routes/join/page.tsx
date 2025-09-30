@@ -4,6 +4,7 @@ export default function Join() {
 	return (
 		<>
 			<h1 className={css({ fontSize: "xl", fontWeight: "bold" })}>Join</h1>
+			<p>foobar</p>
 		</>
 	);
 }

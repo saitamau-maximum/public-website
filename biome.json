@@ -7,7 +7,15 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["**", "!**/v1"]
+		"includes": [
+			"**",
+			"!**/v1",
+			"!**/.react-router",
+			"!**/.wrangler",
+			"!**/build",
+			"!**/styled-system",
+			"!**/worker-configuration.d.ts"
+		]
 	},
 	"formatter": {
 		"enabled": true,
