@@ -4,6 +4,8 @@ import { css } from "styled-system/css";
 
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
+import { Footer } from "./components/footer";
+import { Header } from "./components/header";
 import { classifyError } from "./utils/classify-error";
 
 export const links: Route.LinksFunction = () => [
@@ -38,13 +40,36 @@ export function Layout({ children }: { children: ReactNode }) {
 			<body
 				className={css({
 					fontFamily: '"Noto Sans JP", sans-serif',
+					color: "gray.600",
+					backgroundGradient: "primary",
+					backgroundRepeat: "no-repeat",
 					width: "100%",
-					minHeight: "100%",
-					color: "gray.800",
+					minHeight: "100dvh",
+					display: "flex",
+					flexDirection: "column",
 				})}
 			>
-				{children}
-				<ScrollRestoration />
+				<Header />
+				<main
+					className={css({
+						marginTop: "headerHeight",
+						padding: 4,
+						flexGrow: 1,
+						// header ぶんの高さだけスクロール位置をずらす
+						"& *": { scrollMarginTop: "headerHeight" },
+					})}
+				>
+					<div
+						className={css({
+							backgroundColor: "gray.50",
+							borderRadius: "md",
+							padding: 4,
+						})}
+					>
+						{children}
+					</div>
+				</main>
+				<Footer /> <ScrollRestoration />
 				<Scripts />
 			</body>
 		</html>
@@ -69,55 +94,31 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 			<title>{pageTitle}</title>
 			<div
 				className={css({
-					margin: "6",
-					width: "calc(100% - token(spacing.6) * 2)",
-					height: "calc(100dvh - token(spacing.6) * 2)",
-					overflow: "hidden",
-					background: "white",
-					borderRadius: "md",
-					lgDown: {
-						margin: "4",
-						width: "calc(100% - token(spacing.4) * 2)",
-						height: "calc(100dvh - token(spacing.4) * 2)",
-					},
-					mdDown: {
-						margin: "2",
-						width: "calc(100% - token(spacing.2) * 2)",
-						height: "calc(100dvh - token(spacing.2) * 2)",
-					},
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					gap: 6,
+					justifyContent: "center",
+					padding: 6,
 				})}
 			>
-				<div
+				<h1
 					className={css({
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "center",
-						gap: "6",
-						justifyContent: "center",
-						height: "100%",
-						color: "gray.600",
-						paddingLeft: "4",
-						paddingRight: "4",
+						fontSize: "6xl",
+						fontWeight: "bold",
 					})}
 				>
-					<h1
-						className={css({
-							fontSize: "6xl",
-							fontWeight: "bold",
-						})}
-					>
-						{status_code}
-					</h1>
-					<p
-						className={css({
-							fontSize: "2xl",
-							fontWeight: "bold",
-						})}
-					>
-						{error_title}
-					</p>
-					<p>{error_message}</p>
-				</div>
+					{status_code}
+				</h1>
+				<p
+					className={css({
+						fontSize: "2xl",
+						fontWeight: "bold",
+					})}
+				>
+					{error_title}
+				</p>
+				<p>{error_message}</p>
 			</div>
 		</>
 	);
