@@ -6,9 +6,9 @@ description: 'Maximum公式Webサイトをリニューアルしました！'
 group: 'Maximum'
 ---
 
-# Maximum 公式Webサイトをリニューアルしました！
+## Maximum 公式Webサイトをリニューアルしました！
 
 2024年の春休み中に、Maximum公式Webサイトを開発しました。
 開発は新2年生のメンバーが中心となって行いました！
 
-https://github.com/saitamau-maximum/public-website
+<https://github.com/saitamau-maximum/public-website>

@@ -11,6 +11,7 @@ imageUrl: "/images/ISUCON.png"
 [ISUCON](https://isucon.net/)は、与えられた Web サービスをどれだけ高速化できるかを競う、 LINE ヤフー社主催のコンテストです。
 
 ## ISUCON14 (2024)
+
 12/8に開催され、全体で834チームが参加しました。
 
 | チーム名 | スコア | 順位 | 学生順位 | 備考 |
@@ -24,6 +25,7 @@ imageUrl: "/images/ISUCON.png"
 - batora9: [ISUCON14に参加しました(batora視点)](https://batoran.com/articles/isucon14)
 
 ## ISUCON13 (2023)
+
 11/25に開催され、全体で694チームが参加しました。
 
 | チーム名 | スコア | 順位 | 学生順位 | 備考 |
