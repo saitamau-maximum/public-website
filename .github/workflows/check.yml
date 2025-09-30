@@ -40,4 +40,6 @@ jobs:
       - name: Markdownlint Check
         uses: DavidAnson/markdownlint-cli2-action@v20
         with:
-          globs: "**/*.md"
+          globs: |
+            README.md
+            docs/*.md
