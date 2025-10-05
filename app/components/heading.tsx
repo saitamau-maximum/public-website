@@ -14,9 +14,9 @@ export const H1 = ({
 			className={cx(
 				css(
 					{
-						fontSize: "2xl",
+						fontSize: "3xl",
 						fontWeight: "bold",
-						marginTop: 10,
+						marginTop: 12,
 						marginBottom: 4,
 					},
 					customCss,
@@ -38,9 +38,57 @@ export const H2 = ({
 			className={cx(
 				css(
 					{
+						fontSize: "2xl",
+						fontWeight: "bold",
+						marginTop: 10,
+						marginBottom: 2,
+					},
+					customCss,
+				),
+				className,
+			)}
+		/>
+	);
+};
+
+export const H3 = ({
+	className,
+	css: customCss,
+	...props
+}: WithCSSProps<ComponentPropsWithRef<"h2">>) => {
+	return (
+		<h3
+			{...props}
+			className={cx(
+				css(
+					{
 						fontSize: "xl",
 						fontWeight: "bold",
 						marginTop: 8,
+						marginBottom: 2,
+					},
+					customCss,
+				),
+				className,
+			)}
+		/>
+	);
+};
+
+export const H4 = ({
+	className,
+	css: customCss,
+	...props
+}: WithCSSProps<ComponentPropsWithRef<"h2">>) => {
+	return (
+		<h4
+			{...props}
+			className={cx(
+				css(
+					{
+						fontSize: "lg",
+						fontWeight: "bold",
+						marginTop: 4,
 						marginBottom: 2,
 					},
 					customCss,
