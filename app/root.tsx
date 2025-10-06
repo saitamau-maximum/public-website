@@ -30,7 +30,7 @@ export const links: Route.LinksFunction = () => [
 	},
 	{
 		rel: "stylesheet",
-		href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap",
+		href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+Mono:wght@400&display=swap",
 	},
 	{ rel: "stylesheet", href: stylesheet },
 ];
@@ -86,6 +86,14 @@ export function Layout({ children }: { children: ReactNode }) {
 								height: "100%",
 								backgroundGradient: "primary",
 							},
+						},
+						"& code": {
+							fontFamily: '"Noto Sans Mono", monospace',
+							backgroundColor: "rose.50",
+							color: "rose.900",
+							padding: 0.5,
+							borderRadius: "sm",
+							fontSize: "0.9em",
 						},
 						// header ぶんの高さだけスクロール位置をずらす
 						"& *": { scrollMarginTop: "headerHeight" },

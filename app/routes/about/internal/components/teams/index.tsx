@@ -1,5 +1,6 @@
 import { H2 } from "~/components/heading";
 import { AboutTeamsCompro } from "./compro";
+import { AboutTeamsCtf } from "./ctf";
 import { AboutTeamsWeb } from "./web";
 
 export const AboutTeams = () => {
@@ -18,6 +19,7 @@ export const AboutTeams = () => {
 			</p>
 			<AboutTeamsCompro />
 			<AboutTeamsWeb />
+			<AboutTeamsCtf />
 		</section>
 	);
 };
