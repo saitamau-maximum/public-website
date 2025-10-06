@@ -71,6 +71,22 @@ export function Layout({ children }: { children: ReactNode }) {
 						flexGrow: 1,
 						overflowX: "hidden",
 						"& p": { marginTop: 2, marginBottom: 2 },
+						"& blockquote": {
+							marginTop: 2,
+							marginBottom: 2,
+							paddingLeft: 5,
+							position: "relative",
+							_before: {
+								position: "absolute",
+								left: 1,
+								top: 0,
+								content: '""',
+								display: "inline-block",
+								width: 1,
+								height: "100%",
+								backgroundGradient: "primary",
+							},
+						},
 						// header ぶんの高さだけスクロール位置をずらす
 						"& *": { scrollMarginTop: "headerHeight" },
 					})}
