@@ -1,5 +1,6 @@
 import { H2 } from "~/components/heading";
 import { AboutTeamsCompro } from "./compro";
+import { AboutTeamsWeb } from "./web";
 
 export const AboutTeams = () => {
 	return (
@@ -16,6 +17,7 @@ export const AboutTeams = () => {
 				もちろん、最初からほかの班に所属することも可能です。
 			</p>
 			<AboutTeamsCompro />
+			<AboutTeamsWeb />
 		</section>
 	);
 };
