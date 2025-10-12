@@ -1,6 +1,8 @@
 import { ChevronRight, Home } from "react-feather";
 import { Link } from "react-router";
+import type { BreadcrumbList, WithContext } from "schema-dts";
 import { css } from "styled-system/css";
+import { SITE_HOST } from "~/constants/site-config";
 import { AnchorLike } from "./anchor-like";
 
 interface Props {
@@ -8,6 +10,17 @@ interface Props {
 }
 
 export const Breadcrumb = ({ items }: Props) => {
+	const breadcrumbJsonLD: WithContext<BreadcrumbList> = {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: items.map((item, index) => ({
+			"@type": "ListItem",
+			position: index + 1,
+			name: item.label,
+			item: `${SITE_HOST}${item.href}`,
+		})),
+	};
+
 	return (
 		<nav
 			aria-label="Breadcrumb"
@@ -20,6 +33,11 @@ export const Breadcrumb = ({ items }: Props) => {
 				overflowX: "auto",
 			})}
 		>
+			<script
+				type="application/ld+json"
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: breadcrumbJsonLD はユーザー入力ではないので、 XSS の心配はない
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLD) }}
+			/>
 			<ol
 				className={css({
 					display: "flex",
