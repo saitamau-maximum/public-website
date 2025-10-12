@@ -7,6 +7,7 @@ import { H1 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
 import { makePageTitle } from "~/utils/title";
 import { AboutTeams } from "./internal/components/teams";
+import AboutTCE from "./internal/components/tech-circle-expo";
 
 export default function About() {
 	const breadcrumbItems = [
@@ -56,6 +57,7 @@ export default function About() {
 				<li>卒業生: 4 人 (情報工学科卒業 3 人、教育学部卒業 1 人)</li>
 			</ul>
 			<AboutTeams />
+			<AboutTCE />
 		</>
 	);
 }
