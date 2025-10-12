@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { AnchorLike } from "~/components/anchor-like";
 import { Breadcrumb } from "~/components/breadcrumb";
 import { ExternalLink } from "~/components/external-link";
-import { H1 } from "~/components/heading";
+import { H1, H2 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
 import { MAXIMUM_TWITTER_URL } from "~/constants/social-link";
 import { makePageTitle } from "~/utils/title";
@@ -29,6 +29,7 @@ export default function QA() {
 					{MAXIMUM_TWITTER_URL.split(".com/")[1]})
 				</ExternalLink>
 			</p>
+			<H2>○○でも大丈夫？</H2>
 			<ul>
 				<QaItem.Root>
 					<QaItem.Question>プログラミング初心者なんですが...</QaItem.Question>
@@ -47,6 +48,23 @@ export default function QA() {
 					</QaItem.Answer>
 				</QaItem.Root>
 				<QaItem.Root>
+					<QaItem.Question>情報工学科じゃないけど入れる？</QaItem.Question>
+					<QaItem.Answer>
+						独習がメインな部分もあり、ほかのメンバーと大きな差はないようです。
+						実は、情報工学科が半数以下の年もありますし、他学科のメンバーも多数在籍しています。
+						所属学部・学科内訳は{" "}
+						<AnchorLike>
+							<Link to="/about/">わたしたちについて</Link>
+						</AnchorLike>{" "}
+						ページに記載がありますので、そちらもご覧ください。
+						基本、入会者は歓迎するので興味があればぜひお声がけください！
+					</QaItem.Answer>
+				</QaItem.Root>
+			</ul>
+
+			<H2>活動について</H2>
+			<ul>
+				<QaItem.Root>
 					<QaItem.Question>活動の成果は？</QaItem.Question>
 					<QaItem.Answer>
 						<AnchorLike>
@@ -61,43 +79,13 @@ export default function QA() {
 						<AnchorLike>
 							<Link to="/about/">わたしたちについて</Link>
 						</AnchorLike>{" "}
-						ページをご覧ください。 競技プログラミングや Web を中心に、 2025
-						年度からは CTF や広義 AI
+						ページをご覧ください。 また、{" "}
+						<ExternalLink href={MAXIMUM_TWITTER_URL}>
+							Twitter (現 X)
+						</ExternalLink>{" "}
+						では、ときどき写真付きで活動の様子を発信していますので、そちらもぜひご覧ください！
+						競技プログラミングや Web を中心に、 2025 年度からは CTF や広義 AI
 						などの新しい活動班も加わり、幅広い分野に挑戦できるサークルになりました！
-					</QaItem.Answer>
-				</QaItem.Root>
-				<QaItem.Root>
-					<QaItem.Question>会費はかかる？</QaItem.Question>
-					<QaItem.Answer>
-						月額 250 円で、入会時点での残りの年度の活動月分を一括徴収します。
-						例えば、 4 月に入会した場合は 250 円 × 12 ヶ月分 = 3,000 円、 5
-						月に入会した場合は 250 円 × 11 ヶ月分 = 2,750
-						円、...といった具合です。
-						なお、一度納入いただいた会費は、理由の如何を問わず返金はできませんので、あらかじめご了承ください。
-					</QaItem.Answer>
-				</QaItem.Root>
-				<QaItem.Root>
-					<QaItem.Question>情報工学科じゃないけど入れる？</QaItem.Question>
-					<QaItem.Answer>
-						独習がメインな部分もあり、ほかのメンバーと大きな差はないようです。
-						実は、情報工学科が半数以下の年もありますし、他学科のメンバーも多数在籍しています。
-						所属学部・学科内訳は{" "}
-						<AnchorLike>
-							<Link to="/about/">わたしたちについて</Link>
-						</AnchorLike>{" "}
-						ページに記載がありますので、そちらもご覧ください。
-						基本、入部者は歓迎するので興味があればぜひお声がけください！
-					</QaItem.Answer>
-				</QaItem.Root>
-				<QaItem.Root>
-					<QaItem.Question>
-						どんな練習をしているんですか？ (競技プログラミング班)
-					</QaItem.Question>
-					<QaItem.Answer>
-						<ExternalLink href="https://atcoder.jp/">AtCoder</ExternalLink>{" "}
-						という、毎週末に競技プログラミングコンテストを開催している企業があるので、主にそこの問題を解きます。
-						まず "AtCoder Beginner Contest (ABC)"
-						に参加して競技プログラミングに慣れましょう。
 					</QaItem.Answer>
 				</QaItem.Root>
 				<QaItem.Root>
@@ -119,6 +107,27 @@ export default function QA() {
 						</AnchorLike>{" "}
 						ページに記載があるように、 2025 年度の現人数は 60 人強です。
 						女子のメンバーもいます。 学部学科・男女関係なく歓迎しています！
+					</QaItem.Answer>
+				</QaItem.Root>
+			</ul>
+			<H2>会費について</H2>
+			<ul>
+				<QaItem.Root>
+					<QaItem.Question>会費はかかる？</QaItem.Question>
+					<QaItem.Answer>
+						月額 250 円で、入会時点での残りの年度の活動月分を一括徴収します。
+						例えば、 4 月に入会した場合は 250 円 × 12 ヶ月分 = 3,000 円、 5
+						月に入会した場合は 250 円 × 11 ヶ月分 = 2,750
+						円、...といった具合です。
+						なお、一度納入いただいた会費は、理由の如何を問わず返金はできませんので、あらかじめご了承ください。
+					</QaItem.Answer>
+				</QaItem.Root>
+				<QaItem.Root>
+					<QaItem.Question>何に使われるの？</QaItem.Question>
+					<QaItem.Answer>
+						サークルの運営に必要な費用に充てています。 例えば、ドメイン (URL の{" "}
+						<code>maximum.vc</code> の部分) の維持管理費用、
+						サーバー代、イベント開催費用などに使われています。
 					</QaItem.Answer>
 				</QaItem.Root>
 			</ul>
