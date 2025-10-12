@@ -49,20 +49,7 @@ export function Layout({ children }: { children: ReactNode }) {
 				<Meta />
 				<Links />
 			</head>
-			<body
-				className={css({
-					fontFamily: '"Noto Sans JP", sans-serif',
-					color: "gray.600",
-					backgroundGradient: "primary",
-					backgroundRepeat: "no-repeat",
-					width: "100%",
-					minHeight: "100dvh",
-					display: "flex",
-					flexDirection: "column",
-					lineHeight: 1.7,
-					letterSpacing: "0.04em",
-				})}
-			>
+			<body>
 				<Header />
 				<div
 					className={css({
@@ -70,33 +57,6 @@ export function Layout({ children }: { children: ReactNode }) {
 						padding: 4,
 						flexGrow: 1,
 						overflowX: "hidden",
-						"& p": { marginTop: 2, marginBottom: 2 },
-						"& blockquote": {
-							marginTop: 2,
-							marginBottom: 2,
-							paddingLeft: 5,
-							position: "relative",
-							_before: {
-								position: "absolute",
-								left: 1,
-								top: 0,
-								content: '""',
-								display: "inline-block",
-								width: 1,
-								height: "100%",
-								backgroundGradient: "primary",
-							},
-						},
-						"& code": {
-							fontFamily: '"Noto Sans Mono", monospace',
-							backgroundColor: "rose.50",
-							color: "rose.900",
-							padding: 0.5,
-							borderRadius: "sm",
-							fontSize: "0.9em",
-						},
-						// header ぶんの高さだけスクロール位置をずらす
-						"& *": { scrollMarginTop: "headerHeight" },
 					})}
 				>
 					<div
