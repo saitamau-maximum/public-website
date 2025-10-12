@@ -1,6 +1,10 @@
 import { H2 } from "~/components/heading";
+import { AboutTeamsAi } from "./ai";
 import { AboutTeamsCompro } from "./compro";
 import { AboutTeamsCtf } from "./ctf";
+import { AboutTeamsGameDev } from "./game-dev";
+import { AboutTeamsInfra } from "./infra";
+import { AboutTeamsMobileApp } from "./mobile-app";
 import { AboutTeamsWeb } from "./web";
 
 export const AboutTeams = () => {
@@ -20,6 +24,10 @@ export const AboutTeams = () => {
 			<AboutTeamsCompro />
 			<AboutTeamsWeb />
 			<AboutTeamsCtf />
+			<AboutTeamsAi />
+			<AboutTeamsMobileApp />
+			<AboutTeamsGameDev />
+			<AboutTeamsInfra />
 		</section>
 	);
 };
