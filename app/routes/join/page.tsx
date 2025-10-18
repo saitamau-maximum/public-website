@@ -1,15 +1,13 @@
 import { Link } from "react-router";
-import { css } from "styled-system/css";
 import { AnchorLike } from "~/components/anchor-like";
 import { Breadcrumb } from "~/components/breadcrumb";
-import { ExternalLink } from "~/components/external-link";
 import { H1 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
 import { makePageTitle } from "~/utils/title";
 import { JoinCondition } from "./internal/components/condition";
 import { JoinFlow } from "./internal/components/flow";
 
-export default function About() {
+export default function Join() {
 	const breadcrumbItems = [
 		{ href: "/", label: "ホーム" },
 		{ href: "/join/", label: "入会案内", active: true },
