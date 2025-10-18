@@ -1,9 +1,13 @@
 import { css } from "styled-system/css";
 
-export const HeroImg = () => {
+interface Props {
+	src?: string;
+}
+
+export const HeroImg = ({ src = "/heros/hero.avif" }: Props) => {
 	return (
 		<img
-			src="/hero.avif"
+			src={src}
 			alt=""
 			loading="eager"
 			className={css({
