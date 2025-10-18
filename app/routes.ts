@@ -11,5 +11,5 @@ export default [
 	route("qa", "routes/qa/page.tsx"),
 	route("join", "routes/join/page.tsx"),
 	...prefix("news", [index("routes/news/page.tsx")]),
-	...prefix("achievements", [index("routes/achievements/page.tsx")]),
+	...prefix("achievements", [index("routes/achievements/home/page.tsx")]),
 ] satisfies RouteConfig;

@@ -12,11 +12,14 @@ export const ExternalLink = ({
 	...props
 }: WithCSSProps<ComponentPropsWithRef<"a">>) => {
 	return (
+		// biome-ignore lint/a11y/noStaticElementInteractions: リンククリック時の親要素伝播を防止したいので
 		<a
 			{...props}
 			className={cx(css({ display: "inline" }, customCSS), className)}
 			target="_blank"
 			rel="noopener noreferrer"
+			// biome-ignore lint/a11y/useValidAnchor: click イベントのためだけにリンクにボタン使うのはよくない
+			onClick={(e) => e.stopPropagation()}
 		>
 			<AnchorLike>
 				{children}
