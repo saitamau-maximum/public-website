@@ -7,43 +7,37 @@ import { ExternalLink } from "~/components/external-link";
 import { H1, H2, H3 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
 import { Table } from "~/components/table";
-import type icpcSchema from "~/schema/achievements/icpc.schema";
+import type ute1Schema from "~/schema/achievements/icpc.schema";
 import { makePageTitle } from "~/utils/title";
 
 export const loader = async () => {
 	// fs での取得ができないため、 Vite raw import 機能でデータを読み込む
 	// (Workers 内では Virtual File System が使われており、ローカルファイルシステムにアクセスできないので)
 	// ref: https://developers.cloudflare.com/workers/runtime-apis/nodejs/fs/
-	const icpcYamlData = (await import("~/data/achievements/icpc.yml?raw"))
+	const ute1YamlData = (await import("~/data/achievements/ute1.yml?raw"))
 		.default;
-	const icpcData = load(icpcYamlData) as FromSchema<typeof icpcSchema>;
-	return { icpcData };
+	const ute1Data = load(ute1YamlData) as FromSchema<typeof ute1Schema>;
+	return { ute1Data };
 };
 
-export default function AchievementsIcpc() {
-	const { icpcData } = useLoaderData<typeof loader>();
+export default function AchievementsUte1() {
+	const { ute1Data } = useLoaderData<typeof loader>();
 
 	const breadcrumbItems = [
 		{ href: "/", label: "ホーム" },
 		{ href: "/achievements/", label: "活動実績" },
-		{ href: "/achievements/icpc/", label: "ICPC", active: true },
+		{ href: "/achievements/ute1/", label: "UTE-1", active: true },
 	];
 
 	return (
 		<>
-			<title>{makePageTitle(["ICPC での活動実績"])}</title>
-			<HeroImg src="/heros/icpc.avif" />
+			<title>{makePageTitle(["UTE-1 での活動実績"])}</title>
+			<HeroImg src="/heros/ute1.avif" />
 			<Breadcrumb items={breadcrumbItems} />
-			<H1>ICPC での活動実績</H1>
+			<H1>UTE-1 での活動実績</H1>
 			<p>
-				ICPC (International Collegiate Programming Contest /
-				国際大学対抗プログラミングコンテスト) とは、 ICPC Foundation
-				が主催するプログラミングコンテストです。 同じ大学で 3 人 1
-				組のチームを作り、チームでプログラミングと問題解決の能力を競う大会です。
-			</p>
-			<p>
-				ICPC には 2000
-				年から出場し続けており、これまでにも世界大会経験や、国内予選の継続的な突破といった好成績を収める実績を挙げています。
+				UTE-1 は、株式会社ウルシステムズが主催する、 Web
+				アプリケーション開発のバグ修正やセキュリティなどの技術を期間内にどれだけ発揮できるかを競う、バックエンドメインの大会です。
 			</p>
 			<p>
 				<strong>参加記について</strong>
@@ -53,7 +47,7 @@ export default function AchievementsIcpc() {
 				各メンバーが管理する外部サイトへ遷移することがあります。
 				予めご了承ください。
 			</p>
-			{Object.entries(icpcData)
+			{Object.entries(ute1Data)
 				// 年度降順で表示
 				.sort((a, b) => Number.parseInt(b[0], 10) - Number.parseInt(a[0], 10))
 				.map(([year, data]) => (

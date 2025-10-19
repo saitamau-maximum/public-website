@@ -16,6 +16,11 @@ export default [
 		layout("routes/achievements/layout.tsx", [
 			index("routes/achievements/home/page.tsx"),
 			route("icpc", "routes/achievements/icpc/page.tsx"),
+			route("isucon", "routes/achievements/isucon/page.tsx"),
+			route("wsh", "routes/achievements/wsh/page.tsx"),
+			route("icfpc", "routes/achievements/icfpc/page.tsx"),
+			route("kaggle", "routes/achievements/kaggle/page.tsx"),
+			route("ute1", "routes/achievements/ute1/page.tsx"),
 		]),
 	]),
 ] satisfies RouteConfig;

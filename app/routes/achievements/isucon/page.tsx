@@ -7,43 +7,47 @@ import { ExternalLink } from "~/components/external-link";
 import { H1, H2, H3 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
 import { Table } from "~/components/table";
-import type icpcSchema from "~/schema/achievements/icpc.schema";
+import type isuconSchema from "~/schema/achievements/icpc.schema";
 import { makePageTitle } from "~/utils/title";
 
 export const loader = async () => {
 	// fs での取得ができないため、 Vite raw import 機能でデータを読み込む
 	// (Workers 内では Virtual File System が使われており、ローカルファイルシステムにアクセスできないので)
 	// ref: https://developers.cloudflare.com/workers/runtime-apis/nodejs/fs/
-	const icpcYamlData = (await import("~/data/achievements/icpc.yml?raw"))
+	const isuconYamlData = (await import("~/data/achievements/isucon.yml?raw"))
 		.default;
-	const icpcData = load(icpcYamlData) as FromSchema<typeof icpcSchema>;
-	return { icpcData };
+	const isuconData = load(isuconYamlData) as FromSchema<typeof isuconSchema>;
+	return { isuconData };
 };
 
-export default function AchievementsIcpc() {
-	const { icpcData } = useLoaderData<typeof loader>();
+export default function AchievementsIsucon() {
+	const { isuconData } = useLoaderData<typeof loader>();
 
 	const breadcrumbItems = [
 		{ href: "/", label: "ホーム" },
 		{ href: "/achievements/", label: "活動実績" },
-		{ href: "/achievements/icpc/", label: "ICPC", active: true },
+		{ href: "/achievements/isucon/", label: "ISUCON", active: true },
 	];
 
 	return (
 		<>
-			<title>{makePageTitle(["ICPC での活動実績"])}</title>
-			<HeroImg src="/heros/icpc.avif" />
+			<title>{makePageTitle(["ISUCON での活動実績"])}</title>
+			<HeroImg src="/heros/isucon.avif" />
 			<Breadcrumb items={breadcrumbItems} />
-			<H1>ICPC での活動実績</H1>
+			<H1>ISUCON での活動実績</H1>
 			<p>
-				ICPC (International Collegiate Programming Contest /
-				国際大学対抗プログラミングコンテスト) とは、 ICPC Foundation
-				が主催するプログラミングコンテストです。 同じ大学で 3 人 1
-				組のチームを作り、チームでプログラミングと問題解決の能力を競う大会です。
+				<ExternalLink href="https://isucon.net/">
+					ISUCON (Iikanjini Speed Up Contest)
+				</ExternalLink>{" "}
+				とは、 LINE
+				ヤフー株式会社が主催する、バックエンドメインのコンテストです。
+				与えられた Web
+				サービスのパフォーマンスを改善し、どれだけ高速化できるかを競います。
+				最大 3 人のチームを組み、制限時間内にスコアを競い合います。
 			</p>
 			<p>
-				ICPC には 2000
-				年から出場し続けており、これまでにも世界大会経験や、国内予選の継続的な突破といった好成績を収める実績を挙げています。
+				Maximum では 2023 年度の ISUCON13 から参加しており、上位 30
+				位として入賞するなどの実績を挙げています。
 			</p>
 			<p>
 				<strong>参加記について</strong>
@@ -53,7 +57,7 @@ export default function AchievementsIcpc() {
 				各メンバーが管理する外部サイトへ遷移することがあります。
 				予めご了承ください。
 			</p>
-			{Object.entries(icpcData)
+			{Object.entries(isuconData)
 				// 年度降順で表示
 				.sort((a, b) => Number.parseInt(b[0], 10) - Number.parseInt(a[0], 10))
 				.map(([year, data]) => (

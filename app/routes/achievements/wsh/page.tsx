@@ -7,43 +7,42 @@ import { ExternalLink } from "~/components/external-link";
 import { H1, H2, H3 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
 import { Table } from "~/components/table";
-import type icpcSchema from "~/schema/achievements/icpc.schema";
+import type wshSchema from "~/schema/achievements/icpc.schema";
 import { makePageTitle } from "~/utils/title";
 
 export const loader = async () => {
 	// fs での取得ができないため、 Vite raw import 機能でデータを読み込む
 	// (Workers 内では Virtual File System が使われており、ローカルファイルシステムにアクセスできないので)
 	// ref: https://developers.cloudflare.com/workers/runtime-apis/nodejs/fs/
-	const icpcYamlData = (await import("~/data/achievements/icpc.yml?raw"))
-		.default;
-	const icpcData = load(icpcYamlData) as FromSchema<typeof icpcSchema>;
-	return { icpcData };
+	const wshYamlData = (await import("~/data/achievements/wsh.yml?raw")).default;
+	const wshData = load(wshYamlData) as FromSchema<typeof wshSchema>;
+	return { wshData };
 };
 
-export default function AchievementsIcpc() {
-	const { icpcData } = useLoaderData<typeof loader>();
+export default function AchievementsWsh() {
+	const { wshData } = useLoaderData<typeof loader>();
 
 	const breadcrumbItems = [
 		{ href: "/", label: "ホーム" },
 		{ href: "/achievements/", label: "活動実績" },
-		{ href: "/achievements/icpc/", label: "ICPC", active: true },
+		{ href: "/achievements/wsh/", label: "Web Speed Hackathon", active: true },
 	];
 
 	return (
 		<>
-			<title>{makePageTitle(["ICPC での活動実績"])}</title>
-			<HeroImg src="/heros/icpc.avif" />
+			<title>{makePageTitle(["Web Speed Hackathon での活動実績"])}</title>
+			<HeroImg src="/heros/wsh.avif" />
 			<Breadcrumb items={breadcrumbItems} />
-			<H1>ICPC での活動実績</H1>
+			<H1>Web Speed Hackathon での活動実績</H1>
 			<p>
-				ICPC (International Collegiate Programming Contest /
-				国際大学対抗プログラミングコンテスト) とは、 ICPC Foundation
-				が主催するプログラミングコンテストです。 同じ大学で 3 人 1
-				組のチームを作り、チームでプログラミングと問題解決の能力を競う大会です。
+				Web Speed Hackathon は、とても重たいサイトの Core Web Vitals
+				を改善することを目的とした、株式会社サイバーエージェントが主催するコンテストです。
 			</p>
 			<p>
-				ICPC には 2000
-				年から出場し続けており、これまでにも世界大会経験や、国内予選の継続的な突破といった好成績を収める実績を挙げています。
+				Maximum では 2023 年 (2022 年度)
+				からメンバーが参加しており、スコア順位で 1
+				桁順位を獲得するなどの実績を挙げています。 また、 Maximum
+				に所属している卒業生が作問に携わっています。
 			</p>
 			<p>
 				<strong>参加記について</strong>
@@ -53,7 +52,7 @@ export default function AchievementsIcpc() {
 				各メンバーが管理する外部サイトへ遷移することがあります。
 				予めご了承ください。
 			</p>
-			{Object.entries(icpcData)
+			{Object.entries(wshData)
 				// 年度降順で表示
 				.sort((a, b) => Number.parseInt(b[0], 10) - Number.parseInt(a[0], 10))
 				.map(([year, data]) => (

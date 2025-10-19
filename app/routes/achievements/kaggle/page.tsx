@@ -7,43 +7,43 @@ import { ExternalLink } from "~/components/external-link";
 import { H1, H2, H3 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
 import { Table } from "~/components/table";
-import type icpcSchema from "~/schema/achievements/icpc.schema";
+import type kaggleSchema from "~/schema/achievements/icpc.schema";
 import { makePageTitle } from "~/utils/title";
 
 export const loader = async () => {
 	// fs での取得ができないため、 Vite raw import 機能でデータを読み込む
 	// (Workers 内では Virtual File System が使われており、ローカルファイルシステムにアクセスできないので)
 	// ref: https://developers.cloudflare.com/workers/runtime-apis/nodejs/fs/
-	const icpcYamlData = (await import("~/data/achievements/icpc.yml?raw"))
+	const kaggleYamlData = (await import("~/data/achievements/kaggle.yml?raw"))
 		.default;
-	const icpcData = load(icpcYamlData) as FromSchema<typeof icpcSchema>;
-	return { icpcData };
+	const kaggleData = load(kaggleYamlData) as FromSchema<typeof kaggleSchema>;
+	return { kaggleData };
 };
 
-export default function AchievementsIcpc() {
-	const { icpcData } = useLoaderData<typeof loader>();
+export default function AchievementsKaggle() {
+	const { kaggleData } = useLoaderData<typeof loader>();
 
 	const breadcrumbItems = [
 		{ href: "/", label: "ホーム" },
 		{ href: "/achievements/", label: "活動実績" },
-		{ href: "/achievements/icpc/", label: "ICPC", active: true },
+		{ href: "/achievements/kaggle/", label: "Kaggle", active: true },
 	];
 
 	return (
 		<>
-			<title>{makePageTitle(["ICPC での活動実績"])}</title>
-			<HeroImg src="/heros/icpc.avif" />
+			<title>{makePageTitle(["Kaggle での活動実績"])}</title>
+			<HeroImg src="/heros/kaggle.avif" />
 			<Breadcrumb items={breadcrumbItems} />
-			<H1>ICPC での活動実績</H1>
+			<H1>Kaggle での活動実績</H1>
 			<p>
-				ICPC (International Collegiate Programming Contest /
-				国際大学対抗プログラミングコンテスト) とは、 ICPC Foundation
-				が主催するプログラミングコンテストです。 同じ大学で 3 人 1
-				組のチームを作り、チームでプログラミングと問題解決の能力を競う大会です。
+				<ExternalLink href="https://www.kaggle.com/">Kaggle</ExternalLink>
+				(カグル)
+				とは、機械学習やデータサイエンスの分野で世界中のデータサイエンティストが参加する、
+				Google 社が運営するオンラインプラットフォームです。
 			</p>
 			<p>
-				ICPC には 2000
-				年から出場し続けており、これまでにも世界大会経験や、国内予選の継続的な突破といった好成績を収める実績を挙げています。
+				Maximum では、メンバーが Kaggle
+				で開催されるさまざまなコンペティションに参加しています。
 			</p>
 			<p>
 				<strong>参加記について</strong>
@@ -53,7 +53,7 @@ export default function AchievementsIcpc() {
 				各メンバーが管理する外部サイトへ遷移することがあります。
 				予めご了承ください。
 			</p>
-			{Object.entries(icpcData)
+			{Object.entries(kaggleData)
 				// 年度降順で表示
 				.sort((a, b) => Number.parseInt(b[0], 10) - Number.parseInt(a[0], 10))
 				.map(([year, data]) => (
