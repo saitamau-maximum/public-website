@@ -1,7 +1,6 @@
 import { load } from "js-yaml";
 import type { FromSchema } from "json-schema-to-ts";
 import { useLoaderData } from "react-router";
-import { css } from "styled-system/css";
 import { Breadcrumb } from "~/components/breadcrumb";
 import { ExternalLink } from "~/components/external-link";
 import { H1, H2, H3 } from "~/components/heading";
@@ -10,6 +9,7 @@ import { Table } from "~/components/table";
 import { UnorderedList } from "~/components/unordered-list";
 import type icpcSchema from "~/schema/achievements/icpc.schema";
 import { makePageTitle } from "~/utils/title";
+import { ReportsNote } from "../internal/components/reports-note";
 
 export const loader = async () => {
 	// fs での取得ができないため、 Vite raw import 機能でデータを読み込む
@@ -46,14 +46,7 @@ export default function AchievementsIcpc() {
 				ICPC には 2000
 				年から出場し続けており、これまでにも世界大会経験や、国内予選の継続的な突破といった好成績を収める実績を挙げています。
 			</p>
-			<p>
-				<strong>参加記について</strong>
-				<br />
-				参加記は Maximum メンバーが個人で執筆・公開しているもので、 Maximum
-				の公式見解を示すものではありません。
-				各メンバーが管理する外部サイトへ遷移することがあります。
-				予めご了承ください。
-			</p>
+			<ReportsNote />
 			{Object.entries(icpcData)
 				// 年度降順で表示
 				.sort((a, b) => Number.parseInt(b[0], 10) - Number.parseInt(a[0], 10))
