@@ -1,5 +1,6 @@
 import { ExternalLink } from "~/components/external-link";
 import { H3, H4 } from "~/components/heading";
+import { UnorderedList } from "~/components/unordered-list";
 import { Spoiler } from "../spoiler";
 
 export const AboutTeamsCompro = () => {
@@ -50,6 +51,33 @@ export const AboutTeamsCompro = () => {
 				<ExternalLink href="https://atcoder.jp/">AtCoder</ExternalLink>{" "}
 				という競技プログラミングのサイトで定期的に開催されるコンテストに参加したりしています。
 			</p>
+			<p>
+				また、不定期ですが Maximum-Cup というコンテストを開催しています。
+				現在もアクセスできる過去の開催分は以下の通りです。
+				興味があればぜひ問題を解いてみてください！
+			</p>
+			<UnorderedList>
+				<li>
+					<ExternalLink href="https://atcoder.jp/contests/maximum-cup-2013">
+						Maximum-Cup 2013
+					</ExternalLink>
+				</li>
+				<li>
+					<ExternalLink href="https://atcoder.jp/contests/maximum-cup-2018">
+						Maximum-Cup 2018
+					</ExternalLink>
+				</li>
+				<li>
+					<ExternalLink href="https://atcoder.jp/contests/maximum-cup-2023">
+						Maximum-Cup 2023
+					</ExternalLink>
+				</li>
+				<li>
+					<ExternalLink href="https://mofecoder.com/contests/maximum_cup_2024">
+						Maximum-Cup 2024
+					</ExternalLink>
+				</li>
+			</UnorderedList>
 		</>
 	);
 };
