@@ -1,22 +1,16 @@
 import { css } from "styled-system/css";
 import { H2 } from "~/components/heading";
+import { UnorderedList } from "~/components/unordered-list";
 
 export const JoinCondition = () => {
 	return (
 		<section>
 			<H2>入会条件</H2>
 			<p>以下の条件を満たせば、だれでもいつでも Maximum に入会できます。</p>
-			<ul
-				className={css({
-					listStyleType: "disc",
-					paddingLeft: 8,
-					marginTop: 2,
-					marginBottom: 4,
-				})}
-			>
+			<UnorderedList>
 				<li>埼玉大学の学部生、大学院生、または卒業生であること</li>
 				<li>プログラミングに興味があること</li>
-			</ul>
+			</UnorderedList>
 			<p>学部学科は問いません。 年度途中からの入会も大歓迎です！</p>
 			<p>
 				埼玉大学に在籍している (していた)

@@ -7,6 +7,7 @@ import { ExternalLink } from "~/components/external-link";
 import { H1, H2, H3 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
 import { Table } from "~/components/table";
+import { UnorderedList } from "~/components/unordered-list";
 import type icfpcSchema from "~/schema/achievements/icpc.schema";
 import { makePageTitle } from "~/utils/title";
 
@@ -88,14 +89,7 @@ export default function AchievementsIcfpc() {
 						{data.blogs && (
 							<>
 								<H3>参加記</H3>
-								<ul
-									className={css({
-										listStyleType: "disc",
-										paddingLeft: 8,
-										marginTop: 2,
-										marginBottom: 4,
-									})}
-								>
+								<UnorderedList>
 									{data.blogs.map((report) => (
 										<li key={report.url}>
 											{report.author}:{" "}
@@ -104,7 +98,7 @@ export default function AchievementsIcfpc() {
 											</ExternalLink>
 										</li>
 									))}
-								</ul>
+								</UnorderedList>
 							</>
 						)}
 					</section>
