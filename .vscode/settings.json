@@ -19,5 +19,10 @@
 	},
 	"biome.enabled": true,
 	"prettier.enable": false,
-	"eslint.enable": false
+	"eslint.enable": false,
+	"yaml.schemas": {
+		"app/schema/achievements/icpc.schema.json": [
+			"app/data/achievements/icpc.yml"
+		]
+	}
 }

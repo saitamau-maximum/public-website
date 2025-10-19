@@ -172,10 +172,6 @@ export default function Achievements() {
 						アプリケーション開発のバグ修正やセキュリティなどの技術を期間内にどれだけ発揮できるかを競う、バックエンドメインの大会です。
 					</p>
 				</CompetitionCard>
-				<p className={css({ fontSize: "sm" })}>
-					各種大会のロゴは、大会の公式ページより引用しています。
-					著作権はそれぞれの大会運営団体に帰属します。
-				</p>
 			</section>
 		</>
 	);
