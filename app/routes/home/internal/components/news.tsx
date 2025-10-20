@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { css } from "styled-system/css";
 import { AnchorLike } from "~/components/anchor-like";
-import { Card } from "~/components/card";
+import { ArticleCard } from "~/components/article-card";
 import { H2 } from "~/components/heading";
 import type { NewsArticle } from "~/utils/articles";
 
@@ -31,26 +31,9 @@ export const HomeNews = ({ newsList }: Props) => {
 			>
 				{newsList.map((news) => {
 					const articlePath = `/news/${news.year}/${news.slug}/`;
-
 					return (
 						<li key={articlePath} className={css({ maxWidth: "full" })}>
-							<Card.Root>
-								{news.image && (
-									<Card.Image
-										src={`${articlePath}${news.image}`}
-										alt={`${news.title} のサムネイル画像`}
-									/>
-								)}
-								<Card.Title>{news.title}</Card.Title>
-								<Card.Body>
-									{news.description && <p>{news.description}</p>}
-									<p>
-										<Link to={articlePath}>
-											<AnchorLike>このお知らせを読む</AnchorLike>
-										</Link>
-									</p>
-								</Card.Body>
-							</Card.Root>
+							<ArticleCard article={news} path={articlePath} />
 						</li>
 					);
 				})}
