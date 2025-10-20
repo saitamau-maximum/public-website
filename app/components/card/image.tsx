@@ -16,7 +16,7 @@ export const CardImg = ({
 			className={cx(
 				css(
 					{
-						width: "100%",
+						width: "full",
 						aspectRatio: "16 / 9",
 						objectFit: "cover",
 						objectPosition: "center",
