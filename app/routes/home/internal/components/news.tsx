@@ -3,15 +3,10 @@ import { css } from "styled-system/css";
 import { AnchorLike } from "~/components/anchor-like";
 import { Card } from "~/components/card";
 import { H2 } from "~/components/heading";
+import type { NewsArticle } from "~/utils/articles";
 
 interface Props {
-	newsList: ReadonlyArray<{
-		slug: string;
-		imgSrc: string;
-		title: string;
-		description: string;
-		createdAt: string;
-	}>;
+	newsList: readonly NewsArticle[];
 }
 
 export const HomeNews = ({ newsList }: Props) => {
@@ -34,30 +29,36 @@ export const HomeNews = ({ newsList }: Props) => {
 					},
 				})}
 			>
-				{newsList.map((news) => (
-					<li key={news.slug} className={css({ maxWidth: "full" })}>
-						<Card.Root>
-							<Card.Image
-								src={news.imgSrc}
-								alt={`${news.title} のサムネイル画像`}
-							/>
-							<Card.Title>{news.title}</Card.Title>
-							<Card.Body>
-								<p>{news.description}</p>
-								<p>
-									<Link to={news.slug}>
-										<AnchorLike>このお知らせを読む</AnchorLike>
-									</Link>
-								</p>
-							</Card.Body>
-						</Card.Root>
-					</li>
-				))}
+				{newsList.map((news) => {
+					const articlePath = `/news/${news.year}/${news.slug}/`;
+
+					return (
+						<li key={articlePath} className={css({ maxWidth: "full" })}>
+							<Card.Root>
+								{news.image && (
+									<Card.Image
+										src={`${articlePath}${news.image}`}
+										alt={`${news.title} のサムネイル画像`}
+									/>
+								)}
+								<Card.Title>{news.title}</Card.Title>
+								<Card.Body>
+									{news.description && <p>{news.description}</p>}
+									<p>
+										<Link to={articlePath}>
+											<AnchorLike>このお知らせを読む</AnchorLike>
+										</Link>
+									</p>
+								</Card.Body>
+							</Card.Root>
+						</li>
+					);
+				})}
 			</ul>
 			<p>
 				ほかのお知らせは、{" "}
 				<Link to="/news/">
-					<AnchorLike>ニュース一覧</AnchorLike>
+					<AnchorLike>お知らせ一覧</AnchorLike>
 				</Link>{" "}
 				ページからご覧いただけます。
 			</p>

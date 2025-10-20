@@ -17,8 +17,9 @@ export const CardImg = ({
 				css(
 					{
 						width: "100%",
-						aspectRatio: "16 / 9", // 16:9 前提
+						aspectRatio: "16 / 9",
 						objectFit: "cover",
+						objectPosition: "center",
 						borderRadius: "md",
 						borderWidth: "1px",
 						borderStyle: "solid",

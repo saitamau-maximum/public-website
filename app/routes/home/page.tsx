@@ -1,12 +1,27 @@
+import { useLoaderData } from "react-router";
 import { css } from "styled-system/css";
 import { H1 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
+import { getNewsArticles } from "~/utils/articles";
 import { HomeAboutUs } from "./internal/components/about-us";
 import { HomeContact } from "./internal/components/contact";
 import { HomeNews } from "./internal/components/news";
 import { HomeWhatWeMade } from "./internal/components/what-we-made";
 
+export const loader = async () => {
+	const newsArticles = await getNewsArticles();
+	return {
+		newsArticles: newsArticles
+			// createdAt 降順に並び変え
+			.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+			// 先頭 2 件だけ取得
+			.slice(0, 2),
+	};
+};
+
 export default function Home() {
+	const { newsArticles } = useLoaderData<typeof loader>();
+
 	return (
 		<>
 			<HeroImg />
@@ -36,24 +51,7 @@ export default function Home() {
 			</H1>
 			<HomeAboutUs />
 			<HomeWhatWeMade />
-			<HomeNews
-				newsList={[
-					{
-						slug: "/news/first-post",
-						imgSrc: "/news/news1.avif",
-						title: "First Post",
-						description: "This is the first post.",
-						createdAt: "2024-01-01",
-					},
-					{
-						slug: "/news/first-post",
-						imgSrc: "/news/news1.avif",
-						title: "First Post",
-						description: "This is the first post.",
-						createdAt: "2024-01-01",
-					},
-				]}
-			/>
+			<HomeNews newsList={newsArticles} />
 			<HomeContact />
 		</>
 	);

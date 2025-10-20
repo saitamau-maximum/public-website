@@ -6,14 +6,22 @@ import { resolveFromProjectRoot } from "./resolve-from-project-root";
 
 export const newsArticleFrontmatterSchema = v.object({
 	title: v.string(),
-	createdAt: v.pipe(v.string(), v.isoDate()),
-	updatedAt: v.pipe(v.string(), v.isoDate()),
+	createdAt: v.date(),
+	updatedAt: v.date(),
 	description: v.optional(v.string()),
 	group: v.string(),
-	image: v.optional(v.string()),
+	image: v.optional(
+		v.pipe(
+			v.string(),
+			v.endsWith(
+				"-thumb.avif",
+				"サムネイル画像は -thumb.avif 形式で指定してください",
+			),
+		),
+	),
 });
 
-type NewsArticle = {
+export type NewsArticle = {
 	year: string;
 	slug: string;
 } & v.InferOutput<typeof newsArticleFrontmatterSchema>;
@@ -31,13 +39,14 @@ export const getNewsArticles = async () => {
 			const fileContent = await readFile(articleFile, "utf-8");
 			const { data } = matter(fileContent);
 
-			const { success, output: frontmatter } = v.safeParse(
-				newsArticleFrontmatterSchema,
-				data,
-			);
+			const {
+				success,
+				output: frontmatter,
+				issues,
+			} = v.safeParse(newsArticleFrontmatterSchema, data);
 
 			if (!success) {
-				console.warn(`Invalid frontmatter: ${yearDir}/${articleDir}`);
+				console.warn(`Invalid frontmatter: ${yearDir}/${articleDir}`, issues);
 				continue;
 			}
 
