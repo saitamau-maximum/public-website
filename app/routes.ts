@@ -11,7 +11,11 @@ export default [
 	route("about", "routes/about/page.tsx"),
 	route("qa", "routes/qa/page.tsx"),
 	route("join", "routes/join/page.tsx"),
-	...prefix("news", [index("routes/news/page.tsx")]),
+	...prefix("news", [
+		index("routes/news/home/page.tsx"),
+		route(":year", "routes/news/year/page.tsx"),
+		route(":year/:slug", "routes/news/article/page.tsx"),
+	]),
 	...prefix("achievements", [
 		layout("routes/achievements/layout.tsx", [
 			index("routes/achievements/home/page.tsx"),
