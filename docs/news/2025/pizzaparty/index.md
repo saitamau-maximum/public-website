@@ -1,10 +1,10 @@
 ---
-title: '懇親会を開催しました！'
-createdAt: '2025-05-15'
-updatedAt: '2025-05-15'
-description: '新入生とピザを食べながら交流しました'
-group: 'Maximum'
-image: '/images/pizzaparty.jpg'
+title: 懇親会を開催しました！
+createdAt: 2025-05-15
+updatedAt: 2025-05-15
+description: 新入生とピザを食べながら交流しました
+group: Maximum
+image: pizzaparty-thumb.avif
 ---
 
 ## 新入生と仲良くなりたい！

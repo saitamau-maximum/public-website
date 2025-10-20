@@ -1,10 +1,10 @@
 ---
-title: '上半期を振り返る'
-createdAt: '2025-08-19'
-updatedAt: '2025-08-19'
-description: '新体制で迎えた2025年の上半期を振り返ります'
-group: 'Maximum'
-image: '/images/midyear-review-2025.jpg'
+title: 上半期を振り返る
+createdAt: 2025-08-19
+updatedAt: 2025-08-19
+description: 新体制で迎えた2025年の上半期を振り返ります
+group: Maximum
+image: midyear-review-2025-thumb.avif
 ---
 
 ## 2025年からの新体制（班制度）の進捗

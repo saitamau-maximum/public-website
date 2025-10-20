@@ -1,10 +1,10 @@
 ---
-title: '新歓・ガイダンスのお知らせ'
-createdAt: '2025-03-23'
-updatedAt: '2025-03-23'
-description: '2025年度の新歓・ガイダンスのお知らせ'
-group: 'Maximum'
-image: '/images/guidance-2024.png'
+title: 新歓・ガイダンスのお知らせ
+createdAt: 2025-03-23
+updatedAt: 2025-03-23
+description: 2025年度の新歓・ガイダンスのお知らせ
+group: Maximum
+image: guidance-2024-thumb.avif
 ---
 
 ## 2025年度も新歓・ガイダンスを開催します

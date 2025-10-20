@@ -1,9 +1,9 @@
 ---
-title: 'サイトリニューアルのお知らせ'
-createdAt: '2024-04-15'
-updatedAt: '2024-04-15'
-description: 'Maximum公式Webサイトをリニューアルしました！'
-group: 'Maximum'
+title: サイトリニューアルのお知らせ
+createdAt: 2024-04-15
+updatedAt: 2024-04-15
+description: Maximum公式Webサイトをリニューアルしました！
+group: Maximum
 ---
 
 ## Maximum 公式Webサイトをリニューアルしました！

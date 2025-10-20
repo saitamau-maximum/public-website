@@ -1,10 +1,10 @@
 ---
-title: '今年も賑わった新歓ガイダンス！'
-createdAt: '2025-04-17'
-updatedAt: '2025-04-17'
-description: '2025年度新歓ガイダンスをレポートします'
-group: 'Maximum'
-image: '/images/guidance-2025-thumbnail.jpg'
+title: 今年も賑わった新歓ガイダンス！
+createdAt: 2025-04-17
+updatedAt: 2025-04-17
+description: 2025年度新歓ガイダンスをレポートします
+group: Maximum
+image: /images/guidance-2025-thumbnail-thumb.avif
 ---
 
 ## 2025年度新歓ガイダンスを振り返って
