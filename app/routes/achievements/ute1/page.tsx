@@ -1,3 +1,4 @@
+import { readFile } from "node:fs/promises";
 import { load } from "js-yaml";
 import type { FromSchema } from "json-schema-to-ts";
 import { useLoaderData } from "react-router";
@@ -8,15 +9,15 @@ import { HeroImg } from "~/components/hero-img";
 import { Table } from "~/components/table";
 import { UnorderedList } from "~/components/unordered-list";
 import type ute1Schema from "~/schema/achievements/icpc.schema";
+import { resolveFromProjectRoot } from "~/utils/resolve-from-project-root";
 import { makePageTitle } from "~/utils/title";
 import { ReportsNote } from "../internal/components/reports-note";
 
 export const loader = async () => {
-	// fs での取得ができないため、 Vite raw import 機能でデータを読み込む
-	// (Workers 内では Virtual File System が使われており、ローカルファイルシステムにアクセスできないので)
-	// ref: https://developers.cloudflare.com/workers/runtime-apis/nodejs/fs/
-	const ute1YamlData = (await import("~/data/achievements/ute1.yml?raw"))
-		.default;
+	const ute1YamlData = await readFile(
+		resolveFromProjectRoot("app", "data", "achievements", "ute1.yml"),
+		"utf-8",
+	);
 	const ute1Data = load(ute1YamlData) as FromSchema<typeof ute1Schema>;
 	return { ute1Data };
 };
