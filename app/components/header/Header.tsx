@@ -67,7 +67,7 @@ export const Header = () => {
 						gap: 6,
 						alignItems: "center",
 					})}
-					aria-label="Header Navigation"
+					aria-label="ヘッダーナビゲーション"
 				>
 					{headerItems.map(([label, href]) => (
 						<Link
@@ -87,7 +87,7 @@ export const Header = () => {
 				<Button
 					className={css({ hideFrom: "md", height: 6, width: 6 })}
 					onPress={handleMenuClick}
-					aria-label={showingMenu ? "Close Menu" : "Open Menu"}
+					aria-label={showingMenu ? "メニューを閉じる" : "メニューを開く"}
 				>
 					<Menu className={css({ display: showingMenu ? "none" : "block" })} />
 					<X className={css({ display: !showingMenu ? "none" : "block" })} />
@@ -128,7 +128,7 @@ export const Header = () => {
 							gap: 8,
 							alignItems: "center",
 						})}
-						aria-label="Mobile Header Navigation"
+						aria-label="モバイルヘッダーナビゲーション"
 					>
 						{headerItems.map(([label, href]) => (
 							<Link

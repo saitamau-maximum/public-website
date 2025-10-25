@@ -26,7 +26,7 @@ const NoImagePlaceholder = () => {
 			})}
 			aria-hidden="true"
 			role="img"
-			aria-label="No Image Available"
+			aria-label="画像がありません"
 		>
 			<div
 				className={css({

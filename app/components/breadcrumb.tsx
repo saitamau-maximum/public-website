@@ -23,7 +23,7 @@ export const Breadcrumb = ({ items }: Props) => {
 
 	return (
 		<nav
-			aria-label="Breadcrumb"
+			aria-label="パンくずリスト"
 			className={css({
 				marginTop: 2,
 				marginBottom: 2,

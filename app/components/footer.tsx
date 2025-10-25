@@ -54,7 +54,7 @@ export const Footer = () => {
 					justifyContent: "center",
 					gap: 6,
 				})}
-				aria-label="Footer Navigation"
+				aria-label="フッターナビゲーション"
 			>
 				{footerItems.map(([label, href]) => (
 					<Link
