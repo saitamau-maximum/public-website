@@ -24,6 +24,7 @@ export const newsArticleFrontmatterSchema = v.object({
 export type NewsArticle = {
 	year: string;
 	slug: string;
+	filePath: string;
 } & v.InferOutput<typeof newsArticleFrontmatterSchema>;
 
 export const getNewsArticles = async () => {
@@ -53,6 +54,7 @@ export const getNewsArticles = async () => {
 			articles.push({
 				year: yearDir,
 				slug: articleDir,
+				filePath: articleFile,
 				title: frontmatter.title,
 				createdAt: frontmatter.createdAt,
 				updatedAt: frontmatter.updatedAt,

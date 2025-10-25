@@ -12,4 +12,7 @@ export default defineConfig({
 		},
 	},
 	plugins: [tsconfigPaths(), cloudflareDevProxy(), reactRouter()],
+	ssr: {
+		noExternal: ["@saitamau-maximum/markdown-processor"],
+	},
 });
