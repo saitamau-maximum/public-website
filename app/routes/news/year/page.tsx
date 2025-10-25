@@ -9,7 +9,9 @@ import { getNewsArticles } from "~/utils/articles";
 import { makePageTitle } from "~/utils/title";
 import type { Route } from "./+types/page";
 
-export const loader = async ({ params }: Route.LoaderArgs) => {
+const itemsPerPage = 10;
+
+export const loader = async ({ params, request }: Route.LoaderArgs) => {
 	const articles = (await getNewsArticles())
 		.filter((article) => article.year === params.year)
 		.sort(
@@ -18,6 +20,14 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 		);
 
 	if (articles.length === 0) {
+		throw new Response("Not Found", { status: 404 });
+	}
+
+	const url = new URL(request.url);
+	const page = Number.parseInt(url.searchParams.get("page") || "1", 10);
+
+	// Pagination 範囲外なら 404
+	if (page < 1 || page > Math.ceil(articles.length / itemsPerPage)) {
 		throw new Response("Not Found", { status: 404 });
 	}
 

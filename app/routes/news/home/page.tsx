@@ -7,9 +7,26 @@ import { HeroImg } from "~/components/hero-img";
 import { Pagination } from "~/components/pagination";
 import { getNewsArticles } from "~/utils/articles";
 import { makePageTitle } from "~/utils/title";
+import type { Route } from "./+types/page";
 
-export const loader = async () => {
+const itemsPerPage = 10;
+
+export const loader = async ({ request }: Route.LoaderArgs) => {
 	const newsArticles = await getNewsArticles();
+
+	const url = new URL(request.url);
+	const page = Number.parseInt(url.searchParams.get("page") || "1", 10);
+
+	// 記事ないなら 404
+	if (newsArticles.length === 0) {
+		throw new Response("Not Found", { status: 404 });
+	}
+
+	// Pagination 範囲外なら 404
+	if (page < 1 || page > Math.ceil(newsArticles.length / itemsPerPage)) {
+		throw new Response("Not Found", { status: 404 });
+	}
+
 	return {
 		newsArticles: newsArticles.sort(
 			// 新しい順に並び替え
@@ -23,7 +40,6 @@ export default function News() {
 	const [searchParams, setSearchParams] = useSearchParams();
 
 	const page = Number.parseInt(searchParams.get("page") || "1", 10);
-	const itemsPerPage = 10;
 	const lastPage = Math.ceil(allNewsArticles.length / itemsPerPage);
 
 	const newsArticles = allNewsArticles.slice(
