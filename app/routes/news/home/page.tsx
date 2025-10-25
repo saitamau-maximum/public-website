@@ -76,6 +76,15 @@ export default function News() {
 					);
 				})}
 			</ul>
+			<Pagination
+				currentPage={page}
+				maxPage={lastPage}
+				onPageChange={(newPage) => {
+					setSearchParams({
+						page: newPage.toString(),
+					});
+				}}
+			/>
 		</>
 	);
 }

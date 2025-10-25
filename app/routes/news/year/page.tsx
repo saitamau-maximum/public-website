@@ -85,6 +85,15 @@ export default function NewsYear() {
 					);
 				})}
 			</ul>
+			<Pagination
+				currentPage={page}
+				maxPage={lastPage}
+				onPageChange={(newPage) => {
+					setSearchParams({
+						page: newPage.toString(),
+					});
+				}}
+			/>
 		</>
 	);
 }
