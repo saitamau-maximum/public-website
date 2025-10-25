@@ -4,7 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "react-router dev",
-		"build": "pnpm build:newsassets && cross-env NODE_OPTIONS=\"--conditions workerd\" react-router build",
+		"build": "pnpm build:assets:news && cross-env NODE_OPTIONS=\"--conditions workerd\" react-router build",
 		"typegen": "wrangler types && react-router typegen",
 		"fix": "biome check --write",
 		"check": "biome check",
