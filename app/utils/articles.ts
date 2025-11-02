@@ -1,8 +1,5 @@
-import { readdir, readFile } from "node:fs/promises";
-import { resolve } from "node:path";
 import matter from "gray-matter";
 import * as v from "valibot";
-import { resolveFromProjectRoot } from "./resolve-from-project-root";
 
 export const newsArticleFrontmatterSchema = v.object({
 	title: v.string(),
@@ -24,45 +21,47 @@ export const newsArticleFrontmatterSchema = v.object({
 export type NewsArticle = {
 	year: string;
 	slug: string;
-	filePath: string;
+	content: string;
 } & v.InferOutput<typeof newsArticleFrontmatterSchema>;
 
 export const getNewsArticles = async () => {
-	const articlesDir = resolveFromProjectRoot("docs", "news");
 	const articles: NewsArticle[] = [];
 
-	const yearDirs = await readdir(articlesDir);
-	for (const yearDir of yearDirs) {
-		const yearDirPath = resolve(articlesDir, yearDir);
-		const articleDirs = await readdir(yearDirPath);
-		for (const articleDir of articleDirs) {
-			const articleFile = resolve(yearDirPath, articleDir, "index.md");
-			const fileContent = await readFile(articleFile, "utf-8");
-			const { data } = matter(fileContent);
+	// nodejs_compat を有効にしている + prerender とはいえ、 fs での読み込みはできない (???)
+	// そのため import.meta.glob を使って記事一覧を取得する
+	const articleModules = import.meta.glob("/docs/news/*/*/index.md", {
+		query: "?raw",
+		import: "default",
+		eager: true,
+	});
 
-			const {
-				success,
-				output: frontmatter,
-				issues,
-			} = v.safeParse(newsArticleFrontmatterSchema, data);
+	for (const fullPath in articleModules) {
+		const [_empty, _docs, _news, year, slug, _indexMd] = fullPath.split("/");
+		const fileContent = articleModules[fullPath] as string;
+		const { data } = matter(fileContent);
 
-			if (!success) {
-				console.warn(`Invalid frontmatter: ${yearDir}/${articleDir}`, issues);
-				continue;
-			}
+		const {
+			success,
+			output: frontmatter,
+			issues,
+		} = v.safeParse(newsArticleFrontmatterSchema, data);
 
-			articles.push({
-				year: yearDir,
-				slug: articleDir,
-				filePath: articleFile,
-				title: frontmatter.title,
-				createdAt: frontmatter.createdAt,
-				updatedAt: frontmatter.updatedAt,
-				description: frontmatter.description,
-				group: frontmatter.group,
-				image: frontmatter.image,
-			});
+		if (!success) {
+			console.warn(`Invalid frontmatter: ${year}/${slug}`, issues);
+			continue;
 		}
+
+		articles.push({
+			year,
+			slug,
+			content: fileContent,
+			title: frontmatter.title,
+			createdAt: frontmatter.createdAt,
+			updatedAt: frontmatter.updatedAt,
+			description: frontmatter.description,
+			group: frontmatter.group,
+			image: frontmatter.image,
+		});
 	}
 
 	return articles;

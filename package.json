@@ -4,7 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "react-router dev",
-		"build": "pnpm build:assets:news && cross-env NODE_OPTIONS=\"--conditions workerd\" react-router build",
+		"build": "pnpm build:assets:news && react-router build",
 		"typegen": "wrangler types && react-router typegen",
 		"fix": "biome check --write",
 		"check": "biome check",
@@ -22,6 +22,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.4",
+		"@cloudflare/vite-plugin": "^1.13.7",
 		"@pandacss/dev": "^1.4.0",
 		"@react-router/dev": "^7.9.3",
 		"@types/js-yaml": "^4.0.9",
@@ -29,7 +30,6 @@
 		"@types/react": "^19.1.14",
 		"@types/react-dom": "^19.1.9",
 		"autoprefixer": "^10.4.21",
-		"cross-env": "^10.1.0",
 		"gray-matter": "^4.0.3",
 		"husky": "^9.1.7",
 		"js-yaml": "^4.1.0",
@@ -43,7 +43,7 @@
 		"valibot": "^1.1.0",
 		"vite": "^7.1.7",
 		"vite-tsconfig-paths": "^5.1.4",
-		"wrangler": "^4.40.2"
+		"wrangler": "^4.45.2"
 	},
 	"lint-staged": {
 		"*": [

@@ -1,4 +1,3 @@
-import { readFile } from "node:fs/promises";
 import { load } from "js-yaml";
 import type { FromSchema } from "json-schema-to-ts";
 import { useLoaderData } from "react-router";
@@ -9,15 +8,13 @@ import { HeroImg } from "~/components/hero-img";
 import { Table } from "~/components/table";
 import { UnorderedList } from "~/components/unordered-list";
 import type icpcSchema from "~/schema/achievements/icpc.schema";
-import { resolveFromProjectRoot } from "~/utils/resolve-from-project-root";
 import { makePageTitle } from "~/utils/title";
 import { ReportsNote } from "../internal/components/reports-note";
 
 export const loader = async () => {
-	const icpcYamlData = await readFile(
-		resolveFromProjectRoot("app", "data", "achievements", "icpc.yml"),
-		"utf-8",
-	);
+	// readFile が使えないので raw import で代替
+	const icpcYamlData = (await import("~/data/achievements/icpc.yml?raw"))
+		.default;
 	const icpcData = load(icpcYamlData) as FromSchema<typeof icpcSchema>;
 	return { icpcData };
 };

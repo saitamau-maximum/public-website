@@ -1,4 +1,3 @@
-import { readFile } from "node:fs/promises";
 import { parseMarkdownToHTML } from "@saitamau-maximum/markdown-processor/server";
 import matter from "gray-matter";
 import { useLoaderData } from "react-router";
@@ -18,8 +17,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 	}
 
 	const article = articles[0];
-
-	const rawContent = await readFile(article.filePath, "utf-8");
+	const rawContent = article.content;
 
 	// getNewsArticles で既に存在確認と一意性の確認をしているため !rawContent はあり得ないが念のため
 	if (!rawContent) {
@@ -28,7 +26,9 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 
 	const { content } = matter(rawContent);
 
-	const { content: html } = await parseMarkdownToHTML(content);
+	// shikijs の読み込みでエラー吐いてるのでいったん md をそのまま返す
+	// const { content: html } = await parseMarkdownToHTML(content);
+	const html = content;
 	return {
 		year: params.year,
 		slug: params.slug,
