@@ -1,8 +1,14 @@
 import { parseMarkdownToHTML } from "@saitamau-maximum/markdown-processor/server";
 import matter from "gray-matter";
+import { Fragment } from "react";
+import { jsx, jsxs } from "react/jsx-runtime";
 import { useLoaderData } from "react-router";
+import rehypeParse from "rehype-parse";
+import rehypeReact from "rehype-react";
+import { unified } from "unified";
 import { Breadcrumb } from "~/components/breadcrumb";
-import { H1 } from "~/components/heading";
+import { ExternalLink } from "~/components/external-link";
+import { H1, H2, H3, H4 } from "~/components/heading";
 import { getNewsArticles } from "~/utils/articles";
 import { toISODateString } from "~/utils/date";
 import { makePageTitle } from "~/utils/title";
@@ -25,10 +31,8 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 	}
 
 	const { content } = matter(rawContent);
+	const { content: html } = await parseMarkdownToHTML(content);
 
-	// shikijs の読み込みでエラー吐いてるのでいったん md をそのまま返す
-	// const { content: html } = await parseMarkdownToHTML(content);
-	const html = content;
 	return {
 		year: params.year,
 		slug: params.slug,
@@ -39,6 +43,23 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 
 export default function NewsArticle() {
 	const { year, slug, article, html } = useLoaderData<typeof loader>();
+
+	// HTML を React に変換する
+	// hast から変換する手もあるが Prerender なので気にしない
+	const articleElem = unified()
+		.use(rehypeParse, { fragment: true })
+		.use(rehypeReact, {
+			Fragment,
+			jsx,
+			jsxs,
+			components: {
+				h2: H2,
+				h3: H3,
+				h4: H4,
+				a: ExternalLink,
+			},
+		})
+		.processSync(html).result;
 
 	const breadcrumbItems = [
 		{ href: "/", label: "ホーム" },
@@ -66,9 +87,8 @@ export default function NewsArticle() {
 				</time>
 			</p>
 			<p>Group: {article.group}</p>
-			{/* TODO: スタイルをあてる */}
-			{/** biome-ignore lint/security/noDangerouslySetInnerHtml: docs からの信頼できる記事を表示させる前提のため */}
-			<article dangerouslySetInnerHTML={{ __html: html }} />
+			<hr />
+			<article>{articleElem}</article>
 		</>
 	);
 }
