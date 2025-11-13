@@ -32,5 +32,5 @@ image: guidance-2024-thumb.avif
 - [LINEオープンチャット](https://line.me/ti/g2/uLfSQMqkPI0NKLrWZ0nDs0d6wXZEJPe4wzSjFw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default)(新歓期間中)
 - [X(旧Twitter)](https://x.com/Maximum03400346)
 
-![新歓地図](/images/guidance-map.png)
+![新歓地図](./guidance-map.avif)
 (埼玉大学ホームページより引用)

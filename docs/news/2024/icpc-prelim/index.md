@@ -17,4 +17,4 @@ Yokohama Regionalに向けて、更なる精進を重ねていきます！<br>
 
 各チームの成績は[こちら](https://maximum.vc/achievements/icpc)
 
-![icpc2024](/images/icpc2024-news.jpg)
+![icpc2024](./icpc2024-news.avif)

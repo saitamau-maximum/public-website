@@ -20,4 +20,4 @@ image: guidance-news-thumb.avif
 
 まずは、広い部屋を借りるところからですかね．．．（笑）
 
-![2024年度のガイダンス](/images/guidance-news.png)
+![2024年度のガイダンス](./guidance-news.avif)
