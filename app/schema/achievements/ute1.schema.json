@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "ICPC Achievements Schema",
+	"title": "UTE-1 Achievements Schema",
 	"type": "object",
 	"patternProperties": {
 		"^20\\d{2}$": {
@@ -12,12 +12,9 @@
 						"type": "object",
 						"properties": {
 							"name": { "type": "string" },
-							"prelim": { "type": "string" },
-							"regional": { "type": "string" },
-							"playoff": { "type": "string" },
-							"worldfinal": { "type": "string" }
+							"rank": { "type": "string" }
 						},
-						"required": ["name"],
+						"required": ["name", "rank"],
 						"additionalProperties": false
 					},
 					"minItems": 1
