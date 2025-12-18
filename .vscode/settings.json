@@ -35,6 +35,7 @@
 		],
 		"app/schema/achievements/ute1.schema.json": [
 			"app/data/achievements/ute1.yml"
-		]
+		],
+		"app/schema/achievements/wsh.schema.json": ["app/data/achievements/wsh.yml"]
 	}
 }

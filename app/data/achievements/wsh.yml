@@ -1,10 +1,77 @@
-2024:
-  teams:
-    - name: executive is deprived
-      prelim: 31 位
-      regional: 横浜大会 34 位 (47 位)
-
+2025:
+  description: 全 123 人、うち学生が 45 人参加しました。 また、 B4 の Sor4chi が作問に携わりました。
+  participants:
+    - name: nakamuraitsuki
+      rank: 21 位
+      scorerank: 36 位 (16 位)
+    - name: shigekk
+      rank: 24 位
+      scorerank: 29 位 (18 位)
+    - name: Daaaai0809
+      rank: 26 位
+      scorerank: 41 位 (19 位)
+    - name: hana-rs
+      rank: 27 位
+      scorerank: 42 位 (20 位)
+    - name: nomanoma121
+      rank: 35 位
+      scorerank: 50 位 (23 位)
+    - name: seiei-n
+      rank: 37 位
+      scorerank: 52 位 (24 位)
+    - name: LLstream
+      rank: 51 位
+      scorerank: 66 位 (30 位)
+    - name: batora9
+      rank: 107 位
+      scorerank: 122 位 (45 位)
+    - name: a01sa01to
+      scorerank: 16 位 (9 位)
+      note: タイムゾーンのミスにより失格
   blogs:
     - author: a01sa01to
-      title: ICPC 2024 国内予選
-      url: https://a01sa01to.com/articles/2024/07/icpc2024-prelim/
+      title: Web Speed Hackathon 2025 参加記
+      url: https://a01sa01to.com/articles/2025/03/wsh2025/
+
+2024:
+  description: 全 103 人、うち学生が 43 人参加しました。
+  participants:
+    - name: a01sa01to
+      rank: 3 位
+      scorerank: 13 位 (8 位)
+    - name: seiei-n
+      rank: 14 位
+      scorerank: 29 位 (13 位)
+    - name: kasa021
+      rank: 24 位
+      scorerank: 39 位 (17 位)
+    - name: yukikamome316
+      rank: 42 位
+      scorerank: 57 位 (20 位)
+    - name: Sor4chi
+      scorerank: 1 位 (1 位)
+      note: 正規表現のミスにより失格
+    - name: Daaaai0809
+      scorerank: 21 位 (10 位)
+      note: 画像のアスペクト比のミスにより失格
+  blogs:
+    - author: a01sa01to
+      title: Web Speed Hackathon 2024 で 3 位になりました
+      url: https://a01sa01to.com/articles/2024/03/wsh2024/
+
+2023:
+  description: 全 80 人、うち学生が 34 人参加しました。
+  participants:
+    - name: Sor4chi
+      scorerank: 4 位 (2 位)
+      note: スタイル崩れが発生し失格
+    - name: a01sa01to
+      scorerank: 10 位 (8 位)
+      note: エラー表示条件が不適切だったため失格
+  blogs:
+    - author: Sor4chi
+      title: Web Speed Hackathon 2023 で3位になり損ねた話
+      url: https://zenn.dev/monica/articles/7e060938f72073
+    - author: a01sa01to
+      title: Web Speed Hackathon 2023 参加記
+      url: https://a01sa01to.com/articles/2023/03/wsh2023/

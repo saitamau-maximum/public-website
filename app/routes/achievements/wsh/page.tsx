@@ -7,7 +7,7 @@ import { H1, H2, H3 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
 import { Table } from "~/components/table";
 import { UnorderedList } from "~/components/unordered-list";
-import type wshSchema from "~/schema/achievements/icpc.schema";
+import type wshSchema from "~/schema/achievements/wsh.schema";
 import { makePageTitle } from "~/utils/title";
 import { ReportsNote } from "../internal/components/reports-note";
 
@@ -49,34 +49,29 @@ export default function AchievementsWsh() {
 				.sort((a, b) => Number.parseInt(b[0], 10) - Number.parseInt(a[0], 10))
 				.map(([year, data]) => (
 					<section key={year}>
-						<H2>{year} 年度</H2>
+						<H2>{year}</H2>
+						<p>{data.description}</p>
 						<H3>成績</H3>
 						<Table.Root>
 							<thead>
 								<Table.Tr>
-									<Table.Th>チーム名</Table.Th>
-									<Table.Th>国内予選</Table.Th>
+									<Table.Th>個人名</Table.Th>
+									<Table.Th>最終順位</Table.Th>
 									<Table.Th>
-										地区大会 大学別順位
+										スコア順位
 										<br />
-										(括弧内はチーム順位)
+										(括弧内は学生内順位)
 									</Table.Th>
-									{Number.parseInt(year, 10) >= 2023 && (
-										<Table.Th>Asia Pacific Championship</Table.Th>
-									)}
-									<Table.Th>World Finals</Table.Th>
+									<Table.Th>備考</Table.Th>
 								</Table.Tr>
 							</thead>
 							<tbody>
-								{data.teams.map((team) => (
+								{data.participants.map((team) => (
 									<Table.Tr key={team.name}>
 										<Table.Td>{team.name}</Table.Td>
-										<Table.Td>{team.prelim}</Table.Td>
-										<Table.Td>{team.regional}</Table.Td>
-										{Number.parseInt(year, 10) >= 2023 && (
-											<Table.Td>{team.playoff}</Table.Td>
-										)}
-										<Table.Td>{team.worldfinal}</Table.Td>
+										<Table.Td>{team.rank}</Table.Td>
+										<Table.Td>{team.scorerank}</Table.Td>
+										<Table.Td>{team.note}</Table.Td>
 									</Table.Tr>
 								))}
 							</tbody>
