@@ -1,10 +1,48 @@
-2024:
+14:
+  title: ISUCON14 (2024)
+  description: 12/8 に開催され、全体で 834 チームが参加しました。
   teams:
-    - name: executive is deprived
-      prelim: 31 位
-      regional: 横浜大会 34 位 (47 位)
-
+    - name: Maxif.
+      score: 24640
+      rank: 29 位
+      sturank: 4 位
+    - name: Maximum-Y.N.K.S
+      score: 13766
+      note: データ保持 NG のためランク外
+    - name: Maxipus
+      score: 3546
+      note: 負荷走行後再起動 NG のためランク外
   blogs:
     - author: a01sa01to
-      title: ICPC 2024 国内予選
-      url: https://a01sa01to.com/articles/2024/07/icpc2024-prelim/
+      title: ISUCON14 参加記 (Maxif. Asa 視点)
+      url: https://a01sa01to.com/articles/2024/12/isucon14/
+    - author: Sor4chi
+      title: ISUCON14に参加してきました
+      url: https://monica-dev.com/blog/isucon14/
+    - author: batora9
+      title: ISUCON14に参加しました(batora視点)
+      url: https://batoran.com/articles/isucon14
+
+13:
+  title: ISUCON13 (2023)
+  description: 11/25 に開催され、全体で 694 チームが参加しました。
+  teams:
+    - name: Maxif.
+      score: 58631
+      rank: 25 位
+      sturank: 5 位
+    - name: maximum.baby
+      score: 15389
+      rank: 142 位
+      sturank: 非公表
+    - name: Maximum.mum
+      score: 7159
+      rank: 340 位
+      sturank: 非公表
+  blogs:
+    - author: a01sa01to
+      title: ISUCON13 参加記 (Maxif. Asa 視点)
+      url: https://a01sa01to.com/articles/2023/11/isucon13/
+    - author: Sor4chi
+      title: ISUCON13に参加してきました
+      url: https://monica-dev.com/blog/isucon13/

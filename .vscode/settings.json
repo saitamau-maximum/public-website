@@ -26,6 +26,9 @@
 		],
 		"app/schema/achievements/icfpc.schema.json": [
 			"app/data/achievements/icfpc.yml"
+		],
+		"app/schema/achievements/isucon.schema.json": [
+			"app/data/achievements/isucon.yml"
 		]
 	}
 }

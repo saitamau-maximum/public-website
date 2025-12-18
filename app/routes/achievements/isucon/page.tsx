@@ -1,13 +1,14 @@
 import { load } from "js-yaml";
 import type { FromSchema } from "json-schema-to-ts";
 import { useLoaderData } from "react-router";
+import { css } from "styled-system/css";
 import { Breadcrumb } from "~/components/breadcrumb";
 import { ExternalLink } from "~/components/external-link";
 import { H1, H2, H3 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
 import { Table } from "~/components/table";
 import { UnorderedList } from "~/components/unordered-list";
-import type isuconSchema from "~/schema/achievements/icpc.schema";
+import type isuconSchema from "~/schema/achievements/isucon.schema";
 import { makePageTitle } from "~/utils/title";
 import { ReportsNote } from "../internal/components/reports-note";
 
@@ -48,40 +49,37 @@ export default function AchievementsIsucon() {
 				Maximum では 2023 年度の ISUCON13 から参加しており、上位 30
 				位として入賞するなどの実績を挙げています。
 			</p>
+			<p>
+				学生チーム内順位は、学生のみで構成されたチームの中での順位を示しています。
+				大会公式のランキングに記載されていない場合は「非公表」としています。
+			</p>
 			<ReportsNote />
 			{Object.entries(isuconData)
 				// 年度降順で表示
 				.sort((a, b) => Number.parseInt(b[0], 10) - Number.parseInt(a[0], 10))
 				.map(([year, data]) => (
 					<section key={year}>
-						<H2>{year} 年度</H2>
+						<H2>{data.title}</H2>
+						<p>{data.description}</p>
 						<H3>成績</H3>
 						<Table.Root>
 							<thead>
 								<Table.Tr>
 									<Table.Th>チーム名</Table.Th>
-									<Table.Th>国内予選</Table.Th>
-									<Table.Th>
-										地区大会 大学別順位
-										<br />
-										(括弧内はチーム順位)
-									</Table.Th>
-									{Number.parseInt(year, 10) >= 2023 && (
-										<Table.Th>Asia Pacific Championship</Table.Th>
-									)}
-									<Table.Th>World Finals</Table.Th>
+									<Table.Th>スコア</Table.Th>
+									<Table.Th>順位</Table.Th>
+									<Table.Th>学生チーム内順位</Table.Th>
+									<Table.Th>備考</Table.Th>
 								</Table.Tr>
 							</thead>
 							<tbody>
 								{data.teams.map((team) => (
 									<Table.Tr key={team.name}>
 										<Table.Td>{team.name}</Table.Td>
-										<Table.Td>{team.prelim}</Table.Td>
-										<Table.Td>{team.regional}</Table.Td>
-										{Number.parseInt(year, 10) >= 2023 && (
-											<Table.Td>{team.playoff}</Table.Td>
-										)}
-										<Table.Td>{team.worldfinal}</Table.Td>
+										<Table.Td>{team.score.toLocaleString()}</Table.Td>
+										<Table.Td>{team.rank}</Table.Td>
+										<Table.Td>{team.sturank}</Table.Td>
+										<Table.Td>{team.note}</Table.Td>
 									</Table.Tr>
 								))}
 							</tbody>
