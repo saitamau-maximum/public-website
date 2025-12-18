@@ -39,7 +39,7 @@ export default function AchievementsIcfpc() {
 				に併設されるコンテストです。
 				各年のテーマに基づく問題を解決するプログラムを作成し、競い合う大会です。
 			</p>
-			<ReportsNote />
+			{/* <ReportsNote /> */}
 			{Object.entries(icfpcData)
 				// 年度降順で表示
 				.sort((a, b) => Number.parseInt(b[0], 10) - Number.parseInt(a[0], 10))
@@ -65,7 +65,7 @@ export default function AchievementsIcfpc() {
 						</Table.Root>
 						{data.blogs && (
 							<>
-								<H3>参加記等</H3>
+								<H3>作業リポジトリ等</H3>
 								<UnorderedList>
 									{data.blogs.map((report) => (
 										<li key={report.url}>
