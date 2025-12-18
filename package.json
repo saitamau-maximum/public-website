@@ -4,12 +4,13 @@
 	"type": "module",
 	"scripts": {
 		"dev": "react-router dev",
-		"build": "pnpm build:assets:news && react-router build",
+		"build": "pnpm build:assets:news && pnpm build:app",
 		"typegen": "wrangler types && react-router typegen",
 		"fix": "biome check --write",
 		"check": "biome check",
 		"prepare": "husky && react-router typegen && panda codegen",
-		"build:assets:news": "tsx ./scripts/copy-article-assets.ts"
+		"build:assets:news": "tsx ./scripts/copy-article-assets.ts",
+		"build:app": "react-router build"
 	},
 	"dependencies": {
 		"@saitamau-maximum/markdown-processor": "^2.2.0",
