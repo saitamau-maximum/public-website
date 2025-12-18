@@ -23,6 +23,9 @@
 	"yaml.schemas": {
 		"app/schema/achievements/icpc.schema.json": [
 			"app/data/achievements/icpc.yml"
+		],
+		"app/schema/achievements/icfpc.schema.json": [
+			"app/data/achievements/icfpc.yml"
 		]
 	}
 }
