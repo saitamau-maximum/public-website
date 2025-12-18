@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ChevronRight } from "react-feather";
 import { Link } from "react-router";
 import { css } from "styled-system/css";
 
@@ -25,6 +26,7 @@ export const CompetitionCard = ({
 					marginBottom: 4,
 					padding: 4,
 					display: "flex",
+					position: "relative",
 					gap: 6,
 					alignItems: "center",
 					backgroundColor: "white",
@@ -32,6 +34,10 @@ export const CompetitionCard = ({
 					borderRadius: "sm",
 					mdDown: {
 						flexDirection: "column",
+					},
+					"&:hover": {
+						backgroundColor: "gray.100",
+						boxShadow: "md",
 					},
 				})}
 			>
@@ -73,6 +79,13 @@ export const CompetitionCard = ({
 					</p>
 					<div>{children}</div>
 				</div>
+				<ChevronRight
+					className={css({
+						position: "absolute",
+						bottom: 4,
+						right: 4,
+					})}
+				/>
 			</div>
 		</Link>
 	);
