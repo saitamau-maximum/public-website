@@ -1,23 +1,32 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "ICPC Achievements Schema",
+	"title": "Kaggle Achievements Schema",
 	"type": "object",
 	"patternProperties": {
-		"^20\\d{2}$": {
+		"^[a-z0-9\\-]+$": {
 			"type": "object",
 			"properties": {
+				"title": { "type": "string" },
+				"description": { "type": "string" },
+				"url": { "type": "string", "format": "uri" },
 				"teams": {
 					"type": "array",
 					"items": {
 						"type": "object",
 						"properties": {
 							"name": { "type": "string" },
-							"prelim": { "type": "string" },
-							"regional": { "type": "string" },
-							"playoff": { "type": "string" },
-							"worldfinal": { "type": "string" }
+							"rank": { "type": "string" },
+							"medal": {
+								"type": "string",
+								"enum": ["gold", "silver", "bronze"]
+							},
+							"members": {
+								"type": "array",
+								"items": { "type": "string" },
+								"minItems": 1
+							}
 						},
-						"required": ["name"],
+						"required": ["name", "rank", "members"],
 						"additionalProperties": false
 					},
 					"minItems": 1
@@ -37,7 +46,7 @@
 					"minItems": 1
 				}
 			},
-			"required": ["teams"],
+			"required": ["title", "description", "url", "teams"],
 			"additionalProperties": false
 		}
 	},

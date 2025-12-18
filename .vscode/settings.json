@@ -29,6 +29,9 @@
 		],
 		"app/schema/achievements/isucon.schema.json": [
 			"app/data/achievements/isucon.yml"
+		],
+		"app/schema/achievements/kaggle.schema.json": [
+			"app/data/achievements/kaggle.yml"
 		]
 	}
 }
