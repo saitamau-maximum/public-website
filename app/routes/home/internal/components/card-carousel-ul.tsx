@@ -13,30 +13,62 @@ export const CardCarouselUl = ({ children, ariaLabel }: Props) => {
 			<span className={css({ srOnly: true })}>
 				左右の矢印キーでコンテンツをスクロールできます。
 			</span>
-			<ul
-				aria-label={ariaLabel}
-				// biome-ignore lint/a11y/noNoninteractiveTabindex: キーボード入力でもスクロールできるようにするため
-				tabIndex={0}
+			<div
 				className={css({
-					display: "flex",
-					flexDirection: "row",
-					gap: 4,
-					flexWrap: "nowrap",
-					overflowX: "auto",
-					marginTop: 4,
-					paddingBottom: 2,
-					scrollSnapType: "x mandatory",
-					// 中央でリストが止まるようにする
-					// min(50%, 14rem) は Card の width と合わせる
-					scrollPaddingLeft: "calc(50% - min(50%, 14rem))",
-					"& > li": {
-						maxWidth: "full",
-						scrollSnapAlign: "start",
+					"--cardWidth": "calc(min(100%, 28rem))",
+					position: "relative",
+					"&::before": {
+						content: '""',
+						position: "absolute",
+						top: 0,
+						left: 0,
+						width: "calc(min(5rem, 50% - var(--cardWidth) / 2))",
+						height: "100%",
+						backgroundGradient: "to-r",
+						gradientFrom: "gray.50",
+						gradientTo: "transparent",
+						pointerEvents: "none",
+					},
+					"&::after": {
+						content: '""',
+						position: "absolute",
+						top: 0,
+						right: 0,
+						width: "calc(min(5rem, 50% - var(--cardWidth) / 2))",
+						height: "100%",
+						backgroundGradient: "to-l",
+						gradientFrom: "gray.50",
+						gradientTo: "transparent",
+						pointerEvents: "none",
 					},
 				})}
 			>
-				{children}
-			</ul>
+				<ul
+					aria-label={ariaLabel}
+					// biome-ignore lint/a11y/noNoninteractiveTabindex: キーボード入力でもスクロールできるようにするため
+					tabIndex={0}
+					className={css({
+						display: "flex",
+						flexDirection: "row",
+						gap: 4,
+						flexWrap: "nowrap",
+						overflowX: "auto",
+						marginTop: 4,
+						paddingBottom: 2,
+						paddingLeft: "calc(50% - var(--cardWidth) / 2)",
+						paddingRight: "calc(50% - var(--cardWidth) / 2)",
+						scrollSnapType: "x mandatory",
+						// 中央でリストが止まるようにする
+						scrollPaddingLeft: "calc(50% - var(--cardWidth) / 2)",
+						"& > li": {
+							maxWidth: "full",
+							scrollSnapAlign: "start",
+						},
+					})}
+				>
+					{children}
+				</ul>
+			</div>
 			<ScrollIndicator />
 		</>
 	);
