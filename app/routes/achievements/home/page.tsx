@@ -38,7 +38,7 @@ export default function Achievements() {
 				<H2>保有資格等</H2>
 				<p>
 					現在所属しているメンバーが保有している資格や合格した試験について記載しています。
-					自己申告制のため、実際の状況とは異なる場合があります。
+					自己申告制のため、実際の保有状況より少ない場合があります。
 				</p>
 				{certifications.map((cert) => {
 					const dataItem = data.certifications.find(
