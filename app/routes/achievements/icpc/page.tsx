@@ -73,7 +73,17 @@ export default function AchievementsIcpc() {
 									<Table.Tr key={team.name}>
 										<Table.Td>{team.name}</Table.Td>
 										<Table.Td>{team.prelim}</Table.Td>
-										<Table.Td>{team.regional}</Table.Td>
+										<Table.Td>
+											{team.regional
+												?.trim()
+												.split("\n")
+												.map((line) => (
+													<span key={line}>
+														{line}
+														<br />
+													</span>
+												))}
+										</Table.Td>
 										{Number.parseInt(year, 10) >= 2023 && (
 											<Table.Td>{team.playoff}</Table.Td>
 										)}
