@@ -13,6 +13,9 @@ export const Th = ({ children, className, ...props }: Props) => {
 					backgroundColor: "gray.100",
 					color: "gray.600",
 					whiteSpace: "nowrap",
+					borderBottomWidth: 1,
+					borderBottomStyle: "solid",
+					borderBottomColor: "gray.200",
 				}),
 				className,
 			)}

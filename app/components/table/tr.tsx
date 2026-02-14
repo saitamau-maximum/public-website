@@ -10,7 +10,7 @@ export const Tr = ({ children, className, onClick, ...props }: Props) => {
 			className={cx(
 				css({
 					"&:last-child": {
-						"& td": {
+						"& th,td": {
 							borderBottomWidth: 0,
 						},
 					},
