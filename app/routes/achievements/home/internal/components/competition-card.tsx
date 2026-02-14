@@ -2,9 +2,10 @@ import type { ReactNode } from "react";
 import { ChevronRight } from "react-feather";
 import { Link } from "react-router";
 import { css } from "styled-system/css";
+import { NoImagePlaceholder } from "~/components/no-image";
 
 interface Props {
-	imageUrl: string;
+	imageUrl?: string;
 	title: string;
 	standsFor?: string;
 	to: string;
@@ -41,9 +42,7 @@ export const CompetitionCard = ({
 					},
 				})}
 			>
-				<img
-					src={imageUrl}
-					alt={`${title} ロゴ`}
+				<div
 					className={css({
 						aspectRatio: "16/9",
 						width: "auto",
@@ -53,7 +52,25 @@ export const CompetitionCard = ({
 						objectPosition: "center",
 						borderRadius: "sm",
 					})}
-				/>
+				>
+					{imageUrl ? (
+						<img
+							src={imageUrl}
+							alt={`${title} ロゴ`}
+							className={css({
+								aspectRatio: "16/9",
+								width: "auto",
+								maxWidth: "100%",
+								height: 28,
+								objectFit: "cover",
+								objectPosition: "center",
+								borderRadius: "sm",
+							})}
+						/>
+					) : (
+						<NoImagePlaceholder />
+					)}
+				</div>
 				<div>
 					<p
 						className={css({

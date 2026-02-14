@@ -4,50 +4,12 @@ import type { NewsArticle } from "~/utils/articles";
 import { toISODateString } from "~/utils/date";
 import { AnchorLike } from "./anchor-like";
 import { Card } from "./card";
+import { NoImagePlaceholder } from "./no-image";
 
 interface Props {
 	article: NewsArticle;
 	path: string;
 }
-
-const NoImagePlaceholder = () => {
-	return (
-		<div
-			className={css({
-				width: "full",
-				aspectRatio: "16 / 9",
-				borderRadius: "md",
-				borderWidth: "1px",
-				borderStyle: "solid",
-				borderColor: "gray.300",
-				backgroundGradient: "primary",
-				padding: 0,
-				pointerEvents: "none",
-				userSelect: "none",
-			})}
-			aria-hidden="true"
-			role="img"
-			aria-label="画像がありません"
-		>
-			<div
-				className={css({
-					width: "full",
-					height: "full",
-					borderRadius: "md",
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-					fontSize: "2xl",
-					fontWeight: "bold",
-					backgroundColor: "rgba(0, 0, 0, 0.1)",
-					color: "white",
-				})}
-			>
-				No Image
-			</div>
-		</div>
-	);
-};
 
 export const ArticleCard = ({ article, path }: Props) => {
 	return (
