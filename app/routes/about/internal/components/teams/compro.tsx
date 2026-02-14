@@ -1,3 +1,4 @@
+import { css } from "styled-system/css";
 import { ExternalLink } from "~/components/external-link";
 import { H3, H4 } from "~/components/heading";
 import { UnorderedList } from "~/components/unordered-list";
@@ -25,13 +26,18 @@ export const AboutTeamsCompro = () => {
 				つずつ質問していくと、いつかは正解にたどり着きますが、時間がかかってしまいます。
 				この問題を効率的に解く、つまり質問の回数を少なくして年齢を当てるためにはどうすればよいでしょうか？
 			</p>
+			<p className={css({ color: "gray.500", fontSize: "sm" })}>
+				( 以下、ネタバレ防止のために一部を隠しています。
+				タップ・クリックすると表示されます。
+				ぜひ自分で考えながら読み進めてください！ )
+			</p>
 			<p>
 				解答の 1 つとして、「
 				<Spoiler>
 					50 歳 <strong>以上</strong> ですか？
 				</Spoiler>
-				」などと質問することを繰り返していく方法が挙げられます。 この方法では、{" "}
-				<Spoiler>最大 7</Spoiler> 回の質問で答えを特定できます。 例えば、 A
+				」などと質問することを繰り返していく方法が挙げられます。 この方法では、
+				最大 <Spoiler>7</Spoiler> 回の質問で答えを特定できます。 例えば、 A
 				さんが 19 歳だった場合、「
 				<Spoiler>
 					50 以上 No → 25 以上 No → 13 以上 Yes → 19 以上 Yes → 22 以上 No → 20

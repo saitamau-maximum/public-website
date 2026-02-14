@@ -16,12 +16,6 @@ export const HomeContact = () => {
 					{MAXIMUM_TWITTER_URL.split(".com/")[1]})
 				</ExternalLink>
 			</p>
-			<p>
-				<strong>企業・団体様へ</strong>
-				<br />
-				弊サークル内部でのサークルやキャリアの情報共有の観点から、基本的に外部サークルや企業との長期連携はお断りさせていただくという方針を取らせていただいております。
-				あらかじめご了承ください。
-			</p>
 		</section>
 	);
 };
