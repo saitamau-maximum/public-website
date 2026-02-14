@@ -33,6 +33,9 @@
 		"app/schema/achievements/kaggle.schema.json": [
 			"app/data/achievements/kaggle.yml"
 		],
+		"app/schema/achievements/kanto-police-ctf.schema.json": [
+			"app/data/achievements/kanto-police-ctf.yml"
+		],
 		"app/schema/achievements/ute1.schema.json": [
 			"app/data/achievements/ute1.yml"
 		],

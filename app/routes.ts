@@ -25,6 +25,10 @@ export default [
 			route("icfpc", "routes/achievements/icfpc/page.tsx"),
 			route("kaggle", "routes/achievements/kaggle/page.tsx"),
 			route("ute1", "routes/achievements/ute1/page.tsx"),
+			route(
+				"kanto-police-ctf",
+				"routes/achievements/kanto-police-ctf/page.tsx",
+			),
 		]),
 	]),
 ] satisfies RouteConfig;

@@ -172,6 +172,16 @@ export default function Achievements() {
 						アプリケーション開発のバグ修正やセキュリティなどの技術を期間内にどれだけ発揮できるかを競う、バックエンドメインの大会です。
 					</p>
 				</CompetitionCard>
+				<CompetitionCard
+					title="関東管区内警察合同 サイバーボランティア・学生 CTF 大会"
+					// imageUrl="/images/noimage.avif"
+					to="/achievements/kanto-police-ctf/"
+				>
+					<p>
+						関東管区内警察合同 サイバーボランティア・学生 CTF
+						大会は、関東管区内の 10 警察が合同で主催した CTF 大会です。
+					</p>
+				</CompetitionCard>
 			</section>
 		</>
 	);
