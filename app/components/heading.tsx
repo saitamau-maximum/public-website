@@ -29,6 +29,7 @@ export const H1 = ({
 
 export const H2 = ({
 	className,
+	children,
 	css: customCss,
 	...props
 }: WithCSSProps<ComponentPropsWithRef<"h2">>) => {
@@ -42,17 +43,30 @@ export const H2 = ({
 						fontWeight: "bold",
 						marginTop: 10,
 						marginBottom: 2,
+						// 文字色グラデーション
+						backgroundGradient: "primary",
+						backgroundClip: "text",
+						color: "transparent",
+						// 下線グラデーション
+						borderBottomWidth: 2,
+						borderBottomStyle: "solid",
+						borderBottomColor: "transparent",
+						borderImageSource: "token(gradients.primary)",
+						borderImageSlice: 1,
 					},
 					customCss,
 				),
 				className,
 			)}
-		/>
+		>
+			{children}
+		</h2>
 	);
 };
 
 export const H3 = ({
 	className,
+	children,
 	css: customCss,
 	...props
 }: WithCSSProps<ComponentPropsWithRef<"h2">>) => {
@@ -66,17 +80,23 @@ export const H3 = ({
 						fontWeight: "bold",
 						marginTop: 8,
 						marginBottom: 2,
+						borderBottomWidth: 1,
+						borderBottomStyle: "dashed",
+						borderBottomColor: "gray.400",
 					},
 					customCss,
 				),
 				className,
 			)}
-		/>
+		>
+			{children}
+		</h3>
 	);
 };
 
 export const H4 = ({
 	className,
+	children,
 	css: customCss,
 	...props
 }: WithCSSProps<ComponentPropsWithRef<"h2">>) => {
@@ -95,6 +115,8 @@ export const H4 = ({
 				),
 				className,
 			)}
-		/>
+		>
+			{children}
+		</h4>
 	);
 };
