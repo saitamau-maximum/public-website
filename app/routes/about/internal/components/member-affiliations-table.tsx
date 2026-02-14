@@ -13,14 +13,17 @@ export default function MembersAffiliations({
 	affiliations,
 }: Props) {
 	const displayData = [
-		{ name: "工学部 情報工学科", key: "TI" },
-		{ name: "工学部 機械工学・システムデザイン学科", key: "TM" },
-		{ name: "工学部 応用科学科", key: "TC" },
-		{ name: "理学部 基礎科学科", key: "RC" },
 		{ name: "経済学部", key: "ED" },
-		{ name: "理学部 生体制御学科", key: "RR" },
+
 		{ name: "理学部 物理学科", key: "RP" },
+		{ name: "理学部 基礎科学科", key: "RC" },
 		{ name: "理学部 分子生物学科", key: "RB" },
+		{ name: "理学部 生体制御学科", key: "RR" },
+
+		{ name: "工学部 機械工学・システムデザイン学科", key: "TM" },
+		{ name: "工学部 電気電子物理工学科", key: "TE" },
+		{ name: "工学部 情報工学科", key: "TI" },
+		{ name: "工学部 環境社会デザイン学科", key: "TC" },
 	];
 
 	const getMemberCountByAff = (affKey: string) => {
@@ -68,6 +71,7 @@ export default function MembersAffiliations({
 					})
 					.map((item) => {
 						const [total, b1, b2, b3, b4] = getMemberCountByAff(item.key);
+						if (total === 0) return null;
 						return (
 							<Table.Tr key={item.key}>
 								<Table.Th>{item.name}</Table.Th>
