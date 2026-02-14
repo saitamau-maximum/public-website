@@ -1,7 +1,6 @@
 import { load } from "js-yaml";
 import type { FromSchema } from "json-schema-to-ts";
 import { useLoaderData } from "react-router";
-import { css } from "styled-system/css";
 import { Breadcrumb } from "~/components/breadcrumb";
 import { ExternalLink } from "~/components/external-link";
 import { H1, H2, H3 } from "~/components/heading";

@@ -9,7 +9,6 @@ import { Table } from "~/components/table";
 import { UnorderedList } from "~/components/unordered-list";
 import type icfpcSchema from "~/schema/achievements/icfpc.schema";
 import { makePageTitle } from "~/utils/title";
-import { ReportsNote } from "../internal/components/reports-note";
 
 export const loader = async () => {
 	// readFile が使えないので raw import で代替
@@ -39,7 +38,6 @@ export default function AchievementsIcfpc() {
 				に併設されるコンテストです。
 				各年のテーマに基づく問題を解決するプログラムを作成し、競い合う大会です。
 			</p>
-			{/* <ReportsNote /> */}
 			{Object.entries(icfpcData)
 				// 年度降順で表示
 				.sort((a, b) => Number.parseInt(b[0], 10) - Number.parseInt(a[0], 10))

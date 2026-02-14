@@ -1,4 +1,3 @@
-import { css } from "styled-system/css";
 import { H2 } from "~/components/heading";
 import { UnorderedList } from "~/components/unordered-list";
 

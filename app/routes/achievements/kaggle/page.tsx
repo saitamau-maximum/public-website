@@ -10,7 +10,6 @@ import { Table } from "~/components/table";
 import { UnorderedList } from "~/components/unordered-list";
 import type kaggleSchema from "~/schema/achievements/kaggle.schema";
 import { makePageTitle } from "~/utils/title";
-import { ReportsNote } from "../internal/components/reports-note";
 
 export const loader = async () => {
 	// readFile が使えないので raw import で代替
@@ -45,7 +44,6 @@ export default function AchievementsKaggle() {
 				Maximum では、メンバーが Kaggle
 				で開催されるさまざまなコンペティションに参加しています。
 			</p>
-			{/* <ReportsNote /> */}
 			{Object.entries(kaggleData).map(([key, data]) => (
 				<section key={key}>
 					<H2>{data.title}</H2>
