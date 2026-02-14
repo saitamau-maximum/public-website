@@ -11,18 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
       - name: Setup Nodejs
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version-file: .node-version
           cache: pnpm
           cache-dependency-path: "**/pnpm-lock.yaml"
-          always-auth: true
           scope: "@saitamau-maximum"
 
       - name: Install deps
@@ -38,7 +37,7 @@ jobs:
         run: pnpm build
 
       - name: Markdownlint Check
-        uses: DavidAnson/markdownlint-cli2-action@v20
+        uses: DavidAnson/markdownlint-cli2-action@v22
         with:
           globs: |
             README.md

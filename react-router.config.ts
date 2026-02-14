@@ -4,7 +4,7 @@ import { getNewsArticles } from "./app/utils/articles";
 
 export default {
 	future: {
-		unstable_viteEnvironmentApi: true,
+		v8_viteEnvironmentApi: true,
 	},
 	ssr: true,
 	async prerender() {
