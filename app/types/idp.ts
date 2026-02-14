@@ -3,3 +3,5 @@ export interface CertificationItem {
 	title: string;
 	numberOfHolders: number;
 }
+
+export type AffiliationsSummary = Record<string, number>;

@@ -1,15 +1,33 @@
-import { Link } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { AnchorLike } from "~/components/anchor-like";
 import { Breadcrumb } from "~/components/breadcrumb";
 import { ExternalLink } from "~/components/external-link";
 import { H1 } from "~/components/heading";
 import { HeroImg } from "~/components/hero-img";
-import { UnorderedList } from "~/components/unordered-list";
+import type { AffiliationsSummary } from "~/types/idp";
 import { makePageTitle } from "~/utils/title";
+import MembersAffiliations from "./internal/components/member-affiliations-table";
 import { AboutTeams } from "./internal/components/teams";
 import AboutTCE from "./internal/components/tech-circle-expo";
 
+export const loader = async () => {
+	const currentYear = new Date().getFullYear();
+	const currentFY = currentYear - (new Date().getMonth() < 4 ? 1 : 0);
+
+	const DATA_URL = "https://api.id.maximum.vc/public/affiliations-summary";
+	const affiliations = await fetch(DATA_URL).then((res) =>
+		res.json<AffiliationsSummary>(),
+	);
+
+	return {
+		currentFY,
+		affiliations,
+	};
+};
+
 export default function About() {
+	const data = useLoaderData<typeof loader>();
+
 	const breadcrumbItems = [
 		{ href: "/", label: "ホーム" },
 		{ href: "/about/", label: "わたしたちについて", active: true },
@@ -37,18 +55,10 @@ export default function About() {
 				</AnchorLike>{" "}
 				ページをご確認ください。
 			</p>
-			<p>2025 年度のメンバー 61 人の所属内訳は以下のようになっています。</p>
-			<UnorderedList>
-				<li>工学部 情報工学科: 42 人 (B4 x2, B3 x8, B2 x12, B1 x20)</li>
-				<li>工学部 機械工学科: 4 人 (B3 x3, B1 x1)</li>
-				<li>工学部 環境社会デザイン学科: 1 人 (B2 x1)</li>
-				<li>理学部 基礎化学科: 1 人 (B1 x1)</li>
-				<li>理学部 生体制御学科: 1 人 (B1 x1)</li>
-				<li>理学部 物理学科: 1 人 (B3 x1)</li>
-				<li>経済学部: 2 人 (B2 x1, B1 x1)</li>
-				<li>大学院 理工学研究科: 5 人 (M1 x5)</li>
-				<li>卒業生: 4 人 (情報工学科卒業 3 人、教育学部卒業 1 人)</li>
-			</UnorderedList>
+			<MembersAffiliations
+				currentFY={data.currentFY}
+				affiliations={data.affiliations}
+			/>
 			<AboutTeams />
 			<AboutTCE />
 		</>
