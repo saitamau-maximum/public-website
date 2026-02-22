@@ -57,6 +57,8 @@ export function Layout({ children }: { children: ReactNode }) {
 						padding: 4,
 						flexGrow: 1,
 						overflowX: "hidden",
+						display: "flex",
+						flexDirection: "column",
 					})}
 				>
 					<div
@@ -65,6 +67,7 @@ export function Layout({ children }: { children: ReactNode }) {
 							borderRadius: "md",
 							padding: 4,
 							overflowX: "hidden",
+							flexGrow: 1,
 						})}
 					>
 						<main
