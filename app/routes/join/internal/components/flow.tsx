@@ -16,7 +16,7 @@ export const JoinFlow = () => {
 						Twitter (現 X) の DM
 					</ExternalLink>{" "}
 					または{" "}
-					<ExternalLink href="https://line.me/ti/g2/uLfSQMqkPI0NKLrWZ0nDs0d6wXZEJPe4wzSjFw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default">
+					<ExternalLink href="https://line.me/ti/g2/pBKdiYrTubcWF9vuiceAL3dJmgK0-yv68kdh8g?utm_source=invitation&utm_medium=link_copy&utm_campaign=default">
 						LINE OpenChat
 					</ExternalLink>{" "}
 					で入会希望を伝える
