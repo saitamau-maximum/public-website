@@ -5,6 +5,7 @@ import { jsx, jsxs } from "react/jsx-runtime";
 import { useLoaderData } from "react-router";
 import rehypeParse from "rehype-parse";
 import rehypeReact from "rehype-react";
+import { css } from "styled-system/css";
 import { unified } from "unified";
 import { Breadcrumb } from "~/components/breadcrumb";
 import { ExternalLink } from "~/components/external-link";
@@ -73,21 +74,43 @@ export default function NewsArticle() {
 			<title>{makePageTitle([article.title, "お知らせ"])}</title>
 			<Breadcrumb items={breadcrumbItems} />
 			<H1>{article.title}</H1>
-			{article.description && <p>{article.description}</p>}
-			<p>
-				作成日:{" "}
-				<time dateTime={toISODateString(article.createdAt)}>
-					{toISODateString(article.createdAt)}
-				</time>
-			</p>
-			<p>
-				最終更新日:{" "}
-				<time dateTime={toISODateString(article.updatedAt)}>
-					{toISODateString(article.updatedAt)}
-				</time>
-			</p>
-			<p>Group: {article.group}</p>
-			<hr />
+			{article.description && (
+				<p
+					className={css({
+						color: "gray.600",
+					})}
+				>
+					{article.description}
+				</p>
+			)}
+			<div
+				className={css({
+					display: "flex",
+					flexWrap: "wrap",
+					alignItems: "center",
+					gap: 4,
+					fontSize: "sm",
+					color: "gray.600",
+				})}
+			>
+				<p>
+					作成日:{" "}
+					<time dateTime={toISODateString(article.createdAt)}>
+						{toISODateString(article.createdAt)}
+					</time>
+				</p>
+				<p>
+					最終更新日:{" "}
+					<time dateTime={toISODateString(article.updatedAt)}>
+						{toISODateString(article.updatedAt)}
+					</time>
+				</p>
+			</div>
+			<hr
+				className={css({
+					borderColor: "gray.300",
+				})}
+			/>
 			<article>{articleElem}</article>
 		</>
 	);
