@@ -1,49 +1,58 @@
 {
-  "name": "public-website",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint --dir src",
-    "lint:fix": "npm run lint --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
-    "prepare": "husky",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "dependencies": {
-    "@saitamau-maximum/markdown-processor": "^1.2.0",
-    "clsx": "^2.1.0",
-    "gray-matter": "^4.0.3",
-    "next": "14.1.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-icons": "^5.0.1",
-    "react-paginate": "^8.2.0",
-    "sass": "^1.72.0"
-  },
-  "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.17",
-    "@storybook/addon-interactions": "^7.6.17",
-    "@storybook/addon-links": "^7.6.17",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "^7.6.17",
-    "@storybook/nextjs": "^7.6.17",
-    "@storybook/react": "^7.6.17",
-    "@storybook/test": "^7.6.17",
-    "@types/node": "^20.11.25",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-storybook": "^0.8.0",
-    "husky": "^9.0.11",
-    "prettier": "^3.2.5",
-    "storybook": "^7.6.17",
-    "typescript": "^5"
-  },
-  "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af"
+	"name": "public-website",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "react-router dev",
+		"build": "pnpm build:assets:news && pnpm build:app",
+		"typegen": "wrangler types && react-router typegen",
+		"fix": "biome check --write",
+		"check": "biome check",
+		"prepare": "husky && react-router typegen && panda codegen",
+		"build:assets:news": "tsx ./scripts/copy-article-assets.ts",
+		"build:app": "react-router build"
+	},
+	"dependencies": {
+		"@saitamau-maximum/markdown-processor": "^2.2.1",
+		"isbot": "^5.1.35",
+		"react": "^19.2.4",
+		"react-aria-components": "^1.15.1",
+		"react-dom": "^19.2.4",
+		"react-feather": "^2.0.10",
+		"react-router": "^7.13.0",
+		"rehype-parse": "^9.0.1",
+		"rehype-react": "^8.0.0",
+		"unified": "^11.0.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.4",
+		"@cloudflare/vite-plugin": "^1.25.2",
+		"@pandacss/dev": "^1.8.2",
+		"@react-router/dev": "^7.13.0",
+		"@types/js-yaml": "^4.0.9",
+		"@types/node": "^25.3.0",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"autoprefixer": "^10.4.24",
+		"gray-matter": "^4.0.3",
+		"husky": "^9.1.7",
+		"js-yaml": "^4.1.1",
+		"json-schema-to-ts": "^3.1.1",
+		"lint-staged": "^16.2.7",
+		"sass-embedded": "^1.97.3",
+		"schema-dts": "^1.1.5",
+		"sharp": "^0.34.5",
+		"tsx": "^4.21.0",
+		"typescript": "^5.9.3",
+		"valibot": "^1.2.0",
+		"vite": "^7.3.1",
+		"vite-tsconfig-paths": "^6.1.1",
+		"wrangler": "^4.67.0"
+	},
+	"lint-staged": {
+		"*": [
+			"biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
+		]
+	},
+	"packageManager": "pnpm@10.29.3+sha512.498e1fb4cca5aa06c1dcf2611e6fafc50972ffe7189998c409e90de74566444298ffe43e6cd2acdc775ba1aa7cc5e092a8b7054c811ba8c5770f84693d33d2dc"
 }

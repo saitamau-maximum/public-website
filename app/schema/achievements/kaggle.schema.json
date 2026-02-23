@@ -1,0 +1,54 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Kaggle Achievements Schema",
+	"type": "object",
+	"patternProperties": {
+		"^[a-z0-9\\-]+$": {
+			"type": "object",
+			"properties": {
+				"title": { "type": "string" },
+				"description": { "type": "string" },
+				"url": { "type": "string", "format": "uri" },
+				"teams": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": { "type": "string" },
+							"rank": { "type": "string" },
+							"medal": {
+								"type": "string",
+								"enum": ["gold", "silver", "bronze"]
+							},
+							"members": {
+								"type": "array",
+								"items": { "type": "string" },
+								"minItems": 1
+							}
+						},
+						"required": ["name", "rank", "members"],
+						"additionalProperties": false
+					},
+					"minItems": 1
+				},
+				"blogs": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"author": { "type": "string" },
+							"title": { "type": "string" },
+							"url": { "type": "string", "format": "uri" }
+						},
+						"required": ["author", "title", "url"],
+						"additionalProperties": false
+					},
+					"minItems": 1
+				}
+			},
+			"required": ["title", "description", "url", "teams"],
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

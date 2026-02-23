@@ -1,0 +1,35 @@
+lux-ai-season-3:
+  title: Lux AI Season 3
+  description: Lux AI Season 3 は、 AI ボットを開発・トレーニングして 1vs1 で他のボットと対戦させるコンペティションです。
+  url: https://www.kaggle.com/competitions/lux-ai-season-3
+  teams:
+    - name: Monica
+      rank: 174 位 / 701 チーム
+      members:
+        - sor4chi
+
+fide-google-efficiency-chess-ai-challenge:
+  title: FIDE & Google Efficient Chess AI Challenge
+  description: 限られた CPU 制約およびメモリ制約のもとで動作するチェスのエンジンを開発し、他の参加者と対戦させるコンペティションです。
+  url: https://www.kaggle.com/competitions/fide-google-efficiency-chess-ai-challenge
+  teams:
+    - name: Maximum
+      rank: 108 位 / 1,120 チーム
+      medal: bronze
+      members:
+        - through
+        - sor4chi
+        - a01sa01to
+
+santa2024:
+  title: Santa 2024
+  description: Santa は、毎年クリスマスシーズンに開催される、クリスマスを題材にした最適化問題に取り組むコンペティションです。 2024 年は "Santa 2024 - The Perplexity Permutation Puzzle" として開催されました。
+  url: https://www.kaggle.com/competitions/santa-2024
+  teams:
+    - name: Maximum
+      rank: 32 位 / 1,514 チーム
+      medal: silver
+      members:
+        - through
+        - sor4chi
+        - a01sa01to

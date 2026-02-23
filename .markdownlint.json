@@ -1,0 +1,6 @@
+{
+	"$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.38.0/schema/markdownlint-config-schema.json",
+	"default": true,
+	"MD026": false,
+	"MD033": false
+}

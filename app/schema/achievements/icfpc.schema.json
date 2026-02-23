@@ -1,0 +1,42 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "ICFPC Achievements Schema",
+	"type": "object",
+	"patternProperties": {
+		"^20\\d{2}$": {
+			"type": "object",
+			"properties": {
+				"teams": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": { "type": "string" },
+							"rank": { "type": "string" }
+						},
+						"required": ["name", "rank"],
+						"additionalProperties": false
+					},
+					"minItems": 1
+				},
+				"blogs": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"author": { "type": "string" },
+							"title": { "type": "string" },
+							"url": { "type": "string", "format": "uri" }
+						},
+						"required": ["author", "title", "url"],
+						"additionalProperties": false
+					},
+					"minItems": 1
+				}
+			},
+			"required": ["teams"],
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

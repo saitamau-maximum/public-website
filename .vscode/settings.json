@@ -1,7 +1,44 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
-  }
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit"
+	},
+	"biome.enabled": true,
+	"prettier.enable": false,
+	"eslint.enable": false,
+	"yaml.schemas": {
+		"app/schema/achievements/icpc.schema.json": [
+			"app/data/achievements/icpc.yml"
+		],
+		"app/schema/achievements/icfpc.schema.json": [
+			"app/data/achievements/icfpc.yml"
+		],
+		"app/schema/achievements/isucon.schema.json": [
+			"app/data/achievements/isucon.yml"
+		],
+		"app/schema/achievements/kaggle.schema.json": [
+			"app/data/achievements/kaggle.yml"
+		],
+		"app/schema/achievements/kanto-police-ctf.schema.json": [
+			"app/data/achievements/kanto-police-ctf.yml"
+		],
+		"app/schema/achievements/ute1.schema.json": [
+			"app/data/achievements/ute1.yml"
+		],
+		"app/schema/achievements/wsh.schema.json": ["app/data/achievements/wsh.yml"]
+	}
 }

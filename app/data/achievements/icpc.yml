@@ -1,0 +1,409 @@
+2025:
+  teams:
+    - name: Maximum Masters
+      prelim: 40 位
+      regional: 横浜大会 28 位 (43 位)
+    - name: Maximum ICS
+      prelim: 82 位
+    - name: Maximum Apollon
+      prelim: 125 位
+    - name: Maximum Merinchan
+      prelim: 162 位
+    - name: Medium
+      prelim: 188 位
+    - name: tuple
+      prelim: 194 位
+    - name: Arc
+      prelim: 253 位
+    - name: YTT
+      prelim: 291 位
+  blogs:
+    - author: a01sa01to
+      title: ICPC 2025 国内予選
+      url: https://a01sa01to.com/articles/2025/07/icpc2025-prelim/
+    - author: a01sa01to
+      title: ICPC2025 Yokohama Regional 参加記 (a01sa01to 視点)
+      url: https://a01sa01to.com/articles/2025/12/icpc2025-regional/
+
+2024:
+  teams:
+    - name: executive is deprived
+      prelim: 31 位
+      regional: 横浜大会 34 位 (47 位)
+    - name: mountain_river_village
+      prelim: 131 位
+    - name: Bocchi The Maximum
+      prelim: 159 位
+    - name: Maximum Legends
+      prelim: 164 位
+    - name: Maximum.mum
+      prelim: 180 位
+    - name: Maximum ES
+      prelim: 287 位
+    - name: MAXIMUM TUNE 6RR
+      prelim: 298 位
+    - name: YushiYamamoto
+      prelim: 304 位
+    - name: Maximum The Max
+      prelim: 310 位
+    - name: Level1
+      prelim: 349 位
+  blogs:
+    - author: a01sa01to
+      title: ICPC 2024 国内予選
+      url: https://a01sa01to.com/articles/2024/07/icpc2024-prelim/
+    - author: a01sa01to
+      title: ICPC2024 Regional 参加記 (a01sa01to 視点)
+      url: https://a01sa01to.com/articles/2024/12/icpc2024-regional/
+
+2023:
+  teams:
+    - name: Maximum-executive
+      prelim: 71 位
+    - name: Maximum.mum
+      prelim: 112 位
+    - name: Maximum-mini_tomato
+      prelim: 138 位
+    - name: touch_hogehoge
+      prelim: 174 位
+  blogs:
+    - author: a01sa01to
+      title: ICPC2023 国内予選
+      url: https://a01sa01to.com/articles/2023/07/icpc2023-prelim/
+
+2022:
+  teams:
+    - name: Maximum-goodlife9
+      prelim: 16 位
+      regional: 横浜大会 8 位 (14 位)
+    - name: Maximum-2oo2
+      prelim: 179 位
+    - name: Maximum-Momentum
+      prelim: 209 位
+  blogs:
+    - author: a01sa01to
+      title: ICPC2022 国内予選
+      url: https://a01sa01to.com/articles/2022/07/icpc2022-prelim/
+    - author: a01sa01to
+      title: ICPC2022 横浜大会
+      url: https://a01sa01to.com/articles/2022/12/icpc2022-regional/
+
+2021:
+  teams:
+    - name: seica is gone
+      prelim: 43 位
+      regional: 横浜大会 9 位 (11 位)
+    - name: Maximum2021
+      prelim: 104 位
+  blogs:
+    - author: a01sa01to
+      title: ICPC2021 国内予選
+      url: https://a01sa01to.com/articles/2021/11/icpc2021-prelim/
+    - author: a01sa01to
+      title: ICPC2021 横浜大会
+      url: https://a01sa01to.com/articles/2022/03/icpc2021-regional/
+
+2020:
+  teams:
+    - name: seica on the border
+      prelim: 43 位
+      regional: 横浜大会 9 位 (13 位)
+    - name: Maximum2020
+      prelim: 202 位
+
+2019:
+  teams:
+    - name: seica on the border
+      prelim: 39 位
+      regional: 横浜大会 24 位 (29 位)
+    - name: KKaraage
+      prelim: 187 位
+
+2018:
+  teams:
+    - name: Semuderna
+      prelim: 62 位
+      regional: 横浜大会 19 位 (28 位)
+    - name: KarintounoX
+      prelim: 92 位
+    - name: Enter
+      prelim: 148 位
+    - name: YKK
+      prelim: 159 位
+
+2017:
+  teams:
+    - name: Maximum-omake
+      prelim: 54 位
+      regional: つくば大会 19 位 (27 位)
+    - name: Maximum-Trump
+      prelim: 93 位
+    - name: Maximum-bug
+      prelim: 134 位
+    - name: Maximum-VJJ
+      prelim: 142 位
+
+2016:
+  teams:
+    - name: Maximum-Variant
+      prelim: 40 位
+      regional: つくば大会 24 位 (31 位)
+    - name: Maximum-UniSchoolFleet
+      prelim: 88 位
+    - name: Maximum-NuPogodi
+      prelim: 120 位
+    - name: Maximum-bug
+      prelim: 152 位
+    - name: Maximum-Digital
+      prelim: 166 位
+
+2015:
+  teams:
+    - name: trtrMarimo
+      prelim: 30 位
+      regional: つくば大会 30 位 (38 位)
+    - name: Maximum_Resolution
+      prelim: 161 位
+    - name: Maximum_Average
+      prelim: 164 位
+    - name: Maximum_TKM
+      prelim: 174 位
+    - name: Maximum_AIS
+      prelim: 275 位
+    - name: Maximum_Minimum
+      prelim: 282 位
+
+2014:
+  teams:
+    - name: Maximum_Shift_Key
+      prelim: 49 位
+      regional: 東京大会 28 位 (33 位)
+    - name: Maximum_Inpact_Straight
+      prelim: 58 位
+    - name: Maximum_Tsubugumi
+      prelim: 102 位
+    - name: Maximum_Ypsilon
+      prelim: 147 位
+    - name: Maximum_Kayoubi
+      prelim: Honorable Mention
+    - name: Maximum_Mokuyoubi
+      prelim: Honorable Mention
+
+2013:
+  teams:
+    - name: tHe_SaitaMa
+      prelim: 31 位
+      regional: 会津大会 14 位 (20 位)
+    - name: Maximum-column
+      prelim: 34 位
+    - name: Maximum-Akunohana
+      prelim: 54 位
+    - name: Maximum-later
+      prelim: 68 位
+    - name: Maximum-minimum
+      prelim: Honorable Mention
+    - name: Maximum-beginner
+      prelim: Honorable Mention
+
+2012:
+  teams:
+    - name: Maximum.ma-bo-doufu
+      prelim: 19 位
+      regional: 東京大会 Honorable Mention
+    - name: Maximum-Chrome
+      prelim: 23 位
+      regional: 東京大会 Honorable Mention
+    - name: Maximum-Delta
+      prelim: Honorable Mention
+    - name: Maximum-hathonos
+      prelim: Honorable Mention
+
+2011:
+  teams:
+    - name: Maximum.ma-bo-doufu
+      prelim: 22 位
+      regional: |
+        福岡大会 12 位 (17 位)
+        台湾大会 Honorable Mention
+    - name: Maximum-Opera
+      prelim: 32 位
+    - name: MaximumixaM
+      prelim: Honorable Mention
+    - name: scop
+      prelim: Honorable Mention
+
+2010:
+  teams:
+    - name: MaximumMST
+      prelim: 22 位
+      regional: |
+        東京大会 Honorable Mention
+        台湾大会 Honorable Mention
+    - name: Maximum-Explosion
+      prelim: 48 位
+    - name: Maximum-Principle2.2
+      prelim: 65 位
+    - name: Maximum-HIK
+      prelim: Honorable Mention
+    - name: Maximum-Safari
+      prelim: Honorable Mention
+
+2009:
+  teams:
+    - name: Maximum-Principle
+      prelim: 54 位
+    - name: Maximum-TLE
+      prelim: 86 位
+    - name: abcdefghijklmnopqrstuvwxyz
+      prelim: 105 位
+    - name: Maximum-Weber
+      prelim: 115 位
+    - name: Real
+      prelim: 131 位
+    - name: PB
+      prelim: Honorable Mention
+
+2008:
+  teams:
+    - name: Maximum-Coffee-X
+      prelim: 6 位
+      regional: |
+        会津大会 9 位 (13 位)
+        テヘラン大会 2 位 (3 位)
+      worldfinal: Honorable Mention
+    - name: ANALOG
+      prelim: 59 位
+    - name: Maximum_YGM
+      prelim: 91 位
+    - name: Maximum_GTK
+      prelim: 124 位
+    - name: Last Penguin
+      prelim: 241 位
+
+2007:
+  teams:
+    - name: Maximum-Coffee
+      prelim: 13 位
+      regional: |
+        東京大会 7 位 (12 位)
+        シンガポール大会 10 位
+    - name: Maximum_TGM
+      prelim: 20 位
+      regional: |
+        東京大会 (21 位)
+        シンガポール大会 10 位
+    - name: I My 3cm
+      prelim: 43 位
+    - name: ANALOG
+      prelim: 87 位
+    - name: Orange
+      prelim: 133 位
+    - name: Team-ASIKA
+      prelim: Honorable Mention
+
+2006:
+  teams:
+    - name: Maximum_Tomato
+      prelim: 13 位
+      regional: |
+        横浜大会 6 位 (7 位)
+        マニラ大会 3 位 (3 位)
+      worldfinal: 44 位
+    - name: Maximum-iTT
+      prelim: 32 位
+      regional: 横浜大会 (19 位)
+    - name: Lemon Marron Melon
+      prelim: 40 位
+    - name: Solve or Melt
+      prelim: Honorable Mention
+    - name: ANALOG
+      prelim: Honorable Mention
+
+2005:
+  teams:
+    - name: Keep Time Worker
+      prelim: 20 位
+      regional: |
+        東京大会 Honorable Mention
+        北京大会 26 位 (36 位)
+    - name: Bugless
+      prelim: 83 位
+    - name: Fairy_Tale
+      prelim: 93 位
+    - name: iostream
+      prelim: 99 位
+
+2004:
+  teams:
+    - name: Maximum-TNT
+      prelim: 3 位
+      regional: |
+        愛媛大会 9 位 (10 位)
+        Kanpur 大会 4 位 (4 位)
+    - name: FutaPi
+      prelim: 29 位
+      regional: 愛媛大会 Honorable Mention
+    - name: polymorphism
+      prelim: 111 位
+    - name: We_are_in_rock
+      prelim: Honorable Mention
+    - name: minimum
+      prelim: Honorable Mention
+    - name: hustle-Z
+      prelim: Honorable Mention
+
+2003:
+  teams:
+    - name: Maximum_TNT
+      prelim: 7 位
+      regional: 会津大会 5 位 (7 位)
+    - name: little dancer
+      prelim: 39 位
+    - name: JUNICHIRO
+      prelim: 41 位
+    - name: Mata_Rainen
+      prelim: 61 位
+
+2002:
+  teams:
+    - name: TILTOWAIT
+      prelim: 12 位
+      regional: 金沢大会 12 位 (16 位)
+    - name: Seventh_*
+      prelim: 6 位
+      regional: 金沢大会 (19 位)
+    - name: Country_Sai
+      prelim: 19 位
+    - name: A team
+      prelim: Honorable Mention
+    - name: Happy Clacking!?
+      prelim: Honorable Mention
+
+2001:
+  teams:
+    - name: Out_Of_Order
+      prelim: 21 位
+      regional: 函館大会 13 位 (17 位)
+    - name: only_*
+      prelim: 13 位
+      regional: 函館大会 Honorable Mention
+    - name: NaN
+      prelim: 38 位
+    - name: ringo_*
+      prelim: 42 位
+    - name: maXimum-N.C.
+      prelim: Honorable Mention
+    - name: saidai
+      prelim: Honorable Mention
+
+2000:
+  teams:
+    - name: Jackal
+      prelim: 22 位
+      regional: つくば大会 16 位 (21 位)
+    - name: Newromancer
+      prelim: 26 位
+      regional: つくば大会 Honorable Mention
+    - name: MAXIMUM
+      prelim: 33 位
+      regional: つくば大会 Honorable Mention

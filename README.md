@@ -1,55 +1,54 @@
 # Maximum Public Website
 
-一般公開向けのMaximumウェブサイトを管理するリポジトリです。
+一般公開向けの Maximum ウェブサイトを管理するリポジトリです。
 
-## 開発形態
+<https://maximum.vc>
 
-### ブランチ名
+## Development
 
-- `main`: 本番環境
-- `feat/xxx`: 機能追加
-- `fix/xxx`: バグ修正
-- `hotfix/xxx`: 緊急バグ修正
-
-## 開発手順
-
-### 前提条件
-
-#### `npm.pkg.github.com` にログインする
+### 前提条件: `npm.pkg.github.com` にログインする
 
 ```bash
 npm login --scope=@saitamau-maximum --auth-type=legacy --registry=https://npm.pkg.github.com
 ```
 
-この時、`username` にはGitHubのユーザー名、`password` にはGitHubのパーソナルアクセストークンを入力してください。
+この時、 `username` には GitHub のユーザー名、 `password` には GitHub のパーソナルアクセストークンを入力してください。
 パーソナルアクセストークンは `read:packages` の権限が必要です。
-これがないと`@saitamau-maximum/markdown-processor` がインストールできません。
+これがないと `@saitamau-maximum/markdown-processor` がインストールできません。
 
 発行方法はクラメソさんの記事を参考にしてください。
 <https://dev.classmethod.jp/articles/github-personal-access-tokens>
 
-#### 必要なパッケージをインストールする
+### 必要なパッケージをインストールする
 
 ```bash
-npm install
+pnpm install
 ```
 
-#### pre-commitについて
+### pre-commitについて
 
-prepareを使ってインストールなどのアクション時にhuskyのフックを設定しています。
+prepare を使ってインストールなどのアクション時に husky のフックを設定しています。
 こうしてコミット前にフォーマッターを適応させています。
 
-#### 開発サーバーの起動
+### 開発サーバーの起動
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
-### デプロイについて
+もし docs 内に画像などを配置した場合は、更新後以下のコマンドで public にコピーしてください。
 
-GitHubの `main` ブランチに push すると、Cloudflare Pagesに自動デプロイされます。
+```bash
+pnpm build:assets:news
+```
 
-### デザインについて
+## デプロイについて
 
-[Figma(Dev-Project)](https://www.figma.com/file/bpfQJEGw74avlImcC0LbiZ/Dev-Project?type=design&node-id=5%3A2&mode=design&t=6dFZsWxnenm8fWhx-1)
-で管理しています。
+GitHubの `main` ブランチに push すると、 Cloudflare Workers に自動デプロイされます。
+
+## これまでの maximum.vc
+
+- 2022 年度まで: DokuWiki を使用していたためバージョン管理されていません
+- 2023 年度まで: [saitamau-maximum/website](https://github.com/saitamau-maximum/website)
+- 2025 年 10 月まで: [saitamau-maximum/public-website@v1](https://github.com/saitamau-maximum/public-website/tree/v1)
+- 現在: [saitamau-maximum/public-website@main](https://github.com/saitamau-maximum/public-website)

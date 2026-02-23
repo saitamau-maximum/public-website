@@ -1,0 +1,47 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "ISUCON Achievements Schema",
+	"type": "object",
+	"patternProperties": {
+		"^\\d{2}$": {
+			"type": "object",
+			"properties": {
+				"title": { "type": "string" },
+				"description": { "type": "string" },
+				"teams": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": { "type": "string" },
+							"score": { "type": "number" },
+							"rank": { "type": "string" },
+							"sturank": { "type": "string" },
+							"note": { "type": "string" }
+						},
+						"required": ["name", "score"],
+						"additionalProperties": false
+					},
+					"minItems": 1
+				},
+				"blogs": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"author": { "type": "string" },
+							"title": { "type": "string" },
+							"url": { "type": "string", "format": "uri" }
+						},
+						"required": ["author", "title", "url"],
+						"additionalProperties": false
+					},
+					"minItems": 1
+				}
+			},
+			"required": ["title", "description", "teams"],
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

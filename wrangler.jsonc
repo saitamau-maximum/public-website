@@ -1,0 +1,15 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "public-website",
+	"main": "./workers/app.ts",
+	"compatibility_date": "2026-01-20",
+	"compatibility_flags": [
+		"nodejs_compat" // gray-matter で使っている
+	],
+	"workers_dev": false,
+	"preview_urls": true,
+	"observability": {
+		"enabled": true
+	},
+	"upload_source_maps": true
+}
