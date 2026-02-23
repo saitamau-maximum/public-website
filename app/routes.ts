@@ -6,6 +6,8 @@ import {
 	route,
 } from "@react-router/dev/routes";
 
+// 📝 react-router.config.ts の Prerender 設定も書き換えること
+
 export default [
 	index("routes/home/page.tsx"),
 	route("about", "routes/about/page.tsx"),

@@ -10,20 +10,24 @@ export default {
 	async prerender() {
 		const newsArticles = await getNewsArticles();
 		return [
-			// ローカルファイル読み込み系は Pre-render する
-			"/", // お知らせ (新着 2 件)
-			"/achievements/icpc/", // 実績読み込み
-			"/achievements/isucon/",
-			"/achievements/wsh/",
-			"/achievements/icfpc/",
-			"/achievements/kaggle/",
-			"/achievements/ute1/",
-			// お知らせ
+			// SSR 必要ないページは Prerender しておく
+			"/",
+			// "/about/", // SSR
+			"/qa/",
+			"/join/",
 			"/news/",
 			...newsArticles.flatMap((article) => [
 				`/news/${article.year}/`,
 				`/news/${article.year}/${article.slug}/`,
 			]),
+			// "/achievements/", // SSR
+			"/achievements/icpc/",
+			"/achievements/isucon/",
+			"/achievements/wsh/",
+			"/achievements/icfpc/",
+			"/achievements/kaggle/",
+			"/achievements/ute1/",
+			"/achievements/kanto-police-ctf/",
 		];
 	},
 } satisfies Config;
