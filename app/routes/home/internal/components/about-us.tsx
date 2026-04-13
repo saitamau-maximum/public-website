@@ -70,12 +70,12 @@ export const HomeAboutUs = () => {
 				</li>
 				<li>
 					<Card.Root>
-						<Card.Title>モバイルアプリ班</Card.Title>
+						<Card.Title>アニメーション班</Card.Title>
 						<Card.Body>
 							<p>
-								その名の通りモバイルアプリの開発を行っています。 Flutter
-								を用いて開発を行い、週 1, 2 回の進捗共有を行い、活動開始から 3
-								か月～半年でプロダクトの発表会を行います。
+								アニメーション班では、その名の通りアニメーションの制作を行っていきます。
+                                3〜4人チームでの制作か個人制作の、好きな方を選ぶことができます。
+								ソフトウェアとしてはBlenderを使用しての制作となります！
 							</p>
 						</Card.Body>
 					</Card.Root>
