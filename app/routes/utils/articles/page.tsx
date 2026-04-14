@@ -31,6 +31,7 @@ import { newsArticleFrontmatterSchema } from "~/utils/articles";
 import { ErrorBox } from "./internal/components/error-box";
 import { SimpleCodeBlock } from "./internal/components/simple-code-block";
 import { StatusText } from "./internal/components/status-text";
+import { useDebounce } from "./internal/hooks/use-debounce";
 
 const STATUS_CHECKING = 0 as const;
 const STATUS_OPEN_REPO = 1 as const;
@@ -68,11 +69,19 @@ const TextWithIconStyle = css({
 });
 
 const parseFrontmatter = (content: string) => {
-	const vfile = new VFile(content);
-	matter(vfile);
-	const { matter: data } = vfile.data;
+	try {
+		const vfile = new VFile(content);
+		matter(vfile);
+		const { matter: data } = vfile.data;
 
-	return v.safeParse(newsArticleFrontmatterSchema, data);
+		return v.safeParse(newsArticleFrontmatterSchema, data);
+	} catch {
+		return {
+			success: false,
+			output: null,
+			issues: [],
+		};
+	}
 };
 
 const md2html = async (markdown: string) => {
@@ -155,7 +164,10 @@ export default function UtilsArticles() {
 	const year = watch("year");
 	const slug = watch("slug");
 	const content = watch("content");
-	const frontmatterRes = parseFrontmatter(content);
+
+	// 多少負荷を軽減するために、 content の更新が止まってから 500ms 後に frontmatter のパースと Markdown -> HTML の処理をする
+	const debouncedContent = useDebounce(content, 500);
+	const frontmatterRes = parseFrontmatter(debouncedContent);
 	const frontmatter = frontmatterRes.success ? frontmatterRes.output : null;
 
 	// 各ボタンの状態をリセットするために、初期状態でも trigger しておく
@@ -168,7 +180,7 @@ export default function UtilsArticles() {
 		setArticleContent(<p>Loading...</p>);
 
 		const fn = async () => {
-			let html = await md2html(content);
+			let html = await md2html(debouncedContent);
 
 			// img タグの src を object URL に置き換える
 			const parser = new DOMParser().parseFromString(html, "text/html");
@@ -202,7 +214,7 @@ export default function UtilsArticles() {
 		};
 
 		void fn();
-	}, [content, articleAssets]);
+	}, [debouncedContent, articleAssets]);
 
 	const refreshArticleAssets = async () => {
 		if (!directoryHandler.current) return;
