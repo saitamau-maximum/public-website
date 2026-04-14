@@ -4,7 +4,7 @@ import { AboutTeamsCompro } from "./compro";
 import { AboutTeamsCtf } from "./ctf";
 import { AboutTeamsGameDev } from "./game-dev";
 import { AboutTeamsInfra } from "./infra";
-import { AboutTeamsMobileApp } from "./mobile-app";
+import { AboutTeamsAnimetion } from "./animetion";
 import { AboutTeamsWeb } from "./web";
 
 export const AboutTeams = () => {
@@ -13,7 +13,7 @@ export const AboutTeams = () => {
 			<H2>班活動</H2>
 			<p>
 				設立時は競技プログラミングを主な活動としていました。 活動の幅が広がり、
-				2025 年度では以下の 7 つの班が活動しています。
+				2026 年度では以下の 7 つの班が活動しています。
 				レベルや興味に応じて、複数の班に所属することも可能です。
 			</p>
 			<p>
@@ -25,7 +25,7 @@ export const AboutTeams = () => {
 			<AboutTeamsWeb />
 			<AboutTeamsCtf />
 			<AboutTeamsAi />
-			<AboutTeamsMobileApp />
+			<AboutTeamsAnimetion />
 			<AboutTeamsGameDev />
 			<AboutTeamsInfra />
 		</section>
