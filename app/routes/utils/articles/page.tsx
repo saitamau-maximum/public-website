@@ -369,14 +369,13 @@ export default function UtilsArticles() {
 			return;
 		}
 
+		await refreshArticleAssets();
+
 		// もしすでに index.md があれば内容を読み込む
 		try {
 			const fileHandle = await articleDirHandler.getFileHandle("index.md");
 			const file = await fileHandle.getFile();
 			const text = await file.text();
-			await refreshArticleAssets();
-			// content にセットするのは assets を読み込んでから
-			// 画像が読み込まれないので
 			setValue("content", text, {
 				shouldValidate: true,
 				shouldDirty: true,
