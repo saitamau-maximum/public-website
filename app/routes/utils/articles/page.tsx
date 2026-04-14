@@ -1,12 +1,12 @@
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import {
 	Code,
-	Edit3,
 	Eye,
 	File,
 	Folder,
 	GitBranch,
 	RefreshCw,
+	Save,
 } from "react-feather";
 import { css, cx } from "styled-system/css";
 import { ButtonLike } from "~/components/button-like";
@@ -100,9 +100,10 @@ export default function UtilsArticles() {
 	const directoryHandler = useRef<FileSystemDirectoryHandle>(null);
 
 	// 小規模なので react-hook-form などは使わずに自前で状態管理する
-	const [yearDirname, setYearDirname] = useState<string>("");
+	const [yearDirname, setYearDirname] = useState<string>(
+		new Date().getFullYear().toString(),
+	);
 	const [slug, setSlug] = useState<string>("");
-	const [title, setTitle] = useState<string>("");
 	const [content, setContent] = useState<string>("");
 	const [currentBranch, setCurrentBranch] = useState<string>("");
 
@@ -247,6 +248,51 @@ export default function UtilsArticles() {
 			setContent(text);
 		} catch {
 			// ファイルがない場合は新規作成する想定なのでエラーは無視
+			const formatedDate = new Date().toISOString().split("T")[0];
+			setContent(
+				`---
+title: 記事のタイトル
+createdAt: ${formatedDate}
+updatedAt: ${formatedDate}
+description: 記事の説明
+image: photo-thumb.avif
+---
+`.trimStart(),
+			);
+		}
+	};
+
+	const handleSaveFile = async () => {
+		setError(null);
+		if (!directoryHandler.current) return;
+
+		const docsDirHandler =
+			await directoryHandler.current.getDirectoryHandle("docs");
+		const newsDirHandler = await docsDirHandler.getDirectoryHandle("news");
+
+		let yearDirHandler: FileSystemDirectoryHandle | null = null;
+		let articleDirHandler: FileSystemDirectoryHandle | null = null;
+
+		try {
+			yearDirHandler = await newsDirHandler.getDirectoryHandle(yearDirname);
+			articleDirHandler = await yearDirHandler.getDirectoryHandle(slug);
+		} catch {
+			setError(
+				"年ディレクトリまたは記事ディレクトリが見つかりません。 Create ボタンは押しましたか？",
+			);
+			return;
+		}
+
+		const fileHandle = await articleDirHandler.getFileHandle("index.md", {
+			create: true,
+		});
+		const file = await fileHandle.createWritable();
+		try {
+			await file.write(content);
+			await file.close();
+		} catch {
+			setError("ファイルの保存に失敗しました。");
+			return;
 		}
 	};
 
@@ -308,6 +354,7 @@ export default function UtilsArticles() {
 			{status === STATUS_READY && (
 				<>
 					<StatusText>準備完了！ 記事の作成や編集ができます</StatusText>
+					<p>自動保存機能はありません。 適宜保存してね</p>
 					<div
 						className={css({
 							display: "flex",
@@ -322,7 +369,7 @@ export default function UtilsArticles() {
 							<Folder />
 							<select
 								className={cx(InputBaseStyle, css({ width: "auto" }))}
-								value={yearDirname}
+								defaultValue={yearDirname}
 								onChange={(e) => setYearDirname(e.target.value)}
 							>
 								{
@@ -350,23 +397,29 @@ export default function UtilsArticles() {
 								type="button"
 								onClick={handleOpenFile}
 								className={css({
-									cursor: "pointer",
 									display: "flex",
 									alignItems: "center",
 									gap: 1,
-									backgroundColor: "gray.100",
-									padding: 2,
-									borderColor: "gray.300",
-									borderWidth: 1,
-									borderStyle: "solid",
-									borderRadius: 4,
-									_hover: {
-										backgroundColor: "gray.200",
-									},
 								})}
 							>
-								<File />
-								Open / Create
+								<ButtonLike>
+									<File />
+									Open / Create
+								</ButtonLike>
+							</button>
+							<button
+								type="button"
+								onClick={handleSaveFile}
+								className={css({
+									display: "flex",
+									alignItems: "center",
+									gap: 1,
+								})}
+							>
+								<ButtonLike>
+									<Save />
+									Save
+								</ButtonLike>
 							</button>
 						</div>
 						<div className={InputContainerBaseStyle}>
@@ -379,17 +432,6 @@ export default function UtilsArticles() {
 							>
 								<RefreshCw />
 							</button>
-						</div>
-						<div
-							className={cx(InputContainerBaseStyle, css({ width: "full" }))}
-						>
-							<Edit3 />
-							<input
-								className={cx(InputBaseStyle, css({ flexGrow: 1 }))}
-								placeholder="記事のタイトル"
-								value={title}
-								onChange={(e) => setTitle(e.target.value)}
-							/>
 						</div>
 						<div className={css({ width: "full", display: "flex", gap: 4 })}>
 							<div
