@@ -1,5 +1,13 @@
 import { type ReactNode, useEffect, useRef, useState } from "react";
-import { Code, Edit3, Eye, Folder, GitBranch, RefreshCw } from "react-feather";
+import {
+	Code,
+	Edit3,
+	Eye,
+	File,
+	Folder,
+	GitBranch,
+	RefreshCw,
+} from "react-feather";
 import { css, cx } from "styled-system/css";
 import { ButtonLike } from "~/components/button-like";
 import { H1 } from "~/components/heading";
@@ -149,8 +157,7 @@ export default function UtilsArticles() {
 		if (!directoryHandler.current) return;
 
 		// 選択されたディレクトリが public-website リポジトリのルートであるかのチェック
-		let isPublicWebsiteRepo = false;
-
+		let isPublicWebsiteRepo = true;
 		try {
 			const gitDirHandler =
 				await directoryHandler.current.getDirectoryHandle(".git");
@@ -160,10 +167,21 @@ export default function UtilsArticles() {
 				.getFileHandle("config")
 				.then((fileHandle) => fileHandle.getFile());
 			const gitConfigText = await gitConfigFile.text();
-			if (gitConfigText.includes("saitamau-maximum/public-website"))
-				isPublicWebsiteRepo = true;
+
+			if (!gitConfigText.includes("saitamau-maximum/public-website"))
+				isPublicWebsiteRepo = false;
 		} catch {
 			// .git ディレクトリがない OR .git/config ファイルがない
+			isPublicWebsiteRepo = false;
+		}
+
+		// docs/news ディレクトリがあるかのチェック
+		try {
+			const docsDirHandler =
+				await directoryHandler.current.getDirectoryHandle("docs");
+			await docsDirHandler.getDirectoryHandle("news");
+		} catch {
+			isPublicWebsiteRepo = false;
 		}
 
 		if (!isPublicWebsiteRepo) {
@@ -176,6 +194,60 @@ export default function UtilsArticles() {
 		}
 
 		await handleRefreshBranch();
+	};
+
+	const handleOpenFile = async () => {
+		setError(null);
+		if (!directoryHandler.current) return;
+
+		const docsDirHandler =
+			await directoryHandler.current.getDirectoryHandle("docs");
+		const newsDirHandler = await docsDirHandler.getDirectoryHandle("news");
+
+		let yearDirHandler: FileSystemDirectoryHandle | null = null;
+		let articleDirHandler: FileSystemDirectoryHandle | null = null;
+
+		// 年ディレクトリがなければ作成
+		try {
+			// 妥当かどうかチェック
+			if (!/^\d{4}$/.test(yearDirname)) {
+				setError("年は 4 桁の数字である必要があります。");
+				return;
+			}
+			yearDirHandler = await newsDirHandler.getDirectoryHandle(yearDirname, {
+				create: true,
+			});
+		} catch {
+			setError("年ディレクトリの作成に失敗しました。");
+			return;
+		}
+
+		// 記事ディレクトリがなければ作成
+		try {
+			// 妥当かどうかチェック
+			if (!/^[a-z0-9-]+$/.test(slug)) {
+				setError(
+					"スラッグは小文字の英数字とハイフンのみである必要があります。",
+				);
+				return;
+			}
+			articleDirHandler = await yearDirHandler.getDirectoryHandle(slug, {
+				create: true,
+			});
+		} catch {
+			setError("記事ディレクトリの作成に失敗しました。");
+			return;
+		}
+
+		// もしすでに index.md があれば内容を読み込む
+		try {
+			const fileHandle = await articleDirHandler.getFileHandle("index.md");
+			const file = await fileHandle.getFile();
+			const text = await file.text();
+			setContent(text);
+		} catch {
+			// ファイルがない場合は新規作成する想定なのでエラーは無視
+		}
 	};
 
 	return (
@@ -246,7 +318,7 @@ export default function UtilsArticles() {
 							padding: 4,
 						})}
 					>
-						<div className={InputContainerBaseStyle}>
+						<div className={cx(InputContainerBaseStyle, css({ gap: 2 }))}>
 							<Folder />
 							<select
 								className={cx(InputBaseStyle, css({ width: "auto" }))}
@@ -274,6 +346,28 @@ export default function UtilsArticles() {
 								value={slug}
 								onChange={(e) => setSlug(e.target.value)}
 							/>
+							<button
+								type="button"
+								onClick={handleOpenFile}
+								className={css({
+									cursor: "pointer",
+									display: "flex",
+									alignItems: "center",
+									gap: 1,
+									backgroundColor: "gray.100",
+									padding: 2,
+									borderColor: "gray.300",
+									borderWidth: 1,
+									borderStyle: "solid",
+									borderRadius: 4,
+									_hover: {
+										backgroundColor: "gray.200",
+									},
+								})}
+							>
+								<File />
+								Open / Create
+							</button>
 						</div>
 						<div className={InputContainerBaseStyle}>
 							<GitBranch />
@@ -281,7 +375,7 @@ export default function UtilsArticles() {
 							<button
 								type="button"
 								onClick={handleRefreshBranch}
-								className={css({ cursor: "pointer" })}
+								className={css({ cursor: "pointer", marginLeft: 4 })}
 							>
 								<RefreshCw />
 							</button>
