@@ -109,6 +109,27 @@ export default function UtilsArticles() {
 		setStatus(res ? STATUS_OPEN_REPO : STATUS_CHECKING);
 	}, []);
 
+	const handleRefreshBranch = async () => {
+		setError(null);
+		if (!directoryHandler.current) return;
+
+		try {
+			// main ブランチにいるかチェック
+			const headFile = await directoryHandler.current
+				.getDirectoryHandle(".git")
+				.then((gitDir) => gitDir.getFileHandle("HEAD"))
+				.then((fileHandle) => fileHandle.getFile());
+			const headText = await headFile.text();
+			if (headText.includes("ref: refs/heads/main"))
+				setStatus(STATUS_ON_MAIN_BRANCH);
+			else setStatus(STATUS_READY);
+			setCurrentBranch(headText.replace("ref: refs/heads/", "").trim());
+		} catch {
+			setError("リポジトリの HEAD 情報の取得に失敗しました。");
+			setStatus(STATUS_OPEN_REPO);
+		}
+	};
+
 	const handleOpenRepo = async () => {
 		setError(null);
 
@@ -154,21 +175,7 @@ export default function UtilsArticles() {
 			return;
 		}
 
-		try {
-			// main ブランチにいるかチェック
-			const headFile = await directoryHandler.current
-				.getDirectoryHandle(".git")
-				.then((gitDir) => gitDir.getFileHandle("HEAD"))
-				.then((fileHandle) => fileHandle.getFile());
-			const headText = await headFile.text();
-			if (headText.includes("ref: refs/heads/main"))
-				setStatus(STATUS_ON_MAIN_BRANCH);
-			else setStatus(STATUS_READY);
-			setCurrentBranch(headText.replace("ref: refs/heads/", "").trim());
-		} catch {
-			setError("リポジトリの HEAD 情報の取得に失敗しました。");
-			setStatus(STATUS_OPEN_REPO);
-		}
+		await handleRefreshBranch();
 	};
 
 	return (
@@ -271,7 +278,13 @@ export default function UtilsArticles() {
 						<div className={InputContainerBaseStyle}>
 							<GitBranch />
 							{currentBranch}
-							<RefreshCw />
+							<button
+								type="button"
+								onClick={handleRefreshBranch}
+								className={css({ cursor: "pointer" })}
+							>
+								<RefreshCw />
+							</button>
 						</div>
 						<div
 							className={cx(InputContainerBaseStyle, css({ width: "full" }))}
