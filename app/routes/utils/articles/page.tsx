@@ -113,6 +113,7 @@ export default function UtilsArticles() {
 	const [articleContent, setArticleContent] = useState<ReactNode>(<Fragment />);
 
 	const directoryHandler = useRef<FileSystemDirectoryHandle>(null);
+	const articleAssetsMap = useRef<Map<string, string>>(null); // ファイル名 -> object URL
 
 	useEffect(() => {
 		if (typeof window === "undefined") return;
@@ -150,7 +151,21 @@ export default function UtilsArticles() {
 		setArticleContent(<p>Loading...</p>);
 
 		const fn = async () => {
-			const html = await md2html(content);
+			let html = await md2html(content);
+
+			// img タグの src を object URL に置き換える
+			const parser = new DOMParser().parseFromString(html, "text/html");
+			const imgElements = parser.querySelectorAll("img");
+			imgElements.forEach((img) => {
+				const src = img.getAttribute("src")?.split("/").slice(-1)[0];
+				const lastDotIndex = src?.lastIndexOf(".");
+				const name = lastDotIndex === -1 ? src : src?.slice(0, lastDotIndex);
+				if (name && articleAssetsMap.current?.has(name)) {
+					img.setAttribute("src", articleAssetsMap.current?.get(name) ?? "");
+				}
+			});
+			html = parser.body.innerHTML;
+
 			const articleElem = await unified()
 				.use(rehypeParse, { fragment: true })
 				.use(rehypeReact, {
@@ -171,6 +186,36 @@ export default function UtilsArticles() {
 
 		void fn();
 	}, [content]);
+
+	const refreshArticleAssets = async () => {
+		if (!directoryHandler.current) return;
+		// object url を revoke する
+		if (articleAssetsMap.current) {
+			for (const url of articleAssetsMap.current.values())
+				URL.revokeObjectURL(url);
+		}
+		articleAssetsMap.current = new Map();
+
+		const docsDirHandler =
+			await directoryHandler.current.getDirectoryHandle("docs");
+		const newsDirHandler = await docsDirHandler.getDirectoryHandle("news");
+		const yearDirHandler = await newsDirHandler.getDirectoryHandle(year);
+		const articleDirHandler = await yearDirHandler.getDirectoryHandle(slug);
+
+		for await (const entry of articleDirHandler.values()) {
+			if (entry.kind === "file") {
+				const file = await entry.getFile();
+				// 画像のみ対象
+				if (file.type.startsWith("image/")) {
+					const lastDotIndex = file.name.lastIndexOf(".");
+					const name =
+						lastDotIndex === -1 ? file.name : file.name.slice(0, lastDotIndex);
+					const url = URL.createObjectURL(file);
+					articleAssetsMap.current.set(name, url);
+				}
+			}
+		}
+	};
 
 	const handleRefreshBranch = async () => {
 		setError(null);
@@ -287,6 +332,9 @@ export default function UtilsArticles() {
 			const fileHandle = await articleDirHandler.getFileHandle("index.md");
 			const file = await fileHandle.getFile();
 			const text = await file.text();
+			await refreshArticleAssets();
+			// content にセットするのは assets を読み込んでから
+			// 画像が読み込まれないので
 			setValue("content", text, {
 				shouldValidate: true,
 				shouldDirty: true,
@@ -553,8 +601,14 @@ image: photo-thumb.avif
 													slug,
 													content,
 													...frontmatter,
+													image:
+														articleAssetsMap.current?.get(
+															frontmatter.image
+																?.split("/")[0]
+																.replace("-thumb.avif", "") ?? "",
+														) ?? frontmatter.image,
 												}}
-												path={`/news/${year}/${slug}/`}
+												path=""
 											/>
 											<ArticleHeader
 												article={{ year, slug, content, ...frontmatter }}
