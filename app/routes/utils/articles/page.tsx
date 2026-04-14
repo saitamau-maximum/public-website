@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
 	Code,
 	Eye,
@@ -12,6 +12,9 @@ import { css, cx } from "styled-system/css";
 import { ButtonLike } from "~/components/button-like";
 import { H1 } from "~/components/heading";
 import { UnorderedList } from "~/components/unordered-list";
+import { ErrorBox } from "./internal/components/error-box";
+import { SimpleCodeBlock } from "./internal/components/simple-code-block";
+import { StatusText } from "./internal/components/status-text";
 
 const STATUS_CHECKING = 0 as const;
 const STATUS_OPEN_REPO = 1 as const;
@@ -25,56 +28,6 @@ type StatusNumber =
 	| typeof STATUS_REPO_OPENED
 	| typeof STATUS_ON_MAIN_BRANCH
 	| typeof STATUS_READY;
-
-const StatusText = ({ children }: { children: ReactNode }) => {
-	return (
-		<p
-			className={css({
-				fontSize: "lg",
-				fontWeight: "bold",
-			})}
-		>
-			{children}
-		</p>
-	);
-};
-
-const CodeBlock = ({ code }: { code: string }) => {
-	return (
-		<pre
-			className={css({
-				backgroundColor: "gray.100",
-				borderColor: "gray.300",
-				borderWidth: 1,
-				borderStyle: "solid",
-				padding: 4,
-				borderRadius: 4,
-				overflowX: "auto",
-				userSelect: "all",
-			})}
-		>
-			{code}
-		</pre>
-	);
-};
-
-const ErrorBox = ({ children }: { children: ReactNode }) => {
-	return (
-		<div
-			className={css({
-				backgroundColor: "rose.50",
-				color: "rose.700",
-				padding: 4,
-				borderRadius: 4,
-				borderColor: "rose.300",
-				borderWidth: 1,
-				borderStyle: "solid",
-			})}
-		>
-			{children}
-		</div>
-	);
-};
 
 const InputContainerBaseStyle = css({
 	display: "flex",
@@ -325,7 +278,7 @@ image: photo-thumb.avif
 						もしまだ public-website
 						リポジトリをクローンしてない場合は、以下のコマンドでクローンしてください。
 					</p>
-					<CodeBlock code="git clone https://github.com/saitamau-maximum/public-website.git" />
+					<SimpleCodeBlock code="git clone https://github.com/saitamau-maximum/public-website.git" />
 					<p>
 						<button type="button" onClick={handleOpenRepo}>
 							<ButtonLike>public-website リポジトリを開く</ButtonLike>
@@ -345,7 +298,7 @@ image: photo-thumb.avif
 						main ブランチが開かれています。 記事の作成や編集を行う前に、 main
 						ブランチから新しいブランチを切ってください。
 					</p>
-					<CodeBlock code="git checkout -b docs/new-branch-name" />
+					<SimpleCodeBlock code="git checkout -b docs/new-branch-name" />
 					<p className={css({ fontSize: "sm" })}>
 						「docs/new-branch-name」の部分は任意のブランチ名に置き換えてください。
 					</p>
