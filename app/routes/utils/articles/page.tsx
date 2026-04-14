@@ -761,7 +761,7 @@ updatedAt: ${formatedDate}
 					</div>
 				</>
 			)}
-			{Object.entries(formErrors).length > 0 && (
+			{status === STATUS_READY && Object.entries(formErrors).length > 0 && (
 				<ErrorBox>
 					<StatusText>入力内容にエラーがあります</StatusText>
 					<UnorderedList>
