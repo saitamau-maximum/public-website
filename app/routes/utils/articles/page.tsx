@@ -1,5 +1,6 @@
 import { type ReactNode, useEffect, useRef, useState } from "react";
-import { css } from "styled-system/css";
+import { Code, Edit3, Eye, Folder, GitBranch, RefreshCw } from "react-feather";
+import { css, cx } from "styled-system/css";
 import { ButtonLike } from "~/components/button-like";
 import { H1 } from "~/components/heading";
 import { UnorderedList } from "~/components/unordered-list";
@@ -67,12 +68,35 @@ const ErrorBox = ({ children }: { children: ReactNode }) => {
 	);
 };
 
+const InputContainerBaseStyle = css({
+	display: "flex",
+	gap: 2,
+	flexWrap: "wrap",
+	alignItems: "center",
+});
+
+const InputBaseStyle = css({
+	borderColor: "gray.300",
+	borderWidth: 1,
+	borderStyle: "solid",
+	borderRadius: 4,
+	padding: 2,
+	maxWidth: "full",
+});
+
 export default function UtilsArticles() {
 	const [status, setStatus] = useState<StatusNumber>(STATUS_CHECKING);
 	const [error, setError] = useState<string | null>(null);
 	const [supported, setSupported] = useState<boolean>(true);
 
 	const directoryHandler = useRef<FileSystemDirectoryHandle>(null);
+
+	// 小規模なので react-hook-form などは使わずに自前で状態管理する
+	const [yearDirname, setYearDirname] = useState<string>("");
+	const [slug, setSlug] = useState<string>("");
+	const [title, setTitle] = useState<string>("");
+	const [content, setContent] = useState<string>("");
+	const [currentBranch, setCurrentBranch] = useState<string>("");
 
 	useEffect(() => {
 		if (typeof window === "undefined") return;
@@ -140,6 +164,7 @@ export default function UtilsArticles() {
 			if (headText.includes("ref: refs/heads/main"))
 				setStatus(STATUS_ON_MAIN_BRANCH);
 			else setStatus(STATUS_READY);
+			setCurrentBranch(headText.replace("ref: refs/heads/", "").trim());
 		} catch {
 			setError("リポジトリの HEAD 情報の取得に失敗しました。");
 			setStatus(STATUS_OPEN_REPO);
@@ -199,6 +224,134 @@ export default function UtilsArticles() {
 					<p className={css({ fontSize: "sm" })}>
 						「docs/new-branch-name」の部分は任意のブランチ名に置き換えてください。
 					</p>
+				</>
+			)}
+			{status === STATUS_READY && (
+				<>
+					<StatusText>準備完了！ 記事の作成や編集ができます</StatusText>
+					<div
+						className={css({
+							display: "flex",
+							flexDirection: "column",
+							flexWrap: "nowrap",
+							gap: 6,
+							width: "full",
+							padding: 4,
+						})}
+					>
+						<div className={InputContainerBaseStyle}>
+							<Folder />
+							<select
+								className={cx(InputBaseStyle, css({ width: "auto" }))}
+								value={yearDirname}
+								onChange={(e) => setYearDirname(e.target.value)}
+							>
+								{
+									// 2024 年から今年までの年を選択肢として表示
+									new Array(new Date().getFullYear() - 2024 + 1)
+										.fill(0)
+										.map((_, i) => {
+											const year = new Date().getFullYear() - i;
+											return (
+												<option key={year} value={year.toString()}>
+													{year}
+												</option>
+											);
+										})
+								}
+							</select>
+							{" / "}
+							<input
+								className={cx(InputBaseStyle, css({ flexGrow: 1 }))}
+								placeholder="記事のスラッグ (例: my-new-article)"
+								value={slug}
+								onChange={(e) => setSlug(e.target.value)}
+							/>
+						</div>
+						<div className={InputContainerBaseStyle}>
+							<GitBranch />
+							{currentBranch}
+							<RefreshCw />
+						</div>
+						<div
+							className={cx(InputContainerBaseStyle, css({ width: "full" }))}
+						>
+							<Edit3 />
+							<input
+								className={cx(InputBaseStyle, css({ flexGrow: 1 }))}
+								placeholder="記事のタイトル"
+								value={title}
+								onChange={(e) => setTitle(e.target.value)}
+							/>
+						</div>
+						<div className={css({ width: "full", display: "flex", gap: 4 })}>
+							<div
+								className={cx(
+									InputContainerBaseStyle,
+									css({
+										flexGrow: 1,
+										flexShrink: 1,
+										flexBasis: 0,
+										flexDirection: "column",
+									}),
+								)}
+							>
+								<span
+									className={css({
+										display: "inline-flex",
+										alignItems: "center",
+										gap: 1,
+									})}
+								>
+									<Code />
+									記事の内容 (Markdown)
+								</span>
+								<textarea
+									className={cx(
+										InputBaseStyle,
+										css({ width: "full", height: 96 }),
+									)}
+									value={content}
+									onChange={(e) => setContent(e.target.value)}
+								/>
+							</div>
+							<div
+								className={cx(
+									InputContainerBaseStyle,
+									css({
+										flexGrow: 1,
+										flexShrink: 1,
+										flexBasis: 0,
+										flexDirection: "column",
+									}),
+								)}
+							>
+								<span
+									className={css({
+										display: "inline-flex",
+										alignItems: "center",
+										gap: 1,
+									})}
+								>
+									<Eye />
+									プレビュー
+								</span>
+								<div
+									className={css({
+										width: "full",
+										maxWidth: "full",
+										height: 96,
+										borderColor: "gray.300",
+										borderWidth: 1,
+										borderStyle: "solid",
+										borderRadius: 4,
+										padding: 2,
+										overflowY: "auto",
+									})}
+								></div>
+							</div>
+						</div>
+					</div>
 				</>
 			)}
 			{error && (
