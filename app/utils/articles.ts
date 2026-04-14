@@ -3,14 +3,17 @@ import { VFile } from "vfile";
 import { matter } from "vfile-matter";
 
 export const newsArticleFrontmatterSchema = v.object({
-	title: v.pipe(v.string(), v.nonEmpty("タイトルを入力してください")),
+	title: v.pipe(
+		v.string("タイトルを入力してください"),
+		v.nonEmpty("タイトルを入力してください"),
+	),
 	createdAt: v.pipe(
-		v.string(),
+		v.string("日付を入力してください"),
 		v.isoDate("日付の形式が正しくありません"),
 		v.toDate(),
 	),
 	updatedAt: v.pipe(
-		v.string(),
+		v.string("日付を入力してください"),
 		v.isoDate("日付の形式が正しくありません"),
 		v.toDate(),
 	),

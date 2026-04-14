@@ -1,3 +1,4 @@
+import { valibotResolver } from "@hookform/resolvers/valibot";
 import { useEffect, useRef, useState } from "react";
 import {
 	Code,
@@ -8,10 +9,15 @@ import {
 	RefreshCw,
 	Save,
 } from "react-feather";
+import { useForm } from "react-hook-form";
 import { css, cx } from "styled-system/css";
+import * as v from "valibot";
+import { VFile } from "vfile";
+import { matter } from "vfile-matter";
 import { ButtonLike } from "~/components/button-like";
 import { H1 } from "~/components/heading";
 import { UnorderedList } from "~/components/unordered-list";
+import { newsArticleFrontmatterSchema } from "~/utils/articles";
 import { ErrorBox } from "./internal/components/error-box";
 import { SimpleCodeBlock } from "./internal/components/simple-code-block";
 import { StatusText } from "./internal/components/status-text";
@@ -45,20 +51,46 @@ const InputBaseStyle = css({
 	maxWidth: "full",
 });
 
+const FormSchema = v.object({
+	year: v.pipe(v.string(), v.regex(/^\d{4}$/, "年の形式がおかしいです")), // 4 桁の数字
+	slug: v.pipe(
+		v.string(),
+		v.nonEmpty("slug は必須です"),
+		v.regex(
+			/^[a-z0-9-]+$/,
+			"slug は英数小文字とハイフンのみ含めることができます",
+		),
+	), // 小文字の英数字とハイフンのみ
+	content: v.pipe(
+		v.string(),
+		v.nonEmpty("記事の内容が入力されていません"),
+		v.rawCheck(({ addIssue, dataset }) => {
+			if (!dataset.typed) return;
+
+			// frontmatter check
+			const file = new VFile(dataset.value);
+			matter(file);
+			const { matter: data } = file.data;
+			const { issues } = v.safeParse(newsArticleFrontmatterSchema, data);
+			if (issues && issues.length > 0) {
+				for (const issue of issues) {
+					addIssue({
+						input: issue.input,
+						message: `frontmatter.${issue.path?.at(0)?.key}: ${issue.message}`,
+					});
+				}
+			}
+		}),
+	),
+});
+
 export default function UtilsArticles() {
 	const [status, setStatus] = useState<StatusNumber>(STATUS_CHECKING);
 	const [error, setError] = useState<string | null>(null);
 	const [supported, setSupported] = useState<boolean>(true);
+	const [currentBranch, setCurrentBranch] = useState<string>("");
 
 	const directoryHandler = useRef<FileSystemDirectoryHandle>(null);
-
-	// 小規模なので react-hook-form などは使わずに自前で状態管理する
-	const [yearDirname, setYearDirname] = useState<string>(
-		new Date().getFullYear().toString(),
-	);
-	const [slug, setSlug] = useState<string>("");
-	const [content, setContent] = useState<string>("");
-	const [currentBranch, setCurrentBranch] = useState<string>("");
 
 	useEffect(() => {
 		if (typeof window === "undefined") return;
@@ -70,6 +102,25 @@ export default function UtilsArticles() {
 		setSupported(res);
 		setStatus(res ? STATUS_OPEN_REPO : STATUS_CHECKING);
 	}, []);
+
+	const {
+		register,
+		watch,
+		setValue,
+		formState: { errors: formErrors, isValid: isFormValid },
+	} = useForm({
+		resolver: valibotResolver(FormSchema),
+		defaultValues: {
+			year: new Date().getFullYear().toString(),
+			slug: "",
+			content: "",
+		},
+		mode: "all",
+	});
+
+	const year = watch("year");
+	const slug = watch("slug");
+	const content = watch("content");
 
 	const handleRefreshBranch = async () => {
 		setError(null);
@@ -163,12 +214,7 @@ export default function UtilsArticles() {
 
 		// 年ディレクトリがなければ作成
 		try {
-			// 妥当かどうかチェック
-			if (!/^\d{4}$/.test(yearDirname)) {
-				setError("年は 4 桁の数字である必要があります。");
-				return;
-			}
-			yearDirHandler = await newsDirHandler.getDirectoryHandle(yearDirname, {
+			yearDirHandler = await newsDirHandler.getDirectoryHandle(year, {
 				create: true,
 			});
 		} catch {
@@ -178,13 +224,6 @@ export default function UtilsArticles() {
 
 		// 記事ディレクトリがなければ作成
 		try {
-			// 妥当かどうかチェック
-			if (!/^[a-z0-9-]+$/.test(slug)) {
-				setError(
-					"スラッグは小文字の英数字とハイフンのみである必要があります。",
-				);
-				return;
-			}
 			articleDirHandler = await yearDirHandler.getDirectoryHandle(slug, {
 				create: true,
 			});
@@ -198,11 +237,16 @@ export default function UtilsArticles() {
 			const fileHandle = await articleDirHandler.getFileHandle("index.md");
 			const file = await fileHandle.getFile();
 			const text = await file.text();
-			setContent(text);
+			setValue("content", text, {
+				shouldValidate: true,
+				shouldDirty: true,
+				shouldTouch: true,
+			});
 		} catch {
 			// ファイルがない場合は新規作成する想定なのでエラーは無視
 			const formatedDate = new Date().toISOString().split("T")[0];
-			setContent(
+			setValue(
+				"content",
 				`---
 title: 記事のタイトル
 createdAt: ${formatedDate}
@@ -211,6 +255,7 @@ description: 記事の説明
 image: photo-thumb.avif
 ---
 `.trimStart(),
+				{ shouldValidate: true, shouldDirty: true, shouldTouch: true },
 			);
 		}
 	};
@@ -227,7 +272,7 @@ image: photo-thumb.avif
 		let articleDirHandler: FileSystemDirectoryHandle | null = null;
 
 		try {
-			yearDirHandler = await newsDirHandler.getDirectoryHandle(yearDirname);
+			yearDirHandler = await newsDirHandler.getDirectoryHandle(year);
 			articleDirHandler = await yearDirHandler.getDirectoryHandle(slug);
 		} catch {
 			setError(
@@ -322,8 +367,7 @@ image: photo-thumb.avif
 							<Folder />
 							<select
 								className={cx(InputBaseStyle, css({ width: "auto" }))}
-								defaultValue={yearDirname}
-								onChange={(e) => setYearDirname(e.target.value)}
+								{...register("year")}
 							>
 								{
 									// 2024 年から今年までの年を選択肢として表示
@@ -343,8 +387,7 @@ image: photo-thumb.avif
 							<input
 								className={cx(InputBaseStyle, css({ flexGrow: 1 }))}
 								placeholder="記事のスラッグ (例: my-new-article)"
-								value={slug}
-								onChange={(e) => setSlug(e.target.value)}
+								{...register("slug")}
 							/>
 							<button
 								type="button"
@@ -354,8 +397,9 @@ image: photo-thumb.avif
 									alignItems: "center",
 									gap: 1,
 								})}
+								disabled={!!formErrors.year || !!formErrors.slug}
 							>
-								<ButtonLike>
+								<ButtonLike disabled={!!formErrors.year || !!formErrors.slug}>
 									<File />
 									Open / Create
 								</ButtonLike>
@@ -368,8 +412,9 @@ image: photo-thumb.avif
 									alignItems: "center",
 									gap: 1,
 								})}
+								disabled={!isFormValid}
 							>
-								<ButtonLike>
+								<ButtonLike disabled={!isFormValid}>
 									<Save />
 									Save
 								</ButtonLike>
@@ -413,8 +458,7 @@ image: photo-thumb.avif
 										InputBaseStyle,
 										css({ width: "full", height: 96 }),
 									)}
-									value={content}
-									onChange={(e) => setContent(e.target.value)}
+									{...register("content")}
 								/>
 							</div>
 							<div
@@ -465,6 +509,18 @@ image: photo-thumb.avif
 						頻発する場合には、再現手順とともに public-website リポジトリの Issue
 						に報告してください。
 					</p>
+				</ErrorBox>
+			)}
+			{Object.entries(formErrors).length > 0 && (
+				<ErrorBox>
+					<StatusText>入力内容にエラーがあります</StatusText>
+					<UnorderedList>
+						{Object.entries(formErrors).map(([field, error]) => (
+							<li key={field}>
+								{field}: {error.message}
+							</li>
+						))}
+					</UnorderedList>
 				</ErrorBox>
 			)}
 		</>
