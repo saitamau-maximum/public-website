@@ -532,6 +532,16 @@ updatedAt: ${formatedDate}
 					<p className={css({ fontSize: "sm" })}>
 						「docs/new-branch-name」の部分は任意のブランチ名に置き換えてください。
 					</p>
+					<button
+						type="button"
+						onClick={handleRefreshBranch}
+						className={cx(TextWithIconStyle, css({ marginLeft: 4 }))}
+					>
+						<ButtonLike variant="secondary">
+							<RefreshCw />
+							ブランチを再確認
+						</ButtonLike>
+					</button>
 				</>
 			)}
 			{status === STATUS_READY && (
