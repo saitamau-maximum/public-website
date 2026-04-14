@@ -683,6 +683,10 @@ image: photo-thumb.avif
 								>
 									{frontmatter ? (
 										<>
+											<ArticleHeader
+												article={{ year, slug, content, ...frontmatter }}
+											/>
+											<article>{articleContent}</article>
 											<ArticleCard
 												article={{
 													year,
@@ -698,10 +702,6 @@ image: photo-thumb.avif
 												}}
 												path=""
 											/>
-											<ArticleHeader
-												article={{ year, slug, content, ...frontmatter }}
-											/>
-											<article>{articleContent}</article>
 										</>
 									) : (
 										<ErrorBox>
