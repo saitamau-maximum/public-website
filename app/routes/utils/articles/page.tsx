@@ -8,6 +8,8 @@ import {
 	File,
 	Folder,
 	GitBranch,
+	Image,
+	Plus,
 	RefreshCw,
 	Save,
 } from "react-feather";
@@ -57,6 +59,12 @@ const InputBaseStyle = css({
 	borderRadius: 4,
 	padding: 2,
 	maxWidth: "full",
+});
+
+const TextWithIconStyle = css({
+	display: "flex",
+	alignItems: "center",
+	gap: 1,
 });
 
 const parseFrontmatter = (content: string) => {
@@ -111,9 +119,11 @@ export default function UtilsArticles() {
 	const [supported, setSupported] = useState<boolean>(true);
 	const [currentBranch, setCurrentBranch] = useState<string>("");
 	const [articleContent, setArticleContent] = useState<ReactNode>(<Fragment />);
+	const [articleAssets, setArticleAssets] = useState<Record<string, string>>(
+		{},
+	); // ファイル名 -> object URL
 
 	const directoryHandler = useRef<FileSystemDirectoryHandle>(null);
-	const articleAssetsMap = useRef<Map<string, string>>(null); // ファイル名 -> object URL
 
 	useEffect(() => {
 		if (typeof window === "undefined") return;
@@ -167,8 +177,8 @@ export default function UtilsArticles() {
 				const src = img.getAttribute("src")?.split("/").slice(-1)[0];
 				const lastDotIndex = src?.lastIndexOf(".");
 				const name = lastDotIndex === -1 ? src : src?.slice(0, lastDotIndex);
-				if (name && articleAssetsMap.current?.has(name)) {
-					img.setAttribute("src", articleAssetsMap.current?.get(name) ?? "");
+				if (name && articleAssets[name]) {
+					img.setAttribute("src", articleAssets[name]);
 				}
 			});
 			html = parser.body.innerHTML;
@@ -192,16 +202,12 @@ export default function UtilsArticles() {
 		};
 
 		void fn();
-	}, [content]);
+	}, [content, articleAssets]);
 
 	const refreshArticleAssets = async () => {
 		if (!directoryHandler.current) return;
 		// object url を revoke する
-		if (articleAssetsMap.current) {
-			for (const url of articleAssetsMap.current.values())
-				URL.revokeObjectURL(url);
-		}
-		articleAssetsMap.current = new Map();
+		for (const url of Object.values(articleAssets)) URL.revokeObjectURL(url);
 
 		const docsDirHandler =
 			await directoryHandler.current.getDirectoryHandle("docs");
@@ -218,7 +224,7 @@ export default function UtilsArticles() {
 					const name =
 						lastDotIndex === -1 ? file.name : file.name.slice(0, lastDotIndex);
 					const url = URL.createObjectURL(file);
-					articleAssetsMap.current.set(name, url);
+					setArticleAssets((prev) => ({ ...prev, [name]: url }));
 				}
 			}
 		}
@@ -399,6 +405,42 @@ image: photo-thumb.avif
 		}
 	};
 
+	const handleSaveAsset = async () => {
+		if (!directoryHandler.current) return;
+
+		// ファイル選択画面
+		const fileHandles = await window.showOpenFilePicker({
+			id: "asset-file-picker",
+			types: [
+				{
+					description: "Image files",
+					accept: {
+						"image/*": [".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif"],
+					},
+				},
+			],
+			multiple: true,
+			excludeAcceptAllOption: true,
+		});
+
+		// 選択されたファイルを記事のディレクトリにコピー
+		const docsDirHandler =
+			await directoryHandler.current.getDirectoryHandle("docs");
+		const newsDirHandler = await docsDirHandler.getDirectoryHandle("news");
+		const yearDirHandler = await newsDirHandler.getDirectoryHandle(year);
+		const articleDirHandler = await yearDirHandler.getDirectoryHandle(slug);
+
+		for (const fileHandle of fileHandles) {
+			const file = await fileHandle.getFile();
+			await articleDirHandler
+				.getFileHandle(file.name, { create: true })
+				.then((handle) => handle.createWritable())
+				.then((writable) => writable.write(file).then(() => writable.close()));
+		}
+
+		await refreshArticleAssets();
+	};
+
 	return (
 		<>
 			<title>記事作成支援ツール </title>
@@ -497,11 +539,7 @@ image: photo-thumb.avif
 							<button
 								type="button"
 								onClick={handleOpenFile}
-								className={css({
-									display: "flex",
-									alignItems: "center",
-									gap: 1,
-								})}
+								className={TextWithIconStyle}
 								disabled={!!formErrors.year || !!formErrors.slug}
 							>
 								<ButtonLike disabled={!!formErrors.year || !!formErrors.slug}>
@@ -512,11 +550,7 @@ image: photo-thumb.avif
 							<button
 								type="button"
 								onClick={handleSaveFile}
-								className={css({
-									display: "flex",
-									alignItems: "center",
-									gap: 1,
-								})}
+								className={TextWithIconStyle}
 								disabled={!isFormValid}
 							>
 								<ButtonLike disabled={!isFormValid}>
@@ -536,6 +570,53 @@ image: photo-thumb.avif
 								<RefreshCw />
 							</button>
 						</div>
+						<div className={InputContainerBaseStyle}>
+							<span className={TextWithIconStyle}>
+								<Image />
+								<strong>Assets</strong>
+							</span>
+							<ul
+								className={css({ display: "flex", gap: 4, flexWrap: "wrap" })}
+							>
+								{Object.entries(articleAssets).map(([name, url]) => (
+									<li
+										key={name}
+										className={css({
+											display: "flex",
+											flexDirection: "column",
+											gap: 1,
+											alignItems: "center",
+										})}
+									>
+										<img
+											src={url}
+											alt={name}
+											className={css({
+												objectFit: "contain",
+												width: "64px",
+												height: "64px",
+											})}
+										/>
+										{name}
+									</li>
+								))}
+								<li>
+									<button
+										type="button"
+										className={css({ height: "full" })}
+										onClick={handleSaveAsset}
+										disabled={!!formErrors.year || !!formErrors.slug}
+									>
+										<ButtonLike
+											variant="secondary"
+											disabled={!!formErrors.year || !!formErrors.slug}
+										>
+											<Plus />
+										</ButtonLike>
+									</button>
+								</li>
+							</ul>
+						</div>
 						<div className={css({ width: "full", display: "flex", gap: 4 })}>
 							<div
 								className={cx(
@@ -548,15 +629,9 @@ image: photo-thumb.avif
 									}),
 								)}
 							>
-								<span
-									className={css({
-										display: "inline-flex",
-										alignItems: "center",
-										gap: 1,
-									})}
-								>
+								<span className={TextWithIconStyle}>
 									<Code />
-									記事の内容 (Markdown)
+									<strong>Source Markdown</strong>
 								</span>
 								<textarea
 									className={cx(
@@ -577,15 +652,9 @@ image: photo-thumb.avif
 									}),
 								)}
 							>
-								<span
-									className={css({
-										display: "inline-flex",
-										alignItems: "center",
-										gap: 1,
-									})}
-								>
+								<span className={TextWithIconStyle}>
 									<Eye />
-									プレビュー
+									<strong>Preview</strong>
 								</span>
 								<div
 									className={css({
@@ -609,11 +678,11 @@ image: photo-thumb.avif
 													content,
 													...frontmatter,
 													image:
-														articleAssetsMap.current?.get(
+														articleAssets[
 															frontmatter.image
 																?.split("/")[0]
-																.replace("-thumb.avif", "") ?? "",
-														) ?? frontmatter.image,
+																.replace("-thumb.avif", "") ?? ""
+														] ?? frontmatter.image,
 												}}
 												path=""
 											/>
