@@ -130,6 +130,7 @@ export default function UtilsArticles() {
 		register,
 		watch,
 		setValue,
+		trigger,
 		formState: { errors: formErrors, isValid: isFormValid },
 	} = useForm({
 		resolver: valibotResolver(FormSchema),
@@ -146,6 +147,12 @@ export default function UtilsArticles() {
 	const content = watch("content");
 	const frontmatterRes = parseFrontmatter(content);
 	const frontmatter = frontmatterRes.success ? frontmatterRes.output : null;
+
+	// 各ボタンの状態をリセットするために、初期状態でも trigger しておく
+	// ex: 初期状態だと slug が空だが、 Open/Create が推せるようになってしまうので
+	useEffect(() => {
+		if (status === STATUS_READY) trigger();
+	}, [trigger, status]);
 
 	useEffect(() => {
 		setArticleContent(<p>Loading...</p>);
