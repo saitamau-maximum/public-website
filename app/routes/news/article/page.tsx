@@ -1,5 +1,4 @@
 import { parseMarkdownToHTML } from "@saitamau-maximum/markdown-processor/server";
-import matter from "gray-matter";
 import { Fragment } from "react";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useLoaderData } from "react-router";
@@ -7,6 +6,8 @@ import rehypeParse from "rehype-parse";
 import rehypeReact from "rehype-react";
 import { css } from "styled-system/css";
 import { unified } from "unified";
+import { VFile } from "vfile";
+import { matter } from "vfile-matter";
 import { Breadcrumb } from "~/components/breadcrumb";
 import { ExternalLink } from "~/components/external-link";
 import { H1, H2, H3, H4 } from "~/components/heading";
@@ -31,7 +32,9 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 		throw new Response("Not Found", { status: 404 });
 	}
 
-	const { content } = matter(rawContent);
+	const vfile = new VFile(rawContent);
+	matter(vfile, { strip: true }); // frontmatter 部分を取り除く
+	const content = String(vfile.value);
 	const { content: html } = await parseMarkdownToHTML(content);
 
 	return {
