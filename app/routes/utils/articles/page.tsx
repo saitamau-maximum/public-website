@@ -27,6 +27,7 @@ import { ButtonLike } from "~/components/button-like";
 import { ExternalLink } from "~/components/external-link";
 import { H1, H2, H3, H4 } from "~/components/heading";
 import { UnorderedList } from "~/components/unordered-list";
+import { useToast } from "~/hooks/use-toast";
 import { newsArticleFrontmatterSchema } from "~/utils/articles";
 import { ErrorBox } from "./internal/components/error-box";
 import { SimpleCodeBlock } from "./internal/components/simple-code-block";
@@ -124,7 +125,6 @@ const FormSchema = v.object({
 
 export default function UtilsArticles() {
 	const [status, setStatus] = useState<StatusNumber>(STATUS_CHECKING);
-	const [error, setError] = useState<string | null>(null);
 	const [supported, setSupported] = useState<boolean>(true);
 	const [currentBranch, setCurrentBranch] = useState<string>("");
 	const [articleContent, setArticleContent] = useState<ReactNode>(<Fragment />);
@@ -133,6 +133,8 @@ export default function UtilsArticles() {
 	); // ファイル名 -> object URL
 
 	const directoryHandler = useRef<FileSystemDirectoryHandle>(null);
+
+	const { pushToast } = useToast();
 
 	useEffect(() => {
 		if (typeof window === "undefined") return;
@@ -243,7 +245,6 @@ export default function UtilsArticles() {
 	};
 
 	const handleRefreshBranch = async () => {
-		setError(null);
 		if (!directoryHandler.current) return;
 
 		try {
@@ -258,14 +259,15 @@ export default function UtilsArticles() {
 			else setStatus(STATUS_READY);
 			setCurrentBranch(headText.replace("ref: refs/heads/", "").trim());
 		} catch {
-			setError("リポジトリの HEAD 情報の取得に失敗しました。");
+			pushToast({
+				title: "リポジトリの HEAD 情報の取得に失敗しました",
+				type: "error",
+			});
 			setStatus(STATUS_OPEN_REPO);
 		}
 	};
 
 	const handleOpenRepo = async () => {
-		setError(null);
-
 		// mounted かつサポートチェック済みである前提
 		try {
 			directoryHandler.current = await window.showDirectoryPicker({
@@ -274,7 +276,10 @@ export default function UtilsArticles() {
 			});
 			setStatus(STATUS_REPO_OPENED);
 		} catch {
-			setError("ディレクトリの選択がキャンセルされました。");
+			pushToast({
+				title: "ディレクトリの選択がキャンセルされました",
+				type: "info",
+			});
 			return;
 		}
 
@@ -310,19 +315,25 @@ export default function UtilsArticles() {
 		}
 
 		if (!isPublicWebsiteRepo) {
-			setError(
-				"選択されたディレクトリは public-website リポジトリのルートではありません。",
-			);
+			pushToast({
+				title:
+					"選択されたディレクトリは public-website リポジトリのルートではありません",
+				type: "error",
+			});
 			// もう一度選択させる
 			setStatus(STATUS_OPEN_REPO);
 			return;
 		}
 
 		await handleRefreshBranch();
+
+		pushToast({
+			title: "リポジトリを開きました",
+			type: "success",
+		});
 	};
 
 	const handleOpenFile = async () => {
-		setError(null);
 		if (!directoryHandler.current) return;
 
 		const docsDirHandler =
@@ -338,7 +349,10 @@ export default function UtilsArticles() {
 				create: true,
 			});
 		} catch {
-			setError("年ディレクトリの作成に失敗しました。");
+			pushToast({
+				title: "年ディレクトリの作成に失敗しました",
+				type: "error",
+			});
 			return;
 		}
 
@@ -348,7 +362,10 @@ export default function UtilsArticles() {
 				create: true,
 			});
 		} catch {
-			setError("記事ディレクトリの作成に失敗しました。");
+			pushToast({
+				title: "記事ディレクトリの作成に失敗しました",
+				type: "error",
+			});
 			return;
 		}
 
@@ -385,7 +402,6 @@ updatedAt: ${formatedDate}
 	};
 
 	const handleSaveFile = async () => {
-		setError(null);
 		if (!directoryHandler.current) return;
 
 		const docsDirHandler =
@@ -399,9 +415,11 @@ updatedAt: ${formatedDate}
 			yearDirHandler = await newsDirHandler.getDirectoryHandle(year);
 			articleDirHandler = await yearDirHandler.getDirectoryHandle(slug);
 		} catch {
-			setError(
-				"年ディレクトリまたは記事ディレクトリが見つかりません。 Create ボタンは押しましたか？",
-			);
+			pushToast({
+				title: "年ディレクトリまたは記事ディレクトリが見つかりません",
+				type: "error",
+				description: "Create/Open ボタンは押しましたか？",
+			});
 			return;
 		}
 
@@ -413,9 +431,17 @@ updatedAt: ${formatedDate}
 			await file.write(content);
 			await file.close();
 		} catch {
-			setError("ファイルの保存に失敗しました。");
+			pushToast({
+				title: "ファイルの保存に失敗しました",
+				type: "error",
+			});
 			return;
 		}
+
+		pushToast({
+			title: "ファイルを保存しました",
+			type: "success",
+		});
 	};
 
 	const handleSaveAsset = async () => {
@@ -725,17 +751,6 @@ updatedAt: ${formatedDate}
 						</div>
 					</div>
 				</>
-			)}
-			{error && (
-				<ErrorBox>
-					<StatusText>エラーが発生しました</StatusText>
-					<p>{error}</p>
-					<p className={css({ fontSize: "sm" })}>
-						ページを再読み込みして、もう一度お試しください。
-						頻発する場合には、再現手順とともに public-website リポジトリの Issue
-						に報告してください。
-					</p>
-				</ErrorBox>
 			)}
 			{Object.entries(formErrors).length > 0 && (
 				<ErrorBox>

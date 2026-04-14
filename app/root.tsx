@@ -14,6 +14,7 @@ import stylesheet from "./app.css?url";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { LoadingSpinner } from "./components/loading-spinner";
+import { ToastProvider } from "./hooks/use-toast/toast-provider";
 import { classifyError } from "./utils/classify-error";
 
 export const links: Route.LinksFunction = () => [
@@ -90,7 +91,11 @@ export function Layout({ children }: { children: ReactNode }) {
 }
 
 export default function App() {
-	return <Outlet />;
+	return (
+		<ToastProvider>
+			<Outlet />
+		</ToastProvider>
+	);
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
