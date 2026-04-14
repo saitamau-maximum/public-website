@@ -1,5 +1,7 @@
 import { valibotResolver } from "@hookform/resolvers/valibot";
-import { useEffect, useRef, useState } from "react";
+import { parseMarkdownToHTML } from "@saitamau-maximum/markdown-processor/server";
+import { Fragment, type ReactNode, useEffect, useRef, useState } from "react";
+import { jsx, jsxs } from "react/jsx-runtime";
 import {
 	Code,
 	Eye,
@@ -10,12 +12,18 @@ import {
 	Save,
 } from "react-feather";
 import { useForm } from "react-hook-form";
+import rehypeParse from "rehype-parse";
+import rehypeReact from "rehype-react";
 import { css, cx } from "styled-system/css";
+import { unified } from "unified";
 import * as v from "valibot";
 import { VFile } from "vfile";
 import { matter } from "vfile-matter";
+import { ArticleCard } from "~/components/article-card";
+import { ArticleHeader } from "~/components/article-header";
 import { ButtonLike } from "~/components/button-like";
-import { H1 } from "~/components/heading";
+import { ExternalLink } from "~/components/external-link";
+import { H1, H2, H3, H4 } from "~/components/heading";
 import { UnorderedList } from "~/components/unordered-list";
 import { newsArticleFrontmatterSchema } from "~/utils/articles";
 import { ErrorBox } from "./internal/components/error-box";
@@ -51,6 +59,22 @@ const InputBaseStyle = css({
 	maxWidth: "full",
 });
 
+const parseFrontmatter = (content: string) => {
+	const vfile = new VFile(content);
+	matter(vfile);
+	const { matter: data } = vfile.data;
+
+	return v.safeParse(newsArticleFrontmatterSchema, data);
+};
+
+const md2html = async (markdown: string) => {
+	const vfile = new VFile(markdown);
+	matter(vfile, { strip: true }); // frontmatter 部分を取り除く
+	const content = String(vfile.value);
+	const { content: html } = await parseMarkdownToHTML(content);
+	return html;
+};
+
 const FormSchema = v.object({
 	year: v.pipe(v.string(), v.regex(/^\d{4}$/, "年の形式がおかしいです")), // 4 桁の数字
 	slug: v.pipe(
@@ -68,10 +92,7 @@ const FormSchema = v.object({
 			if (!dataset.typed) return;
 
 			// frontmatter check
-			const file = new VFile(dataset.value);
-			matter(file);
-			const { matter: data } = file.data;
-			const { issues } = v.safeParse(newsArticleFrontmatterSchema, data);
+			const { issues } = parseFrontmatter(dataset.value);
 			if (issues && issues.length > 0) {
 				for (const issue of issues) {
 					addIssue({
@@ -89,6 +110,7 @@ export default function UtilsArticles() {
 	const [error, setError] = useState<string | null>(null);
 	const [supported, setSupported] = useState<boolean>(true);
 	const [currentBranch, setCurrentBranch] = useState<string>("");
+	const [articleContent, setArticleContent] = useState<ReactNode>(<Fragment />);
 
 	const directoryHandler = useRef<FileSystemDirectoryHandle>(null);
 
@@ -121,6 +143,34 @@ export default function UtilsArticles() {
 	const year = watch("year");
 	const slug = watch("slug");
 	const content = watch("content");
+	const frontmatterRes = parseFrontmatter(content);
+	const frontmatter = frontmatterRes.success ? frontmatterRes.output : null;
+
+	useEffect(() => {
+		setArticleContent(<p>Loading...</p>);
+
+		const fn = async () => {
+			const html = await md2html(content);
+			const articleElem = await unified()
+				.use(rehypeParse, { fragment: true })
+				.use(rehypeReact, {
+					Fragment,
+					jsx,
+					jsxs,
+					components: {
+						h2: H2,
+						h3: H3,
+						h4: H4,
+						a: ExternalLink,
+					},
+				})
+				.process(html);
+
+			setArticleContent(articleElem.result);
+		};
+
+		void fn();
+	}, [content]);
 
 	const handleRefreshBranch = async () => {
 		setError(null);
@@ -456,7 +506,7 @@ image: photo-thumb.avif
 								<textarea
 									className={cx(
 										InputBaseStyle,
-										css({ width: "full", height: 96 }),
+										css({ width: "full", height: 96, fontFamily: "mono" }),
 									)}
 									{...register("content")}
 								/>
@@ -494,7 +544,29 @@ image: photo-thumb.avif
 										padding: 2,
 										overflowY: "auto",
 									})}
-								></div>
+								>
+									{frontmatter ? (
+										<>
+											<ArticleCard
+												article={{
+													year,
+													slug,
+													content,
+													...frontmatter,
+												}}
+												path={`/news/${year}/${slug}/`}
+											/>
+											<ArticleHeader
+												article={{ year, slug, content, ...frontmatter }}
+											/>
+											<article>{articleContent}</article>
+										</>
+									) : (
+										<ErrorBox>
+											<StatusText>frontmatter にエラーがあります</StatusText>
+										</ErrorBox>
+									)}
+								</div>
 							</div>
 						</div>
 					</div>
