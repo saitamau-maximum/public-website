@@ -6,12 +6,14 @@ import { UnorderedList } from "~/components/unordered-list";
 
 const STATUS_CHECKING = 0 as const;
 const STATUS_OPEN_REPO = 1 as const;
-const STATUS_ON_MAIN_BRANCH = 2 as const;
-const STATUS_READY = 3 as const;
+const STATUS_REPO_OPENED = 2 as const;
+const STATUS_ON_MAIN_BRANCH = 3 as const;
+const STATUS_READY = 4 as const;
 
 type StatusNumber =
 	| typeof STATUS_CHECKING
 	| typeof STATUS_OPEN_REPO
+	| typeof STATUS_REPO_OPENED
 	| typeof STATUS_ON_MAIN_BRANCH
 	| typeof STATUS_READY;
 
@@ -84,16 +86,69 @@ export default function UtilsArticles() {
 	}, []);
 
 	const handleOpenRepo = async () => {
+		setError(null);
+
 		// mounted かつサポートチェック済みである前提
 		try {
-			directoryHandler.current = await window.showDirectoryPicker();
+			directoryHandler.current = await window.showDirectoryPicker({
+				id: "public-website-repo-picker",
+				mode: "readwrite",
+			});
+			setStatus(STATUS_REPO_OPENED);
 		} catch {
 			setError("ディレクトリの選択がキャンセルされました。");
+			return;
+		}
+
+		// 型ガードとしての二重チェック
+		if (!directoryHandler.current) return;
+
+		// 選択されたディレクトリが public-website リポジトリのルートであるかのチェック
+		let isPublicWebsiteRepo = false;
+
+		try {
+			const gitDirHandler =
+				await directoryHandler.current.getDirectoryHandle(".git");
+
+			// .git/config に saitamau-maximum/public-website がリモートとして登録されているかのチェック
+			const gitConfigFile = await gitDirHandler
+				.getFileHandle("config")
+				.then((fileHandle) => fileHandle.getFile());
+			const gitConfigText = await gitConfigFile.text();
+			if (gitConfigText.includes("saitamau-maximum/public-website"))
+				isPublicWebsiteRepo = true;
+		} catch {
+			// .git ディレクトリがない OR .git/config ファイルがない
+		}
+
+		if (!isPublicWebsiteRepo) {
+			setError(
+				"選択されたディレクトリは public-website リポジトリのルートではありません。",
+			);
+			// もう一度選択させる
+			setStatus(STATUS_OPEN_REPO);
+			return;
+		}
+
+		try {
+			// main ブランチにいるかチェック
+			const headFile = await directoryHandler.current
+				.getDirectoryHandle(".git")
+				.then((gitDir) => gitDir.getFileHandle("HEAD"))
+				.then((fileHandle) => fileHandle.getFile());
+			const headText = await headFile.text();
+			if (headText.includes("ref: refs/heads/main"))
+				setStatus(STATUS_ON_MAIN_BRANCH);
+			else setStatus(STATUS_READY);
+		} catch {
+			setError("リポジトリの HEAD 情報の取得に失敗しました。");
+			setStatus(STATUS_OPEN_REPO);
 		}
 	};
 
 	return (
 		<>
+			<title>記事作成支援ツール </title>
 			<H1>記事作成支援ツール</H1>
 			{status === STATUS_CHECKING &&
 				(supported ? (
@@ -125,6 +180,24 @@ export default function UtilsArticles() {
 						<button type="button" onClick={handleOpenRepo}>
 							<ButtonLike>public-website リポジトリを開く</ButtonLike>
 						</button>
+					</p>
+				</>
+			)}
+			{status === STATUS_REPO_OPENED && (
+				<StatusText>
+					リポジトリが開かれました。 内容を確認しています...
+				</StatusText>
+			)}
+			{status === STATUS_ON_MAIN_BRANCH && (
+				<>
+					<StatusText>main ブランチが開かれています</StatusText>
+					<p>
+						main ブランチが開かれています。 記事の作成や編集を行う前に、 main
+						ブランチから新しいブランチを切ってください。
+					</p>
+					<CodeBlock code="git checkout -b docs/new-branch-name" />
+					<p className={css({ fontSize: "sm" })}>
+						「docs/new-branch-name」の部分は任意のブランチ名に置き換えてください。
 					</p>
 				</>
 			)}
