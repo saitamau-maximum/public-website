@@ -371,11 +371,12 @@ export default function UtilsArticles() {
 			setValue(
 				"content",
 				`---
+# コメントは消してね
 title: 記事のタイトル
 createdAt: ${formatedDate}
 updatedAt: ${formatedDate}
-description: 記事の説明
-image: photo-thumb.avif
+# description: 記事の説明  # optional
+# image: photo-thumb.avif  # optional
 ---
 `.trimStart(),
 				{ shouldValidate: true, shouldDirty: true, shouldTouch: true },
@@ -511,7 +512,10 @@ image: photo-thumb.avif
 			{status === STATUS_READY && (
 				<>
 					<StatusText>準備完了！ 記事の作成や編集ができます</StatusText>
-					<p>自動保存機能はありません。 適宜保存してね</p>
+					<p>
+						自動保存や自動 Commit &amp; Push なんて機能はありません。
+						時々保存して、各自で Commit &amp; Push してね
+					</p>
 					<div
 						className={css({
 							display: "flex",
@@ -577,9 +581,12 @@ image: photo-thumb.avif
 							<button
 								type="button"
 								onClick={handleRefreshBranch}
-								className={css({ cursor: "pointer", marginLeft: 4 })}
+								className={cx(TextWithIconStyle, css({ marginLeft: 4 }))}
 							>
-								<RefreshCw />
+								<ButtonLike variant="secondary">
+									<RefreshCw />
+									ブランチを再確認
+								</ButtonLike>
 							</button>
 						</div>
 						<div className={InputContainerBaseStyle}>
@@ -648,7 +655,12 @@ image: photo-thumb.avif
 								<textarea
 									className={cx(
 										InputBaseStyle,
-										css({ width: "full", height: 96, fontFamily: "mono" }),
+										css({
+											width: "full",
+											height: 96,
+											fontFamily: "mono",
+											backgroundColor: "white",
+										}),
 									)}
 									{...register("content")}
 								/>
