@@ -29,9 +29,9 @@ import { H1, H2, H3, H4 } from "~/components/heading";
 import { UnorderedList } from "~/components/unordered-list";
 import { useToast } from "~/hooks/use-toast";
 import { newsArticleFrontmatterSchema } from "~/utils/articles";
-import { ErrorBox } from "./internal/components/error-box";
 import { SimpleCodeBlock } from "./internal/components/simple-code-block";
 import { StatusText } from "./internal/components/status-text";
+import { WarningBox } from "./internal/components/warning-box";
 import { useDebounce } from "./internal/hooks/use-debounce";
 
 const STATUS_CHECKING = 0 as const;
@@ -488,7 +488,7 @@ updatedAt: ${formatedDate}
 				(supported ? (
 					<StatusText>ブラウザの互換性を確認中...</StatusText>
 				) : (
-					<ErrorBox>
+					<WarningBox>
 						<StatusText>このブラウザはサポートされていません</StatusText>
 						<p>
 							このツールは、以下の API をサポートするブラウザでのみ動作します。
@@ -500,7 +500,7 @@ updatedAt: ${formatedDate}
 							caniuse.com などでブラウザの対応状況を確認してください。 最新版の
 							Chrome での利用を推奨します。
 						</p>
-					</ErrorBox>
+					</WarningBox>
 				))}
 			{status === STATUS_OPEN_REPO && (
 				<>
@@ -752,16 +752,16 @@ updatedAt: ${formatedDate}
 											/>
 										</>
 									) : (
-										<ErrorBox>
+										<WarningBox>
 											<StatusText>frontmatter にエラーがあります</StatusText>
-										</ErrorBox>
+										</WarningBox>
 									)}
 								</div>
 							</div>
 						</div>
 					</div>
 					{Object.entries(formErrors).length > 0 && (
-						<ErrorBox>
+						<WarningBox>
 							<StatusText>入力内容にエラーがあります</StatusText>
 							<UnorderedList>
 								{Object.entries(formErrors).map(([field, error]) => (
@@ -770,7 +770,7 @@ updatedAt: ${formatedDate}
 									</li>
 								))}
 							</UnorderedList>
-						</ErrorBox>
+						</WarningBox>
 					)}
 				</>
 			)}
