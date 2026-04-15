@@ -142,6 +142,7 @@ export default function UtilsArticles() {
 		// ここで使う機能がブラウザでサポートされているかのチェック
 		let res = true;
 		if (!("showDirectoryPicker" in window)) res = false;
+		if (!("showOpenFilePicker" in window)) res = false;
 
 		setSupported(res);
 		setStatus(res ? STATUS_OPEN_REPO : STATUS_CHECKING);
@@ -759,19 +760,19 @@ updatedAt: ${formatedDate}
 							</div>
 						</div>
 					</div>
+					{Object.entries(formErrors).length > 0 && (
+						<ErrorBox>
+							<StatusText>入力内容にエラーがあります</StatusText>
+							<UnorderedList>
+								{Object.entries(formErrors).map(([field, error]) => (
+									<li key={field}>
+										{field}: {error.message}
+									</li>
+								))}
+							</UnorderedList>
+						</ErrorBox>
+					)}
 				</>
-			)}
-			{status === STATUS_READY && Object.entries(formErrors).length > 0 && (
-				<ErrorBox>
-					<StatusText>入力内容にエラーがあります</StatusText>
-					<UnorderedList>
-						{Object.entries(formErrors).map(([field, error]) => (
-							<li key={field}>
-								{field}: {error.message}
-							</li>
-						))}
-					</UnorderedList>
-				</ErrorBox>
 			)}
 		</>
 	);
