@@ -538,7 +538,13 @@ updatedAt: ${formatedDate}
 					<StatusText>準備完了！ 記事の作成や編集ができます</StatusText>
 					<p>
 						自動保存や自動 Commit &amp; Push なんて機能はありません。
-						時々保存して、各自で Commit &amp; Push してね
+						時々保存して、各自で Commit &amp; Push してね！
+						<br />
+						<strong>
+							Preview は実際の記事ページの描画と一致するとは限りません。
+						</strong>
+						PR つくったら Cloudflare の Branch Preview
+						とかで記事ページを開いて、レイアウト崩れがないか確認してね！
 					</p>
 					<div
 						className={css({
@@ -669,6 +675,7 @@ updatedAt: ${formatedDate}
 										flexShrink: 1,
 										flexBasis: 0,
 										flexDirection: "column",
+										minWidth: 0,
 									}),
 								)}
 							>
@@ -697,6 +704,7 @@ updatedAt: ${formatedDate}
 										flexShrink: 1,
 										flexBasis: 0,
 										flexDirection: "column",
+										minWidth: 0,
 									}),
 								)}
 							>
@@ -714,7 +722,7 @@ updatedAt: ${formatedDate}
 										borderStyle: "solid",
 										borderRadius: 4,
 										padding: 2,
-										overflowY: "auto",
+										overflow: "auto",
 										animation: loadingContent ? "pulse" : undefined,
 										animationDuration: "1s",
 									})}
