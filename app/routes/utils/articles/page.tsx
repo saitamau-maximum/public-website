@@ -517,7 +517,7 @@ updatedAt: ${formatedDate}
 						main ブランチが開かれています。 記事の作成や編集を行う前に、 main
 						ブランチから新しいブランチを切ってください。
 					</p>
-					<SimpleCodeBlock code="git checkout -b docs/new-branch-name" />
+					<SimpleCodeBlock code="git switch -c docs/new-branch-name" />
 					<p className={css({ fontSize: "sm" })}>
 						「docs/new-branch-name」の部分は任意のブランチ名に置き換えてください。
 					</p>
