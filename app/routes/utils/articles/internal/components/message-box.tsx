@@ -18,3 +18,21 @@ export const WarningBox = ({ children }: { children: ReactNode }) => {
 		</div>
 	);
 };
+
+export const InfoBox = ({ children }: { children: ReactNode }) => {
+	return (
+		<div
+			className={css({
+				backgroundColor: "sky.50",
+				color: "sky.700",
+				padding: 4,
+				borderRadius: 4,
+				borderColor: "sky.300",
+				borderWidth: 1,
+				borderStyle: "solid",
+			})}
+		>
+			{children}
+		</div>
+	);
+};

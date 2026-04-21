@@ -25,9 +25,9 @@ import { UnorderedList } from "~/components/unordered-list";
 import { useToast } from "~/hooks/use-toast";
 import { newsArticleFrontmatterSchema } from "~/utils/articles";
 import { html2elem } from "~/utils/html2elem";
+import { InfoBox, WarningBox } from "./internal/components/message-box";
 import { SimpleCodeBlock } from "./internal/components/simple-code-block";
 import { StatusText } from "./internal/components/status-text";
-import { WarningBox } from "./internal/components/warning-box";
 import { useDebounce } from "./internal/hooks/use-debounce";
 
 const STATUS_CHECKING = 0 as const;
@@ -770,6 +770,14 @@ updatedAt: ${formatedDate}
 							</UnorderedList>
 						</WarningBox>
 					)}
+					<InfoBox>
+						以下の Markdown 要素は使えません。 未実装です。 必要なら誰か作って
+						<UnorderedList>
+							<li>コードブロック</li>
+							<li>数式</li>
+							<li>注釈 (External Link になる)</li>
+						</UnorderedList>
+					</InfoBox>
 				</>
 			)}
 		</>
