@@ -124,6 +124,7 @@ export default function UtilsArticles() {
 	const [supported, setSupported] = useState<boolean>(true);
 	const [currentBranch, setCurrentBranch] = useState<string>("");
 	const [articleContent, setArticleContent] = useState<ReactNode>(<Fragment />);
+	const [loadingContent, setLoadingContent] = useState<boolean>(false);
 	const [articleAssets, setArticleAssets] = useState<Record<string, string>>(
 		{},
 	); // ファイル名 -> object URL
@@ -176,7 +177,11 @@ export default function UtilsArticles() {
 	}, [trigger, status]);
 
 	useEffect(() => {
-		setArticleContent(<p>Loading...</p>);
+		if (debouncedContent !== content) setLoadingContent(true);
+	}, [debouncedContent, content]);
+
+	useEffect(() => {
+		setLoadingContent(true);
 
 		const fn = async () => {
 			let html = await md2html(debouncedContent);
@@ -196,6 +201,7 @@ export default function UtilsArticles() {
 
 			const articleElem = html2elem(html);
 			setArticleContent(articleElem);
+			setLoadingContent(false);
 		};
 
 		void fn();
@@ -709,6 +715,8 @@ updatedAt: ${formatedDate}
 										borderRadius: 4,
 										padding: 2,
 										overflowY: "auto",
+										animation: loadingContent ? "pulse" : undefined,
+										animationDuration: "1s",
 									})}
 								>
 									{frontmatter ? (
