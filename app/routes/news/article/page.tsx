@@ -1,17 +1,11 @@
 import { parseMarkdownToHTML } from "@saitamau-maximum/markdown-processor/server";
-import { Fragment } from "react";
-import { jsx, jsxs } from "react/jsx-runtime";
 import { useLoaderData } from "react-router";
-import rehypeParse from "rehype-parse";
-import rehypeReact from "rehype-react";
-import { unified } from "unified";
 import { VFile } from "vfile";
 import { matter } from "vfile-matter";
 import { ArticleHeader } from "~/components/article-header";
 import { Breadcrumb } from "~/components/breadcrumb";
-import { ExternalLink } from "~/components/external-link";
-import { H2, H3, H4 } from "~/components/heading";
 import { getNewsArticles } from "~/utils/articles";
+import { html2elem } from "~/utils/html2elem";
 import { makePageTitle } from "~/utils/title";
 import type { Route } from "./+types/page";
 
@@ -49,20 +43,7 @@ export default function NewsArticle() {
 
 	// HTML を React に変換する
 	// hast から変換する手もあるが Prerender なので気にしない
-	const articleElem = unified()
-		.use(rehypeParse, { fragment: true })
-		.use(rehypeReact, {
-			Fragment,
-			jsx,
-			jsxs,
-			components: {
-				h2: H2,
-				h3: H3,
-				h4: H4,
-				a: ExternalLink,
-			},
-		})
-		.processSync(html).result;
+	const articleElem = html2elem(html);
 
 	const breadcrumbItems = [
 		{ href: "/", label: "ホーム" },

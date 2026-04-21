@@ -1,7 +1,6 @@
 import { valibotResolver } from "@hookform/resolvers/valibot";
 import { parseMarkdownToHTML } from "@saitamau-maximum/markdown-processor/server";
 import { Fragment, type ReactNode, useEffect, useRef, useState } from "react";
-import { jsx, jsxs } from "react/jsx-runtime";
 import {
 	Code,
 	Eye,
@@ -14,21 +13,18 @@ import {
 	Save,
 } from "react-feather";
 import { useForm } from "react-hook-form";
-import rehypeParse from "rehype-parse";
-import rehypeReact from "rehype-react";
 import { css, cx } from "styled-system/css";
-import { unified } from "unified";
 import * as v from "valibot";
 import { VFile } from "vfile";
 import { matter } from "vfile-matter";
 import { ArticleCard } from "~/components/article-card";
 import { ArticleHeader } from "~/components/article-header";
 import { ButtonLike } from "~/components/button-like";
-import { ExternalLink } from "~/components/external-link";
-import { H1, H2, H3, H4 } from "~/components/heading";
+import { H1 } from "~/components/heading";
 import { UnorderedList } from "~/components/unordered-list";
 import { useToast } from "~/hooks/use-toast";
 import { newsArticleFrontmatterSchema } from "~/utils/articles";
+import { html2elem } from "~/utils/html2elem";
 import { SimpleCodeBlock } from "./internal/components/simple-code-block";
 import { StatusText } from "./internal/components/status-text";
 import { WarningBox } from "./internal/components/warning-box";
@@ -198,22 +194,8 @@ export default function UtilsArticles() {
 			});
 			html = parser.body.innerHTML;
 
-			const articleElem = await unified()
-				.use(rehypeParse, { fragment: true })
-				.use(rehypeReact, {
-					Fragment,
-					jsx,
-					jsxs,
-					components: {
-						h2: H2,
-						h3: H3,
-						h4: H4,
-						a: ExternalLink,
-					},
-				})
-				.process(html);
-
-			setArticleContent(articleElem.result);
+			const articleElem = html2elem(html);
+			setArticleContent(articleElem);
 		};
 
 		void fn();
