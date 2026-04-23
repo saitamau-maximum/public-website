@@ -4,7 +4,7 @@ import { AboutTeamsCompro } from "./compro";
 import { AboutTeamsCtf } from "./ctf";
 import { AboutTeamsGameDev } from "./game-dev";
 import { AboutTeamsInfra } from "./infra";
-import { AboutTeamsAnimetion } from "./animetion";
+import { AboutTeamsAnimation } from "./animation";
 import { AboutTeamsWeb } from "./web";
 
 export const AboutTeams = () => {
@@ -27,7 +27,7 @@ export const AboutTeams = () => {
 			<AboutTeamsAi />
 			<AboutTeamsGameDev />
 			<AboutTeamsInfra />
-	      <AboutTeamsAnimetion />
+	      <AboutTeamsAnimation />
 		</section>
 	);
 };

@@ -41,16 +41,15 @@ const convertAvifIfImage = async (
 };
 
 const copyDirectoryDeep = async (src: string, dest: string) => {
-	readdir(src, { withFileTypes: true })
+	return readdir(src, { withFileTypes: true })
 		.then((entries) =>
 			Promise.all(
 				entries.map(async (entry) => {
 					const srcPath = resolve(src, entry.name);
 					const destPath = resolve(dest, entry.name);
 					if (entry.isDirectory()) {
-						mkdir(destPath, { recursive: true }).then(() =>
-							copyDirectoryDeep(srcPath, destPath),
-						);
+						await mkdir(destPath, { recursive: true });
+						await copyDirectoryDeep(srcPath, destPath);
 						return;
 					}
 					// index.md はスキップ
