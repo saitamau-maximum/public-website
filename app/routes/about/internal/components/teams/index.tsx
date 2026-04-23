@@ -25,9 +25,9 @@ export const AboutTeams = () => {
 			<AboutTeamsWeb />
 			<AboutTeamsCtf />
 			<AboutTeamsAi />
-			<AboutTeamsAnimetion />
 			<AboutTeamsGameDev />
 			<AboutTeamsInfra />
+	      <AboutTeamsAnimetion />
 		</section>
 	);
 };
