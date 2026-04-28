@@ -42,9 +42,9 @@ const convertAvifIfImage = async (
 
 const copyDirectoryDeep = async (src: string, dest: string) => {
 	return readdir(src, { withFileTypes: true })
-		.then((entries) =>
+		.then((entries: Dirent[]): Promise<void[]> =>
 			Promise.all(
-				entries.map(async (entry) => {
+				entries.map(async (entry: Dirent) => {
 					const srcPath = resolve(src, entry.name);
 					const destPath = resolve(dest, entry.name);
 					if (entry.isDirectory()) {
