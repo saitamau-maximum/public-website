@@ -1,6 +1,6 @@
 import { H3 } from "~/components/heading";
 
-export const AboutTeamsAnimation = () => { 
+export const AboutTeamsAnimation = () => {
 	return (
 		<>
 			<H3>アニメーション班</H3>
@@ -15,7 +15,8 @@ export const AboutTeamsAnimation = () => {
 				トアニメーションの作成となります。班員は募集中です。ほかの班同様GitHubを使うので新入生はウェブ研へ参加することをお勧めします。
 			</p>
 			<p>
-				週に 1回の進捗共有を行い、アニメーションが出来上がったら発表会を行います。ものによってはサークルが運営するXやYoutubeで公開することも考えています。
+				週に
+				1回の進捗共有を行い、アニメーションが出来上がったら発表会を行います。ものによってはサークルが運営するXやYoutubeで公開することも考えています。
 			</p>
 			<p>
 				どんな作品を作るかは自由です！
