@@ -45,52 +45,52 @@ const copyDirectoryDeep = async (src: string, dest: string) => {
 		.then(
 			(entries: Dirent[]): Promise<undefined[]> =>
 				Promise.all(
-				entries.map(async (entry: Dirent) => {
-					const srcPath = resolve(src, entry.name);
-					const destPath = resolve(dest, entry.name);
-					if (entry.isDirectory()) {
-						await mkdir(destPath, { recursive: true });
-						await copyDirectoryDeep(srcPath, destPath);
-						return;
-					}
-					// index.md はスキップ
-					if (srcPath.includes("index.md")) {
-						console.log(`[SKIP] ${relative(rootDir, srcPath)}`);
-						return;
-					}
+					entries.map(async (entry: Dirent) => {
+						const srcPath = resolve(src, entry.name);
+						const destPath = resolve(dest, entry.name);
+						if (entry.isDirectory()) {
+							await mkdir(destPath, { recursive: true });
+							await copyDirectoryDeep(srcPath, destPath);
+							return;
+						}
+						// index.md はスキップ
+						if (srcPath.includes("index.md")) {
+							console.log(`[SKIP] ${relative(rootDir, srcPath)}`);
+							return;
+						}
 
-					await Promise.all([
-						(async () => {
-							await copyFile(srcPath, destPath);
-							console.log(`[COPY] ${relative(rootDir, srcPath)}`);
-						})(),
-						(async () => {
-							// 末尾の .~~~ を .avif に置換
-							const avifDestPath = destPath.replace(/\.[^/.]+$/, ".avif");
-							// avif 生成
-							await convertAvifIfImage(
-								srcPath,
-								avifDestPath,
-								{ width: 1024 }, // 横幅は高々 1024px なのでそれで良い
-								{ quality: 80, effort: 8 },
-							);
-							// サムネイル画像も生成
-							const thumbDestPath = destPath.replace(
-								/\.[^/.]+$/,
-								"-thumb.avif",
-							);
-							await convertAvifIfImage(
-								srcPath,
-								thumbDestPath,
-								// サムネイルは横幅 414px
-								// ref: card root.tsx (width: md = 28rem = 448px, padding が左右あわせて 2rem = 32px)
-								{ width: 414 },
-								{ quality: 80, effort: 8 },
-							);
-						})(),
-					]);
-				}),
-			),
+						await Promise.all([
+							(async () => {
+								await copyFile(srcPath, destPath);
+								console.log(`[COPY] ${relative(rootDir, srcPath)}`);
+							})(),
+							(async () => {
+								// 末尾の .~~~ を .avif に置換
+								const avifDestPath = destPath.replace(/\.[^/.]+$/, ".avif");
+								// avif 生成
+								await convertAvifIfImage(
+									srcPath,
+									avifDestPath,
+									{ width: 1024 }, // 横幅は高々 1024px なのでそれで良い
+									{ quality: 80, effort: 8 },
+								);
+								// サムネイル画像も生成
+								const thumbDestPath = destPath.replace(
+									/\.[^/.]+$/,
+									"-thumb.avif",
+								);
+								await convertAvifIfImage(
+									srcPath,
+									thumbDestPath,
+									// サムネイルは横幅 414px
+									// ref: card root.tsx (width: md = 28rem = 448px, padding が左右あわせて 2rem = 32px)
+									{ width: 414 },
+									{ quality: 80, effort: 8 },
+								);
+							})(),
+						]);
+					}),
+				),
 		)
 		.catch((err) => {
 			console.error(`Error copying directory: ${err}`);
