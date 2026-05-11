@@ -1,17 +1,15 @@
 {
 	"compilerOptions": {
 		"strict": true,
-		"lib": ["DOM", "DOM.Iterable", "ES2022"],
-		"types": ["node", "vite/client"],
-		"target": "ES2022",
-		"module": "ES2022",
+		"lib": ["DOM"],
+		"types": ["node", "js-yaml", "vite/client"],
 		"moduleResolution": "bundler",
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",
-		"baseUrl": ".",
 		"rootDirs": [".", "./.react-router/types"],
 		"paths": {
-			"~/*": ["./app/*"]
+			"~/*": ["./app/*"],
+			"styled-system/*": ["./styled-system/*"]
 		},
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
@@ -25,6 +23,5 @@
 		"worker-configuration.d.ts",
 		"vite.config.ts",
 		"workers/**/*"
-	],
-	"exclude": ["node_modules", "v1"]
+	]
 }

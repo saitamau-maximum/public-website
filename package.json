@@ -43,7 +43,7 @@
 		"schema-dts": "^2.0.0",
 		"sharp": "^0.34.5",
 		"tsx": "^4.21.0",
-		"typescript": "^5.9.3",
+		"typescript": "^6.0.3",
 		"valibot": "^1.4.0",
 		"vite": "^8.0.11",
 		"wrangler": "^4.90.0"

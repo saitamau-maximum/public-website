@@ -47,10 +47,10 @@ importers:
         version: 1.36.3(vite@8.0.11(@types/node@25.6.2)(esbuild@0.27.3)(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.4))(workerd@1.20260507.1)(wrangler@4.90.0)
       '@pandacss/dev':
         specifier: ^1.11.1
-        version: 1.11.1(typescript@5.9.3)
+        version: 1.11.1(typescript@6.0.3)
       '@react-router/dev':
         specifier: ^7.15.0
-        version: 7.15.0(@types/node@25.6.2)(lightningcss@1.32.0)(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(typescript@5.9.3)(vite@8.0.11(@types/node@25.6.2)(esbuild@0.27.3)(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.4))(wrangler@4.90.0)(yaml@2.8.4)
+        version: 7.15.0(@types/node@25.6.2)(lightningcss@1.32.0)(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(typescript@6.0.3)(vite@8.0.11(@types/node@25.6.2)(esbuild@0.27.3)(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.4))(wrangler@4.90.0)(yaml@2.8.4)
       '@types/js-yaml':
         specifier: ^4.0.9
         version: 4.0.9
@@ -86,7 +86,7 @@ importers:
         version: 1.99.0
       schema-dts:
         specifier: ^2.0.0
-        version: 2.0.0(typescript@5.9.3)
+        version: 2.0.0(typescript@6.0.3)
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -94,11 +94,11 @@ importers:
         specifier: ^4.21.0
         version: 4.21.0
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
       valibot:
         specifier: ^1.4.0
-        version: 1.4.0(typescript@5.9.3)
+        version: 1.4.0(typescript@6.0.3)
       vite:
         specifier: ^8.0.11
         version: 8.0.11(@types/node@25.6.2)(esbuild@0.27.3)(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.4)
@@ -3195,13 +3195,13 @@ packages:
     resolution: {integrity: sha512-OZs6gsjF4vMp32qrCbiVSkrFmXtG/AZhY3t0iAMrMBiAZyV9oALtXO8hsrHbMXF9x6L3grlFuwW2oAz7cav+Gw==}
     engines: {node: '>= 0.6'}
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.2:
+    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@6.0.2:
-    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4134,14 +4134,14 @@ snapshots:
       postcss-selector-parser: 7.1.1
       ts-pattern: 5.9.0
 
-  '@pandacss/dev@1.11.1(typescript@5.9.3)':
+  '@pandacss/dev@1.11.1(typescript@6.0.3)':
     dependencies:
       '@clack/prompts': 0.11.0
       '@pandacss/config': 1.11.1
       '@pandacss/logger': 1.11.1
-      '@pandacss/mcp': 1.11.1(typescript@5.9.3)
-      '@pandacss/node': 1.11.1(typescript@5.9.3)
-      '@pandacss/postcss': 1.11.1(typescript@5.9.3)
+      '@pandacss/mcp': 1.11.1(typescript@6.0.3)
+      '@pandacss/node': 1.11.1(typescript@6.0.3)
+      '@pandacss/postcss': 1.11.1(typescript@6.0.3)
       '@pandacss/preset-base': 1.11.1
       '@pandacss/preset-panda': 1.11.1
       '@pandacss/shared': 1.11.1
@@ -4154,10 +4154,10 @@ snapshots:
       - supports-color
       - typescript
 
-  '@pandacss/extractor@1.11.1(typescript@5.9.3)':
+  '@pandacss/extractor@1.11.1(typescript@6.0.3)':
     dependencies:
       '@pandacss/shared': 1.11.1
-      ts-evaluator: 1.2.0(typescript@5.9.3)
+      ts-evaluator: 1.2.0(typescript@6.0.3)
       ts-morph: 28.0.0
     transitivePeerDependencies:
       - jsdom
@@ -4184,12 +4184,12 @@ snapshots:
       '@pandacss/types': 1.11.1
       kleur: 4.1.5
 
-  '@pandacss/mcp@1.11.1(typescript@5.9.3)':
+  '@pandacss/mcp@1.11.1(typescript@6.0.3)':
     dependencies:
       '@clack/prompts': 0.11.0
       '@modelcontextprotocol/sdk': 1.29.0(zod@4.4.3)
       '@pandacss/logger': 1.11.1
-      '@pandacss/node': 1.11.1(typescript@5.9.3)
+      '@pandacss/node': 1.11.1(typescript@6.0.3)
       '@pandacss/token-dictionary': 1.11.1
       '@pandacss/types': 1.11.1
       zod: 4.4.3
@@ -4199,13 +4199,13 @@ snapshots:
       - supports-color
       - typescript
 
-  '@pandacss/node@1.11.1(typescript@5.9.3)':
+  '@pandacss/node@1.11.1(typescript@6.0.3)':
     dependencies:
       '@pandacss/config': 1.11.1
       '@pandacss/core': 1.11.1
       '@pandacss/generator': 1.11.1
       '@pandacss/logger': 1.11.1
-      '@pandacss/parser': 1.11.1(typescript@5.9.3)
+      '@pandacss/parser': 1.11.1(typescript@6.0.3)
       '@pandacss/plugin-lightningcss': 1.11.1
       '@pandacss/plugin-svelte': 1.11.1
       '@pandacss/plugin-vue': 1.11.1
@@ -4237,11 +4237,11 @@ snapshots:
       - jsdom
       - typescript
 
-  '@pandacss/parser@1.11.1(typescript@5.9.3)':
+  '@pandacss/parser@1.11.1(typescript@6.0.3)':
     dependencies:
       '@pandacss/config': 1.11.1
       '@pandacss/core': 1.11.1
-      '@pandacss/extractor': 1.11.1(typescript@5.9.3)
+      '@pandacss/extractor': 1.11.1(typescript@6.0.3)
       '@pandacss/logger': 1.11.1
       '@pandacss/shared': 1.11.1
       '@pandacss/types': 1.11.1
@@ -4269,9 +4269,9 @@ snapshots:
       '@vue/compiler-sfc': 3.5.25
       magic-string: 0.30.21
 
-  '@pandacss/postcss@1.11.1(typescript@5.9.3)':
+  '@pandacss/postcss@1.11.1(typescript@6.0.3)':
     dependencies:
-      '@pandacss/node': 1.11.1(typescript@5.9.3)
+      '@pandacss/node': 1.11.1(typescript@6.0.3)
       postcss: 8.5.14
     transitivePeerDependencies:
       - jsdom
@@ -4380,7 +4380,7 @@ snapshots:
 
   '@poppinss/exception@1.2.3': {}
 
-  '@react-router/dev@7.15.0(@types/node@25.6.2)(lightningcss@1.32.0)(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(typescript@5.9.3)(vite@8.0.11(@types/node@25.6.2)(esbuild@0.27.3)(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.4))(wrangler@4.90.0)(yaml@2.8.4)':
+  '@react-router/dev@7.15.0(@types/node@25.6.2)(lightningcss@1.32.0)(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(typescript@6.0.3)(vite@8.0.11(@types/node@25.6.2)(esbuild@0.27.3)(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.4))(wrangler@4.90.0)(yaml@2.8.4)':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/generator': 7.29.1
@@ -4389,7 +4389,7 @@ snapshots:
       '@babel/preset-typescript': 7.28.5(@babel/core@7.29.0)
       '@babel/traverse': 7.29.0
       '@babel/types': 7.29.0
-      '@react-router/node': 7.15.0(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@5.9.3)
+      '@react-router/node': 7.15.0(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3)
       '@remix-run/node-fetch-server': 0.13.0
       arg: 5.0.2
       babel-dead-code-elimination: 1.0.12
@@ -4409,11 +4409,11 @@ snapshots:
       react-router: 7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       semver: 7.7.4
       tinyglobby: 0.2.15
-      valibot: 1.4.0(typescript@5.9.3)
+      valibot: 1.4.0(typescript@6.0.3)
       vite: 8.0.11(@types/node@25.6.2)(esbuild@0.27.3)(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.4)
       vite-node: 3.2.4(@types/node@25.6.2)(lightningcss@1.32.0)(sass-embedded@1.99.0)(sass@1.99.0)(tsx@4.21.0)(yaml@2.8.4)
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.3
       wrangler: 4.90.0
     transitivePeerDependencies:
       - '@types/node'
@@ -4430,12 +4430,12 @@ snapshots:
       - tsx
       - yaml
 
-  '@react-router/node@7.15.0(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@5.9.3)':
+  '@react-router/node@7.15.0(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3)':
     dependencies:
       '@mjackson/node-fetch-server': 0.2.0
       react-router: 7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.3
 
   '@react-types/shared@3.34.0(react@19.2.6)':
     dependencies:
@@ -6531,13 +6531,13 @@ snapshots:
 
   scheduler@0.27.0: {}
 
-  schema-dts-lib@1.0.0(typescript@5.9.3):
+  schema-dts-lib@1.0.0(typescript@6.0.3):
     dependencies:
-      typescript: 5.9.3
+      typescript: 6.0.3
 
-  schema-dts@2.0.0(typescript@5.9.3):
+  schema-dts@2.0.0(typescript@6.0.3):
     dependencies:
-      schema-dts-lib: 1.0.0(typescript@5.9.3)
+      schema-dts-lib: 1.0.0(typescript@6.0.3)
     transitivePeerDependencies:
       - typescript
 
@@ -6769,12 +6769,12 @@ snapshots:
 
   ts-algebra@2.0.0: {}
 
-  ts-evaluator@1.2.0(typescript@5.9.3):
+  ts-evaluator@1.2.0(typescript@6.0.3):
     dependencies:
       ansi-colors: 4.1.3
       crosspath: 2.0.0
       object-path: 0.11.8
-      typescript: 5.9.3
+      typescript: 6.0.3
 
   ts-morph@28.0.0:
     dependencies:
@@ -6798,9 +6798,9 @@ snapshots:
       media-typer: 1.1.0
       mime-types: 3.0.2
 
-  typescript@5.9.3: {}
-
   typescript@6.0.2: {}
+
+  typescript@6.0.3: {}
 
   undici-types@7.19.2: {}
 
@@ -6875,9 +6875,9 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  valibot@1.4.0(typescript@5.9.3):
+  valibot@1.4.0(typescript@6.0.3):
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.3
 
   varint@6.0.0: {}
 
