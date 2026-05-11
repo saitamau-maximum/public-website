@@ -4,7 +4,6 @@ on: pull_request
 
 permissions:
   contents: read
-  packages: read
 
 jobs:
   check:
@@ -22,13 +21,9 @@ jobs:
           node-version-file: .node-version
           cache: pnpm
           cache-dependency-path: "**/pnpm-lock.yaml"
-          scope: "@saitamau-maximum"
 
       - name: Install deps
         run: pnpm install --frozen-lockfile --prefer-offline
-        env:
-          TOKEN_FOR_GITHUB: ${{ secrets.GITHUB_TOKEN }}
-          NPM_CONFIG_USERCONFIG: .npmrc.pages
 
       - name: Lint Check
         run: pnpm check
