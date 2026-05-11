@@ -70,19 +70,6 @@ export const HomeAboutUs = () => {
 				</li>
 				<li>
 					<Card.Root>
-						<Card.Title>アニメーション班</Card.Title>
-						<Card.Body>
-							<p>
-								アニメーション班では、その名の通りアニメーションの制作を行っていきます。
-								3, 4
-								人チームでの制作か個人制作の、好きな方を選ぶことができます。
-								Blender を使用しての制作となります！
-							</p>
-						</Card.Body>
-					</Card.Root>
-				</li>
-				<li>
-					<Card.Root>
 						<Card.Title>ゲーム開発班</Card.Title>
 						<Card.Body>
 							<p>
@@ -99,6 +86,19 @@ export const HomeAboutUs = () => {
 							<p>
 								サーバーの運用・構築を中心に、インフラに関する勉強を行っています。
 								サイトの公開までの手順を実際に行い、生じた疑問を調べながら解消することで概形を把握し、操作に慣れることを目的としています。
+							</p>
+						</Card.Body>
+					</Card.Root>
+				</li>
+				<li>
+					<Card.Root>
+						<Card.Title>アニメーション班</Card.Title>
+						<Card.Body>
+							<p>
+								アニメーション班では、その名の通りアニメーションの制作を行っていきます。
+								3, 4
+								人チームでの制作か個人制作の、好きな方を選ぶことができます。
+								Blender を使用しての制作となります！
 							</p>
 						</Card.Body>
 					</Card.Root>
