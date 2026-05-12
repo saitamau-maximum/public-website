@@ -13,46 +13,45 @@
 		"build:app": "react-router build"
 	},
 	"dependencies": {
-		"@saitamau-maximum/markdown-processor": "^2.2.1",
-		"isbot": "^5.1.35",
-		"react": "^19.2.4",
-		"react-aria-components": "^1.15.1",
-		"react-dom": "^19.2.4",
+		"@saitamau-maximum/markdown-processor": "^2.2.4",
+		"isbot": "^5.1.40",
+		"react": "^19.2.6",
+		"react-aria-components": "^1.17.0",
+		"react-dom": "^19.2.6",
 		"react-feather": "^2.0.10",
-		"react-router": "^7.13.0",
+		"react-router": "^7.15.0",
 		"rehype-parse": "^9.0.1",
 		"rehype-react": "^8.0.0",
 		"unified": "^11.0.5"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.4.4",
-		"@cloudflare/vite-plugin": "^1.25.2",
-		"@pandacss/dev": "^1.8.2",
-		"@react-router/dev": "^7.13.0",
+		"@biomejs/biome": "^2.4.15",
+		"@cloudflare/vite-plugin": "^1.36.3",
+		"@pandacss/dev": "^1.11.1",
+		"@react-router/dev": "^7.15.0",
 		"@types/js-yaml": "^4.0.9",
-		"@types/node": "^25.3.0",
+		"@types/node": "^25.6.2",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
-		"autoprefixer": "^10.4.24",
+		"autoprefixer": "^10.5.0",
 		"gray-matter": "^4.0.3",
 		"husky": "^9.1.7",
 		"js-yaml": "^4.1.1",
 		"json-schema-to-ts": "^3.1.1",
-		"lint-staged": "^16.2.7",
-		"sass-embedded": "^1.97.3",
-		"schema-dts": "^1.1.5",
+		"lint-staged": "^17.0.4",
+		"sass-embedded": "^1.99.0",
+		"schema-dts": "^2.0.0",
 		"sharp": "^0.34.5",
 		"tsx": "^4.21.0",
-		"typescript": "^5.9.3",
-		"valibot": "^1.2.0",
-		"vite": "^7.3.1",
-		"vite-tsconfig-paths": "^6.1.1",
-		"wrangler": "^4.67.0"
+		"typescript": "^6.0.3",
+		"valibot": "^1.4.0",
+		"vite": "^8.0.11",
+		"wrangler": "^4.90.0"
 	},
 	"lint-staged": {
 		"*": [
 			"biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
 		]
 	},
-	"packageManager": "pnpm@10.29.3+sha512.498e1fb4cca5aa06c1dcf2611e6fafc50972ffe7189998c409e90de74566444298ffe43e6cd2acdc775ba1aa7cc5e092a8b7054c811ba8c5770f84693d33d2dc"
+	"packageManager": "pnpm@11.0.9+sha512.34ce82e6780233cf9cad8685029a8f81d2e06196c5a9bad98879f7424940c6817c4e4524fb7d38b8553ceed48b9758b8ebaf1abd3600c232c4c8cf7366086f38"
 }
