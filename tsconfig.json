@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"strict": true,
 		"lib": ["DOM"],
-		"types": ["node", "js-yaml", "vite/client"],
+		"types": ["node", "js-yaml", "vite/client", "wicg-file-system-access"],
 		"moduleResolution": "bundler",
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",

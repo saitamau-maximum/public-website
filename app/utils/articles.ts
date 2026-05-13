@@ -1,12 +1,24 @@
-import matter from "gray-matter";
 import * as v from "valibot";
+import { VFile } from "vfile";
+import { matter } from "vfile-matter";
 
 export const newsArticleFrontmatterSchema = v.object({
-	title: v.string(),
-	createdAt: v.date(),
-	updatedAt: v.date(),
+	title: v.pipe(
+		v.string("タイトルを入力してください"),
+		v.nonEmpty("タイトルを入力してください"),
+	),
+	createdAt: v.pipe(
+		v.string("日付を入力してください"),
+		v.isoDate("日付の形式が正しくありません"),
+		v.toDate(),
+	),
+	updatedAt: v.pipe(
+		v.string("日付を入力してください"),
+		v.isoDate("日付の形式が正しくありません"),
+		v.toDate(),
+	),
 	description: v.optional(v.string()),
-	group: v.string(),
+	group: v.optional(v.string()),
 	image: v.optional(
 		v.pipe(
 			v.string(),
@@ -27,8 +39,7 @@ export type NewsArticle = {
 export const getNewsArticles = async () => {
 	const articles: NewsArticle[] = [];
 
-	// nodejs_compat を有効にしている + prerender とはいえ、 fs での読み込みはできない (???)
-	// そのため import.meta.glob を使って記事一覧を取得する
+	// fs での読み込みはできないので import.meta.glob を使って記事一覧を取得する
 	const articleModules = import.meta.glob("/docs/news/*/*/index.md", {
 		query: "?raw",
 		import: "default",
@@ -38,7 +49,9 @@ export const getNewsArticles = async () => {
 	for (const fullPath in articleModules) {
 		const [_empty, _docs, _news, year, slug, _indexMd] = fullPath.split("/");
 		const fileContent = articleModules[fullPath] as string;
-		const { data } = matter(fileContent);
+		const vfile = new VFile(fileContent);
+		matter(vfile);
+		const { matter: data } = vfile.data;
 
 		const {
 			success,

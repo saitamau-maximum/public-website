@@ -28,6 +28,7 @@ export default {
 			"/achievements/kaggle/",
 			"/achievements/ute1/",
 			"/achievements/kanto-police-ctf/",
+			"/utils/articles/",
 		];
 	},
 } satisfies Config;

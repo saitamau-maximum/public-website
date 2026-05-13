@@ -33,4 +33,5 @@ export default [
 			),
 		]),
 	]),
+	...prefix("utils", [route("articles", "routes/utils/articles/page.tsx")]),
 ] satisfies RouteConfig;
