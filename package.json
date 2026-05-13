@@ -20,7 +20,7 @@
 		"react-aria-components": "^1.17.0",
 		"react-dom": "^19.2.6",
 		"react-feather": "^2.0.10",
-		"react-hook-form": "^7.72.1",
+		"react-hook-form": "^7.75.0",
 		"react-router": "^7.15.0",
 		"rehype-parse": "^9.0.1",
 		"rehype-react": "^8.0.0",
@@ -34,7 +34,7 @@
 		"@pandacss/dev": "^1.11.1",
 		"@react-router/dev": "^7.15.0",
 		"@types/js-yaml": "^4.0.9",
-		"@types/node": "^25.6.2",
+		"@types/node": "^25.7.0",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@types/wicg-file-system-access": "^2023.10.7",
@@ -49,7 +49,7 @@
 		"tsx": "^4.21.0",
 		"typescript": "^6.0.3",
 		"valibot": "^1.4.0",
-		"vite": "^8.0.11",
+		"vite": "^8.0.12",
 		"wrangler": "^4.90.0"
 	},
 	"lint-staged": {
