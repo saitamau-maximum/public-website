@@ -6,19 +6,6 @@
 
 ## Development
 
-### 前提条件: `npm.pkg.github.com` にログインする
-
-```bash
-npm login --scope=@saitamau-maximum --auth-type=legacy --registry=https://npm.pkg.github.com
-```
-
-この時、 `username` には GitHub のユーザー名、 `password` には GitHub のパーソナルアクセストークンを入力してください。
-パーソナルアクセストークンは `read:packages` の権限が必要です。
-これがないと `@saitamau-maximum/markdown-processor` がインストールできません。
-
-発行方法はクラメソさんの記事を参考にしてください。
-<https://dev.classmethod.jp/articles/github-personal-access-tokens>
-
 ### 必要なパッケージをインストールする
 
 ```bash
