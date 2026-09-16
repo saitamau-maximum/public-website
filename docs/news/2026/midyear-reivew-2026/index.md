@@ -4,7 +4,7 @@ createdAt: 2026-08-18
 updatedAt: 2026-08-18
 description: 新歓・懇親会・ICPCなど、振り返ります
 group: Maximum
-image: thumbnail.png
+image: thumbnail-thumb.avif
 ---
 
 ## はじめに
@@ -29,7 +29,7 @@ image: thumbnail.png
 
 今年もたくさんの方にご参加いただきました!<br>
 特に2日間開催した中の1日目は会場いっぱいに集まっていただきました。<br>
-![新歓の様子](./guidance-2026.png)
+![新歓の様子](./guidance-2026.avif)
 
 ご参加いただき、ありがとうございました！<br>
 
@@ -53,7 +53,7 @@ Maximumでは、教材がそろっており、オンラインで上級生に質�
 
 お互いに交流を深め、上級生や同級生間でのつながりを作れるよう、ゲームや食事会を行いました。
 
-![懇親会の様子](./meeting-2026.png)
+![懇親会の様子](./meeting-2026.avif)
 
 ピザを食べながら、お互いについて知り合い、親睦を深めることができました。<br>
 
@@ -67,7 +67,7 @@ Maximumでは、毎年ICPC（国際大学対抗プログラミングコンテス
 
 1年生もたくさん参加してくれました。
 
-![ICPCの様子](./icpc-2026.png)
+![ICPCの様子](./icpc-2026.avif)
 ↑各チームごとに準備を進めています...!
 
 今年はMaximum Merinchanが97位/353 でMaximum内最高順位でした。
